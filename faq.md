@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-05-29"
 
 keywords: FAQ, faqs, limit, resource, vNIC, VSI, PGW, console, VRF, bandwidth, COS, egress, load balancer
 
@@ -25,6 +25,11 @@ subcollection: vpc-on-classic
 
 # FAQs
 {: #faqs}
+
+## Can I connect my VPC to my other IBM Cloud workloads? 
+{: #faq-0}
+
+Yes. For details, refer to [Setting up access to your classic infrastructure](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc).
 
 ## What is the limit on the number of characters in a VPC name?
 {: #faq-1}
