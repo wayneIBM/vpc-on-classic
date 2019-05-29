@@ -26,11 +26,11 @@ subcollection: vpc-on-classic
 # FAQs
 {: #faqs}
 
-## Can I connect my VPC to my other IBM Cloud workloads? 
+## Can I connect my VPC to my other {{site.data.keyword.cloud_notm}} workloads?  
 {: #faq-0}
 {:faq}
 
-Yes. For details, refer to [Setting up access to your classic infrastructure](https://cloud.ibm.com/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc).
+Yes, you can set up access to your {{site.data.keyword.cloud}} classic infrastructure from one VPC in each region. For more information, see [Setting up access to your classic infrastructure](/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc).
 
 ## What is the limit on the number of characters in a VPC name?
 {: #faq-1}
