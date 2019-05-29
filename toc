@@ -1,0 +1,75 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="vpc-on-classic" audience="service" arm="4135753" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
+Virtual Private Cloud on Classic
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about-vpc-is.md
+    vpc-quotas.md
+
+    {: .topicgroup}
+    Pricing
+        pricing.md
+        vpc-vsi-pricing.md
+        block-storage-is-pricing.md
+    
+    {: .topicgroup}
+    Tutorials
+        /tutorials/solution-tutorials-vpc-public-app-private-backend
+        /tutorials/solution-tutorials-vpc-multi-region
+        /tutorials/solution-tutorials-vpc-site2site-vpn
+        /tutorials/solution-tutorials-vpc-secure-management-bastion-server
+
+    related-links.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    console-tutorial.md
+    hello-world-vpc.md
+    example-code.md
+    classic-access.md
+    vpc-regions.md
+
+    {: .topicgroup}
+    Administrative tasks
+        about-resources.md
+        vpc-user-permissions.md
+        vpc-admin-guide.md
+        vpc-vsi-permissions.md
+        api-auth-correlation.md
+
+    {: .topicgroup}
+    Creating and managing resources
+        create-manage-vsi.md
+        create-manage-network.md
+        create-manage-storage.md
+
+    {: .topicgroup}
+    Deleting a VPC
+        delete-vpc.md
+        delete-vpc-ui.md
+        delete-vpc-cli.md
+        delete-vpc-api.md
+
+    connect-to-cos.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    vpc-glossary.md
+    api-doc-wrapper.md
+    /vpc-infrastructure-cli-plugin/vpc-infrastructure-cli-plugin-vpc-reference
+    step-by-step-pages.md
+    vpc-endpoints.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    known-limitations.md
+    troubleshooting.md
+    release-notes.md
+    quick-guide-to-resources.md
+    errors.md
+    getting-help.md
+    {: .navgroup-end}
