@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-05-29"
 
 
 keywords: create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
@@ -26,7 +26,7 @@ subcollection: vpc-on-classic
 # Creating a VPC using the REST APIs
 {: #creating-a-vpc-using-the-rest-apis}
 
-This document shows you how to create {{site.data.keyword.cloud}} Virtual Private Cloud resources using the REST APIs.
+This document shows you how to create {{site.data.keyword.cloud}} Virtual Private Cloud resources using the REST APIs using `curl`. For code snippets calling the REST APIs using Go and Python, see this [example code](https://github.com/IBM-Cloud/vpc-api-samples).
 
 ## Prerequisites
 

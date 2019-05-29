@@ -41,8 +41,7 @@ Learn more about the {{site.data.keyword.cloud}} Platform and VPC Classic Infras
 
 *  [Where's My Kill Switch? Migrating Network Services to the Cloud ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://www.ibm.com/w3-techblog/wcp/2018/09/migrating-network-services/){: new_window}, by Chris Dotson. A general overview about datacenter security and SDN.
 
-## Scripts
+## Code and Tools
 
-* [Python script to make a graphical representation of your VPC](https://github.com/l2fprod/vpc-diagram-exporter)
-
-Use this tool to export a visual representation of the existing VPC resources in your IBM Cloud account.
+* [Python script to make a graphical representation of your VPC](https://github.com/l2fprod/vpc-diagram-exporter) Use this tool to export a visual representation of the existing VPC resources in your IBM Cloud account.
+* [Go and Python example code calling the VPC Rest APIs](https://github.com/IBM-Cloud/vpc-api-samples) Go and Python example code that calls the VPC APIs to help you get started.
