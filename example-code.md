@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-05-30"
 
 
 keywords: create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
@@ -93,7 +93,7 @@ To verify that this variable was saved, run `echo $rias_endpoint` and make sure 
 Every API request must include the `version` parameter, in the format `YYYY-MM-DD`. Run the following command to store the version date in a variable so it can be reused in your session. For more information about setting the `version` parameter, see **Versioning** in the [Regional API for VPC](https://{DomainName}/apidocs/vpc-on-classic#versioning)
 
 ```bash
-version="2019-01-01"
+version="2019-05-31"
  ```
 {: pre}
 
@@ -351,7 +351,6 @@ curl -X POST "$rias_endpoint/v1/instances?version=$version&generation=1" \
           "id": "'$vpc'"
         },
         "primary_network_interface": {
-          "port_speed": 1000,
           "subnet": {
             "id": "'$subnet'"
           }
@@ -482,7 +481,7 @@ Create a block storage volume with a request similar to this example and specify
 To see a list of volume profiles, provide this request:
 
 ```bash
-curl -X GET "$rias_endpoint/v1/volumes/profiles?version=$version&generation=1" \
+curl -X GET "$rias_endpoint/v1/volume/profiles?version=$version&generation=1" \
      -H "Authorization: $iam_token" \
 ```
 {: pre}
@@ -531,12 +530,12 @@ curl -X GET "$rias_endpoint/v1/volumes/$volume?version=$version&generation=1" \
 Create a volume attachment to attach the new volume to the virtual server instance. Use the instance ID variable that you created earlier in the request.  Use the volume ID, CRN of the volume, or URL to specify the volume in the data parameter.  This example uses the variable we created for the volume ID.
 
 ```bash
-curl -X POST "$rias_endpoint/v1/instances/$server?version=$version&generation=1" \
+curl -X POST "$rias_endpoint/v1/instances/$server/volume_attachments?version=$version&generation=1" \
   -H "Authorization: $iam_token" \
   -d '{
         "name": "helloworld-vol-attachment",
         "volume": {
-            "id": "$volume"
+            "id": "'$volume'"
             }
       }'
 ```

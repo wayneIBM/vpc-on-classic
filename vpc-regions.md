@@ -146,7 +146,7 @@ ibmcloud is regions
 For example, to get the list of VPCs in the `us-south` region, run the following command:
 
 ```
-curl "https://us-south.iaas.cloud.ibm.com/v1/vpcs?version=2019-01-01&generation=1" -H "Authorization: $iam_token"
+curl "https://us-south.iaas.cloud.ibm.com/v1/vpcs?version=2019-05-31&generation=1" -H "Authorization: $iam_token"
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-05-31"
 
 keywords: limitations, bugs, known, Beta, services, capabilities
 
@@ -50,10 +50,8 @@ The following APIs are not supported in this release.
 | **Compute:** |   |   |
 | Images | Create/Delete not supported | Ubuntu 16.04, CentOS 7.X, Windows 08, Debian|
 | Network_Interfaces | Get (no create, delete, update) | |
-| Volume_Interfaces | Not supported |   |
 | Port_Speed | | Only 100 and 1000 |
 | **Storage:** |   |   |
-| Volumes | Not supported |   |
 | Snapshots | Not supported |  |
 
 ## Features and Use Cases not yet supported

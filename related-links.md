@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-05-30"
 
-keywords: LBaaS, VPN, VSI, Storage, administrator, SRE, network
+keywords: LBaaS, VPN, VSI, Storage, administrator, SRE, network, Python, SDK, API, Go, code, script, example, migrating
 
 subcollection: vpc-on-classic
 
@@ -27,13 +27,9 @@ Learn more about the {{site.data.keyword.cloud}} Platform and VPC Classic Infras
 ## Related Documentation
 
 * [Networking for VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-getting-started)
-
 * [VSIs for VPC](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-getting-started)
-
 * [Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-getting-started#block-storage-getting-started)
-
 * [LBaaS for VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc#--using-load-balancers-in-ibm-cloud-vpc)
-
 * [VPN for VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-vpn-with-your-vpc#--using-vpn-with-your-vpc)
 
 
@@ -44,4 +40,4 @@ Learn more about the {{site.data.keyword.cloud}} Platform and VPC Classic Infras
 ## Code and Tools
 
 * [Python script to make a graphical representation of your VPC](https://github.com/l2fprod/vpc-diagram-exporter) Use this tool to export a visual representation of the existing VPC resources in your IBM Cloud account.
-* [Go and Python example code calling the VPC Rest APIs](https://github.com/IBM-Cloud/vpc-api-samples) Go and Python example code that calls the VPC APIs to help you get started.
+* [Go and Python example code calling the VPC REST APIs](https://github.com/IBM-Cloud/vpc-api-samples) Go and Python example code that calls the VPC APIs to help you get started.

@@ -36,9 +36,9 @@ Your account must be on a Pay-As-You-Go plan to provision VPCs. You can find mor
 
 The network ACL cannot be deleted because it is attached to a subnet or VPC. 
 
-To see if a subnet is using the network ACL, use the `GET /v1/subnets?version=2019-01-01&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To update the network ACL used by a subnet use the `PATCH /v1/subnets/{subnet_id}?version=2019-01-01&generation=1  -d '{ "network_acl":{ "id": “{network_acl_id}” } }’` API or `ibmcloud is subnet-update` CLI. 
+To see if a subnet is using the network ACL, use the `GET /v1/subnets?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To update the network ACL used by a subnet use the `PATCH /v1/subnets/{subnet_id}?version=2019-05-31&generation=1  -d '{ "network_acl":{ "id": “{network_acl_id}” } }’` API or `ibmcloud is subnet-update` CLI. 
 
-To see if a VPC is using the network ACL, use the `GET /v1/vpcs?version=2019-01-01&generation=1` API.  Equivalent CLI command: `ibmcloud is vpcs`. It is not possible to update or delete the default network ACL used by a VPC. The default network ACL is deleted automatically when the VPC gets deleted.
+To see if a VPC is using the network ACL, use the `GET /v1/vpcs?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is vpcs`. It is not possible to update or delete the default network ACL used by a VPC. The default network ACL is deleted automatically when the VPC gets deleted.
 
 ## address_prefix_conflict
 **Message**: The address prefix with this CIDR is in use.
@@ -51,7 +51,7 @@ Equivalent CLI command: `ibmcloud is vpc-address-prefix`
 ## address_prefix_in_use
 **Message**: Cannot delete an address prefix in use.
 
-One or more subnets are using the address prefix.  To determine which subnets are using the address prefix, use the `GET /v1/subnets?version=2019-01-01&generation=1` API command and  check the `ipv4_cidr_block` field.  Equivalent CLI command:  `ibmcloud is subnets` and check the `Subnet CIDR` column. You must delete all the subnets using the address prefix before the address prefix can be deleted.
+One or more subnets are using the address prefix.  To determine which subnets are using the address prefix, use the `GET /v1/subnets?version=2019-05-31&generation=1` API command and  check the `ipv4_cidr_block` field.  Equivalent CLI command:  `ibmcloud is subnets` and check the `Subnet CIDR` column. You must delete all the subnets using the address prefix before the address prefix can be deleted.
 
 ## backend_service_unavailable
 **Message**: The backend service is unavailable.
@@ -259,7 +259,7 @@ An unexpected error occurred. This problem may be temporary. Try the request aga
 Make sure that the ID you provided does not contain any malformed data.
 
 You may get this error message if you provide a malformed start query when making a pagination request. For example,
-`GET /v1/network_acls?start=23fbba08-ceb3-4cbe-a951-84ff20a06069?version=2019-01-01&generation=1` contains two `?`s. Fix the query and try again.
+`GET /v1/network_acls?start=23fbba08-ceb3-4cbe-a951-84ff20a06069?version=2019-05-31&generation=1` contains two `?`s. Fix the query and try again.
 
 ## invalid_route
 **Message**: The requested route does not exist.
@@ -269,8 +269,8 @@ The requested route on the API URL you provided does not exist. Verify that the 
 ## invalid_request_field
 **Message**: A field provided in the request is not valid.
 
-For example, to update the network ACL used by a subnet use the `PATCH /v1/subnets/{subnet_id}?version=2019-01-01&generation=1  -d '{ "network_acl":{ "id": “{network_acl_id}” } }’` API.
-The following request would be invalid because “networkacl” is not a valid field, `PATCH /v1/subnets/{subnet_id}?version=2019-01-01&generation=1  -d '{ "networkacl":{ "id": “{network_acl_id}” } }’`
+For example, to update the network ACL used by a subnet use the `PATCH /v1/subnets/{subnet_id}?version=2019-05-31&generation=1  -d '{ "network_acl":{ "id": “{network_acl_id}” } }’` API.
+The following request would be invalid because “networkacl” is not a valid field, `PATCH /v1/subnets/{subnet_id}?version=2019-05-31&generation=1  -d '{ "networkacl":{ "id": “{network_acl_id}” } }’`
 
 Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for acceptable values.
 
@@ -684,7 +684,7 @@ The quotas per resource are specified in [Quotas and limits for VPC](/docs/infra
 
 The public gateway currently is attached to one or more subnets. You must detach the public gateway from all subnets before you can delete it.
 
-To see which subnet is using the public gateway, use the `GET /v1/subnets?version=2019-01-01&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To detach the public gateway from the subnet, use the API command `DELETE /v1/subnets/{subnet_id}/public_gateway?version=2019-01-01&generation=1` or the CLI command `ibmcloud is subnet-public-gateway-detach`. 
+To see which subnet is using the public gateway, use the `GET /v1/subnets?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To detach the public gateway from the subnet, use the API command `DELETE /v1/subnets/{subnet_id}/public_gateway?version=2019-05-31&generation=1` or the CLI command `ibmcloud is subnet-public-gateway-detach`. 
 
 ## rate_limit_exceeded
 **Message**: Too many requests within a short time.
@@ -694,12 +694,12 @@ This error message is returned if too many requests are received within a specif
 ## security_group_active_transactions
 **Message**: The interface cannot be attached or detached until the instance appears in Active state.
 
-The instance must be active before its network interfaces can be attached to a security group. Use `GET /v1/instances/{id}?version=2019-01-01&generation=1` or `ibmcloud is instance` to check on the status of the instance. Once the status is `running`, please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+The instance must be active before its network interfaces can be attached to a security group. Use `GET /v1/instances/{id}?version=2019-05-31&generation=1` or `ibmcloud is instance` to check on the status of the instance. Once the status is `running`, please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## security_group_already_attached
 **Message**: The interface is already attached to the security group.
 
-The interface is already attached to the security group. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-01-01&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached interfaces.
+The interface is already attached to the security group. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached interfaces.
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -707,7 +707,7 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 ## security_group_exists
 **Message**: The security group already exists.
 
-Security group names must be unique within a VPC. A security group with that name already exists in the targeted VPC. Use `GET /v1/security_groups?version=2019-01-01&generation=1` or `ibmcloud is security-groups` to view current security groups.
+Security group names must be unique within a VPC. A security group with that name already exists in the targeted VPC. Use `GET /v1/security_groups?version=2019-05-31&generation=1` or `ibmcloud is security-groups` to view current security groups.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
 
@@ -718,7 +718,7 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 **Message**: Cannot delete the security group while interfaces are attached.
 
 
-Detach all interfaces before deleting the security group. Use `DELETE /v1/security_groups/{id}/network_interfaces/{id}?version=2019-01-01&generation=1` or `ibmcloud is security-group-network-interface-remove` to detach an interface.
+Detach all interfaces before deleting the security group. Use `DELETE /v1/security_groups/{id}/network_interfaces/{id}?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interface-remove` to detach an interface.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the
 [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
@@ -755,12 +755,12 @@ You have attempted to create a new security group, but you are currently at your
 ## security_group_network_interface_not_active
 **Message**: The interface cannot be attached because it is not active.
 
-Network interfaces must be active before attaching to security groups. Use `GET /v1/instances/{id}/network_interfaces/{id}?version=2019-01-01&generation=1` or `ibmcloud is instance-network-interface` to view the status of an interface. Once the status is 'available', please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Network interfaces must be active before attaching to security groups. Use `GET /v1/instances/{id}/network_interfaces/{id}?version=2019-05-31&generation=1` or `ibmcloud is instance-network-interface` to view the status of an interface. Once the status is 'available', please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## security_group_not_attached
 **Message**: The interface is not attached.
 
-The interface is not attached to the security group. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-01-01&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached interfaces.
+The interface is not attached to the security group. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached interfaces.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-updating-the-default-security-group-using-the-cli){: new_window}.
 
@@ -770,12 +770,12 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 ## security_group_not_in_vpc
 **Message**: The interface and security group are in different VPCs.
 
-To attach a network interface to a security group, the instance must be in the same VPC as the security group. Use `GET /v1/security_groups/{id}?version=2019-01-01&generation=1` or `ibmcloud is security-group` to view the security groups details and VPC. Use `GET /v1/instances/{id}?version=2019-01-01&generation=1` or `ibmcloud is instance` to view the instance details and VPC.
+To attach a network interface to a security group, the instance must be in the same VPC as the security group. Use `GET /v1/security_groups/{id}?version=2019-05-31&generation=1` or `ibmcloud is security-group` to view the security groups details and VPC. Use `GET /v1/instances/{id}?version=2019-05-31&generation=1` or `ibmcloud is instance` to view the instance details and VPC.
 
 ## security_group_order_bindings
 **Message**: Cannot delete the security group while it has pending instance orders.
 
-If an instance was created with security group(s) specified on the network interfaces, the instance and network interfaces must be active before the security group can be deleted. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-01-01&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached network interfaces and their status. Once the status of the interfaces is 'available', please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+If an instance was created with security group(s) specified on the network interfaces, the instance and network interfaces must be active before the security group can be deleted. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached network interfaces and their status. Once the status of the interfaces is 'available', please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## security_group_port_max_less_than_port_min
 **Message**: TCP/UDP max port cannot be less than min port.
@@ -806,7 +806,7 @@ For further instructions to fix this problem, refer to the [Using Security Group
 ## security_group_remoting_rules
 **Message**: Cannot delete the security group while remoting rules are attached.
 
-The security group contains one or more rules referencing a remote security group. Use `GET /v1/security_groups/{id}/rules?version=2019-01-01&generation=1` or `ibmcloud is security-group-rules` to view the rules. The 'remote' field will specify any remote security groups. Try again after deleting or editing the remoting rule.
+The security group contains one or more rules referencing a remote security group. Use `GET /v1/security_groups/{id}/rules?version=2019-05-31&generation=1` or `ibmcloud is security-group-rules` to view the rules. The 'remote' field will specify any remote security groups. Try again after deleting or editing the remoting rule.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
 
@@ -911,7 +911,7 @@ The subnet must be in `available` status before you can operate it. Try again in
 
 There was a request to attach a floating IP address to a server’s network interface, but the network interface already has a floating IP attached to it. 
 
-To find the floating IP address currently attached to a network interface, run the API command `GET /v1/floating_ips?version=2019-01-01&generation=1` and look for the network interface ID in the `target.id` field.  
+To find the floating IP address currently attached to a network interface, run the API command `GET /v1/floating_ips?version=2019-05-31&generation=1` and look for the network interface ID in the `target.id` field.  
 
 If you are using the CLI, run the command `ibmcloud is floating-ips` and look at the `Target` value. Be aware that the CLI truncates the network interface ID at the first dash (“-“) character. For example, a server’s primary network interface with an ID of `abdfcb29-b3c5-4e4a-b7a0-cf0300154699` appears as `primary(abdfcb29-.)` in the CLI output. 
 
