@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-05-29"
 
 keywords: create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
 
@@ -32,12 +32,12 @@ This document shows you how to create {{site.data.keyword.cloud}} Virtual Privat
 
 1. Install the [IBM Cloud CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
 
-2. Install or update the `infrastructure-service` plugin to the IBM Cloud CLI.
+2. Install or update the `vpc-infrastructure` plugin to the IBM Cloud CLI.
 
   To install:
 
   ```
-  ibmcloud plugin install infrastructure-service
+  ibmcloud plugin install vpc-infrastructure
   ```
   {: pre}
 
@@ -63,28 +63,37 @@ You may have a public SSH key already. Look for a file called ``id_rsa.pub`` und
 If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the ``ssh-keygen`` command and following the prompts.
 
 
-To learn how to create a Virtual Private Cloud in different IBM Cloud regions, see our [Regions](/docs/infrastructure/vpc/vpc-regions.html) topic.
-{: tip}
-
-
 ## Step 1: Log in to IBM Cloud.
 {: #step-1-log-in-to-ibm-cloud}
 
 If you have a federated account:
 ```
-ibmcloud login -sso
+ibmcloud login -a cloud.ibm.com -sso
 ```
 {: pre}
 
 otherwise
 
 ```
-ibmcloud login
+ibmcloud login -a cloud.ibm.com
 ```
 {: pre}
 
-## Step 2: Create a VPC and save the VPC ID.
-{: #step-2-create-a-vpc-and-save-the-vpc-id}
+During the login process, you will be prompted to choose a region during login. VPC may not be available in all regions. Refer to [Creating VPCs in different regions](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region) to see which regions are available today.
+{: important}
+
+## Step 2: Set generation target.
+
+Use the following command to set generation target.
+
+```
+ibmcloud is target --gen 1
+```
+{: pre}
+
+
+## Step 3: Create a VPC and save the VPC ID.
+{: #step-3-create-a-vpc-and-save-the-vpc-id}
 
 Use the following command to create a VPC named _helloworld-vpc_.
 
@@ -113,8 +122,8 @@ vpc="ba9e785a-3e10-418a-811c-56cfe5669676"
 ```
 {: pre}
 
-## Step 3: Create a subnet and save the subnet ID.
-{: #step-3-create-a-subnet-and-save-the-subnet-id}
+## Step 4: Create a subnet and save the subnet ID.
+{: #step-4-create-a-subnet-and-save-the-subnet-id}
 
 Let's pick the `us-south-2` zone for the subnet's location and call the subnet _helloworld-subnet_.
 
@@ -159,10 +168,10 @@ ibmcloud is subnet $subnet
 ```
 {: pre}
 
-## Step 4: Attach a public gateway.
-{: #step-4-attach-a-public-gateway}
+## Step 5: Attach a public gateway.
+{: #step-5-attach-a-public-gateway}
 
-Attach a public gateway to the subnet to allow all attached resources to communicate with the public internet. 
+Attach a public gateway to the subnet to allow all attached resources to communicate with the public internet.
 
 To create a public gateway, run the following command:
 
@@ -192,7 +201,7 @@ You should see output like this:
 
 ```
 Updating Subnet f174ca4d-cb44-4e4d-a0f3-afce151f4198 under account Account as user ...
-                    
+
 ID               f174ca4d-cb44-4e4d-a0f3-afce151f4198   
 Name             helloworld-subnet   
 IPv*             ipv4   
@@ -209,8 +218,8 @@ VPC              helloworld-vpc(6dcd8188-f1e2-48ca-b872-d04cf54479c1)
 ```
 {: screen}
 
-## Step 5: Create an SSH Key in IBM Public Cloud.
-{: #step-5-create-an-ssh-key-in-ibm-public-cloud}
+## Step 6: Create an SSH Key in IBM Public Cloud.
+{: #step-6-create-an-ssh-key-in-ibm-public-cloud}
 
 You'll use the key to provision a virtual server instance. You can use the same key to provision multiple virtual server instances.
 
@@ -253,8 +262,8 @@ Save the ID in a variable so we can use it later, for example:
 key="859b4e97-7540-4337-9c64-384792b85653"
 ```
 
-## Step 6: Select a profile and image for the virtual server instance.
-{: #step-6-select-a-profile-and-image-for-the-virtual-server-instance}
+## Step 7: Select a profile and image for the virtual server instance.
+{: #step-7-select-a-profile-and-image-for-the-virtual-server-instance}
 
 To list all available instance profiles, run the following command:
 
@@ -277,11 +286,11 @@ image=$(ibmcloud is images | grep "ubuntu-16.04-amd64" | cut -d" " -f1)
 ```
 {: pre}
 
-## Step 7: Provision a Virtual Server Instance.
-{: #step-7-provision-a-virtual-server-instance}
+## Step 8: Provision a Virtual Server Instance.
+{: #step-8-provision-a-virtual-server-instance}
 
 ```
-ibmcloud is instance-create helloworld-vsi $vpc us-south-2 bc1-2x8 $subnet 1000 --image-id $image --key-ids $key
+ibmcloud is instance-create helloworld-vsi $vpc us-south-2 bc1-2x8 $subnet --image-id $image --key-ids $key
 ```
 {: pre}
 
@@ -332,8 +341,8 @@ ibmcloud is instance $vsi
 ```
 {: pre}
 
-## Step 8: Create a Floating IP address.
-{: #step-8-create-a-floating-ip-address}
+## Step 9: Create a Floating IP address.
+{: #step-9-create-a-floating-ip-address}
 
 You need a Floating IP address so you can log in to the virtual server instance (VSI) from the internet.
 
@@ -359,15 +368,16 @@ Zone             us-south-2
 ```
 {:screen}
 
-Save the `Address` in a variable so we can use it later:
+Save the ID of the Floating IP and the `Address` in a variable so we can use it later:
 
 ```
+floating_ip="b9d1cc1f-67db-40e3-81de-9228465170a5"
 address=169.61.181.53
 ```
 {: pre}
 
-## Step 9: Add a rule to the default security group for SSH.
-{: #step-9-add-a-rule-to-the-default-security-grop-for-ssh}
+## Step 10: Add a rule to the default security group for SSH.
+{: #step-10-add-a-rule-to-the-default-security-grop-for-ssh}
 
 Find the security group for the VPC:
 
@@ -424,8 +434,8 @@ Remote      -
 ```
 {:screen}
 
-## Step 10: Create a block storage data volume.
-{: #step-10-create-a-block-storage-data-volume}
+## Step 11: Create a block storage data volume.
+{: #step-11-create-a-block-storage-data-volume}
 
 Run this command to create a block storage data volume. Specify a name for your volume, volume profile, and the zone where you are creating the volume. To attach a block storage data volume to an instance, the instance and the block storage data volume must be created in the same zone.
 
@@ -471,7 +481,7 @@ vol=933c8781-f7f5-4a8f-8a2d-3bfc711788ee
 ```
 {: pre}
 
-Note that the status of the volume is `pending` when it first is created. Before you can proceed, the volume needs to move to `available` status, which takes a few minutes. 
+Note that the status of the volume is `pending` when it first is created. Before you can proceed, the volume needs to move to `available` status, which takes a few minutes.
 
 To check the status of the volume, run this command:
 
@@ -480,8 +490,8 @@ ibmcloud is volume $vol
 ```
 {: pre}
 
-## Step 11: Attach a block storage data volume to an instance.
-{: #step-11-attach-a-block-storage-data-volume-to-an-instance}
+## Step 12: Attach a block storage data volume to an instance.
+{: #step-12-attach-a-block-storage-data-volume-to-an-instance}
 
 Use the following command to attach the volume to the virtual server instance, using the variables we created:
 
@@ -490,8 +500,8 @@ ibmcloud is instance-volume-attachment-add helloworld-vol-attachment $vsi $vol -
 ```
 {: pre}
 
-## Step 12: Log in to your virtual server instance using your private SSH key.
-{: #step-12-log-in-to-your-virtual-server-instance-using-your-private-ssh-key}
+## Step 13: Log in to your virtual server instance using your private SSH key.
+{: #step-13-log-in-to-your-virtual-server-instance-using-your-private-ssh-key}
 
 For example, you can use a command of this form:
 
@@ -531,8 +541,8 @@ root@helloworld-vsi:~#
 ```
 {:screen}
 
-## Step 13: Hello, World!
-{: #step-13-hello-world}
+## Step 14: Hello, World!
+{: #step-14-hello-world}
 
 Run the following command in the terminal window:
 
@@ -548,8 +558,8 @@ helloworld-vsi says Hello, World!
 ```
 {:screen}
 
-## Step 14: (Optional) Start using your block storage data volume
-{: #step-14-optional-start-using-your-block-storage-data-volume}
+## Step 15: (Optional) Start using your block storage data volume
+{: #step-15-optional-start-using-your-block-storage-data-volume}
 
 To use your block storage volume as a filesystem, you'll need to partition the volume, format the volume, and then mount it as a filesystem.
 
@@ -564,15 +574,15 @@ You should see output like this:
 
 ```
 NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-xvda    202:0    0  100G  0 disk 
+xvda    202:0    0  100G  0 disk
 ├─xvda1 202:1    0  256M  0 part /boot
 └─xvda2 202:2    0 99.8G  0 part /
-xvdc    202:32   0  100G  0 disk 
-xvdp    202:240  0   64M  0 disk 
+xvdc    202:32   0  100G  0 disk
+xvdp    202:240  0   64M  0 disk
 ```
 {:screen}
 
-Volume `xvdc` is your new block storage data volume. 
+Volume `xvdc` is your new block storage data volume.
 
 Run the following command to partition the volume. To begin, use command `n` for new partition.
 
@@ -634,9 +644,64 @@ touch hellovolume
 ```
 {:codeblock}
 
+## Step 15: (Optional) Delete the Resources
+{: #step-15-delete-vpc-cli}
+
+Optionally delete the resources. A resource cannot be deleted if it contains other resources. For example, a virtual private cloud cannot be deleted if it contains subnets, and a subnet cannot be deleted if it contains virtual server instances. On a delete operation, the API may return quickly but the resource deletion might still be in progress. After issuing the delete request, make sure the resource has been deleted before attempting to delete the parent resource. See [Deleting a VPC](/docs/vpc-on-classic?topic=vpc-on-classic-deleting) for more details.
+
+### Release the floating IP
+
+```
+ibmcloud is floating-ip-release $floating_ip
+```
+{: pre}
+
+### Delete the virtual server instance
+
+```
+ibmcloud is instance-delete $vsi
+```
+{: pre}
+
+### Delete the key
+
+```
+ibmcloud is key-delete $key
+```
+{: pre}
+
+### Delete the subnet
+
+```
+ibmcloud is subnet-delete $subnet
+```
+{: pre}
+
+### Delete the public gateway
+
+```
+ibmcloud is public-gateway-delete $gateway
+```
+{: pre}
+
+
+### Delete the VPC
+
+```
+ibmcloud is vpc-delete $vpc
+```
+{: pre}
+
+### Delete the volume (if not set to auto delete)
+
+```
+ibmcloud is volume-delete $vol
+```
+{: pre}
+
 ## Congratulations!
 {: #cli-congratulations}
 
 You've successfully provisioned and connected to your Virtual Private Cloud instance using the IBM Cloud CLI. To try out more CLI commands, explore the full reference:
 
-* [CLI Reference for VPC](/docs/cli/reference/ibmcloud?topic=infrastructure-service-cli-vpc-reference#vpc-reference)
+* [CLI Reference for VPC](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference)

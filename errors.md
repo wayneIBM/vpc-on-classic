@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-  
+
 lastupdated: "2019-05-28"
 
 keywords: error, message, API, limitations, rias, support
@@ -34,9 +34,9 @@ Your account must be on a Pay-As-You-Go plan to provision VPCs. You can find mor
 ## acl_in_use
 **Message**: The network ACL cannot be deleted because it is attached to resources.
 
-The network ACL cannot be deleted because it is attached to a subnet or VPC. 
+The network ACL cannot be deleted because it is attached to a subnet or VPC.
 
-To see if a subnet is using the network ACL, use the `GET /v1/subnets?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To update the network ACL used by a subnet use the `PATCH /v1/subnets/{subnet_id}?version=2019-05-31&generation=1  -d '{ "network_acl":{ "id": “{network_acl_id}” } }’` API or `ibmcloud is subnet-update` CLI. 
+To see if a subnet is using the network ACL, use the `GET /v1/subnets?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To update the network ACL used by a subnet use the `PATCH /v1/subnets/{subnet_id}?version=2019-05-31&generation=1  -d '{ "network_acl":{ "id": “{network_acl_id}” } }’` API or `ibmcloud is subnet-update` CLI.
 
 To see if a VPC is using the network ACL, use the `GET /v1/vpcs?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is vpcs`. It is not possible to update or delete the default network ACL used by a VPC. The default network ACL is deleted automatically when the VPC gets deleted.
 
@@ -102,7 +102,7 @@ The resource specified already exists. Try using a different name for the resour
 ## floating_ip_in_use
 **Message**: The floating IP is in use.
 
-This floating IP is associated with a virtual server instance or public gateway. 
+This floating IP is associated with a virtual server instance or public gateway.
 
 To see where the floating IP is used, use the `GET /v1/floating_ips/e6e4850d-123e-43a9-a224-ea10a287770e?version=2019-03-12` API and look at the "target" values. Equivalent CLI command: `ibmcloud is floating-ip FLOATINGIP_ID`.
 
@@ -231,7 +231,7 @@ The VPC quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?t
 ## instance_too_many_keys
 **Message**: The Windows instance cannot be created because the request contains multiple keys.
 
-Windows instances only support one key. 
+Windows instances only support one key.
 
 ## insufficient_space_for_subnet
 **Message**: Insufficient space for subnet in address prefix.
@@ -299,7 +299,7 @@ The date given in the version parameter must be later than 2019-01-01 but before
 ## invalid_zone
 **Message**: Please check whether the resources you are requesting are in the same zone.
 
-You may see this message attempting to attach a public gateway in zone-1 to a subnet in zone-2. 
+You may see this message attempting to attach a public gateway in zone-1 to a subnet in zone-2.
 
 ## ipsec_policies_quota_exceeded
 **Message**: The IPsec policy cannot be created because your account has reached the quota.
@@ -462,7 +462,7 @@ The value of the load balancer parameter `is_public` must be either _true_ or _f
 ## load_balancer_invalid_name
 **Message**: Name `<load_balancer_name>` is invalid.
 
-Names may not be empty. A valid load balancer name starts with a letter, followed by letters, digits, or underscores. The length of the name may not exceed 40 characters. 
+Names may not be empty. A valid load balancer name starts with a letter, followed by letters, digits, or underscores. The length of the name may not exceed 40 characters.
 
 ## load_balancer_invalid_subnet
 **Message**: The subnet with ID <subnet_id>  is not valid. Make sure to use an existing subnet with 'available' status.
@@ -684,7 +684,7 @@ The quotas per resource are specified in [Quotas and limits for VPC](/docs/infra
 
 The public gateway currently is attached to one or more subnets. You must detach the public gateway from all subnets before you can delete it.
 
-To see which subnet is using the public gateway, use the `GET /v1/subnets?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To detach the public gateway from the subnet, use the API command `DELETE /v1/subnets/{subnet_id}/public_gateway?version=2019-05-31&generation=1` or the CLI command `ibmcloud is subnet-public-gateway-detach`. 
+To see which subnet is using the public gateway, use the `GET /v1/subnets?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is subnets`.  To detach the public gateway from the subnet, use the API command `DELETE /v1/subnets/{subnet_id}/public_gateway?version=2019-05-31&generation=1` or the CLI command `ibmcloud is subnet-public-gateway-detach`.
 
 ## rate_limit_exceeded
 **Message**: Too many requests within a short time.
@@ -909,11 +909,11 @@ The subnet must be in `available` status before you can operate it. Try again in
 ## target_in_use
 **Message**: The target already has floating IP attached.
 
-There was a request to attach a floating IP address to a server’s network interface, but the network interface already has a floating IP attached to it. 
+There was a request to attach a floating IP address to a server’s network interface, but the network interface already has a floating IP attached to it.
 
 To find the floating IP address currently attached to a network interface, run the API command `GET /v1/floating_ips?version=2019-05-31&generation=1` and look for the network interface ID in the `target.id` field.  
 
-If you are using the CLI, run the command `ibmcloud is floating-ips` and look at the `Target` value. Be aware that the CLI truncates the network interface ID at the first dash (“-“) character. For example, a server’s primary network interface with an ID of `abdfcb29-b3c5-4e4a-b7a0-cf0300154699` appears as `primary(abdfcb29-.)` in the CLI output. 
+If you are using the CLI, run the command `ibmcloud is floating-ips` and look at the `Target` value. Be aware that the CLI truncates the network interface ID at the first dash (“-“) character. For example, a server’s primary network interface with an ID of `abdfcb29-b3c5-4e4a-b7a0-cf0300154699` appears as `primary(abdfcb29-.)` in the CLI output.
 
 ## token_invalid
 **Message**: The service token was expired or invalid.
@@ -948,7 +948,7 @@ For example, the following value would be invalid because `northbound` is not a 
 }
 ```
 
-Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} or the [CLI reference](/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-vpc-reference){: new_window} for acceptable values.
+Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} or the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference){: new_window} for acceptable values.
 
 ## validation_failure
 **Message**: The JSON provided did not match the expected structure.
@@ -1194,7 +1194,7 @@ You are out of quota for the current account. Try deleting some volumes or conta
 ## volume_resource_group_id_invalid
 **Message**: The resource group ID specified in the request is not valid.
 
-The resource group ID that you specified in the request is not valid. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-vpc-reference#storage) for more information.
+The resource group ID that you specified in the request is not valid. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#storage) for more information.
 
 ## volume_resource_group_not_authorized
 **Message**: The current action is not authorized on the specified resource group.
@@ -1204,7 +1204,7 @@ You are not authorized to list or create volumes in the specified resource group
 ## volume_resource_group_not_found
 **Message**: A resource group with the specified ID could not be found.
 
-The resource group ID could not be found because you might have entered it incorrectly or it does not exist. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-vpc-reference#storage) for more information.
+The resource group ID could not be found because you might have entered it incorrectly or it does not exist. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#storage) for more information.
 
 ## volume_start_not_found
 **Message**: A volume with the ID specified as the page start parameter is not found.

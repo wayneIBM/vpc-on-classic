@@ -27,7 +27,7 @@ subcollection: vpc
 {: #deleting-using-api}
 
 Deleting an {{site.data.keyword.cloud}} Virtual Private Cloud using the REST APIs follows the same general steps in the
-[deleting](/docs/vpc-on-classic?topic=vpc-on-classic-deleting) process as deletion by using the [CLI](/docs/vpc-on-classic?topic=vpc-on-classic-deleting-using-cli). 
+[deleting](/docs/vpc-on-classic?topic=vpc-on-classic-deleting) process as deletion by using the [CLI](/docs/vpc-on-classic?topic=vpc-on-classic-deleting-using-cli).
 
 Here are the main steps in the process:
 
@@ -51,8 +51,8 @@ Add ` | json_pp ` or ` | jq ` after the curl command to get a readable JSON stri
 {: tip}
 
 ```bash
-curl -X GET "$rias_endpoint/v1/vpcs?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+curl -X GET "$rias_endpoint/v1/vpcs?version=$version&generation=1" \
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -67,7 +67,7 @@ To get the list of all subnets in your account, run the following command:
 
 ```bash
 curl -X GET "$rias_endpoint/v1/subnets?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -89,8 +89,8 @@ If the VPC you want to delete has multiple subnets, repeat the steps to delete e
 To list all VPN gateways in your account, run the following command:
 
 ```bash
-curl -X GET "$rias_endpoint/v1/vpn_gateways?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+curl -X GET "$rias_endpoint/v1/vpn_gateways?version=$version&generation=1" \
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -98,7 +98,7 @@ For each VPN gateway in the subnet you would like to delete, run the following c
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/vpn_gateways/$vpnid?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -111,7 +111,7 @@ To list all Load Balancers in your account, run the following command:
 
 ```bash
 curl -X GET "$rias_endpoint/v1/load_balancers?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -119,7 +119,7 @@ For each Load Balancer in the subnet you would like to delete, run the following
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/load_balancers/$lbid?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -134,7 +134,7 @@ To list all instances in your account, run the following command:
 
 ```bash
 curl -X GET "$rias_endpoint/v1/instances?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -142,7 +142,7 @@ If you are deleting all instances in the VPC, you can run the following command 
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/instances/$vsi?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -152,7 +152,7 @@ To list all network interfaces of an instance, run the following command:
 
 ```bash
 curl -X GET "$rias_endpoint/v1/instances/$vsi/network_interfaces?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -165,7 +165,7 @@ Once all the resources inside the subnet have been deleted and are not returned 
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/subnets/$subnet?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -178,7 +178,7 @@ To list all public gateways in your account, run the following command:
 
 ```bash
 curl -X GET "$rias_endpoint/v1/public_gateways?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -186,7 +186,7 @@ For each public gateway in the VPC you want to delete, run the following command
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/public_gateways/$gateway?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 
@@ -198,7 +198,7 @@ Once all subnets, VPN gateways, load balancers, public gateways in the VPC have 
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/vpcs/$vpc?version=$version&generation=1" \     
-     -H "Authorization: $iam_token"
+     -H "Authorization:$iam_token"
 ```
 {: pre}
 

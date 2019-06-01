@@ -560,17 +560,17 @@ Specify the volume attachment ID to attach the new volume to a virtual server in
 
 ```bash
 curl -X PATCH "$rias_endpoint/v1/instances/$server/volume_attachments/$attachment?version=$version&generation=1" \
-  -H "Authorization: $iam_token" \
-  -d {
+    -H "Authorization: $iam_token" \
+    -d '{
 	  "name": "helloworld-vsi-volattachment"
-    }
+    }'
 ```
 {: pre}
 
 
 ## Step 22 (Optional): Delete the Resources
 
-Optionally delete the resources. A resource cannot be deleted if it contains other resources. For example, a virtual private cloud cannot be deleted if it contains subnets, and a subnet cannot be deleted if it contains virtual server instances. On a delete operation, the API may return quickly but the resource deletion might still be in progress. IBM recommends that you query the resource to make sure it is deleted before you delete other resources.
+Optionally delete the resources. A resource cannot be deleted if it contains other resources. For example, a virtual private cloud cannot be deleted if it contains subnets, and a subnet cannot be deleted if it contains virtual server instances. On a delete operation, the API may return quickly but the resource deletion might still be in progress. After issuing the delete request, make sure the resource has been deleted before attempting to delete the parent resource. See [Deleting a VPC](/docs/vpc-on-classic?topic=vpc-on-classic-deleting) for more details.
 
 ### Delete the floating IP
 
@@ -592,15 +592,6 @@ curl -X DELETE "$rias_endpoint/v1/instances/$server?version=$version&generation=
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/keys/$key?version=$version&generation=1" \
-  -H "Authorization: $iam_token"
-```
-{: pre}
-
-
-### Delete the public gateway
-
-```bash
-curl -X DELETE "$rias_endpoint/v1/public_gateways/$gateway?version=$version&generation=1" \
   -H "Authorization:$iam_token"
 ```
 {: pre}
@@ -613,6 +604,15 @@ curl -X DELETE "$rias_endpoint/v1/subnets/$subnet?version=$version&generation=1"
 ```
 {: pre}
 
+### Delete the public gateway
+
+```bash
+curl -X DELETE "$rias_endpoint/v1/public_gateways/$gateway?version=$version&generation=1" \
+  -H "Authorization:$iam_token"
+```
+{: pre}
+
+
 ### Delete the VPC
 
 ```bash
@@ -621,8 +621,13 @@ curl -X DELETE "$rias_endpoint/v1/vpcs/$vpc?version=$version&generation=1" \
 ```
 {: pre}
 
-Because a vNIC cannot be deleted from a VSI, we do not include steps to delete vNICs in this tutorial.
-{: note}
+### Delete the volume
+
+```bash
+curl -X DELETE "$rias_endpoint/v1/volumes/$volume?version=$version&generation=1"  \
+  -H "Authorization:$iam_token"
+```
+{: pre}
 
 ## Congratulations!
 

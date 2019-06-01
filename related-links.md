@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-30"
+lastupdated: "2019-05-31"
 
-keywords: LBaaS, VPN, VSI, Storage, administrator, SRE, network, Python, SDK, API, Go, code, script, example, migrating
+keywords: LBaaS, VPN, VSI, Storage, administrator, SRE, network, Python, SDK, API, Go, code, script, example, migrating, terraform
 
 subcollection: vpc-on-classic
 
@@ -41,3 +41,10 @@ Learn more about the {{site.data.keyword.cloud}} Platform and VPC Classic Infras
 
 * [Python script to make a graphical representation of your VPC](https://github.com/l2fprod/vpc-diagram-exporter) Use this tool to export a visual representation of the existing VPC resources in your IBM Cloud account.
 * [Go and Python example code calling the VPC REST APIs](https://github.com/IBM-Cloud/vpc-api-samples) Go and Python example code that calls the VPC APIs to help you get started.
+* [Terraform available for VPC](https://ibm-cloud.github.io/tf-ibm-docs/index.html) The IBM Cloud Provider for Terraform includes Infrastructure Service data sources and resources now.
+
+## Architecture Center Tutorials
+
+* [Basic 3-Tier Web App (with LB)](https://github.com/ibm-cloud-architecture/tutorial-vpc-3tier-networking)
+* [Running a Windows deployment](https://github.com/ibm-cloud-architecture/tutorial-vpc-windows_server)
+* [IoT Application](https://github.com/ibm-cloud-architecture/tutorial-vpc-IoT_service)

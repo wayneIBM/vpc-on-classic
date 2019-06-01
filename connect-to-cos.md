@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018-2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-01"
 
 keywords: resource, storage, connection, COS, object, endpoints, cross-region, regional, datacenter
 
@@ -19,61 +19,101 @@ subcollection: vpc-on-classic
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Connecting to IBM Cloud Object Storage from VPC 
+# Connecting to IBM Cloud Object Storage from VPC
 {: #connecting-to-ibm-cloud-object-storage-from-a-vpc}
 
-This document shows you how to connect to IBM® Cloud Object Storage from your Virtual Private Cloud.
+This document shows you how to connect to {{site.data.keyword.cloud}} Object Storage from your Virtual Private Cloud. The endpoint information applies specifically to {{site.data.keyword.cloud_notm}} Virtual Private Cloud in the Classic Infrastructure environment.
+{: shortdesc}
+
 
 ## What is IBM Cloud Object Storage (COS)?
 {: #what-is-ibm-cloud-object-storage-cos}
 
-IBM Cloud Object Storage (COS) is a web-scale platform that stores unstructured data. It provides reliability, security, availability, and disaster recovery without manual replication.
-Information stored within IBM Cloud Object Storage is encrypted and dispersed across multiple geographic locations. It is accessible through an implementation of the S3 API. This service makes use of the distributed storage technologies provided by the IBM Cloud Object Storage service.
+{{site.data.keyword.cloud}} Object Storage (COS) is a web-scale platform that stores unstructured data. It provides reliability, security, availability, and disaster recovery without replication.
 
-IBM COS is available in three configurations: **Cross-Region**, **Regional** and **Single-Site**.
- * **Cross Region** service provides higher durability and availability than using a single region, but at the cost of slightly higher latency.
- * **Regional** service provides the reverse: It distributes objects across multiple availability zones within a single region. If a given region or availability zone is inaccessible, the object store continues to function smoothly. Any missed changes are applied when the inaccessible datacenter comes back online.
- * **Single Site** service offers access to Cloud Object Storage in a selected datacenter.
+Information stored with {{site.data.keyword.cloud_notm}} Object Storage is encrypted and dispersed across multiple geographic locations. It is accessible through an implementation of the S3 API. This service makes use of the distributed storage technologies provided by the IBM Cloud Object Storage System.
 
-### COS Direct Endpoints for use with VPC
+IBM Cloud Object Storage is available with three types of configurations for resiliency: **Cross Region**, **Regional**, and **Single Datacenter**. 
+* **Cross Region** service provides higher durability and availability than using a single region, at the cost of slightly higher latency. This service is available today in the U.S., E.U., and A.P. areas. 
+* **Regional** service reverses the tradeoffs. It distributes objects across multiple availability zones within a single region. It is available in the U.S., E.U. and A.P. regions. If a given region or zone is unavailable, the object store continues to function without impediment. 
+**Single Datacenter** service distributes objects across multiple machines within the same physical location. Check this document regularly for available regions.
+
+### COS direct endpoints for use with VPC
 {: #cos-direct-endpoints-for-use-with-vpc}
 
-Endpoints are URLs that applications use to issue COS commands and exchange data with COS. Every endpoint uses the same Application Programming Interface (API) to interact with COS.
-Servers provisioned within IBM Cloud use
-API endpoints for services, including COS. Direct endpoints provide customers' IBM Cloud servers with high-speed, direct connections to services with no added bandwidth costs.
+To send a REST API request, you must set a target endpoint or a URL, and each COS storage location requires its own set of URLs. Direct endpoints provide your servers with high-speed, direct connections to {{site.data.keyword.cloud_notm}} services, which incur no added bandwidth costs.
 
-There is no charge for traffic from VPCs to all COS Endpoints listed on this page.
+There is no charge for traffic from your VPCs to all COS endpoints listed on this page.
 {: note}
+
+* A VPC client also has access to the COS bucket over the public endpoint.
+* A VPC client does not have access to the COS Configuration API, which allows for for bucket configuration and for viewing bucket metadata over the direct endpoint, but it does have access over the public endpoint.
+* A VPC client does not have access to a COS bucket when the firewall is enabled.
 
 ## How to connect to IBM Cloud Object Storage (COS) from a VPC
 {: #how-to-connect-to-ibm-cloud-object-storage-cos-from-a-vpc}
 
- 1. Provision COS from the [catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/cloud-object-storage){: new_window}.
- 2. Create a COS bucket in one of the Regions listed in the following section.
- 3. Use the Direct Endpoint for VPC to create an interface with your COS bucket.
+1. Provision COS from the [catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/cloud-object-storage){: new_window}.
+2. Create a COS bucket in one of the regions listed in the following section.
+3. Use the endpoint to communicate with your COS bucket.
 
-## U.S. Cross-region Endpoints
-{: #u-s-cross-region-endpoints}
+### Regional endpoints
+{: #regional-endpoints}
 
-| **U.S. Cross Region** | **Direct Endpoint for VPC** |
+Buckets created at a regional endpoint distribute data across three datacenters, which are spread across a metropolitan area. Any single one of these datacenters can suffer an outage, or even destruction, without affecting availability.
+
+| **Region** | **Endpoint** |
 |------------|-------------------------------|
-| US Cross Region | `s3.direct.us.cloud-object-storage.appdomain.cloud` |
-| Dallas Access Point | `s3.direct.dal.us.cloud-object-storage.appdomain.cloud`
-| San Jose Access Point | `s3.direct.sjc.us.cloud-object-storage.appdomain.cloud`
-| Washington, DC Access Point | `s3.direct.wdc.us.cloud-object-storage.appdomain.cloud` |
+| U.S. South | `s3.direct.us-south.cloud-object-storage.appdomain.cloud`|
+| E.U. Germany | `s3.direct.eu-de.cloud-object-storage.appdomain.cloud`|
+| A.P. Japan | `s3.direct.jp-tok.cloud-object-storage.appdomain.cloud` |
 
- ## U.S. Regional Endpoints
- {: #u-s-regional-endpoints}
 
-| **Region** | **Direct Endpoint for VPC** |
+### Cross-region endpoints
+{: #cross-region-endpoints}
+
+Buckets created at a cross-region endpoint distribute data across three regions. Any one of these regions can suffer an outage or even destruction without affecting availability. Requests are routed to the nearest region's datacenter using Border Gateway Protocol (BGP) routing.
+
+In the case of an outage, requests are re-routed to an active region, automatically. Advanced users who wish to write their own failover logic may do so, by sending requests to the specific region's endpoint and bypassing the BGP routing.
+
+| **U.S. Cross Region** | **Endpoint** |
 |------------|-------------------------------|
-| US South | `s3.direct.us-south.cloud-object-storage.appdomain.cloud`|
-| US East | `s3.direct.us-east.cloud-object-storage.appdomain.cloud`|
+| U.S. Cross Region | `s3.direct.us.cloud-object-storage.appdomain.cloud` |
+| Dallas Access Point | `s3.direct.dal.us.cloud-object-storage.appdomain.cloud` |
+| San Jose Access Point | `s3.direct.sjc.us.cloud-object-storage.appdomain.cloud` |
 
- ## Single Datacenter Endpoints
+| **E.U. Cross Region** | **Endpoint** |
+|------------|-------------------------------|
+| E.U. Cross Region | `s3.direct.eu.cloud-object-storage.appdomain.cloud` |
+| Amsterdam Access Point | `s3.direct.ams.eu.cloud-object-storage.appdomain.cloud` |
+| Frankfurt Access Point | `s3.direct.fra.eu.cloud-object-storage.appdomain.cloud` |
+| Milan Access Point | `s3.direct.mil.eu.cloud-object-storage.appdomain.cloud` |
+
+| **Asia Pacific Cross Region** | **Endpoint** |
+|------------|-------------------------------|
+| A.P. Cross Region | `s3.direct.ap.cloud-object-storage.appdomain.cloud` |
+| Tokyo Access Point | `s3.direct.tok.ap.cloud-object-storage.appdomain.cloud` |
+| Seoul Access Point | `s3.direct.seo.ap.cloud-object-storage.appdomain.cloud` |
+| Hong Kong Access Point | `s3.direct.hkg.ap.cloud-object-storage.appdomain.cloud` |
+
+
+ ### Single datacenter endpoints
  {: #single-datacenter-endpoints}
 
-| **Region** | **Direct Endpoint for VPC** |
+Single datacenters are not co-located with IBM Cloud services, such as IAM or Key Protect, and they offer no resiliency in the event of a site's outage or destruction.
+
+If a networking failure results in a partition, such that the datacenter is unable to reach a core IBM Cloud region for access to IAM, authentication and authorization information is read from a cache that may become stale. This action may result in a lack of enforcement of new or altered IAM policies for up to 24 hours.
+{:important}
+
+| **Region** | **Endpoint** |
 |------------|-------------------------------|
+| Amsterdam, Netherlands | `s3.direct.ams03.cloud-object-storage.appdomain.cloud` |
+| Chennai, India | `s3.direct.che01.cloud-object-storage.appdomain.cloud` |
+| Melbourne, Australia | `s3.direct.mel01.cloud-object-storage.appdomain.cloud` |
+| Mexico City, Mexico | `s3.direct.mex01.cloud-object-storage.appdomain.cloud` |
+| Montréal, Canada | `s3.direct.mon01.cloud-object-storage.appdomain.cloud` |
+| Oslo, Norway | `s3.direct.osl01.cloud-object-storage.appdomain.cloud` |
+| San Jose, USA | `s3.direct.sjc04.cloud-object-storage.appdomain.cloud` |
+| São Paulo, Brazil | `s3.direct.sao01.cloud-object-storage.appdomain.cloud` |
+| Seoul, South Korea | `s3.direct.seo01.cloud-object-storage.appdomain.cloud` |
 | Toronto, Canada | `s3.direct.tor01.cloud-object-storage.appdomain.cloud` |
-| Montreal, Canada | `s3.direct.mon01.cloud-object-storage.appdomain.cloud` |

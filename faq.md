@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-05-31"
 
 keywords: FAQ, faqs, limit, resource, vNIC, VSI, PGW, console, VRF, bandwidth, COS, egress, load balancer
 
@@ -26,7 +26,7 @@ subcollection: vpc-on-classic
 # FAQs
 {: #faqs}
 
-## Can I connect my VPC to my other {{site.data.keyword.cloud_notm}} workloads?  
+## Can I connect my VPC to my other IBM Cloud workloads?  
 {: #faq-0}
 {:faq}
 
