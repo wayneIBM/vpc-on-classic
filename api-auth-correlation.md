@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-06"
+lastupdated: "2019-06-04"
 
 keywords: resource, policies, authorization, resource type, resource groups, roles, API, CLI, editor, viewer, administrator, operator
 
@@ -44,13 +44,13 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 |—————|——————|———————|
 | Floating IP (unassociated) | Create, Update, Delete | Any Account user and View authorization on all Account Management Services, if the resource is created in the default resource group. Click [here](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources#setting-up-viewer-access) for instruction on setting up viewer access. **Note: Associating and disassociating are part of the Floating IP Update operation**|
 | Floating IP (unassociated) | View, List | Account user |
-| Floating IP (associated) | Update | Update authorization for the associated subnet and its VPC (you cannot Create or Delete a floating IP after it is associated) |
-| Floating IP (associated) | View, List | View authorization for the floating IP’s subnet | 
+| Floating IP (associated) | Update | Update authorization for the associated subnet's VPC (you cannot Create or Delete a floating IP after it is associated) |
+| Floating IP (associated) | View, List | View authorization for the floating IP’s associated subnet's VPC | 
 |——————|———————|————————|
 | Network ACL (unattached), ACL rules | Create, Update, Delete | Any Account user |
 | Network ACL (unattached), ACL rules | View, List | Any Account user |
-| Network ACL (attached), ACL rules | Create, Update, Delete | Update authorization on all of the attached subnets and VPC |
-| Network ACL (attached), ACL rules | View, List | View authorization on at least 1 of the attached subnets and VPC |
+| Network ACL (attached), ACL rules | Create, Update, Delete | Update authorization on all of the attached subnets associated VPC |
+| Network ACL (attached), ACL rules | View, List | View authorization on at least 1 of the attached subnets associated VPC |
 |——————|———————|————————|
 | Public gateway | Create, Update, Delete |  Update authorization on the PGW’s VPC |
 | Public gateway | View, List | View authorization on the PGW’s VPC |
@@ -75,15 +75,15 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 | Security group network interface | List    | View authorization on the security group (or else a 404 response results.)<br />View authorization on the instance to which the network interface belongs (or else the interface is omitted from the response.)
 | Security group network interface | Attach / Detach | Operate authorization on the security group.<br />Edit authorization on the instance to which the network interface belongs.
 |—————————|—————————|—————————|
-| Images | Create, Update, Delete | Any Account user |
 | Images | View, List  | Any Account user |
+|—————————|—————————|—————————|
 | Instances | Create| Update authorization for the Instance and Volume<br />Operate authorization for VPC, Subnet, Floating IP, Security Group (Only if they are specified)|
 | Instances | Update, Delete | Update authorization for the Instance |
 | Instances | View, List  | View authorization for the Instance |
 | Instance actions | Create, Update, Delete | Update authorization for the Instance|
 | Instance actions, Initialization, NICs| View, List  | View authorization for the Instance |
-| Instance FIPs | View, List | View authorization for the Instance and the FIP |
-| Instance FIPs | Associate | Update authorization for the Instance<br />Operate authorization for FIP |
+| Instance FIPs | View, List | View authorization for the Instance and the VPC |
+| Instance FIPs | Associate | Update authorization for the Instance<br />Operate authorization for FIP's VPC |
 | Instance FIPs | Disassociate | Update authorization for the Instance |
 |————————|——————|————————|
 | VPN gateway | Create, Update, Delete | Update authorization for the VPN |

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-04"
 
 keywords: resource, policies, authorization, resource type, resource groups, roles, load balancer, VPN, operator, editor, viewer, admin
 
@@ -91,9 +91,9 @@ The table summarizes how VPC resources are authorized by default.
 | VPN | Authorization check when created |
 | Subnet | Parent VPC |
 | Public gateway | Parent VPC |
-| Instance | Parent VPC |
+| Instance | Authorization check when created |
 | Security Group | Parent VPC |
-| Key | Parent VPC |
+| Key | Authorization check when created |
 | Image | Account |
 | Floating IP | Account |
 | ACL | Account|
@@ -269,9 +269,7 @@ Delete      | X    | X      | X     | o      | o
 ## Resource authorization for Virtual Server for VPC
 {: #planning-virtual-servers-for-vpc-permissions}
 
-Virtual Server for VPC resources inherit permissions from the parent VPC. Users are assigned a role based on the {{site.data.keyword.vpc_short}} to which an instance is provisioned. If a user has editor or administrator access to the {{site.data.keyword.vpc_short}}, they inherit the ability to create, delete, modify virtual server instances within that {{site.data.keyword.vpc_short}}.
-
-<!-- Set the resource authorization for **Virtual Server for VPC** separately from other resource authorizations in your VPC. -->
+Set the resource authorization for **Virtual Server for VPC** separately from other resource authorizations in your VPC. 
 
 Virtual servers for VPC usage is billed separately.
 {: note}
@@ -294,5 +292,5 @@ Read        | X    | o      | o     | o      | o
 Update      | X    | X      | X     | o      | o
 Delete      | X    | X      | X     | o      | o
 
-<!-- When you create an instance, you must also have Operator access for the VPC and Security Group resources, if those resources are specified. Subnet and Floating IP resources inherit permissions from the associated VPC.  
-{: tip} -->
+When you create an instance, you must also have Operator access for the VPC and Security Group resources, if those resources are specified. Subnet and Floating IP resources inherit permissions from the associated VPC.  
+{: tip} 

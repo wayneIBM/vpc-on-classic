@@ -135,7 +135,7 @@ ibmcloud target
 ## Switch regions using the API  
 {: #switch-regions-using-the-api}
 
-To interact with the Regional API using REST, direct your request to the API endpoint associated with the region in which you want to create resources. The region's API endpoint is shown in the previous table. You also can find the endpoints associated with the regions by running the following command:
+To interact with the Regional VPC API using REST, direct your request to the API endpoint associated with the region in which you want to create resources. The region's API endpoint is shown in the previous table. You also can find the endpoints associated with the regions by running the following command:
 
 ```
 ibmcloud is regions

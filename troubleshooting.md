@@ -48,17 +48,6 @@ Another option is to add the `-i` flag to your `curl` command so that the suppor
 
 When using the API with a cURL command, you may need to include "Bearer" in the Authorization header, depending on what is in the `$iam_token`. If it includes the word "Bearer" you don't include it again in the header. Most of our examples assume that "Bearer" is included in the header.
 
-## Using a different endpoint for CLI
-{: #troubleshoot}
-
-To change the endpoint that the {{site.data.keyword.cloud}} CLI uses for RIAS by default, set the environment variable `IBMCLOUD_IS_API_ENDPOINT` before using the CLI. For example,
-
-```
-export IBMCLOUD_IS_API_ENDPOINT=api.dev.domain.com
-```
-{: pre}
-
-
 ## Common problems
 {: #troubleshoot}
 
@@ -107,7 +96,7 @@ If your instance is not responding to an `instance-reboot` request, you can try 
 ### Cannot delete resources
 {: #troubleshoot}
 
-Certain operations--creating and deleting VSIs, and creating and deleting subnets, for example--are completed asynchronously through the API. Because of this fact, it is recommended to poll the resources you're deleting, to check for deletion before proceeding. 
+Certain operations--creating and deleting VSIs, and creating and deleting subnets, for example--are completed asynchronously through the API. Because of this fact, it is recommended to poll the resources you're deleting, to check for deletion before proceeding.
 
 It can take several minutes for resources to be deleted from the system, due to these asynchronous operations. To facilitate deletion, the best practice is to do things in this order:
 

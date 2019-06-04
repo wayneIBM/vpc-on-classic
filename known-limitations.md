@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-06-04"
 
 keywords: limitations, bugs, known, Beta, services, capabilities
 
@@ -25,11 +25,6 @@ subcollection: vpc-on-classic
 
 This document contains short descriptions of known bugs in the current release, descriptions of features and APIs that are not supported, and indications of which features are now offered as Beta services only. Known limitations may be changing as we add capabilities to {{site.data.keyword.cloud}} Virtual Private Cloud, so feel free to check back with this document from time to time. 
 
-## Known bugs
-{: #known-bugs}
-
-* If you rename a subnet, it could take up to 1 hour to see the new name of your subnet in the server details page, due to cache timing.
-
 ## Summary of features not supported
 {: #summary-of-features-not-supported}
 
@@ -37,22 +32,6 @@ This document contains short descriptions of known bugs in the current release, 
 * A subset of Private Services Endpoints are available to Virtual Private Cloud, not all endpoints are available. 
 * Saving and restoring of images is not supported.
 * VPCs are regional, therefore a VPC from one region cannot connect to a VPC in another region unless they are "classic access" enabled, or by means of a VPN connection.
-
-## APIs not supported
-{: #apis-not-supported}
-
-For details about what's supported, see the [API Spec](https://{DomainName}/apidocs/vpc-on-classic).
-
-The following APIs are not supported in this release.
-
-| Component | Functions | Comments |
-|------|------|--------|
-| **Compute:** |   |   |
-| Images | Create/Delete not supported | Ubuntu 16.04, CentOS 7.X, Windows 08, Debian|
-| Network_Interfaces | Get (no create, delete, update) | |
-| Port_Speed | | Only 100 and 1000 |
-| **Storage:** |   |   |
-| Snapshots | Not supported |  |
 
 ## Features and Use Cases not yet supported
 {: #features-and-use-cases-not-yet-supported}
@@ -64,10 +43,7 @@ This section gives a detailed list of unsupported features and use cases.
 * Custom routes cannot be added to a Virtual Private Cloud. All the subnets in a Virtual Private Cloud can communicate with each other by default.
 * IBM Cloud VPC does not support multicast or broadcast domains.
 * IBM Cloud VPC does not provide end-to-end encryption. 
-* Here are the core IBM Cloud services that can be used from Virtual Private Cloud. Other services are not accessible. 
-  * NTP
-  * Logging
-  * DNS resolvers
+* Cloud Service Endpoints are not supported by Virtual Private Cloud. See [Service endpoints available for IBM Cloud VPC](/docs/vpc-on-classic?topic=vpc-on-classic-service-endpoints-available-for-ibm-cloud-vpc) for services that are available.
 * A subnet cannot be on multiple zones.
 * A subnet cannot be moved from one zone to another.
 * Subnets cannot be resized after they are created.

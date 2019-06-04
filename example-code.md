@@ -90,7 +90,7 @@ rias_endpoint="https://us-south.iaas.cloud.ibm.com"
 
 To verify that this variable was saved, run `echo $rias_endpoint` and make sure the response is not empty.
 
-Every API request must include the `version` parameter, in the format `YYYY-MM-DD`. Run the following command to store the version date in a variable so it can be reused in your session. For more information about setting the `version` parameter, see **Versioning** in the [Regional API for VPC](https://{DomainName}/apidocs/vpc-on-classic#versioning)
+Every API request must include the `version` parameter, in the format `YYYY-MM-DD`. Run the following command to store the version date in a variable so it can be reused in your session. For more information about setting the `version` parameter, see **Versioning** in the [API Reference for VPC](https://{DomainName}/apidocs/vpc-on-classic#versioning)
 
 ```bash
 version="2019-05-31"
@@ -103,7 +103,7 @@ To verify that this variable was saved, run `echo $version` and make sure the re
 
 The following command returns the regions available for VPC, in JSON format. At least one object should be returned.
 
-A `version` and `generation` query parameter is required in each API request. For details, see the [Regional API for VPC](https://{DomainName}/apidocs/vpc-on-classic).
+A `version` and `generation` query parameter is required in each API request. For details, see the [API Reference for VPC](https://{DomainName}/apidocs/vpc-on-classic).
 {: note}
 
 ```bash
@@ -633,4 +633,4 @@ curl -X DELETE "$rias_endpoint/v1/volumes/$volume?version=$version&generation=1"
 
 You've successfully provisioned a virtual private cloud instance using the REST APIs. To try out more API commands, explore the full reference:
 
-* [Regional API for VPC](https://{DomainName}/apidocs/vpc-on-classic)
+* [API Reference for VPC](https://{DomainName}/apidocs/vpc-on-classic)

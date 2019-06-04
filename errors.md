@@ -1224,12 +1224,12 @@ You cannot delete a volume that is still attached to a VSI. If you set automatic
 ## volume_template_invalid
 **Message**: Invalid volume template provided.
 
-You provided an invalid volume template for creating a volume. See the [Regional Infrastructure Service API Reference](https://{DomainName}/apidocs/vpc-on-classic){: new_window} to verify that you are providing the correct parameters in the request body.
+You provided an invalid volume template for creating a volume. See the [VPC API Reference](https://{DomainName}/apidocs/vpc-on-classic){: new_window} to verify that you are providing the correct parameters in the request body.
 
 ## volume_update_invalid_request
 **Message**: The volume update request is not valid.
 
-The update request body property that you specified is not valid. See the [Regional Infrastructure Service API Reference](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for information and correct API request syntax.
+The update request body property that you specified is not valid. See the [VPC API Reference](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for information and correct API request syntax.
 
 ## vpc_not_empty
 **Message**: The VPC cannot be deleted because it is not empty.

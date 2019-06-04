@@ -22,12 +22,13 @@ subcollection: vpc-on-classic
 
 # Creating a VPC using the {{site.data.keyword.cloud_notm}} console
 {: #creating-a-vpc-using-the-ibm-cloud-console}
+[comment]: # (linked help topic)
 
 This document shows you how to create and configure an {{site.data.keyword.cloud}} Virtual Private Cloud using the {{site.data.keyword.cloud_notm}} console.
 
 To create and configure your virtual private cloud (VPC) and other attached resources, perform the steps in the sections that follow, in this order:
 
-1. Create a VPC and subnet to define the network. When you create your subnet, attach a public gateway to allow all resources in the subnet to communicate with the public internet. 
+1. Create a VPC and subnet to define the network. When you create your subnet, attach a public gateway to allow all resources in the subnet to communicate with the public internet.
 1. Configure an access control list (ACL) to limit the subnet's inbound and outbound traffic. By default, all traffic is allowed.
 1. Create a virtual server instance.
 1. Create a block storage volume and attach it to an instance.
@@ -42,7 +43,7 @@ Make sure you have sufficient permissions to create and manage resources in your
 
 Generate an SSH key, which will be used to connect to the virtual server instance. For example, generate an SSH key on your Linux server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file.
 
-If you plan to create a load balancer and use HTTPs for the listener, an SSL certificate is required. You can manage certificates with [IBM Certificate Manager ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/certificate-manager){: new_window}. You must also create an authorization to allow your load balancer instance to access the Certificate Manager instance that contains the SSL certificate. You can create an authorization through [Identity and Access Authorizations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam/#/authorizations){: new_window}. For the source, select **Infrastructure Service** as the Source service, **Load Balancer for VPC** as the Resource type, and **All resource instances** for the Source resource instance. Select **Certificate Manager** as the Target service and assign **Writer** for the service access role. Set the Target service instance to  **All instances** or to your specific Certificate Manager instance. For more information, see [Using Load Balancers in IBM Cloud VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---beta-using-load-balancers-in-ibm-cloud-vpc).
+If you plan to create a load balancer and use HTTPs for the listener, an SSL certificate is required. You can manage certificates with [IBM Certificate Manager ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/certificate-manager){: new_window}. You must also create an authorization to allow your load balancer instance to access the Certificate Manager instance that contains the SSL certificate. You can create an authorization through [Identity and Access Authorizations ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam/#/authorizations){: new_window}. For the source, select **VPC Infrastructure** as the Source service, **Load Balancer for VPC** as the Resource type, and **All resource instances** for the Source resource instance. Select **Certificate Manager** as the Target service and assign **Writer** for the service access role. Set the Target service instance to  **All instances** or to your specific Certificate Manager instance. For more information, see [Using Load Balancers in IBM Cloud VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---beta-using-load-balancers-in-ibm-cloud-vpc).
 
 ## Creating a VPC and subnet
 

@@ -78,7 +78,7 @@ There are no egress bandwidth charges as long as the ADN endpoint is used to con
 {: #faq-16}
 {:faq}
 
-When you’re setting up a VPN gateway, you must specify a subnet, so that the VPN gateway can obtain the IP addresses it requires for the VPN service. By specifying the subnet, you retain control over how your VPN traffic is handled, and you have the flexibility to specify a location that’s closer to the resources that utilize the VPN. In this way, you can reduce latency and improve performance. 
+When you’re setting up a VPN gateway, you must specify a subnet, so that the VPN gateway can obtain the IP addresses it requires for the VPN service. By specifying the subnet, you retain control over how your VPN traffic is handled, and you have the flexibility to specify a location that’s closer to the resources that utilize the VPN. In this way, you can reduce latency and improve performance.
 
 ## How do I know where my load balancer instances will be deployed?
 {: #faq-18}
@@ -123,13 +123,13 @@ Yes, there is no limitation on having multiple network interfaces on the same se
 {: #faq-13}
 {: faq}
 
-The Regional Infrastructure API Service (RIAS) enforces this limit.
+The VPC API enforces this limit.
 
 ## During the PGW creation, do I need to reserve the FIP, or does the system automatically reserve the FIP? Will I see that Floating IP when I query all of the Floating IPs?
 {: #faq-12}
 {: #faq}
 
-The RIAS API for VPC automatically creates a floating IP along with the public gateway if an existing floating IP is not specified. And yes, that floating IP will show up in the list.
+The API automatically creates a floating IP along with the public gateway if an existing floating IP is not specified. And yes, that floating IP will show up in the list.
 
 
 ## How does VRF affect my other networking capabilities and my subnets?

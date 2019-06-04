@@ -25,13 +25,13 @@ subcollection: vpc-on-classic
 # Managing user permissions for VPC resources
 {: #managing-user-permissions-for-vpc-resources}
 
-{{site.data.keyword.cloud}} Virtual Private Cloud uses role-based access control that enables account administrators to control their users' access to VPC and other infrastructure service resources.
+{{site.data.keyword.cloud}} Virtual Private Cloud uses role-based access control that enables account administrators to control their users' access to VPC resources.
 
 For more information about how IBM Cloud VPC uses role-based access control, and how VPC makes use of IAM role and access policies, see [Assigning role-based access to VPC resources](/docs/vpc-on-classic?topic=vpc-on-classic-assigning-role-based-access-to-vpc-resources).
 
 This document shows you how the administrator of the account can add additional users to the account and give them the correct permissions to manage [VPC infrastructure resources](/docs/vpc-on-classic?topic=vpc-on-classic-about-vpc-infrastructure-resources). It covers two common scenarios for a VPC administrator:
 
-* **Simple access scenario:** Shows how to assign an access policy to a user, so the user can create and use infrastructure service resources (including Virtual Private Clouds).
+* **Simple access scenario:** Shows how to assign an access policy to a user, so the user can create and use VPC infrastructure resources (including Virtual Private Clouds).
 
 * **Team access scenario:** Shows how to set up resource groups and access policies that allow two separate teams to create and use the VPC resources assigned to their team.
 
@@ -46,7 +46,7 @@ This scenario covers the basic steps needed to set up an individual user. We wil
 ### Inviting a new user to create or manage VPC resources
 {: #inviting-a-new-user-to-create-or-manage-vpc-resources}
 
-Invite an IBM Cloud user to your account and give them access to `Infrastructure Service` so they can have access to view, create, and update VPC resources. This section gives a quick overview of the IAM steps. Further information is available through the links in the **Related Links** section near the end of this document.
+Invite an IBM Cloud user to your account and give them access to `VPC Infrastructure` so they can have access to view, create, and update VPC resources. This section gives a quick overview of the IAM steps. Further information is available through the links in the **Related Links** section near the end of this document.
 
 Here are the basic steps in IAM needed to invite users to VPC services and resources:
 
@@ -55,7 +55,7 @@ Here are the basic steps in IAM needed to invite users to VPC services and resou
 3. On the **Invite users** page, in the **Users** section, enter the email addresses of the users that you want to invite in the **Email address** field.
 4. In the **Access** section, expand **Services**, and then complete the following tasks:
   * Select **Resource** from the **Assign access to** list.
-  * Select **Infrastructure Service** from the **Services** list.
+  * Select **VPC Infrastructure** from the **Services** list.
   * Select the platform access role that you want to assign to the users. It can be **Administrator**, **Editor**, **Operator**, or **Viewer**.
   * Click **Invite users**.
 
@@ -64,7 +64,7 @@ Here are the basic steps in IAM needed to invite users to VPC services and resou
 
 This scenario covers the basic steps needed to give an existing user in your account permission to edit VPC resources.
 
-In the steps that follow, you'll create two IAM policies. Both policies are needed before your user can create and use infrastructure service resources. All of the resources must reside within the account's default resource group.
+In the steps that follow, you'll create two IAM policies. Both policies are needed before your user can create and use VPC infrastructure resources. All of the resources must reside within the account's default resource group.
 
 1. Navigate to the [IAM Users UI ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/iam#/users){: new_window} in the IBM Cloud Console.
 2. Select the user whose authorization you're enabling.
@@ -72,14 +72,14 @@ In the steps that follow, you'll create two IAM policies. Both policies are need
 4. Select **Assign access within a resource group**.
 5. Select the account's default resource group.
 6. Make sure that the **Assign access to a resource group** option remains set to **Viewer**.
-7. To assign the correct service, select **Infrastructure Service**.
+7. To assign the correct service, select **VPC Infrastructure**.
 8. Make sure that the **Resource type** value is set to **All resource types**.
 9. Select the **Editor** role.
 10. Click **Assign**.
 
-The user is now authorized to create and use VPC resources in the account's default resource group. The first policy (steps 1-6) allows the user to view the account's default resource group. The second policy (steps 7-10) assigned the user the **Editor** role for infrastructure service resources, but access is limited to resources in the account's default resource group.
+The user is now authorized to create and use VPC resources in the account's default resource group. The first policy (steps 1-6) allows the user to view the account's default resource group. The second policy (steps 7-10) assigned the user the **Editor** role for VPC infrastructure resources, but access is limited to resources in the account's default resource group.
 
-When you're creating IAM policies, keep in mind that some accounts must be granted access ("whitelisted") before they can use certain infrastructure service resource types, especially resources in Beta or early access.
+When you're creating IAM policies, keep in mind that some accounts must be granted access ("whitelisted") before they can use certain VPC infrastructure resource types, especially resources in Beta or early access.
 {: tip}
 
 ## Viewing your user's permissions
@@ -148,7 +148,7 @@ Add the necessary VPC access policies so that the `test_team` access group can m
 4. Select **Assign access within a resource group**.
 5. Select the desired resource group (start with: `test_team`)
 6. Make sure **Assign access to a resource group** remains set to **Viewer**.
-7. Select service **Infrastructure Service**.
+7. Select service **VPC Infrastructure**.
 8. Make sure **Resource type** remains set to **All resource types**.
 9. Select the **Editor** role.
 10. Select **Assign**.
@@ -159,16 +159,16 @@ These steps also assign **Viewer** access to the `test_team` resource group. Vie
 
 Repeat the previous steps for the remaining three access groups. You'll accomplish these tasks for matching up access groups with resource groups:
 
-* Assign the `test_team_view_vpcs` access group the **Viewer** role for infrastructure service resources inside the `test_team` resource group.
-* Assign the `production_team_manage_vpcs` access group **Editor** role to infrastructure service resources inside the `production_team` resource group.
-* Assign the `production_team_view_vpcs` access group **Viewer** role to infrastructure service resources inside the `production_team` resource group.
+* Assign the `test_team_view_vpcs` access group the **Viewer** role for VPC infrastructure resources inside the `test_team` resource group.
+* Assign the `production_team_manage_vpcs` access group **Editor** role to VPC infrastructure resources inside the `production_team` resource group.
+* Assign the `production_team_view_vpcs` access group **Viewer** role to VPC infrastructure resources inside the `production_team` resource group.
 
 Users with **Editor** access to VPC resources also can view them. It isn't necessary to add members to the **Editor** AND **Viewer** access groups.
 
 #### Setting up Viewer access
 {: #setting-up-viewer-access)
 
-Infrastructure service `Floating IP` resources are created in the account's default resource group. Therefore, users who need to manage `Floating IPs` need **Viewer** access to the account's default resource group.
+VPC infrastructure `Floating IP` resources are created in the account's default resource group. Therefore, users who need to manage `Floating IPs` need **Viewer** access to the account's default resource group.
 {: tip}
 
 Here's how to create that **Viewer** access:

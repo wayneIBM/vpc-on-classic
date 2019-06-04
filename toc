@@ -14,7 +14,7 @@ Virtual Private Cloud on Classic
         pricing.md
         vpc-vsi-pricing.md
         block-storage-is-pricing.md
-    
+
     {: .topicgroup}
     Tutorials
         /tutorials/solution-tutorials-vpc-public-app-private-backend
@@ -22,7 +22,13 @@ Virtual Private Cloud on Classic
         /tutorials/solution-tutorials-vpc-site2site-vpn
         /tutorials/solution-tutorials-vpc-secure-management-bastion-server
 
-    related-links.md
+    {: .topicgroup}
+    Related Links
+        [Networking for VPC](/vpc-on-classic-network/vpc-on-classic-network-getting-started)
+        [Virtual Servers for VPC](/vpc-on-classic-vsi/vpc-on-classic-vsi-getting-started)
+        [Storage for VPC](/vpc-on-classic-block-storage/vpc-on-classic-block-storage-block-storage-getting-started#block-storage-getting-started)
+        [Load Balancer for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)
+        [VPN for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-vpn-with-your-vpc)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -58,10 +64,12 @@ Virtual Private Cloud on Classic
 
     {: .navgroup id="reference"}
     vpc-glossary.md
-    api-doc-wrapper.md
+    [API reference for VPC](https://cloud.ibm.com/apidocs/vpc-on-classic)
     /vpc-infrastructure-cli-plugin/vpc-infrastructure-cli-plugin-vpc-reference
-    step-by-step-pages.md
     vpc-endpoints.md
+    [Go and Python Example Code](https://github.com/IBM-Cloud/vpc-api-samples)
+    [Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html)
+    [Exporter Tool](https://github.com/l2fprod/vpc-diagram-exporter)
     {: .navgroup-end}
 
     {: .navgroup id="help"}

@@ -24,6 +24,7 @@ subcollection: vpc-on-classic
 
 # Creating a VPC using the IBM Cloud CLI
 {: #creating-a-vpc-using-the-ibm-cloud-cli}
+[comment]: # (linked help topic)
 
 This document shows you how to create {{site.data.keyword.cloud}} Virtual Private Cloud resources using the IBM Cloud CLI.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-06-03"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -24,6 +24,11 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.cloud}} Virtual Private Cloud.
 {:shortdesc}
+
+## 31 May 2019
+{: #may-31-2019}
+
+**New API version available.** The VPC on Classic API version has been updated from `2019-01-01` to `2019-05-31`. For guidelines and best practices, see  [Versioning](https://{DomainName}/apidocs/vpc-on-classic#versioning) in the Virtual Private Cloud on Classic API.
 
 ## 24 May 2019
 {: #may-24-2019}
