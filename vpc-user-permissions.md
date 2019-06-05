@@ -79,7 +79,6 @@ In the steps that follow, you'll create two IAM policies. Both policies are need
 
 The user is now authorized to create and use VPC resources in the account's default resource group. The first policy (steps 1-6) allows the user to view the account's default resource group. The second policy (steps 7-10) assigned the user the **Editor** role for VPC infrastructure resources, but access is limited to resources in the account's default resource group.
 
-When you're creating IAM policies, keep in mind that some accounts must be granted access ("whitelisted") before they can use certain VPC infrastructure resource types, especially resources in Beta or early access.
 {: tip}
 
 ## Viewing your user's permissions

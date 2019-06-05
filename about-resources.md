@@ -33,7 +33,7 @@ The term _resources_ refers to the component parts of a {{site.data.keyword.clou
 * **image**
 * **subnet**
 * **volume**
-* **acl**
+* **network access control lists (acl)**
 * **security group**
 * **floating IP**
 * **vnic**
@@ -41,9 +41,9 @@ The term _resources_ refers to the component parts of a {{site.data.keyword.clou
 * **loadbalancer**
 * **vpn**
 
-You could think of most of these types of resources as "children" of their VPC, because they acquire many of their authorization policies, which govern their usage, from their "parent" VPC (as shown in the summary table in the next section).
+Some VPC Infrastructure resources inherit their authorization policies, which govern their usage, from the parent VPC but others are managed separately.
 
-An exception is that the `loadbalancer` and `vpn` resource types maintain their own authorization policies. More detail about resource authorization for VPN and Load Balancer resources is given later in this document.
+Currently, the `instance`, `key`, `security-group`, `volume`, `loadbalancer` and `vpn` resource types maintain their own authorization policies. More detail about resource authorizations on these resources is given later in this document.
 {: note}
 
 ## Resource policies
@@ -77,7 +77,7 @@ When you're setting up your IBM Cloud VPC, if you want to use resource groups, i
 ## Specifics for VPC
 {: #specifics-for-vpc}
 
-Currently, VPC assigns roles and access at the VPC boundary only, for any or all resources within that particular VPC. For instance, you cannot assign access to individual subnets within that VPC. Instead, the authorizations for all of the types of resources with the VPC--subnets, instances, floating IP, security groups, ACLs, and so forth--are inherited from the VPC "parent" of that resource. Certain resources, such as **load balancers** and **vpn**, maintain authorization separately from the VPC to which they are attached.
+Some VPC Infrastructure resources inherit their authorization policies, which govern their usage, from the account or parent VPC while others have individual policies.
 
 ### VPC resource authorization by resource type
 {: #vpc-resource-authorization-by-resource-type}
@@ -92,14 +92,14 @@ The table summarizes how VPC resources are authorized by default.
 | Subnet | Parent VPC |
 | Public gateway | Parent VPC |
 | Instance | Authorization check when created |
-| Security Group | Parent VPC |
+| Security Group | Authorization check when created |
 | Key | Authorization check when created |
 | Image | Account |
 | Floating IP | Account |
-| ACL | Account|
-| Volume | N/A |
+| Network ACL | Account|
+| Volume | Authorization check when created |
 
-Floating IP and ACLs can be created with scoping at the account level, if unassigned. However, as soon as a floating IP is assigned to an instance or an ACL is assigned to a subnet, these resources become subject to the VPC's authorization scope.
+Floating IP and Network ACLs can be created with scoping at the account level, if unassigned. However, as soon as a floating IP is assigned to an instance or an ACL is assigned to a subnet, these resources become subject to the VPC's authorization scope.
 {: note}
 
 ### VPC coverage of roles and authorized actions on resources
