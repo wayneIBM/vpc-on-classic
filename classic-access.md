@@ -34,10 +34,10 @@ In hosts with a public interface, you must add a route back to your Classic-enab
 ## Pre-requisites:
 {: #vpc-prerequisites}
 
-1. Your classic account must be linked to your IBM Cloud account. See [Linking IBMid accounts](/docs/account/softlayerlink.html) for instructions on how to do this.
+1. Your classic account must be linked to your IBM Cloud account. See [Linking IBMid accounts](/docs/account?topic=account-unifyingaccounts) for instructions on how to do this.
 1. Your classic account must be enabled for VRF.
     * If you already have Direct Link on your account, you are ready.
-    * If your account is not VRF-enabled, open a ticket to request "VRF Migration" for your account. See [How you can initiate the conversion](/docs/infrastructure/direct-link?topic=direct-link-how-you-can-initiate-the-conversion) in our Direct Link documentation to learn more about the conversion process.
+    * If your account is not VRF-enabled, open a ticket to request "VRF Migration" for your account. See [How you can initiate the conversion](/docs/infrastructure/direct-link?topic=direct-link-how-you-can-initiate-the-conversion#how-you-can-initiate-the-conversion) in our Direct Link documentation to learn more about the conversion process.
 
 Firewalls, gateways, Network ACLs, or security groups can filter out some or all of the network traffic between Classic and VPC resources.
 {: important}

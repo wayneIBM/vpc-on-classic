@@ -126,7 +126,7 @@ Your first task is to create resource groups that will contain each of your team
 1. Create a resource group called `test_team`.  
 2. Create a resource group called `production_team`.  
 
-For more information on how to create resource groups, see [Managing resource groups](/docs/resources/resourcegroups.html#rgs).
+For more information on how to create resource groups, see [Managing resource groups](/docs/resources?topic=resources-rgs).
 
 ### Step 2: Create access groups
 {: #step-2-create-access-groups}
@@ -211,6 +211,6 @@ The two example teams are now set up to use VPCs. At this point, members of the 
 ## Related links
 {: #permissions-related-links}
 
-* [Managing identity and access](/docs/iam/quickstart.html)
-* [Managing users and access](/docs/iam/iamusermanage.html)
-* [What is IAM](/docs/iam/index.html)
+* [Managing identity and access](/docs/iam?topic=iam-getstarted)
+* [Managing users and access](/docs/iam?topic=iam-iamuserinv)
+* [What is IAM](/docs/iam?topic=iam-iamoverview)

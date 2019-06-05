@@ -4,7 +4,7 @@ copyright:
 
   years: 2018, 2019
 
-lastupdated: "2019-05-28"
+lastupdated: "2019-06-04"
 
 keywords: error, message, API, limitations, rias, support
 
@@ -591,7 +591,7 @@ If you are using the CLI, run the command `ibmcloud is subnets` to list all the 
 ## not_authorized
 **Message**: The request is not authorized.
 
-You may see this error is if your IAM token is missing or expired. For instructions on how to generate a token, refer to [Creating a VPC using the REST APIs](/docs/infrastructure/vpc/example-code.html#creating-a-vpc-using-the-rest-apis). If the token is not expired, make sure the account you are using is authorized to use this function and you have the [correct permissions](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
+You may see this error is if your IAM token is missing or expired. For instructions on how to generate a token, refer to [Creating a VPC using the REST APIs](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis). If the token is not expired, make sure the account you are using is authorized to use this function and you have the [correct permissions](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
 
 If you have correct authorization but you are still getting this error, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -762,7 +762,7 @@ Network interfaces must be active before attaching to security groups. Use `GET 
 
 The interface is not attached to the security group. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached interfaces.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-updating-the-default-security-group-using-the-cli){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-security-groups-using-the-cli){: new_window}.
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -1107,7 +1107,7 @@ When creating a volume, the capacity value specified in the request must be a po
 ## volume_encryption_key_account_id_mismatch
 **Message**: The volume encryption key specified in the request does not belong to current user's account.
 
-The Key Protect root key CRN does not match your IAM authorization account ID. Specify a different Key Protect root key CRN for your IAM account. See the [Key Protect](/docs/services/key-protect/index.html) documentation for more information.
+The Key Protect root key CRN does not match your IAM authorization account ID. Specify a different Key Protect root key CRN for your IAM account. See the [Key Protect](/docs/services/key-protect?topic=key-protect-getting-started-tutorial) documentation for more information.
 
 ## volume_encryption_key_cname_mismatch
 **Message**: The volume encryption key specified in the request cannot be used for the current environment.

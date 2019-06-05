@@ -20,10 +20,10 @@ subcollection: vpc-on-classic
 {:table: .aria-labeledby="caption"}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# About Virtual Private Cloud 
+# About Virtual Private Cloud
 {: #about}
 
-{{site.data.keyword.cloud}} Virtual Private Cloud (VPC) is the next generation IBM Cloud platform. VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud. 
+{{site.data.keyword.cloud}} Virtual Private Cloud (VPC) is the next generation IBM Cloud platform. VPC allows you to create your own space in the IBM Cloud, to run an isolated environment within the public cloud. VPC gives you the security of a private cloud, with the agility and ease of a public cloud.
 
 You can manage network services and launch instances as needed to support your mission-critical, cloud-tolerant, and cloud-native applications. Key features available:
 
@@ -42,7 +42,7 @@ The VPC Overview figure, which follows, illustrates the available VPC components
 
 ![IBM Cloud VPC Overview](images/vpc-experience-simple.svg "IBM Cloud VPC Overview"){: caption="Figure: IBM Cloud VPC Overview" caption-side="top"}
 
-The following sections give you an overview of the features available in IBM Cloud VPC. 
+The following sections give you an overview of the features available in IBM Cloud VPC.
 
 ## Networking capabilities
 

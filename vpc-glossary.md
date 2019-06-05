@@ -22,7 +22,7 @@ subcollection: vpc-on-classic
 # VPC Glossary
 {: #vpc-glossary}
 
-The following terminology is commonly used and is specific to {{site.data.keyword.cloud}} Virtual Private Cloud. See [Glossary terms for IBM Cloud](/docs/overview/glossary/glossary.html) for broader and more terms.
+The following terminology is commonly used and is specific to {{site.data.keyword.cloud}} Virtual Private Cloud. See [Glossary terms for IBM Cloud](/docs/overview/glossary?topic=overview-glossary) for broader and more terms.
 
 ## Access Control List
 {: #access-control-list}
