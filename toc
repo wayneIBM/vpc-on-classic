@@ -43,7 +43,6 @@ Virtual Private Cloud on Classic
         about-resources.md
         vpc-user-permissions.md
         vpc-admin-guide.md
-        vpc-vsi-permissions.md
         api-auth-correlation.md
 
     {: .topicgroup}
