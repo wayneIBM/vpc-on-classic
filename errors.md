@@ -4,7 +4,7 @@ copyright:
 
   years: 2018, 2019
 
-lastupdated: "2019-06-04"
+lastupdated: "2019-06-06"
 
 keywords: error, message, API, limitations, rias, support
 
@@ -1146,15 +1146,25 @@ The volume ID you specified is not in the correct format. Verify that you correc
 
 You must provide the volume ID in the request parameter when getting a specific volume.
 
+## volume_id_not_found
+**Message**: Volume not found.
+
+The volume ID does not exist. Provide a valid volume ID.
+
 ## volume_iops_zero_or_negative
 **Message**: The volume IOPS should be greater than zero.
 
 When creating a volume, the IOPS value specified in the request must be a positive number. See the [IBM Cloud Block Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about) documentation for supported IOPS values.
 
 ## volume_name_duplicate
-**Message**: The volume name specified in the request already exists.
+**Message**: The volume name is a duplicate.
 
-Specify a unique volume name.
+The volume name specified in the request already exists. Specify a unique volume name.
+
+## volume_not_deletable
+**Message**: Delete failed.
+
+The volume can only be deleted if it is in `available` or `failed` status. Make sure the volume is in a valid status to be deleted.
 
 ## volume_not_found
 **Message**: A volume with the specified ID is not found.

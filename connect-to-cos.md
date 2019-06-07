@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018-2019
-lastupdated: "2019-06-01"
+lastupdated: "2019-06-07"
 
 keywords: resource, storage, connection, COS, object, endpoints, cross-region, regional, datacenter
 
@@ -41,13 +41,13 @@ IBM Cloud Object Storage is available with three types of configurations for res
 ### COS direct endpoints for use with VPC
 {: #cos-direct-endpoints-for-use-with-vpc}
 
-To send a REST API request, you must set a target endpoint or a URL, and each COS storage location requires its own set of URLs. Direct endpoints provide your servers with high-speed, direct connections to {{site.data.keyword.cloud_notm}} services, which incur no added bandwidth costs.
+To send a REST API request, you must set a target endpoint or a URL, and each COS storage location must have its own set of URLs. Direct endpoints provide your servers with high-speed, direct connections to {{site.data.keyword.cloud_notm}} services, which incur no added bandwidth costs. With the COS direct endpoint, a VPC can connect to a COS bucket located anywhere in the world. 
 
 There is no charge for traffic from your VPCs to all COS endpoints listed on this page.
 {: note}
 
 * A VPC client also has access to the COS bucket over the public endpoint.
-* A VPC client does not have access to the COS Configuration API, which allows for for bucket configuration and for viewing bucket metadata over the direct endpoint, but it does have access over the public endpoint.
+* A VPC client does not have access to the COS Configuration API, which allows for bucket configuration and for viewing bucket metadata over the direct endpoint, but it does have access over the public endpoint.
 * A VPC client does not have access to a COS bucket when the firewall is enabled.
 
 ## How to connect to IBM Cloud Object Storage (COS) from a VPC
@@ -65,7 +65,10 @@ Buckets created at a regional endpoint distribute data across three datacenters,
 | **Region** | **Endpoint** |
 |------------|-------------------------------|
 | U.S. South | `s3.direct.us-south.cloud-object-storage.appdomain.cloud`|
+| U.S. East | `s3.direct.us-east.cloud-object-storage.appdomain.cloud`|
+| E.U. United Kingdom | `s3.direct.eu-gb.cloud-object-storage.appdomain.cloud`|
 | E.U. Germany | `s3.direct.eu-de.cloud-object-storage.appdomain.cloud`|
+| A.P. Australia | `s3.direct.au-syd.cloud-object-storage.appdomain.cloud`
 | A.P. Japan | `s3.direct.jp-tok.cloud-object-storage.appdomain.cloud` |
 
 
@@ -109,8 +112,10 @@ If a networking failure results in a partition, such that the datacenter is unab
 |------------|-------------------------------|
 | Amsterdam, Netherlands | `s3.direct.ams03.cloud-object-storage.appdomain.cloud` |
 | Chennai, India | `s3.direct.che01.cloud-object-storage.appdomain.cloud` |
+| Hong Kong | `s3.direct.hkg02.cloud-object-storage.appdomain.cloud` |
 | Melbourne, Australia | `s3.direct.mel01.cloud-object-storage.appdomain.cloud` |
 | Mexico City, Mexico | `s3.direct.mex01.cloud-object-storage.appdomain.cloud` |
+| Milan, Italy | `s3.direct.mil01.cloud-object-storage.appdomain.cloud` |
 | Montréal, Canada | `s3.direct.mon01.cloud-object-storage.appdomain.cloud` |
 | Oslo, Norway | `s3.direct.osl01.cloud-object-storage.appdomain.cloud` |
 | San Jose, USA | `s3.direct.sjc04.cloud-object-storage.appdomain.cloud` |

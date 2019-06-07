@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-07"
 
-keywords: classic, access, API, CLI, limitations
+keywords: vpc, classic, access, API, CLI, limitations
 
 subcollection: vpc-on-classic
 
@@ -40,6 +40,9 @@ In hosts with a public interface, you must add a route back to your Classic-enab
     * If your account is not VRF-enabled, open a ticket to request "VRF Migration" for your account. See [How you can initiate the conversion](/docs/infrastructure/direct-link?topic=direct-link-how-you-can-initiate-the-conversion#how-you-can-initiate-the-conversion) in our Direct Link documentation to learn more about the conversion process.
 
 Firewalls, gateways, Network ACLs, or security groups can filter out some or all of the network traffic between Classic and VPC resources.
+{: important}
+
+All subnets in a VPC with classic access will be shared into the Classic Infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To avoid IP address conflicts, **do not use** IP addresses on the `10.0.0.0/8` space when creating subnets in a Classic Access VPC.
 {: important}
 
 ## Create a Classic Access VPC
@@ -87,7 +90,10 @@ curl -X POST "$rias_endpoint/v1/vpcs?version=2019-05-31&generation=1" \
 ### Classic Access VPC default address prefixes
 {: #classic-access-default-address-prefixes}
 
-IP addresses on classic resources typically are assigned in the `10.x.x.x` range. Therefore, avoid using these addresses in your Classic Access VPCs. When a new Classic Access VPC is created, the default address prefixes are assigned, based on the region and zone, as shown in the table that follows:
+All subnets in a VPC with classic access will be shared into the Classic Infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To avoid IP address conflicts, **do not use** IP addresses on the `10.0.0.0/8` space when creating subnets in a Classic Access VPC.
+{: important}
+
+When a new Classic Access VPC is created, the default address prefixes are assigned, based on the region and zone, as shown in the table that follows:
 
 Zone         | Address Prefix
 ---------------|---------------

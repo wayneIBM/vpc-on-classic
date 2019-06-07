@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-07"
 keywords: quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
 
 subcollection: vpc-on-classic
@@ -31,8 +31,8 @@ Accounts have the following quotas:
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
-| Virtual Private Clouds | 5 per account|
-| VPCs with Classic Access | 1 per region, per account |
+| Virtual Private Clouds | 5 per region|
+| VPCs with Classic Access | 1 per region |
 | Public Gateways (PGWs) | 1 per VPC per zone |
 | Address prefixes | 5 per VPC per zone |
 
@@ -73,8 +73,7 @@ Some account-based quotas (limits) exist for security groups and their associate
 
 |Resource|Quota|
 |--------|-----|
-|ACLs| 30 per account|
-|ACLs |200 per region |
+|ACLs| 30 per region |
 |Ingress rules|20 per ACL |
 |Egress rules |20 per ACL |
 

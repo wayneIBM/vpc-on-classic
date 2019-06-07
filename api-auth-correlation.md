@@ -82,8 +82,8 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 | Instances | View, List  | View authorization for the Instance |
 | Instance actions | Create, Update, Delete | Update authorization for the Instance|
 | Instance actions, Initialization, NICs| View, List  | View authorization for the Instance |
-| Instance FIPs | View, List | View authorization for the Instance and the VPC |
-| Instance FIPs | Associate | Update authorization for the Instance<br />Operate authorization for FIP's VPC |
+| Instance FIPs | View, List | View authorization for the Instance and the associated subnet's VPC |
+| Instance FIPs | Associate | Update authorization for the Instance<br />Operate authorization for the associated subnet's VPC|
 | Instance FIPs | Disassociate | Update authorization for the Instance |
 |————————|——————|————————|
 | VPN gateway | Create, Update, Delete | Update authorization for the VPN |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-03"
+lastupdated: "2019-06-06"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -24,6 +24,19 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.cloud}} Virtual Private Cloud.
 {:shortdesc}
+
+## 7 June 2019
+{: #june-07-2019}
+
+- **IBM Cloud VPC is now generally available.** All [Pay-As-You-Go accounts](/docs/account?topic=account-accounts) can provision VPC resources.
+Log in to the [IBM Cloud Console](https://{DomainName}/vpc/overview) and get started today!
+
+- **Individual authorization policies on instances, keys, volumes, and security groups can now be set.** Learn what roles are required to manage these resources in [Resource authorizations required for API and CLI calls](/docs/vpc-on-classic?topic=vpc-on-classic-resource-authorizations-required-for-api-and-cli-calls). Early access users are not affected with existing policies.
+
+- **The port speed parameter for a virtual network interface has been removed from the User Interface, CLI and API.**
+
+- **Multi-region support for monitoring metrics in now available in the User Interface.**
+
 
 ## 31 May 2019
 {: #may-31-2019}
