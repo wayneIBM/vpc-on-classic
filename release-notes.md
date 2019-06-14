@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-13"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -24,6 +24,31 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.cloud}} Virtual Private Cloud.
 {:shortdesc}
+
+## 14 June 2019
+{: #june-14-2019}
+
+**Updates to the IBM Cloud VPC UI**
+
+- **SSH keys and resource groups.**
+    * Resource groups are shown in the SSH key list view.
+    * Resource groups are selectable in the SSH key provisioning modal.
+- **Profiles and bandwidth.** The bandwidth cap assigned to each profile is shown in the **Popular profiles** and the **All profiles** display pages.
+- **Resource groups.** The VSI provisioning page shows the resource group dropdown.
+
+**Updates to Block Storage for VPC**
+- The **volume name length** has been increased to 63 alpha-numeric characters.
+- The following **volume error codes** have been renamed and messages updated, or deleted:
+    * `volume_encryption_key_account_id_mismatch` is renamed to `volume_crn_account_id_mismatch`
+    * `volume_encryption_key_cname_mismatch` is renamed to `volume_crn_cname_mismatch`
+    * `volume_encryption_key_region_not_found` has been removed
+
+**Updates to the SDK**
+
+- **Terraform provider v0.17.1** has been released. Please download the [latest binary](https://github.com/IBM-Cloud/terraform-provider-ibm/releases/tag/v0.17.1).
+- **Docker Image** also has been updated with the latest Terraform provider. You can pull the latest Docker image by using this command:  `docker pull ibmterraform/terraform-provider-ibm-docker:latest`
+- Remember to set `generation` as a provider argument or export `IC_GENERATION= 1` so that your code will work with the currently released version of VPC on classic infrastructure. By default the value is set to 2 (VPC, coming soon, now in Beta).
+- Provider arguments(`bluemix_api_key` and `bluemix_timeout`) have been deprecated, so a warning could be thrown when you run Terraform plan or apply.
 
 ## 7 June 2019
 {: #june-07-2019}

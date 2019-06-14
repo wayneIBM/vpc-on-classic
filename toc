@@ -1,12 +1,13 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc-on-classic" audience="service" arm="4135753" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
+{: .toc subcollection="vpc-on-classic" category="vpc,network,storage" audience="service" arm="4135753" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
 Virtual Private Cloud on Classic
 
     {: .navgroup id="learn"}
     getting-started.md
     about-vpc-is.md
+    vpc-responsibilities.md
     vpc-quotas.md
 
     {: .topicgroup}
@@ -68,6 +69,7 @@ Virtual Private Cloud on Classic
     quick-guide-to-resources.md
     /vpc-infrastructure-cli-plugin/vpc-infrastructure-cli-plugin-vpc-reference
     vpc-endpoints.md
+    at-events.md
     [Go and Python Example Code](https://github.com/IBM-Cloud/vpc-api-samples)
     [Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html)
     [Exporter Tool](https://github.com/l2fprod/vpc-diagram-exporter)

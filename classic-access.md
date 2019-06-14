@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-12"
 
 keywords: vpc, classic, access, API, CLI, limitations
 
@@ -123,3 +123,6 @@ Zone         | Address Prefix
 * Only your private (or "back" in old documentation) networks will be connected to your account's private implicit router.
 * Only subnets allocated with classic APIs are connected to the classic side of your private implicit router. The routing function of the implicit router does not work between subnets on classic VLANs.
 * Only one VPC per region, per account can be enabled for Classic Access.
+
+Depending on the OS you've installed on your classic VSIs or bare metal servers, your configuration procedure will vary. For more information, see [About public virtual servers](https://cloud.ibm.com/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
+{: note}

@@ -3,8 +3,7 @@
 copyright:
 
   years: 2018, 2019
-
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-11"
 
 keywords: error, message, API, limitations, rias, support
 
@@ -191,10 +190,25 @@ Equivalent CLI command: `ibmcloud is ike-policy-connections IKE_POLICY_ID`
 
 A valid IKE policy name starts with a letter, followed by letters, digits, underscores or hyphens.
 
+## ike_policy_not_created
+**Message**: The IKE policy `<ike_policy_id>` could not be created.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## ike_policy_not_deleted
+**Message**: The IKE policy `<ike_policy_id>` could not be deleted.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
 ## ike_policy_not_found
 **Message**: The IKE policy `<ike_policy_id>` could not be found.
 
 You referenced an IKE policy that does not exist. Please review your request to ensure that you specified the proper IKE policy ID. Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## ike_policy_not_updated
+**Message**: The IKE policy `<ike_policy_id>` could not be updated.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## instance_delete_conflict
 **Message**: The instance cannot be deleted in the current status.
@@ -253,6 +267,11 @@ An unexpected error occurred. This problem may be temporary. Try the request aga
 
 An unexpected error occurred. This problem may be temporary. Try the request again in a few minutes. If this error persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
+## invalid_generation_parameter
+**Message**: The generation query parameter must be set to 1.
+
+For versions on and after 5/31/2019, the `generation` query parameter must be set to 1 to allow VPC on Classic API requests.
+
 ## invalid_id_format
 **Message**: Bad ID format. Ensure format is correct.
 
@@ -277,14 +296,25 @@ Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: 
 ## invalid_state
 **Message**: An action was requested on a resource which is not supported at the current status of the resource.
 
-1. A reboot operation may already be in progress for the instance. Refer to [actions allowed](/docs/vpc-on-classic?topic=vpc-on-classic-troubleshooting-your-ibm-cloud-vpc#error-409-conflict-when-invoking-an-action-on-an-instance) depending on the status of the instance.
-2. While the status of the instance is `pending`, you cannot perform the following actions:
-* delete the instance
-* attach a volume to the instance
-* detach a volume from the instance
-* update the instance
+If the resource is an instance:
+
+1. A reboot operation may already be in progress for the instance. Refer to [actions allowed](/docs/vpc-on-classic?topic=vpc-on-classic-troubleshooting-your-ibm-cloud-vpc#error-409-conflict-when-invoking-an-action-on-an-instance), depending on the status of the instance.
+
+2. While the status of the instance is `pending` you cannot perform the following actions:
+  * delete the instance
+  * attach a volume to the instance
+  * detach a volume from the instance
+  * update the instance
 
 Try your action again later. If the status of the resource does not change, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+If the resource is an image:
+
+While the status of the instance is `deleting` you cannot perform the following actions:
+  * patch the image
+  * delete the image
+
+Do not make the request again. Deletion of the image will complete in its own time. Once deletion is complate, all requests on that image will fail with the error `not_found` instead.
 
 ## invalid_version
 **Message**: The `version` parameter is invalid, it must be of the form `YYYY-MM-DD`.
@@ -327,10 +357,25 @@ Equivalent CLI command: `ibmcloud is ipsec-policy-connections IPSEC_POLICY_ID`
 
 A valid IPsec policy name starts with a letter, followed by letters, digits, underscores or hyphens.
 
+## ipsec_policy_not_created
+**Message**: The IPsec policy `<ipsec_policy_id>` could not be created.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## ipsec_policy_not_deleted
+**Message**: The IPsec policy `<ipsec_policy_id>` could not be deleted.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
 ## ipsec_policy_not_found
 **Message**: The IPsec policy `<ipsec_policy_id>` could not be found.
 
 You referenced an IPsec policy that does not exist. Please review your request and specify a valid IPsec policy ID. If you are sure the policy exists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## ipsec_policy_not_updated
+**Message**: The IPsec policy `<ipsec_policy_id>` could not be updated.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## key_content_exists
 **Message**: The same key content already exists.
@@ -564,6 +609,11 @@ Provide an existing member ID.
 **Message**: Member cannot be created. Quota of member instances under the pool has reached maximum limit.
 
 The quotas per resource are specified in [Quotas and limits for VPC](/docs/infrastructure/vpc/?topic=vpc-quotas){: new_window}.
+
+## missing_generation_parameter
+**Message**: The generation query parameter is required.
+
+For versions on and after 5/31/2019, the `generation` query parameter is required for VPC on Classic API requests.
 
 ## missing_ims_account_id
 **Message**: None
@@ -1104,15 +1154,15 @@ When you create a volume, you must specify a volume capacity based on this profi
 
 When creating a volume, the capacity value specified in the request must be a positive number between 10 GB and 2000 GB. See the [IBM Cloud Block Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about) documentation for supported volume capacity values.
 
-## volume_encryption_key_account_id_mismatch
-**Message**: The volume encryption key specified in the request does not belong to current user's account.
+## volume_crn_account_id_mismatch
+**Message**: The CRN specified in the request does not belong to current user's account.
 
 The Key Protect root key CRN does not match your IAM authorization account ID. Specify a different Key Protect root key CRN for your IAM account. See the [Key Protect](/docs/services/key-protect?topic=key-protect-getting-started-tutorial) documentation for more information.
 
-## volume_encryption_key_cname_mismatch
-**Message**: The volume encryption key specified in the request cannot be used for the current environment.
+## volume_crn_cname_mismatch
+**Message**: The CRN specified in the request cannot be used for the current environment.
 
-The volume encryption key that you specified in the request cannot be used in the current environment. Provide a root key CRN applicable to your environment.
+The CRN that you specified in the request cannot be used in the current environment. Provide a CRN applicable to your environment.
 
 ## volume_encryption_key_crn_invalid
 **Message**: The volume encryption key CRN specified in the request is not valid.
@@ -1147,9 +1197,9 @@ The volume ID you specified is not in the correct format. Verify that you correc
 You must provide the volume ID in the request parameter when getting a specific volume.
 
 ## volume_id_not_found
-**Message**: Volume not found.
+**Message**: Volume not found. Volume ID `<volume_id>` does not exist, where `<volume_id>` is the provided volume ID.
 
-The volume ID does not exist. Provide a valid volume ID.
+The specified volume ID does not exist. Provide a valid volume ID.
 
 ## volume_iops_zero_or_negative
 **Message**: The volume IOPS should be greater than zero.
@@ -1157,9 +1207,14 @@ The volume ID does not exist. Provide a valid volume ID.
 When creating a volume, the IOPS value specified in the request must be a positive number. See the [IBM Cloud Block Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about) documentation for supported IOPS values.
 
 ## volume_name_duplicate
-**Message**: The volume name is a duplicate.
+**Message**: The volume name is a duplicate. Volume name `<volume_name>` provided in the request already exists, where `<volume_name>` is the provided volume name.
 
-The volume name specified in the request already exists. Specify a unique volume name.
+The volume name specified in the request already exists. Provide a volume name that is not currently in use.
+
+## volume_not_available
+**Message**: The Volume is not available. Volume can only be modified in available status. Current volume `<volume_id>` status is `<volume_status>`, where `<volume_id>` is the volume ID provided in the request and `<volume_status>` is the current volume status.
+
+A volume can be modified only when it's in an `available` status. Make sure the volume is available before you modify it.
 
 ## volume_not_deletable
 **Message**: Delete failed.
@@ -1256,11 +1311,11 @@ The resources must be in the same VPC. For example, if you are attempting to att
 To determine which VPC contains the public gateway, run the `GET /public_gateways/{id}` command and look at the "vpc" value. The equivalent CLI command is `ibmcloud is public-gateway <id>`.
 
 ## vpn_connection_cidr_duplicated
-**Message**: The `cidr_type` CIDR blocks have duplicates: `<cidrs>`.
+**Message**: The `<cidr_type>` CIDR blocks have duplicated CIDR blocks `<cidr_blocks>`.
 
-There are duplicate CIDR blocks provided when creating the connection. Ensure the CIDR blocks are unique.
+Duplicate CIDR blocks have been provided when creating the connection. Ensure that the CIDR blocks are unique.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If the problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## vpn_connection_cidr_not_created
 **Message**: A CIDR block could not be added to the VPN connection `<vpn_connection_id>`.
@@ -1284,6 +1339,11 @@ Provide a valid CIDR that is in the connection.
 
 To view the connection's CIDR blocks, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `local_cidrs` and `peer_cidrs` fields.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connection VPN_GATEWAY_ID CONNECTION_ID`
+
+## vpn_connection_cidr_not_updated
+**Message**: A CIDR block could not be updated in the VPN connection `<vpn_connection_id>`.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## vpn_connection_cidr_not_valid
 **Message**: The CIDR block `<cidr_block>` does not represent a valid address.
@@ -1323,26 +1383,46 @@ Provide a valid local CIDR that meets the requirements given by the specificatio
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
 
-## vpn_connection_local_cidrs_quota_exceeded
-**Message**: Local CIDR blocks across VPN connections for the VPN gateway `<vpn_gateway_id>` has reached the quota.
+## vpn_connection_local_subnets_quota_exceeded
+**Message**: Local subnets across VPN connections for the VPN gateway `<vpn_gateway_id>` has reached the quota.
 
 The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
 
-To view the current local CIDR blocks across VPN connections, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API and check the `local_cidrs` field for each connection.
+To view the current local subnets across VPN connections, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API and check the `local_cidrs` field for each connection.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
 
-## vpn_connection_local_cidrs_quota_exceeded_for_connection
-**Message**: Local CIDR blocks for the VPN connection has reached the quota.
+## vpn_connection_local_subnets_quota_exceeded_for_connection
+**Message**: Local subnets for the VPN connection has reached the quota.
 
 The quotas per resource are specified on the [Quotas](/docs/infrastructure/vp?topic=vpc-quotas#vpn-quotas){: new_window} page.
 
-To view the current local CIDR blocks for a VPN connection, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `local_cidrs` field.
+To view the current local subnets for a VPN connection, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `local_cidrs` field.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connection VPN_GATEWAY_ID CONNECTION_ID`
+
+## vpn_connection_not_created
+**Message**: The VPN connection `<vpn_connection_id>` could not be created.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## vpn_connection_not_deleted
+**Message**: The VPN connection `<vpn_connection_id>` could not be deleted.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## vpn_connection_not_found
 **Message**: The VPN connection `<vpn_connection_id>` could not be found.
 
 Check whether the connection ID is correct. Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## vpn_connection_not_updated
+**Message**: The VPN connection `<vpn_connection_id>` could not be updated.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## vpn_connection_pair_cidrs_duplicated
+**Message**: At least one pair of local CIDR and peer CIDR with the same peer gateway has been duplicated.
+
+Another connection which has a matching local CIDR and peer CIDR to this one exists on this gateway.  Provide a valid set of local / peer CIDRs.
 
 ## vpn_connection_peer_cidrs_required
 **Message**: At least one peer CIDR block is required when creating a VPN connection.
@@ -1351,29 +1431,21 @@ Provide a valid peer CIDR that meets the requirements given by the specification
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
 
-## vpn_connection_peer_cidrs_quota_exceeded
-**Message**: Peer CIDR blocks across VPN connections for the VPN gateway `<vpn_gateway_id>` has reached the quota.
+## vpn_connection_peer_subnets_quota_exceeded
+**Message**: Peer subnets across VPN connections for the VPN gateway `<vpn_gateway_id>` has reached the quota.
 
 The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
 
-To view the current peer CIDR blocks across VPN connections, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API and check the `peer_cidrs` field for each connection.
+To view the current peer subnets across VPN connections, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API and check the `peer_cidrs` field for each connection.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
 
-## vpn_connection_peer_cidrs_quota_exceeded_for_connection
-**Message**: Peer CIDR blocks for the VPN connection has reached the quota.
+## vpn_connection_peer_subnets_quota_exceeded_for_connection
+**Message**: Peer subnets for the VPN connection has reached the quota.
 
 The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
 
-To view the current peer CIDR blocks for a VPN connection, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `peer_cidrs` field.
+To view the current peer subnets for a VPN connection, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `peer_cidrs` field.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connection VPN_GATEWAY_ID CONNECTION_ID`
-
-## vpn_connections_quota_exceeded
-**Message**: The VPN connection cannot be created because the VPN gateway `<vpn_gateway_id>` has reached the quota.
-
-The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
-
-To view the current VPN connections for a VPN gateway, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API.
-Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
 
 ## vpn_connection_static_route_not_created
 **Message**: Failed to add a static route for the peer CIDR block `<peer_cidr>`.
@@ -1391,6 +1463,14 @@ Try again in a few minutes. If this problem persists, [contact support](/docs/vp
 Provide a valid request value that meets the requirements given by the specification.
 
 For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+
+## vpn_connections_quota_exceeded
+**Message**: The VPN connection cannot be created because the VPN gateway `<vpn_gateway_id>` has reached the quota.
+
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
+
+To view the current VPN connections for a VPN gateway, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API.
+Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
 
 ## vpn_gateway_duplicate_name
 **Message**: The name `<vpn_gateway_name>` is already in use by VPN gateway `<vpn_gateway_id>`.
@@ -1417,10 +1497,35 @@ VPN Gateway must be in `available` status before you can operate it. Try again i
 
 Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
+## vpn_gateway_missing_subnet_id
+**Message**: Could not find a subnet identifier for the given VPN gateway template.
+
+The **Subnet ID** is a required field. Provide a subnet ID with your command.
+
+## vpn_gateway_missing_name
+**Message**: Could not find a name for the given VPN gateway template.
+
+The **name** is a required field. Provide a name with your command.
+
+## vpn_gateway_not_created
+**Message**: The VPN gateway `<vpn_gateway_id>` could not be created.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## vpn_gateway_not_deleted
+**Message**: The VPN gateway `<vpn_gateway_id>` could not be deleted.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
 ## vpn_gateway_not_found
 **Message**: The VPN gateway `<vpn_gateway_id>` could not be found.
 
 Check whether the VPN gateway ID is correct. Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## vpn_gateway_not_updated
+**Message**: The VPN gateway `<vpn_gateway_id>` could not be updated.
+
+Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## vpn_gateway_subnet_not_found
 **Message**: Could not find the subnet `<subnet_id>` for the given VPN gateway.

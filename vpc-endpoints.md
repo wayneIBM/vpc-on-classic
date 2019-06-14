@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-05-17"
+lastupdated: "2019-06-12"
 
 keywords: endpoint, service, DNS, resolver, mirror, object, storage, bandwidth, charges
 
@@ -27,7 +27,7 @@ subcollection: vpc-on-classic
 
 When you're ready to run workloads, you can reach two types of endpoints: Infrastructure as a Service (IaaS) endpoints and Cloud Service Endpoints (CSE). The IaaS endpoints are pre-provisioned and ready to go; however, the CSEs must be provisioned separately before they can be used.
 
-Endpoints for these services use _routable addresses_, that is, addresses outside of those specified in RFC 1918, and they might look as if they are communicating through the public Internet, but traffic to and from these endpoints does not leave the cloud. Therefore, this traffic avoids the bandwidth charges associated with public Internet traffic that exits the cloud.
+Endpoints for these services use _routable addresses_; that is, addresses outside of those specified in RFC 1918, and these addresses might look as if they are communicating through the public Internet, but traffic to and from these endpoints does not leave the cloud. Therefore, this traffic avoids the bandwidth charges associated with traffic that exits the cloud and goes onto the public Internet.
 
 ## Infrastructure as a Service (IaaS) endpoints
 {: #infrastructure-as-a-service-iaas-endpoints}

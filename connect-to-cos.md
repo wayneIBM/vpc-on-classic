@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018-2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-11"
 
 keywords: resource, storage, connection, COS, object, endpoints, cross-region, regional, datacenter
 
@@ -47,7 +47,7 @@ There is no charge for traffic from your VPCs to all COS endpoints listed on thi
 {: note}
 
 * A VPC client also has access to the COS bucket over the public endpoint.
-* A VPC client does not have access to the COS Configuration API, which allows for bucket configuration and for viewing bucket metadata over the direct endpoint, but it does have access over the public endpoint.
+* A VPC client only has access to the [COS Configuration API](https://{DomainName}/apidocs/cos/cos-configuration) over the public endpoint, not the direct endpoint. The COS Configuration API can be used to configure some COS features on buckets, as well as to view bucket metadata.
 * A VPC client does not have access to a COS bucket when the firewall is enabled.
 
 ## How to connect to IBM Cloud Object Storage (COS) from a VPC
