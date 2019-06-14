@@ -7,7 +7,6 @@ Virtual Private Cloud on Classic
     {: .navgroup id="learn"}
     getting-started.md
     about-vpc-is.md
-    vpc-responsibilities.md
     vpc-quotas.md
 
     {: .topicgroup}
