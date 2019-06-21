@@ -230,10 +230,15 @@ openssl pkeyutl -in ~/examplepwd64 -decrypt -inkey private.pem -pkeyopt rsa_padd
 See [Connecting to your Windows instance](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-connecting-to-your-windows-instance) for more information on how to connect to your instance.
 
 
-
 ## Monitoring your instance
 
-For an activity log that shows when the instance was started, stopped, or rebooted, click **Activity** in the navigation pane.
+You can monitor the CPU, volume, memory, and network usage of your instance over time.
+
+To monitor your instance:
+
+1. Click **Virtual server instance** in the navigation pane.
+1. Click the name of your instance.
+1. Click **Monitoring** in the navigation pane.
 
 ## Creating a load balancer
 You can create a load balancer to distribute inbound traffic across multiple instances.

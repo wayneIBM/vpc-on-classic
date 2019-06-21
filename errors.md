@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-06-11"
+lastupdated: "2019-06-19"
 
 keywords: error, message, API, limitations, rias, support
 
@@ -460,7 +460,7 @@ Please provide an existing listener ID.
 ## listener_over_quota
 **Message**: Listener cannot be created. Quota of listeners for the load balancer resource has reached the maximum limit.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/infrastructure/vpc/?topic=vpc-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc/?topic=vpc-quotas){: new_window}.
 
 ## listener_pool_protocols_conflict
 **Message**: Listener protocol(`<listener_protocol>`) and pool protocol(`<pool_protocol>`) are in conflict.
@@ -740,6 +740,21 @@ To see which subnet is using the public gateway, use the `GET /v1/subnets?versio
 **Message**: Too many requests within a short time.
 
 This error message is returned if too many requests are received within a specified time interval. Wait a while and try again.
+
+## reserved_ip_in_use
+**Message**: The reserved IP is in use and cannot be deleted.
+
+To see a list of reserved IP addresses, use the `GET /v1/subnets/{subnet_id}/reserved_ips` API, or the CLI command `ibmcloud is subnet-reserved-ip` and make sure that the specified reserved IP address is not in use.
+
+## reserved_ip_owned_by_provider
+**Message**: The specified reserved IP is owned by the provider.
+
+To see a list of reserved IPs, use the `GET /v1/subnets/{subnet_id}/reserved_ips` API, or the CLI command `ibmcloud is subnet-reserved-ip` and make sure that the specified reserved ip is not own by a provider.
+
+## address_is_already_reserved
+**Message**: The specified address is already reserved on the subnet.
+
+To see a list of reserved IPs, use the `GET /v1/subnets/{subnet_id}/reserved_ips` API, or the CLI command `ibmcloud is subnet-reserved-ip` and make sure that the specified address is not already reserved.
 
 ## security_group_active_transactions
 **Message**: The interface cannot be attached or detached until the instance appears in Active state.
@@ -1125,6 +1140,11 @@ Make sure your request conforms to the [API documentation](https://{DomainName}/
 You might have specified a name that is already in use. Please try a different value.
 
 Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## version_not_supported
+**Message** Version specified is not supported. The version must be 2019-05-31 or later.
+
+The version query parameter must be 2019-05-31 or later.
 
 ## volume_attachment_delete_invalid_request
 **Message**: The volume attachment cannot be deleted.

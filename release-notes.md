@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-13"
+lastupdated: "2019-06-20"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -24,6 +24,13 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.cloud}} Virtual Private Cloud.
 {:shortdesc}
+
+## 21 June 2019
+{: #june-21-2019}
+
+- **London and Sydney** regions are [now available](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region).
+- **Rule Priority** has been added to the UI in the ACL provisioning page. You can see and set the priority for an ACL rule when you create the rule.
+- **The UI has been updated** so that 3 IOPS/GB tier is followed by the tier name, in this case, **general-purpose**.
 
 ## 14 June 2019
 {: #june-14-2019}

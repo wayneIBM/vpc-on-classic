@@ -266,6 +266,36 @@ Update      | X    | X      | X     | o      | o
 Delete      | X    | X      | X     | o      | o
 
 
+## Resource authorization for Security Groups for VPC
+{: #resource-authorizations-of-security-groups-for-vpc}
+
+Resource authorization for **Security Groups for VPC** usage is set up separately from other resource authorization in your VPC, but in a similar manner.
+
+### Security Group for VPC coverage of roles and authorized actions on resources
+Set the resource authorization for **Security Groups for VPC** separately from other resource authorizations in your VPC. 
+
+* As an administrator you can define roles and take any available actions on Security Groups.
+* As an editor you can modify the state and create or delete subresources.
+* As an operator you can take actions that don't change the state of resources, including attaching or detaching network interfaces to a security group.
+* As a viewer you can take actions that don't change the state of the resources.
+
+### Security Group coverage summary table
+{: #security-group-coverage-summary-table}
+
+The action role mapping in Security Groups for VPC can be visualized by the following table (X=denied, o=OK):
+
+role:       | none | Viewer | Operator | Editor | Administrator
+-----------:|------|--------|-------|--------|-------
+Create      | X    | X      | X     | o      | o
+List        | X    | o      | o     | o      | o
+Read        | X    | o      | o     | o      | o
+Update      | X    | X      | X     | o      | o
+Delete      | X    | X      | X     | o      | o
+
+When you create an security group, you must also have Viewer access for the VPC. In order to attach a network interface to a security group, you must have Operator access for the instance. 
+{: tip} 
+
+
 ## Resource authorization for Virtual Server for VPC
 {: #planning-virtual-servers-for-vpc-permissions}
 
