@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-06-13"
+lastupdated: "2019-07-01"
 
 keywords: activity tracker, vpc, events, logdna 
 
@@ -157,7 +157,9 @@ The following table lists the actions related to VPNs and the generation of even
 |--------------|---------------------------------------|
 | us-south   | Dallas  |
 | jp-tok   | Tokyo  |
-| eu-de  | Frankfurt   |
+| eu-de  | Frankfurt  |
+| eu-gb  | Frankfurt |
+| au-syd  | Dallas |
 
 ## Where to look for events
 {: #at-events-ui}

@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-06-12"
 
-keywords: endpoint, service, DNS, resolver, mirror, object, storage, bandwidth, charges
+keywords: vpc, CSE, endpoint, service, DNS, resolver, mirror, object, storage, bandwidth, charges
 
 subcollection: vpc-on-classic
 
@@ -49,7 +49,7 @@ DNS resolvers use IP address, rather than names. For shared cloud service endpoi
 ## Ubuntu APT Mirrors
 {: #ubuntu-apt-mirrors}
 
-APT mirrors for updating Ubuntu images are available from `mirrors.adn.networklayer.com`, which should resolve to `161.26.0.6`. 
+APT mirrors for updating Ubuntu images are available from `mirrors.adn.networklayer.com`, which should resolve to `161.26.0.6`.
 
 ## IBM Cloud Object Storage
 {: #ibm-cloud-object-storage}

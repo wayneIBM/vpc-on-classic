@@ -6,7 +6,7 @@ copyright:
   years: 2017, 2018, 2019
 lastupdated: "2019-05-28"
 
-keywords: help, support, ticket, question, forum, Stack Overflow, development
+keywords: vpc, vpc help, help, support, ticket, question, forum, Stack Overflow, development
 
 subcollection: vpc-on-classic
 

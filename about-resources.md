@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-06-04"
 
-keywords: resource, policies, authorization, resource type, resource groups, roles, load balancer, VPN, operator, editor, viewer, admin
+keywords: vpc, vpc resources, resource, policies, authorization, resource type, resource groups, roles, load balancer, VPN, operator, editor, viewer, admin
 
 subcollection: vpc-on-classic
 
@@ -272,7 +272,7 @@ Delete      | X    | X      | X     | o      | o
 Resource authorization for **Security Groups for VPC** usage is set up separately from other resource authorization in your VPC, but in a similar manner.
 
 ### Security Group for VPC coverage of roles and authorized actions on resources
-Set the resource authorization for **Security Groups for VPC** separately from other resource authorizations in your VPC. 
+Set the resource authorization for **Security Groups for VPC** separately from other resource authorizations in your VPC.
 
 * As an administrator you can define roles and take any available actions on Security Groups.
 * As an editor you can modify the state and create or delete subresources.
@@ -292,14 +292,14 @@ Read        | X    | o      | o     | o      | o
 Update      | X    | X      | X     | o      | o
 Delete      | X    | X      | X     | o      | o
 
-When you create an security group, you must also have Viewer access for the VPC. In order to attach a network interface to a security group, you must have Operator access for the instance. 
-{: tip} 
+When you create an security group, you must also have Viewer access for the VPC. In order to attach a network interface to a security group, you must have Operator access for the instance.
+{: tip}
 
 
 ## Resource authorization for Virtual Server for VPC
 {: #planning-virtual-servers-for-vpc-permissions}
 
-Set the resource authorization for **Virtual Server for VPC** separately from other resource authorizations in your VPC. 
+Set the resource authorization for **Virtual Server for VPC** separately from other resource authorizations in your VPC.
 
 Virtual servers for VPC usage is billed separately.
 {: note}
@@ -323,4 +323,4 @@ Update      | X    | X      | X     | o      | o
 Delete      | X    | X      | X     | o      | o
 
 When you create an instance, you must also have Operator access for the VPC and Security Group resources, if those resources are specified. Subnet and Floating IP resources inherit permissions from the associated VPC.  
-{: tip} 
+{: tip}

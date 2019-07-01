@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-06-04"
 
-keywords: resource, policies, authorization, resource type, resource groups, roles, API, CLI, editor, viewer, administrator, operator
+keywords: vpc, resource, policies, authorization, resource type, resource groups, roles, API, CLI, editor, viewer, administrator, operator
 
 subcollection: vpc-on-classic
 
@@ -45,7 +45,7 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 | Floating IP (unassociated) | Create, Update, Delete | Any Account user and View authorization on all Account Management Services, if the resource is created in the default resource group. Click [here](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources#setting-up-viewer-access) for instruction on setting up viewer access. **Note: Associating and disassociating are part of the Floating IP Update operation**|
 | Floating IP (unassociated) | View, List | Account user |
 | Floating IP (associated) | Update | Update authorization for the associated subnet's VPC (you cannot Create or Delete a floating IP after it is associated) |
-| Floating IP (associated) | View, List | View authorization for the floating IP’s associated subnet's VPC | 
+| Floating IP (associated) | View, List | View authorization for the floating IP’s associated subnet's VPC |
 |——————|———————|————————|
 | Network ACL (unattached), ACL rules | Create, Update, Delete | Any Account user |
 | Network ACL (unattached), ACL rules | View, List | Any Account user |
@@ -101,4 +101,3 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 | Volumes | Create, Update, Delete | Update authorization for the Volume
 | Volumes | View, List  | View authorization for the volume |
 | Volume profiles | View, List  | Any Account user |
-

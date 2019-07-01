@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2018, 2019
 lastupdated: "2019-05-29"
 
-keywords: create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
+keywords: vpc, vpc cli, create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
 
 subcollection: vpc-on-classic
 

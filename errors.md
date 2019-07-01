@@ -3,9 +3,9 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-06-19"
+lastupdated: "2019-06-25"
 
-keywords: error, message, API, limitations, rias, support
+keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
 subcollection: vpc-on-classic
 
@@ -271,6 +271,15 @@ An unexpected error occurred. This problem may be temporary. Try the request aga
 **Message**: The generation query parameter must be set to 1.
 
 For versions on and after 5/31/2019, the `generation` query parameter must be set to 1 to allow VPC on Classic API requests.
+
+How to set the generation parameter
+
+In the CLI:
+`ibmcloud is target --gen 1`
+
+In the API:
+`curl -X GET "$rias_endpoint/v1/regions?version=$version&generation=1"
+-H "Authorization: $iam_token"`
 
 ## invalid_id_format
 **Message**: Bad ID format. Ensure format is correct.
@@ -749,7 +758,7 @@ To see a list of reserved IP addresses, use the `GET /v1/subnets/{subnet_id}/res
 ## reserved_ip_owned_by_provider
 **Message**: The specified reserved IP is owned by the provider.
 
-To see a list of reserved IPs, use the `GET /v1/subnets/{subnet_id}/reserved_ips` API, or the CLI command `ibmcloud is subnet-reserved-ip` and make sure that the specified reserved ip is not own by a provider.
+To see a list of reserved IPs, use the `GET /v1/subnets/{subnet_id}/reserved_ips` API, or the CLI command `ibmcloud is subnet-reserved-ip` and make sure that the specified reserved IP is not owned by a provider.
 
 ## address_is_already_reserved
 **Message**: The specified address is already reserved on the subnet.

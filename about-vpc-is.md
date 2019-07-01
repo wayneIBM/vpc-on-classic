@@ -2,7 +2,7 @@
 copyright:
   years: 2017, 2019
 lastupdated: "2019-05-29"
-keywords: features, benefits, isolation, provisioning, security, cloud-native, workloads, BYOIP, vpc
+keywords: vpc, features, benefits, isolation, provisioning, security, cloud-native, workloads, BYOIP
 
 subcollection: vpc-on-classic
 

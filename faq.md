@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-05-31"
 
-keywords: FAQ, faqs, limit, resource, vNIC, VSI, PGW, console, VRF, bandwidth, COS, egress, load balancer
+keywords: vpc, FAQ, faqs, limit, resource, vNIC, VSI, PGW, console, VRF, bandwidth, COS, egress, load balancer
 
 subcollection: vpc-on-classic
 

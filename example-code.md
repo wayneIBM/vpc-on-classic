@@ -5,7 +5,7 @@ copyright:
 lastupdated: "2019-05-30"
 
 
-keywords: create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
+keywords: vpc, vpc examples, create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
 
 subcollection: vpc-on-classic
 

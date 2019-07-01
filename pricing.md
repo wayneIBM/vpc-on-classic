@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-05-29"
 
-keywords: pricing, billing, data, instance, VSI, block, storage, paygo, transfer, floating, server, VPC, allowance, gateway, egress, minimal charges, ARP, traffic
+keywords: vpc, pricing, billing, data, instance, VSI, block, storage, paygo, transfer, floating, server, VPC, allowance, gateway, egress, minimal charges, ARP, traffic
 
 subcollection: vpc-on-classic
 

@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2018, 2019
 lastupdated: "2019-05-21"
 
-keywords: permissions, infrastructure, VPC, SSH, CLI, API, console, classic
+keywords: vpc, permissions, infrastructure, VPC, SSH, CLI, API, console, classic
 
 subcollection: vpc-on-classic
 

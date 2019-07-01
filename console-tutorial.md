@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-05-17"
 
-keywords: create, configure, permissions, ACL, virtual, server, instance, subnet, block, storage, volume, security, group, images, Windows, Linux, example, monitoring, VPN, load balancer, IKE, IPsec
+keywords: vpc, vpc ui, create, configure, permissions, ACL, virtual, server, instance, subnet, block, storage, volume, security, group, images, Windows, Linux, example, monitoring, VPN, load balancer, IKE, IPsec
 
 subcollection: vpc-on-classic
 
@@ -114,7 +114,6 @@ To create a virtual server instance in the newly created subnet:
 1. Enter a name for the instance, such as `my-instance`.
 1. Select the VPC that you created.
 1. In the **Location** field, select the zone in which to create the instance.
-1. Select an image (that is, operating system and version) such as Ubuntu Linux 16.04.
 1. To set the instance size, select one of the popular profiles or click **All profiles** to choose a different core and RAM combination that's most appropriate for your workload.
 1. Select an existing SSH key or add a new SSH key that will be used to access the virtual server instance. To add an SSH key, click **New key** and name the key. After you enter your previously generated public key value, click **Add SSH key**.
 
@@ -123,6 +122,7 @@ Keys only can be added initially as part of creating the VSI. No tooling exists 
 
 1. _Optional:_ Enter user data to run common configuration tasks when your instance starts. For example, you can specify cloud-init directives or shell scripts for Linux images. For more information, see [User Data](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-user-data).
 1. Note the boot volume. In the current release, 100 GB is allotted for the boot volume. *Auto Delete* is enabled for the volume; it will be deleted automatically if the instance is deleted.
+1. Select an image (that is, operating system and version) such as Ubuntu Linux 16.04.
 1. In the **Attached block storage volume** area, you can click **New block storage volume** to attach a block storage volume to your instance. In this tutorial, we'll create a block storage volume and attach it to the instance later.
 1. In the **Network interfaces** area, you can edit the network interface and change its name. If you have more than one subnet in the selected zone and VPC, you can attach a different subnet to the interface. If you want the instance to exist in multiple subnets, you can create more interfaces.
 

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-12"
+lastupdated: "2019-06-27"
 
 keywords: vpc, classic, access, API, CLI, limitations
 
@@ -37,7 +37,7 @@ In hosts with a public interface, you must add a route back to your Classic-enab
 1. Your classic account must be linked to your IBM Cloud account. See [Linking IBMid accounts](/docs/account?topic=account-unifyingaccounts) for instructions on how to do this.
 1. Your classic account must be enabled for VRF.
     * If you already have Direct Link on your account, you are ready.
-    * If your account is not VRF-enabled, open a ticket to request "VRF Migration" for your account. See [How you can initiate the conversion](/docs/infrastructure/direct-link?topic=direct-link-how-you-can-initiate-the-conversion#how-you-can-initiate-the-conversion) in our Direct Link documentation to learn more about the conversion process.
+    * If your account is not VRF-enabled, open a ticket to request "VRF Migration" for your account. See [Converting to VRF](/docs/vpc-on-classic?topic=vpc-on-classic-what-happens-during-the-account-conversion-process#how-you-can-initiate-the-conversion) to learn more about the conversion process.
 
 Firewalls, gateways, Network ACLs, or security groups can filter out some or all of the network traffic between Classic and VPC resources.
 {: important}
@@ -124,5 +124,5 @@ Zone         | Address Prefix
 * Only subnets allocated with classic APIs are connected to the classic side of your private implicit router. The routing function of the implicit router does not work between subnets on classic VLANs.
 * Only one VPC per region, per account can be enabled for Classic Access.
 
-Depending on the OS you've installed on your classic VSIs or bare metal servers, your configuration procedure will vary. For more information, see [About public virtual servers](https://cloud.ibm.com/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
+Depending on the OS you've installed on your classic VSIs or bare metal servers, your configuration procedure will vary. For more information, see [About public virtual servers](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 {: note}

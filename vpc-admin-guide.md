@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-05-17"
 
-keywords: resource, access, role, role-based, authorization, policy, access group, resource group, permission, assign, administrator, operator, editor, viewer, user, control
+keywords: vpc, resource, access, role, role-based, authorization, policy, access group, resource group, permission, assign, administrator, operator, editor, viewer, user, control
 
 subcollection: vpc-on-classic
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 lastupdated: "2019-06-07"
-keywords: quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
+keywords: vpc, quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
 
 subcollection: vpc-on-classic
 
@@ -114,4 +114,3 @@ Here are the current load balancer resource quotas:
 | Secondary volumes per instance, when creating an instance |  4 secondary volumes may be requested |
 | Secondary volumes per instance, for existing instances with fewer than 4 cores | 4 secondary volumes |
 | Secondary volumes per instance, for existing instances with 4 cores or more | up to 12 secondary volumes |
-

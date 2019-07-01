@@ -3,7 +3,7 @@ copyright:
   years: 2018-2019
 lastupdated: "2019-06-11"
 
-keywords: resource, storage, connection, COS, object, endpoints, cross-region, regional, datacenter
+keywords: resource, storage, connection, COS, object, endpoints, cross-region, regional, datacenter, vpc
 
 subcollection: vpc-on-classic
 
@@ -33,15 +33,15 @@ This document shows you how to connect to {{site.data.keyword.cloud}} Object Sto
 
 Information stored with {{site.data.keyword.cloud_notm}} Object Storage is encrypted and dispersed across multiple geographic locations. It is accessible through an implementation of the S3 API. This service makes use of the distributed storage technologies provided by the IBM Cloud Object Storage System.
 
-IBM Cloud Object Storage is available with three types of configurations for resiliency: **Cross Region**, **Regional**, and **Single Datacenter**. 
-* **Cross Region** service provides higher durability and availability than using a single region, at the cost of slightly higher latency. This service is available today in the U.S., E.U., and A.P. areas. 
-* **Regional** service reverses the tradeoffs. It distributes objects across multiple availability zones within a single region. It is available in the U.S., E.U. and A.P. regions. If a given region or zone is unavailable, the object store continues to function without impediment. 
+IBM Cloud Object Storage is available with three types of configurations for resiliency: **Cross Region**, **Regional**, and **Single Datacenter**.
+* **Cross Region** service provides higher durability and availability than using a single region, at the cost of slightly higher latency. This service is available today in the U.S., E.U., and A.P. areas.
+* **Regional** service reverses the tradeoffs. It distributes objects across multiple availability zones within a single region. It is available in the U.S., E.U. and A.P. regions. If a given region or zone is unavailable, the object store continues to function without impediment.
 **Single Datacenter** service distributes objects across multiple machines within the same physical location. Check this document regularly for available regions.
 
 ### COS direct endpoints for use with VPC
 {: #cos-direct-endpoints-for-use-with-vpc}
 
-To send a REST API request, you must set a target endpoint or a URL, and each COS storage location must have its own set of URLs. Direct endpoints provide your servers with high-speed, direct connections to {{site.data.keyword.cloud_notm}} services, which incur no added bandwidth costs. With the COS direct endpoint, a VPC can connect to a COS bucket located anywhere in the world. 
+To send a REST API request, you must set a target endpoint or a URL, and each COS storage location must have its own set of URLs. Direct endpoints provide your servers with high-speed, direct connections to {{site.data.keyword.cloud_notm}} services, which incur no added bandwidth costs. With the COS direct endpoint, a VPC can connect to a COS bucket located anywhere in the world.
 
 There is no charge for traffic from your VPCs to all COS endpoints listed on this page.
 {: note}

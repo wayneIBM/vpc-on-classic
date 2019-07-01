@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-05-17"
 
-keywords: glossary, terminology, definition, access, floating, geography, image, region, zone, instance, VSI, LBaaS, VPN, VPC, NAT, profile, resource, security group, shares, storage, VNPaaS, volume, subnet, SSH, key, gateway, ACL
+keywords: vpc, glossary, terminology, definition, access, floating, geography, image, region, zone, instance, VSI, LBaaS, VPN, VPC, NAT, profile, resource, security group, shares, storage, VNPaaS, volume, subnet, SSH, key, gateway, ACL
 
 subcollection: vpc-on-classic
 
