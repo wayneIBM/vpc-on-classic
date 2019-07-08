@@ -47,13 +47,13 @@ A floating IP is charged at the rate of $1 (U.S.) per month, starting when it is
 ## Basic PayGo pricing for internet data transfer
 {: #basic-paygo-pricing-for-internet-transfer}
 
-| Data transfer | Amount of data | PayGo pricing |
-|-----------|-----------|------------------|
-| Egress to Internet |  0 to 5 GB | Free |
-|  | 6 to 10,000 GB | $0.087 per GB |
-|  | 10,001 to 50,000 GB | $0.083 per GB |
-|  | 50,001 to 150,000 GB | $0.07 per GB |
-|  | 150,001 GB and over | $0.05 per GB |
+| Data transfer | Amount of data | PayGo pricing (usa)| PayGo pricing (eu-de)|PayGo pricing (eu-gb)|PayGo pricing (jp-tok)|PayGo pricing (au-syd)|
+|-----------|-----------|------------------|------------------|------------------|------------------|------------------|
+| Egress to Internet |  0 to 5 GB | Free |Free |Free |Free |Free |
+|  | 6 to 10,000 GB | $0.087 per GB |$0.096 per GB |$0.093 per GB |$0.098 per GB |$0.104 per GB |
+|  | 10,001 to 50,000 GB | $0.083 per GB |$0.091 per GB |$0.089 per GB |$0.094 per GB |$0.100 per GB |
+|  | 50,001 to 150,000 GB | $0.07 per GB |$0.077 per GB |$0.075 per GB |$0.079 per GB |$0.084 per GB |
+|  | 150,001 GB and over | $0.05 per GB |$0.055 per GB |$0.054 per GB |$0.057 per GB |$0.060 per GB |
 
 
 When you create a new VPC, it may take up to an hour for initial billing charges to appear in the Console UI or API.
