@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-05-21"
+lastupdated: "2019-07-01"
 
 keywords: storage, capacity, billing, volume
 
@@ -22,16 +22,14 @@ subcollection: vpc-on-classic
 # Pricing for Block Storage for VPC
 {: #block-storage-pricing}
 
-Pricing for {{site.data.keyword.block_storage_is_short}} is based on the capacity or the IOPS that was provisioned, depending on which storage profile you chose.
+Pricing for {{site.data.keyword.block_storage_is_short}} is based on the capacity or the IOPS that was provisioned, depending on which storage profile you chose.  The published monthly rate is [calculated on an hourly basis](#how-are-charges-calculated).
 
-| IOPS Tier  | Published Monthly rate^1 |
+| IOPS Tier  | Published Monthly rate |
 |------------|--------------|
 |  3 IOPS/GB |  0.13 USD/GB |
 |  5 IOPS/GB |  0.25 USD/GB |
 | 10 IOPS/GB |  0.58 USD/GB |
 | Custom IOPS| 0.10 USD/GB + 0.07 USD/IOPS |
-
-^1 Published price per month, [calculated hourly](#how-are-charges-calculated).
 
 ## How are charges calculated?
 {: #how-are-charges-calculated}

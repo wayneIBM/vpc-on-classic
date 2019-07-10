@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-30"
+lastupdated: "2019-07-08"
 
 
 keywords: vpc, vpc examples, create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
@@ -75,11 +75,7 @@ You must repeat the preceding step to refresh your IAM token every hour, because
 
 ## Step 3: Store the API endpoint and version parameter as a variable
 
-The API endpoints are per region and follow the convention `https://<region>.iaas.cloud.ibm.com`. Endpoints by region are:
-
-* US-SOUTH: `https://us-south.iaas.cloud.ibm.com`
-* EU-DE: `https://eu-de.iaas.cloud.ibm.com`
-* JP-TOK: `https://jp-tok.iaas.cloud.ibm.com`
+The API endpoints are per region and follow the convention `https://<region>.iaas.cloud.ibm.com`. To see the list of all available endpoints, refer to [Creating a VPC in a different region](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region).
 
 Store the API endpoint in a variable so you can use it in API requests without having to type the full URL. For example, to store the us-south endpoint in a variable, run this command:
 
@@ -508,7 +504,7 @@ curl -X POST "$rias_endpoint/v1/volumes?version=$version&generation=1" \
 ```
 {: pre}
 
-For the rest of the calls, you'll need to know the ID of the newly created volume. Save the ID of the volume as a variable, for example: `vol=640774d7-2adc-4609-add9-6dfd96167a8f`.
+For the rest of the calls, you'll need to know the ID of the newly created volume. Save the ID of the volume as a variable, for example: 
 
 ```bash
 volume="<YOUR_VOLUME_ID>"
@@ -540,33 +536,6 @@ curl -X POST "$rias_endpoint/v1/instances/$server/volume_attachments?version=$ve
       }'
 ```
 {: pre}
-
-After creating the volume attachment, get the volume attachment ID.
-
-```bash
-curl -X GET "$rias_endpoint/v1/instances/$server/volume_attachments?version=$version&generation=1" \
-     -H "Authorization: $iam_token"
-```
-{: pre}
-
-Save the attachment ID as a variable.
-
-```bash
-attachment="<YOUR_VOLUME_ATTACHMENT_ID>"
-```
-{: pre}
-
-Specify the volume attachment ID to attach the new volume to a virtual server instance.
-
-```bash
-curl -X PATCH "$rias_endpoint/v1/instances/$server/volume_attachments/$attachment?version=$version&generation=1" \
-    -H "Authorization: $iam_token" \
-    -d '{
-	  "name": "helloworld-vsi-volattachment"
-    }'
-```
-{: pre}
-
 
 ## Step 22 (Optional): Delete the Resources
 

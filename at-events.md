@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-07-01"
+lastupdated: "2019-07-10"
 
 keywords: activity tracker, vpc, events, logdna 
 
@@ -92,6 +92,17 @@ The following table lists the actions related to compute resources and the gener
 | key  | is.key.key.delete   | key was deleted.  |
 | key  | is.key.key.update   | key was updated.  |
 
+## List of events: Image resources
+{: #events-images}
+
+The following table lists the actions related to image resources and the generation of events.
+
+| Resource  | Action  | Description  |
+|:----------------|:-----------------------|:-----------------------|
+| image  | is.image.image.create   | Image was created |
+| image  | is.image.image.delete   | Image was deleted |
+| image  | is.image.image.update   | Image was updated  |
+
 ## List of events: Storage resources
 {: #events-storage}
 
@@ -99,9 +110,9 @@ The following table lists the actions related to storage resources and the gener
 
 | Resource  | Action  | Description  |
 |:----------------|:-----------------------|:-----------------------|
-| volume  | is.volume.volume.create  |  Volume was created.  |
-| volume  | is.volume.volume.update  | Volume was updated.  |
-| volume  | is.volume.volume.delete  | Volume was deleted.  |
+| volume  | is.volume.volume.create  |  Volume was created  |
+| volume  | is.volume.volume.update  | Volume was updated |
+| volume  | is.volume.volume.delete  | Volume was deleted  |
 
 
 ## List of events: Load balancers

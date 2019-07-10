@@ -39,6 +39,13 @@ To see if a subnet is using the network ACL, use the `GET /v1/subnets?version=20
 
 To see if a VPC is using the network ACL, use the `GET /v1/vpcs?version=2019-05-31&generation=1` API.  Equivalent CLI command: `ibmcloud is vpcs`. It is not possible to update or delete the default network ACL used by a VPC. The default network ACL is deleted automatically when the VPC gets deleted.
 
+## acl_rule_does_not_allow
+**Message**: An ACL rule on the subnet does not allow this action.
+
+A network ACL rule would block the necessary network connections that are needed to perform the desired action.
+
+If you are trying to create an instance, please ensure that your subnet's ACL rules allow connectivity to all addresses in `161.26.0.0/16` on source/destination ports `53`, `1688`, `80`, `443`, and `8443`.
+
 ## address_prefix_conflict
 **Message**: The address prefix with this CIDR is in use.
 
@@ -553,7 +560,7 @@ Provide the ID of an existing load balancer.
 
 Delete an existing load balancer, or contact support to increase the load balancer quota on your account.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/infrastructure/vpc/?topic=vpc-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window}.
 
 ## load_balancer_subnet_not_found
 **Message**: The subnet with ID <subnet_id>  cannot be found.
@@ -617,7 +624,7 @@ Provide an existing member ID.
 ## member_over_quota
 **Message**: Member cannot be created. Quota of member instances under the pool has reached maximum limit.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/infrastructure/vpc/?topic=vpc-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window}.
 
 ## missing_generation_parameter
 **Message**: The generation query parameter is required.
@@ -650,7 +657,7 @@ If you are using the CLI, run the command `ibmcloud is subnets` to list all the 
 ## not_authorized
 **Message**: The request is not authorized.
 
-You may see this error is if your IAM token is missing or expired. For instructions on how to generate a token, refer to [Creating a VPC using the REST APIs](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis). If the token is not expired, make sure the account you are using is authorized to use this function and you have the [correct permissions](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
+You may see this error is if your IAM token is missing or expired. For instructions on how to generate a token, refer to [Creating a VPC using the REST APIs](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-rest-apis). If the token is not expired, make sure the account you are using is authorized to use this function and you have the [correct permissions](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
 
 If you have correct authorization but you are still getting this error, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -673,10 +680,15 @@ This error occurs if a user is trying to create a subnet with a CIDR that does n
 
 Run `GET /vpcs/{vpc_id}/address_prefixes` to get the list of address prefixes for the VPC. If using the CLI, you can run `ibmcloud is vpc-address-prefixes` to list all address prefixes for your VPC. Look at the `cidr` and `zone` values of the response and make sure the subnet's `cidr` is a subset of the `cidr` of the address prefix for the zone you are trying to create it.
 
+## no_default_address_prefix 
+**Message**: The zone must have a default address prefix to create a subnet using total_address_count.
+
+This error occurs if a user is trying to create a subnet by address count and no default address prefix is available in the given zone.
+
 ## over_quota
 **Message**: The request would exceed the quota for a resource type.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/infrastructure/vpc/?topic=vpc-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window}.
 
 ## password_not_ready
 **Message**: None
@@ -736,7 +748,7 @@ Provide an existing pool ID.
 ## pool_over_quota
 **Message**: Pool cannot be created. Quota of pools for the load balancer resource has reached maximum limit.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/infrastructure/vpc/?topic=vpc-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window}.
 
 ## public_gateway_in_use
 **Message**: Cannot delete a public gateway when it is in use.

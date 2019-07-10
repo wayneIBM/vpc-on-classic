@@ -1,0 +1,84 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="vpc-on-classic" category="vpc,network,storage" audience="service" arm="4135753" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
+Virtual Private Cloud on Classic
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about-vpc-is.md
+    vpc-quotas.md
+
+    {: .topicgroup}
+    가격
+        pricing.md
+        vpc-vsi-pricing.md
+        block-storage-is-pricing.md
+
+    {: .topicgroup}
+    튜토리얼
+        /tutorials/solution-tutorials-vpc-public-app-private-backend
+        /tutorials/solution-tutorials-vpc-multi-region
+        /tutorials/solution-tutorials-vpc-site2site-vpn
+        /tutorials/solution-tutorials-vpc-secure-management-bastion-server
+
+    {: .topicgroup}
+    관련 링크
+        [VPC용 네트워킹](/vpc-on-classic-network/vpc-on-classic-network-getting-started)
+        [VPC용 Virtual Server](/vpc-on-classic-vsi/vpc-on-classic-vsi-getting-started)
+        [VPC용 스토리지](/vpc-on-classic-block-storage/vpc-on-classic-block-storage-block-storage-getting-started#block-storage-getting-started)
+        [VPC용 Load Balancer](/vpc-on-classic-network/vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)
+        [VPC용 VPN](/vpc-on-classic-network/vpc-on-classic-network---using-vpn-with-your-vpc)
+        [Architecture Center VPC 솔루션](https://www.ibm.com/cloud/garage/architectures/public-cloud/allvpcsolutions)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    console-tutorial.md
+    hello-world-vpc.md
+    example-code.md
+    classic-access.md
+    vpc-regions.md
+
+    {: .topicgroup}
+    관리 태스크
+        about-resources.md
+        vpc-user-permissions.md
+        vpc-admin-guide.md
+        api-auth-correlation.md
+
+    {: .topicgroup}
+    리소스 작성 및 관리
+        create-manage-vsi.md
+        create-manage-network.md
+        create-manage-storage.md
+
+    {: .topicgroup}
+    VPC 삭제
+        delete-vpc.md
+        delete-vpc-ui.md
+        delete-vpc-cli.md
+        delete-vpc-api.md
+
+    connect-to-cos.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    vpc-glossary.md
+    [VPC에 대한 API 참조](https://cloud.ibm.com/apidocs/vpc-on-classic)
+    quick-guide-to-resources.md
+    /vpc-infrastructure-cli-plugin/vpc-infrastructure-cli-plugin-vpc-reference
+    vpc-endpoints.md
+    at-events.md
+    [Go 및 Python 예제 코드](https://github.com/IBM-Cloud/vpc-api-samples)
+    [Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html)
+    [내보내기 프로그램 도구](https://github.com/l2fprod/vpc-diagram-exporter)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    known-limitations.md
+    troubleshooting.md
+    release-notes.md
+    errors.md
+    getting-help.md
+    {: .navgroup-end}
