@@ -1,0 +1,84 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="vpc-on-classic" category="vpc,network,storage" audience="service" arm="4135753" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
+Virtual Private Cloud on Classic
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about-vpc-is.md
+    vpc-quotas.md
+
+    {: .topicgroup}
+    Preisstruktur
+        pricing.md
+        vpc-vsi-pricing.md
+        block-storage-is-pricing.md
+
+    {: .topicgroup}
+    Lernprogramme
+        /tutorials/solution-tutorials-vpc-public-app-private-backend
+        /tutorials/solution-tutorials-vpc-multi-region
+        /tutorials/solution-tutorials-vpc-site2site-vpn
+        /tutorials/solution-tutorials-vpc-secure-management-bastion-server
+
+    {: .topicgroup}
+    Zugehörige Links
+        [Netzbetrieb für VPC](/vpc-on-classic-network/vpc-on-classic-network-getting-started)
+        [Virtuelle Server für VPC](/vpc-on-classic-vsi/vpc-on-classic-vsi-getting-started)
+        [Speicher für VPC](/vpc-on-classic-block-storage/vpc-on-classic-block-storage-block-storage-getting-started#block-storage-getting-started)
+        [Lastausgleichsfunktion für VPC](/vpc-on-classic-network/vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)
+        [VPN für VPC](/vpc-on-classic-network/vpc-on-classic-network---using-vpn-with-your-vpc)
+        [VPC-Lösungen in Architecture Center](https://www.ibm.com/cloud/garage/architectures/public-cloud/allvpcsolutions)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    console-tutorial.md
+    hello-world-vpc.md
+    example-code.md
+    classic-access.md
+    vpc-regions.md
+
+    {: .topicgroup}
+    Verwaltungstasks
+        about-resources.md
+        vpc-user-permissions.md
+        vpc-admin-guide.md
+        api-auth-correlation.md
+
+    {: .topicgroup}
+    Ressourcen erstellen und verwalten
+        create-manage-vsi.md
+        create-manage-network.md
+        create-manage-storage.md
+
+    {: .topicgroup}
+    VPC löschen
+        delete-vpc.md
+        delete-vpc-ui.md
+        delete-vpc-cli.md
+        delete-vpc-api.md
+
+    connect-to-cos.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    vpc-glossary.md
+    [API-Referenz für VPC](https://cloud.ibm.com/apidocs/vpc-on-classic)
+    quick-guide-to-resources.md
+    /vpc-infrastructure-cli-plugin/vpc-infrastructure-cli-plugin-vpc-reference
+    vpc-endpoints.md
+    at-events.md
+    [Go- und Python-Beispielcode](https://github.com/IBM-Cloud/vpc-api-samples)
+    [Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html)
+    [Exportkomponente](https://github.com/l2fprod/vpc-diagram-exporter)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    known-limitations.md
+    troubleshooting.md
+    release-notes.md
+    errors.md
+    getting-help.md
+    {: .navgroup-end}
