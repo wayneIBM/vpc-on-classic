@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-20"
+lastupdated: "2019-07-11"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -24,6 +24,26 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.cloud}} Virtual Private Cloud.
 {:shortdesc}
+
+## 12 July 2019
+{: #july-12-2019}
+
+**Updates to the CLI**
+
+
+- **The load balancer listener policy is enabled**, including commands for `list`, `get`, `create`, `update`, and `delete` of a policy.
+
+- **New commands added for policy rules** in the load balancer listener, including commands for `list`, `get`, `create`, `update`, and `delete`of a rule.
+
+- **Support added for tilde to designate the home directory** for SSH key file path and also for VSI provisioning of volume or user data file paths.
+
+- **Added bandwidth cap information display** for CPU, Memory, and Network bandwidth caps that apply to instance profiles and profile commands.
+
+**Updates to the UI**
+
+- **The live chat widget is available.**
+
+- **Public gateways now are represented in the UI as first-class objects.**
 
 ## 21 June 2019
 {: #june-21-2019}

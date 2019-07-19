@@ -1272,6 +1272,9 @@ Verify that the volume ID you entered is correct and try again. For a list of vo
 
 Contact [customer support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) for more information.
 
+## volume_over_quota
+**Message**: The volume cannot be attached because the number of volume attachments would exceed the quota.
+
 ## volume_profile_capacity_iops_invalid
 **Message**: The volume profile specified in the request is not valid for the provided capacity and/or IOPS.
 
