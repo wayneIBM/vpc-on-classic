@@ -18,12 +18,21 @@ subcollection: vpc-on-classic
 {:tip: .tip}
 {:important: .important}
 {:download: .download}
+{:external: target="_blank" .external}
 
 # Release notes
 {: #release-notes}
 
-Use these release notes to learn about the latest changes to {{site.data.keyword.cloud}} Virtual Private Cloud.
+Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 26 July 2019
+{: #july-26-2019}
+
+- **Advanced Routing** is now available in Networking for VPC. Refer to [Setting Up Advanced Routing in VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-advanced-routing-in-vpc)
+for use cases and examples.
+
+- **Improved instance monitoring data** with filtering is available in the User Interface.
 
 ## 12 July 2019
 {: #july-12-2019}
@@ -33,7 +42,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 - **The load balancer listener policy is enabled**, including commands for `list`, `get`, `create`, `update`, and `delete` of a policy.
 
-- **New commands added for policy rules** in the load balancer listener, including commands for `list`, `get`, `create`, `update`, and `delete`of a rule.
+- **New commands added for policy rules** in the load balancer listener, including commands for `list`, `get`, `create`, `update`, and `delete` of a rule.
 
 - **Support added for tilde to designate the home directory** for SSH key file path and also for VSI provisioning of volume or user data file paths.
 
@@ -72,7 +81,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 **Updates to the SDK**
 
-- **Terraform provider v0.17.1** has been released. Please download the [latest binary](https://github.com/IBM-Cloud/terraform-provider-ibm/releases/tag/v0.17.1).
+- **Terraform provider v0.17.1** has been released. Please download the [latest binary](https://github.com/IBM-Cloud/terraform-provider-ibm/releases/tag/v0.17.1){: external}.
 - **Docker Image** also has been updated with the latest Terraform provider. You can pull the latest Docker image by using this command:  `docker pull ibmterraform/terraform-provider-ibm-docker:latest`
 - Remember to set `generation` as a provider argument or export `IC_GENERATION= 1` so that your code will work with the currently released version of VPC on classic infrastructure. By default the value is set to 2 (VPC, coming soon, now in Beta).
 - Provider arguments(`bluemix_api_key` and `bluemix_timeout`) have been deprecated, so a warning could be thrown when you run Terraform plan or apply.
@@ -81,7 +90,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 {: #june-07-2019}
 
 - **IBM Cloud VPC is now generally available.** All [Pay-As-You-Go accounts](/docs/account?topic=account-accounts) can provision VPC resources.
-Log in to the [IBM Cloud Console](https://{DomainName}/vpc/overview) and get started today!
+Log in to the [IBM Cloud Console](https://{DomainName}/vpc/overview){: external} and get started today!
 
 - **Individual authorization policies on instances, keys, volumes, and security groups can now be set.** Learn what roles are required to manage these resources in [Resource authorizations required for API and CLI calls](/docs/vpc-on-classic?topic=vpc-on-classic-resource-authorizations-required-for-api-and-cli-calls). Early access users are not affected with existing policies.
 
@@ -93,7 +102,7 @@ Log in to the [IBM Cloud Console](https://{DomainName}/vpc/overview) and get sta
 ## 31 May 2019
 {: #may-31-2019}
 
-**New API version available.** The VPC on Classic API version has been updated from `2019-01-01` to `2019-05-31`. For guidelines and best practices, see  [Versioning](https://{DomainName}/apidocs/vpc-on-classic#versioning) in the Virtual Private Cloud on Classic API.
+**New API version available.** The VPC on Classic API version has been updated from `2019-01-01` to `2019-05-31`. For guidelines and best practices, see  [Versioning](https://{DomainName}/apidocs/vpc-on-classic#versioning){: external} in the Virtual Private Cloud on Classic API.
 
 ## 24 May 2019
 {: #may-24-2019}

@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-06-25"
+lastupdated: "2019-07-24"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -18,6 +18,7 @@ subcollection: vpc-on-classic
 {:important: .important}
 {:new_window: target="_blank"}
 {:DomainName: data-hd-keyref="DomainName"}
+{:external: target="_blank" .external}
 
 # IBM Cloud Virtual Private Cloud API error messages
 {: #rias-error-messages}
@@ -28,7 +29,7 @@ When you receive an error message from the {{site.data.keyword.cloud}} Virtual P
 ## account_type_invalid
 **Message**: You must have a Pay-As-You-Go account to provision a Virtual Private Cloud.
 
-Your account must be on a Pay-As-You-Go plan to provision VPCs. You can find more details about upgrading your account here: [Upgrade Your Account](/docs/account?topic=account-accounts#upgrade-lite-account)
+Your account must be on a Pay-As-You-Go plan to provision VPCs. Refer to [Upgrade Your Account](/docs/account?topic=account-accounts#upgrade-lite-account) for instructions on how to upgrade your account.
 
 ## acl_in_use
 **Message**: The network ACL cannot be deleted because it is attached to resources.
@@ -65,23 +66,23 @@ One or more subnets are using the address prefix.  To determine which subnets ar
 A backend cloud service that is used by VPC failed to respond. VPC uses multiple IBM Cloud services, such as:
 
 - [Identity and Asset Management](/docs/iam?topic=iam-iamoverview) (IAM)
-- [Global Catalog](https://{DomainName}/catalog)
+- [Global Catalog](https://{DomainName}/catalog){: external}
 - Resource Controller
 - Resource Manager
 
-You can check [status](https://{DomainName}/status) of IBM Cloud services and try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+You can check [status](https://{DomainName}/status){: external} of IBM Cloud services and try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## bad_field
 **Message**: Correct instance UUID should be provided
 
 One of the values provided in the request is incorrect. Check the `target` value in the error returned for clues as to which parameter was incorrect. In some cases, the UUID or volume in the request cannot be found. Provide a valid value and try again.
 
-Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## bad_request
 **Message**: The information given was invalid, malformed, or missing a required field.
 
-The request was not what we expected. Use the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} to help you format the request.
+The request was not what we expected. Use the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} to help you format the request.
 
 If you are following the specification but still get the error, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -93,7 +94,7 @@ Only one VPC with Classic Access can be created per region. To list the VPC with
 ## classic_access_vpc_account_not_VRF_enabled
 **Message**: Account must be VRF-enabled to create a classic access VPC.
 
-The linked classic account is not VRF-enabled. A classic access VPC requires the linked classic account to be VRF-enabled. To enable your account for VRF, please refer to [VRF on IBM Cloud](/docs/infrastructure/direct-link?topic=direct-link-overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud#overview-of-virtual-routing-and-forwarding-vrf-on-ibm-cloud).
+The linked classic account is not VRF-enabled. A classic access VPC requires the linked classic account to be VRF-enabled. To enable your account for VRF, refer to [VRF on IBM Cloud](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc#vrf-conversion).
 
 ## default_address_prefix_not_found
 **Message**: Default address prefix not found.
@@ -104,6 +105,14 @@ You may see this error message when the default address prefix is not found.
 **Message**: The input provided already exists.
 
 The resource specified already exists. Try using a different name for the resource you want to create. For example, when creating a new VPC, you can list existing VPCs by running `ibmcloud is vpcs`.  Choose a name that does not conflict.
+
+## field_no_longer_supported
+**Message**: The field is no longer supported and should not be supplied.
+
+The field provided was once supported but is no longer supported in the version specified. Look at the `target` values to determine which field is no longer supported.
+
+For details, please refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+
 
 ## floating_ip_in_use
 **Message**: The floating IP is in use.
@@ -164,7 +173,7 @@ The value of the parameter `health monitor delay` must be greater than the value
 
 This problem occurs when the payload you have sent in your request has too many characters. Please try again with a smaller payload. For example, instead of trying to do everything in a single request, try creating a minimal resource in one request, and then appending state to it incrementally in several subsequent requests.
 
-Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## iam_failure
 **Message**: None
@@ -174,7 +183,7 @@ A failure has occurred in the IAM service, verifying authentication or authoriza
 ## ike_policies_quota_exceeded
 **Message**: The IKE policy cannot be created because your account has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas) page.
 
 To view current IKE policies, use the `GET /ike_policies` API.
 Equivalent CLI command: `ibmcloud is ike-policies`
@@ -247,7 +256,7 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 ## instance_sec_volume_over_quota
 **Message**: The instance cannot be created because the number of volume attachments would exceed the quota.
 
-The VPC quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window} page.
+The VPC quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas) page.
 
 ## instance_too_many_keys
 **Message**: The Windows instance cannot be created because the request contains multiple keys.
@@ -307,7 +316,7 @@ The requested route on the API URL you provided does not exist. Verify that the 
 For example, to update the network ACL used by a subnet use the `PATCH /v1/subnets/{subnet_id}?version=2019-05-31&generation=1  -d '{ "network_acl":{ "id": “{network_acl_id}” } }’` API.
 The following request would be invalid because “networkacl” is not a valid field, `PATCH /v1/subnets/{subnet_id}?version=2019-05-31&generation=1  -d '{ "networkacl":{ "id": “{network_acl_id}” } }’`
 
-Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for acceptable values.
+Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for acceptable values.
 
 ## invalid_state
 **Message**: An action was requested on a resource which is not supported at the current status of the resource.
@@ -350,7 +359,7 @@ You may see this message attempting to attach a public gateway in zone-1 to a su
 ## ipsec_policies_quota_exceeded
 **Message**: The IPsec policy cannot be created because your account has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas) page.
 
 To view current IPsec policies, use the `GET /ipsec_policies` API.
 Equivalent CLI command: `ibmcloud is ipsec-policies`
@@ -476,7 +485,7 @@ Please provide an existing listener ID.
 ## listener_over_quota
 **Message**: Listener cannot be created. Quota of listeners for the load balancer resource has reached the maximum limit.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc/?topic=vpc-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc/?topic=vpc-quotas).
 
 ## listener_pool_protocols_conflict
 **Message**: Listener protocol(`<listener_protocol>`) and pool protocol(`<pool_protocol>`) are in conflict.
@@ -560,7 +569,7 @@ Provide the ID of an existing load balancer.
 
 Delete an existing load balancer, or contact support to increase the load balancer quota on your account.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas).
 
 ## load_balancer_subnet_not_found
 **Message**: The subnet with ID <subnet_id>  cannot be found.
@@ -624,7 +633,7 @@ Provide an existing member ID.
 ## member_over_quota
 **Message**: Member cannot be created. Quota of member instances under the pool has reached maximum limit.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas).
 
 ## missing_generation_parameter
 **Message**: The generation query parameter is required.
@@ -634,7 +643,7 @@ For versions on and after 5/31/2019, the `generation` query parameter is require
 ## missing_ims_account_id
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## missing_version
 **Message**: The `version` parameter is required, and it must be of the form `YYYY-MM-DD`.
@@ -666,12 +675,12 @@ If you have correct authorization but you are still getting this error, [contact
 
 You referenced a resource that does not exist or one to which you do not have access. Please review your request to ensure that you specified the proper IDs and references.
 
-Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## not_implemented
 **Message**: None
 
-The method is not implemented. Check your request to make sure you are calling a [valid API](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. [Contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) if you expect this API to be implemented.
+The method is not implemented. Check your request to make sure you are calling a [valid API](https://{DomainName}/apidocs/vpc-on-classic){: external}. [Contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) if you expect this API to be implemented.
 
 ## not_in_address_prefix
 **Message**: The provided CIDR does not fit in any of the address prefixes in the provided zone.
@@ -680,7 +689,7 @@ This error occurs if a user is trying to create a subnet with a CIDR that does n
 
 Run `GET /vpcs/{vpc_id}/address_prefixes` to get the list of address prefixes for the VPC. If using the CLI, you can run `ibmcloud is vpc-address-prefixes` to list all address prefixes for your VPC. Look at the `cidr` and `zone` values of the response and make sure the subnet's `cidr` is a subset of the `cidr` of the address prefix for the zone you are trying to create it.
 
-## no_default_address_prefix 
+## no_default_address_prefix
 **Message**: The zone must have a default address prefix to create a subnet using total_address_count.
 
 This error occurs if a user is trying to create a subnet by address count and no default address prefix is available in the given zone.
@@ -688,7 +697,7 @@ This error occurs if a user is trying to create a subnet by address count and no
 ## over_quota
 **Message**: The request would exceed the quota for a resource type.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas).
 
 ## password_not_ready
 **Message**: None
@@ -748,7 +757,7 @@ Provide an existing pool ID.
 ## pool_over_quota
 **Message**: Pool cannot be created. Quota of pools for the load balancer resource has reached maximum limit.
 
-The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas){: new_window}.
+The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas).
 
 ## public_gateway_in_use
 **Message**: Cannot delete a public gateway when it is in use.
@@ -795,7 +804,7 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 
 Security group names must be unique within a VPC. A security group with that name already exists in the targeted VPC. Use `GET /v1/security_groups?version=2019-05-31&generation=1` or `ibmcloud is security-groups` to view current security groups.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups).
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -806,8 +815,8 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 
 Detach all interfaces before deleting the security group. Use `DELETE /v1/security_groups/{id}/network_interfaces/{id}?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interface-remove` to detach an interface.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the
-[Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} or the
+[Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups).
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -815,10 +824,10 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 ## security_group_interfaces_per_sg_exceeded
 **Message**: Exceeded limit of interfaces per security group.
 
-Attaching another interface to the security group would exceed the limit of interfaces per security group. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas){: new_window}. Evaluate your strategy and consider creating another security group with similar rules.
+Attaching another interface to the security group would exceed the limit of interfaces per security group. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas). Evaluate your strategy and consider creating another security group with similar rules.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic)
-or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}
+or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups).
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -829,14 +838,14 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 A network interface must be attached to at least one security group.
 It will be attached to the VPC's default security group if one is not specified.
 Attach the interface to a different security group, then try again to detach it from the default security group.
-For information on the default security group, refer to the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
+For information on the default security group, refer to the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups).
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## security_group_limit_exceeded
 **Message**: Exceeded security group limit.
 
-You have attempted to create a new security group, but you are currently at your account quota. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas){: new_window}. Evaluate your strategy for assigning instances to security groups. It is often possible to reduce the overall number of security groups by assigning multiple instances to the same security group. This strategy will reduce the number of security groups, and drop you below your account quota. In rare cases, generally for large organizations, there is a need for expanding the quota. In this case, please [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) to inquire if this is possible.
+You have attempted to create a new security group, but you are currently at your account quota. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas). Evaluate your strategy for assigning instances to security groups. It is often possible to reduce the overall number of security groups by assigning multiple instances to the same security group. This strategy will reduce the number of security groups, and drop you below your account quota. In rare cases, generally for large organizations, there is a need for expanding the quota. In this case, please [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) to inquire if this is possible.
 
 ## security_group_network_interface_not_active
 **Message**: The interface cannot be attached because it is not active.
@@ -848,7 +857,7 @@ Network interfaces must be active before attaching to security groups. Use `GET 
 
 The interface is not attached to the security group. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached interfaces.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-security-groups-using-the-cli){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-security-groups-using-the-cli).
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -873,20 +882,20 @@ The maximum port value cannot be less than the minimum port value. Specify a max
 
 Rules with a 'tcp' or 'udp' protocol may have an unset port range (to apply the rule to all traffic), or they may specify a port range. To restrict traffic to a single port, set both the minimum and maximum port to the port value. For example, the following command would create a rule to allow SSH on port 22: `ibmcloud is security-group-rule-add <id> inbound tcp --port-min 22 --port-max 22`.
 
-For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic).
+For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 
 ## security_group_port_range_invalid_protocol
 **Message**: A port range was specified with a protocol of 'icmp'. A port range is only valid for a protocol of 'tcp' or 'udp'.
 
-Rules with an 'icmp' protocol have a type and code. Rules with 'tcp' or 'udp' protocols have a port range. For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic).
+Rules with an 'icmp' protocol have a type and code. Rules with 'tcp' or 'udp' protocols have a port range. For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## security_group_remote_group_not_in_vpc
 **Message**: The remote group is not in the same VPC as this security group.
 
 Security group rules may refer to a remote security group, allowing traffic between attached interfaces of the two groups. Remote security groups must be in the same VPC. Use `GET /v1/security_groups?2019-01-01` or `ibmcloud is security-groups` to view current security groups and their VPCs.
 
-For further instructions to fix this problem, refer to the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
+For further instructions to fix this problem, refer to the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups).
 
 
 ## security_group_remoting_rules
@@ -894,28 +903,28 @@ For further instructions to fix this problem, refer to the [Using Security Group
 
 The security group contains one or more rules referencing a remote security group. Use `GET /v1/security_groups/{id}/rules?version=2019-05-31&generation=1` or `ibmcloud is security-group-rules` to view the rules. The 'remote' field will specify any remote security groups. Try again after deleting or editing the remoting rule.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic) or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} or the [Using Security Groups document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups).
 
 ## security_group_remoting_rules_per_sg_exceeded
 **Message**: Exceeded limit of remoting rules per security group.
 
-Adding another rule refering to a remote security group would exceed the limit of remoting rules per security group. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas){: new_window}.
+Adding another rule refering to a remote security group would exceed the limit of remoting rules per security group. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas).
 
 ## security_group_rules_per_sg_exceeded
 **Message**: Exceeded limit of rules per security group.
 
-Adding a rule would exceed the limit of rules per security group. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas){: new_window}. Evaluate your strategy and consider creating another security group.
+Adding a rule would exceed the limit of rules per security group. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas). Evaluate your strategy and consider creating another security group.
 
 ## security_group_sgs_per_interface_exceeded
 **Message**: Exceeded limit of security groups per interface.
 
-Attaching this interface to another security group would exceed the limit of security groups per interface. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas){: new_window}. Evaluate your strategy and consider adding rules to an existing security group.
+Attaching this interface to another security group would exceed the limit of security groups per interface. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas). Evaluate your strategy and consider adding rules to an existing security group.
 
 
 ## security_group_type_code_invalid_protocol
 **Message**: An 'icmp' type/code was given, but the requested protocol was not 'icmp'. Set the protocol to 'icmp' or specify a port range.
 
-Only rules with an 'icmp' protocol have a type and code. Rules with 'tcp' or 'udp' protocols have a port range. For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic).
+Only rules with an 'icmp' protocol have a type and code. Rules with 'tcp' or 'udp' protocols have a port range. For further information on security group rule configurations, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## security_group_vpc_default
 **Message**: Cannot delete the default security group for a VPC.
@@ -925,7 +934,7 @@ The default security group cannot be deleted. For information on the default sec
 ## service_manager_service_failure
 **Message**: None
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## subnet_conflict
 **Message**: CIDR conflicts with existing Subnet in VPC.
@@ -934,7 +943,7 @@ Run the `GET /subnets` API to retrieve all subnets in VPC. Check the value of `i
 
 If using the CLI, you can run `ibmcloud is subnets` and look at "Subnet CIDR" value for conflicts.
 
-Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## subnet_not_empty
 **Message**: Cannot delete the subnet until it is empty. Delete any resources in the subnet and retry.
@@ -1004,7 +1013,7 @@ If you are using the CLI, run the command `ibmcloud is floating-ips` and look at
 ## token_invalid
 **Message**: The service token was expired or invalid.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## token_missing
 **Message**: The service token was empty or did not exist in the request.
@@ -1034,26 +1043,26 @@ For example, the following value would be invalid because `northbound` is not a 
 }
 ```
 
-Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} or the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference){: new_window} for acceptable values.
+Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} or the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference) for acceptable values.
 
 ## validation_failure
 **Message**: The JSON provided did not match the expected structure.
 
-To fix this problem, be sure the content of your request is valid JSON and that your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+To fix this problem, be sure the content of your request is valid JSON and that your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## validation_invalid_cidr
 **Message**: The value is not a valid CIDR.
 
 The value must be a valid internal CIDR block with a 0 host part.
 
-Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets){: new_window}.
+Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets).
 
 ## validation_invalid_ipv4_cidr
 **Message**: The value is not a valid IPv4 CIDR.
 
 Must be a IPv4 internal CIDR block with a 0 host part.
 
-Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets){: new_window}.
+Certain IP address ranges are reserved. More information about reserved IP ranges is available in our overview of [Using your VPC with Regions and Subnets](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets).
 
 ## validation_invalid_ipv6_cidr
 **Message**: The value is not a valid IPv6 CIDR.
@@ -1080,24 +1089,24 @@ Give a valid IPv6 address. Currently, IPv6 is not supported; use an IPv4 address
 ## validation_invalid_field_type
 **Message**: The value type does not match the field type.
 
-To fix this problem, be sure the content of your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for the endpoint you are calling.
+To fix this problem, be sure the content of your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for the endpoint you are calling.
 
 ## validation_max_value
 **Message**: A value provided for a parameter is larger than allowed.
 
-Provide a smaller value that meets the maximum as given by the [specification](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+Provide a smaller value that meets the maximum as given by the [specification](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## validation_min_value
 **Message**: A value provided for a parameter is smaller than allowed.
 
 You may get this error if you try to create a subnet with `total_ipv4_address_count` less than 8.
 
-Provide a larger value that meets the minimum as given by the [specification](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+Provide a larger value that meets the minimum as given by the [specification](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## validation_not_null
 **Message**: The field supplied must be null.
 
-Be sure the value is null. Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+Be sure the value is null. Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 Here is an invalid example:
 
@@ -1110,7 +1119,7 @@ Here is an invalid example:
 ## validation_only_one
 **Message**: The value must match one of the subschemas.
 
-Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## validation_discriminator_forbidden
 **Message**: The discriminator field forbids this substructure.
@@ -1128,49 +1137,59 @@ The protocol is `icmp`, and _port_min_ is a `tcp` field, so you'll get an error.
 1. validation_discriminator_required for missing `icmp` rules
 2. validation_discriminator_forbidden for `tcp` fields with `icmp` specified
 
-Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## validation_internal_error
 **Message**: None
 
-Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## validation_invalid_name
 **Message**: The value is not a valid name.
 
-Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## validation_invalid_ref
 **Message**: The value is not a valid HREF.
 
-Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## validation_non_empty_uuid
 **Message**: None
 
-Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## validation_required_field
 **Message**: Missing a required field.
 
-Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## validation_unique_failed
 **Message**: The field supplied must be unique.
 
 You might have specified a name that is already in use. Please try a different value.
 
-Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## version_not_supported
 **Message** Version specified is not supported. The version must be 2019-05-31 or later.
 
 The version query parameter must be 2019-05-31 or later.
 
+## volume_action_invalid_request
+**Message**: The volume cannot be attached or detached from the instance in its current status.
+
+You cannot attach or detach a volume when the target instance is in `deleting`, `pending`, `starting`, `stopping` or `restarting` status, or it has another volume attachment in `attaching` or `detaching` status. If the status of the instance or volume attachment does not change, please [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
 ## volume_attachment_delete_invalid_request
 **Message**: The volume attachment cannot be deleted.
 
 This operation is not allowed. The boot volume's volume attachment cannot be deleted because the boot volume is required by the instance.
+
+## volume_attachment_over_quota
+**Message**: The volume cannot be attached because the number of volume attachments would exceed the quota.
+
+The quotas per instance are specified in [Secondary volume quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#secondary-volume-quotas).
 
 ## volume_attachment_update_invalid_request
 **Message**: The volume attachment could not be updated because the request is invalid.
@@ -1272,9 +1291,6 @@ Verify that the volume ID you entered is correct and try again. For a list of vo
 
 Contact [customer support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) for more information.
 
-## volume_over_quota
-**Message**: The volume cannot be attached because the number of volume attachments would exceed the quota.
-
 ## volume_profile_capacity_iops_invalid
 **Message**: The volume profile specified in the request is not valid for the provided capacity and/or IOPS.
 
@@ -1333,12 +1349,12 @@ You cannot delete a volume that is still attached to a VSI. If you set automatic
 ## volume_template_invalid
 **Message**: Invalid volume template provided.
 
-You provided an invalid volume template for creating a volume. See the [VPC API Reference](https://{DomainName}/apidocs/vpc-on-classic){: new_window} to verify that you are providing the correct parameters in the request body.
+You provided an invalid volume template for creating a volume. See the [VPC API Reference](https://{DomainName}/apidocs/vpc-on-classic){: external} to verify that you are providing the correct parameters in the request body.
 
 ## volume_update_invalid_request
 **Message**: The volume update request is not valid.
 
-The update request body property that you specified is not valid. See the [VPC API Reference](https://{DomainName}/apidocs/vpc-on-classic){: new_window} for information and correct API request syntax.
+The update request body property that you specified is not valid. See the [VPC API Reference](https://{DomainName}/apidocs/vpc-on-classic){: external} for information and correct API request syntax.
 
 ## vpc_not_empty
 **Message**: The VPC cannot be deleted because it is not empty.
@@ -1359,14 +1375,14 @@ To determine which VPC contains the public gateway, run the `GET /public_gateway
 
 Duplicate CIDR blocks have been provided when creating the connection. Ensure that the CIDR blocks are unique.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If the problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If the problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## vpn_connection_cidr_not_created
 **Message**: A CIDR block could not be added to the VPN connection `<vpn_connection_id>`.
 
 Provide a valid CIDR that meets the requirements given by the specification.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## vpn_connection_cidr_not_deleted
 **Message**: A CIDR block could not be deleted from the VPN connection `<vpn_connection_id>`.
@@ -1425,12 +1441,12 @@ A valid PSK should only contain 6 to 128 characters which are letters, digits, `
 
 Provide a valid local CIDR that meets the requirements given by the specification.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## vpn_connection_local_subnets_quota_exceeded
 **Message**: Local subnets across VPN connections for the VPN gateway `<vpn_gateway_id>` has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas) page.
 
 To view the current local subnets across VPN connections, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API and check the `local_cidrs` field for each connection.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
@@ -1438,7 +1454,7 @@ Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
 ## vpn_connection_local_subnets_quota_exceeded_for_connection
 **Message**: Local subnets for the VPN connection has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/infrastructure/vp?topic=vpc-quotas#vpn-quotas){: new_window} page.
+The quotas per resource are specified on the [Quotas](/docs/infrastructure/vp?topic=vpc-quotas#vpn-quotas) page.
 
 To view the current local subnets for a VPN connection, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `local_cidrs` field.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connection VPN_GATEWAY_ID CONNECTION_ID`
@@ -1473,12 +1489,12 @@ Another connection which has a matching local CIDR and peer CIDR to this one exi
 
 Provide a valid peer CIDR that meets the requirements given by the specification.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## vpn_connection_peer_subnets_quota_exceeded
 **Message**: Peer subnets across VPN connections for the VPN gateway `<vpn_gateway_id>` has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas) page.
 
 To view the current peer subnets across VPN connections, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API and check the `peer_cidrs` field for each connection.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
@@ -1486,7 +1502,7 @@ Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
 ## vpn_connection_peer_subnets_quota_exceeded_for_connection
 **Message**: Peer subnets for the VPN connection has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas) page.
 
 To view the current peer subnets for a VPN connection, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `peer_cidrs` field.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connection VPN_GATEWAY_ID CONNECTION_ID`
@@ -1506,12 +1522,12 @@ Try again in a few minutes. If this problem persists, [contact support](/docs/vp
 
 Provide a valid request value that meets the requirements given by the specification.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: new_window}.
+For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## vpn_connections_quota_exceeded
 **Message**: The VPN connection cannot be created because the VPN gateway `<vpn_gateway_id>` has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas) page.
 
 To view the current VPN connections for a VPN gateway, use the `GET /vpn_gateways/<vpn_gateway_id>/connections` API.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
@@ -1584,7 +1600,7 @@ Provide a subnet that is in `available` status. Try again in a few minutes. If t
 ## vpn_gateways_quota_exceeded
 **Message**: The VPN Gateway cannot be created because your account and/or the region has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas){: new_window} page.
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas) page.
 
 To view the current VPN gateways, use the `GET /vpn_gateways` API.
 Equivalent CLI command: `ibmcloud is vpn-gateways`

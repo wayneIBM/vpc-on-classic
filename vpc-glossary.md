@@ -18,6 +18,7 @@ subcollection: vpc-on-classic
 {:tip: .tip}
 {:important: .important}
 {:download: .download}
+{:external: target="_blank" .external}
 
 # VPC Glossary
 {: #vpc-glossary}
@@ -70,7 +71,7 @@ Load Balancer as a Service (LBaaS) provides the ability to distribute traffic in
 ## NAT
 {: #nat}
 
-Network Address Translation (NAT) is an addressing method described in [Internet RFC 1631 ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://tools.ietf.org/html/rfc1631){: new_window} so that one IP address can be used to communicate with several other IP addresses, such as those on a private subnet, essentially by means of a lookup table. NAT has two main types: 1-to-1 NAT and [Many-to-1 NAT ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://en.wikipedia.org/wiki/Network_address_translation){: new_window}. NAT was originally intended as a way to extend the useful life of IPv4 IP addresses, but now it is commonly used in cloud environments as a way of creating communication with private subnets.
+Network Address Translation (NAT) is an addressing method described in [Internet RFC 1631](https://tools.ietf.org/html/rfc1631){: external} so that one IP address can be used to communicate with several other IP addresses, such as those on a private subnet, essentially by means of a lookup table. NAT has two main types: 1-to-1 NAT and [Many-to-1 NAT](https://en.wikipedia.org/wiki/Network_address_translation){: external}. NAT was originally intended as a way to extend the useful life of IPv4 IP addresses, but now it is commonly used in cloud environments as a way of creating communication with private subnets.
 
 ## Profile
 {: #profile}

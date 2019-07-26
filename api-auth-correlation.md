@@ -42,7 +42,7 @@ The terms _attached_ or _unattached_ refer to whether the resource is associated
 | VPC address prefixes |  Create, Update, Delete | Update authorization on VPC |
 | VPC address prefixes |  View, List | View authorization on VPC  |
 |—————|——————|———————|
-| Floating IP (unassociated) | Create, Update, Delete | Any Account user and View authorization on all Account Management Services, if the resource is created in the default resource group. Click [here](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources#setting-up-viewer-access) for instruction on setting up viewer access. **Note: Associating and disassociating are part of the Floating IP Update operation**|
+| Floating IP (unassociated) | Create, Update, Delete | Any Account user and View authorization on all Account Management Services, if the resource is created in the default resource group. Refer to [Setting up Viewer access](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources#setting-up-viewer-access) for instruction on setting up viewer access. **Note: Associating and disassociating are part of the Floating IP Update operation**|
 | Floating IP (unassociated) | View, List | Account user |
 | Floating IP (associated) | Update | Update authorization for the associated subnet's VPC (you cannot Create or Delete a floating IP after it is associated) |
 | Floating IP (associated) | View, List | View authorization for the floating IP’s associated subnet's VPC |

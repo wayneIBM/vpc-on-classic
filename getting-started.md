@@ -19,13 +19,14 @@ subcollection: vpc-on-classic
 {:important: .important}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
+{:external: target="_blank" .external}
 
-# Getting started tutorial
+# Getting started with Virtual Private Cloud on Classic
 {: #getting-started}
 [comment]: # (linked help topic)
 
 
-To get started with {{site.data.keyword.cloud}} Virtual Private Cloud:
+To get started with {{site.data.keyword.vpc_full}}:
 
 1. Create a Virtual Private Cloud.
 2. Create one or more subnets in the Virtual Private Cloud in one or more zones.
@@ -50,9 +51,9 @@ You can provision and manage all of your VPC resources through the UI, CLI, or R
 
 If you're new to IBM Cloud Virtual Private Cloud, choose any of the links below, which lead you through the process of creating your IBM Cloud VPC and its resources, from start to finish. You can choose whether to get started from the Console UI, the command line (CLI), or REST APIs.
 
-* For access through the user interface, log into the [IBM Cloud Console ![External link icon](../../icons/launch-glyph.svg "External link icon")]( https://{DomainName}/vpc){: new_window}. For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-ibm-cloud-console).
+* For access through the user interface, log into the [IBM Cloud Console](https://{DomainName}/vpc){: external}. For more information, see [Creating a VPC using the IBM Cloud console](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-ibm-cloud-console).
 * To use the command line interface, follow the [Hello World](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-ibm-cloud-cli) example.
-* For more advanced users, you can call the [REST APIs](https://{DomainName}/apidocs/vpc-on-classic) directly. Follow the [example code](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-rest-apis) tutorial to get started with the REST APIs.
+* For more advanced users, you can call the [REST APIs](https://{DomainName}/apidocs/vpc-on-classic){: external} directly. Follow the [example code](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-rest-apis) tutorial to get started with the REST APIs.
 
 ## Next steps
 If you're ready to dig in, go directly to the detailed documentation about **Networking for VPC**, **VSIs for VPC**, and **Block Storage for VPC**:

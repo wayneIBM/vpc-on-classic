@@ -18,6 +18,7 @@ subcollection: vpc-on-classic
 {:important: .important}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
+{:external: target="_blank" .external}
 
 # Connecting to IBM Cloud Object Storage from VPC
 {: #connecting-to-ibm-cloud-object-storage-from-a-vpc}
@@ -47,13 +48,13 @@ There is no charge for traffic from your VPCs to all COS endpoints listed on thi
 {: note}
 
 * A VPC client also has access to the COS bucket over the public endpoint.
-* A VPC client only has access to the [COS Configuration API](https://{DomainName}/apidocs/cos/cos-configuration) over the public endpoint, not the direct endpoint. The COS Configuration API can be used to configure some COS features on buckets, as well as to view bucket metadata.
+* A VPC client only has access to the [COS Configuration API](https://{DomainName}/apidocs/cos/cos-configuration){: external} over the public endpoint, not the direct endpoint. The COS Configuration API can be used to configure some COS features on buckets, as well as to view bucket metadata.
 * A VPC client does not have access to a COS bucket when the firewall is enabled.
 
 ## How to connect to IBM Cloud Object Storage (COS) from a VPC
 {: #how-to-connect-to-ibm-cloud-object-storage-cos-from-a-vpc}
 
-1. Provision COS from the [catalog ![External link icon](../icons/launch-glyph.svg "External link icon")](https://{DomainName}/catalog/services/cloud-object-storage){: new_window}.
+1. Provision COS from the [catalog](https://{DomainName}/catalog/services/cloud-object-storage){: external}.
 2. Create a COS bucket in one of the regions listed in the following section.
 3. Use the endpoint to communicate with your COS bucket.
 

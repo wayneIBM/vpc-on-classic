@@ -38,7 +38,6 @@ Virtual Private Cloud on Classic
     hello-world-vpc.md
     example-code.md
     classic-access.md
-    vrf-conversion-vpc.md
     vpc-regions.md
 
     {: .topicgroup}

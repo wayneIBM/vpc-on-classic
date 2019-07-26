@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-07-10"
 
-keywords: activity tracker, vpc, events, logdna 
+keywords: activity tracker, vpc, events, logdna
 
 subcollection: vpc-on-classic
 
@@ -175,4 +175,4 @@ The following table lists the actions related to VPNs and the generation of even
 ## Where to look for events
 {: #at-events-ui}
 
-When you provision an {{site.data.keyword.at_full}} instance, events are forwarded automatically to the Activity Tracker with a LogDNA service instance in its [supported location](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#at-supported-locations`).
+When you provision an {{site.data.keyword.at_full}} instance, events are forwarded automatically to the Activity Tracker with a LogDNA service instance in its [supported location](#at-supported-locations).

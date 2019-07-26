@@ -70,7 +70,7 @@ This section lists more details of unsupported features and use cases, categoriz
 * The public gateway does not allow the traffic to be initiated from the Internet to a VSI in the IBM Cloud VPC. For that purpose, a Floating IP must be used.
 * ACL is stateless, so return traffic must be allowed explicitly in ACL rules.
 
-## Known issues in this release
+## Known issues 
 {: #known-issues-in-this-release}
 
 {{site.data.keyword.block_storage_is_short}} might not accurately validate the volume name for uniqueness when all of the following conditions are met:
@@ -78,13 +78,3 @@ This section lists more details of unsupported features and use cases, categoriz
 * The provision request is concurrent
 * The volume has the same name
 * The volume is in the same region
-
-## Beta services available
-
-Peering securely to an appliance is available as a Beta service. Documentation for peering with several types of appliances is available:
-
-* [Remote Vyatta peer](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-creating-a-secure-connection-with-a-remote-vyatta-peer)
-* [Remote StrongSwan peer](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-creating-a-secure-connection-with-a-remote-strongswan-peer)
-* [Remote FortiGate peer](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-creating-a-secure-connection-with-a-remote-fortigate-peer)
-* [Remote Juniper vSRX peer](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-creating-a-secure-connection-with-a-remote-juniper-vsrx-peer)
-* [Remote Cisco ASAv peer](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-creating-a-secure-connection-with-a-remote-cisco-asav-peer)

@@ -21,6 +21,7 @@ subcollection: vpc-on-classic
 {:deprecated: .deprecated}
 {:download: .download}
 {:preview: .preview}
+{:external: target="_blank" .external}
 
 
 # Your responsibilities by using IBM Cloud Virtual Private Cloud
@@ -49,7 +50,7 @@ Your responsibilities:
 ### VPC Workloads
 
 IBM's responsibilities:
-- Provide a suite of tools to automate VPC workload creation, such as the [IBM Cloud Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html) Provider.
+- Provide a suite of tools to automate VPC workload creation, such as the [IBM Cloud Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html){: external} Provider.
 - Provide private network access to OS-based update repositories.
 
 Your responsibilities:

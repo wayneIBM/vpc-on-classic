@@ -28,7 +28,7 @@ subcollection: vpc-on-classic
 After you've created your {{site.data.keyword.cloud}} VPC, including one or more subnets within your VPC to contain your virtual server instances (VSIs), you can optionally add security groups, network access control lists, peering to hardware firewall appliances, or other security options. Also, you can optionally add **Load Balancers for VPC** and connect to other cloud workloads using **VPN for VPC**.
 
 For more information about setting up the networking capabilities in VPC:
- * [Networking overview document](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-about-networking-for-vpc)
+ * [Networking overview](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-about-networking-for-vpc)
  * [Overview of available address ranges, subnets, and regions](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets)
 
 For information about networking security in VPC, refer to these documents:

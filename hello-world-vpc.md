@@ -31,7 +31,7 @@ This document shows you how to create {{site.data.keyword.cloud}} Virtual Privat
 ## Pre-requisites:
 {: #cli-pre-requisites}
 
-1. Install the [IBM Cloud CLI](/docs/cli?topic=cloud-cli-ibmcloud-cli#overview).
+1. Install the [IBM Cloud CLI](/docs/cli?topic=cloud-cli-install-ibmcloud-cli).
 
 2. Install or update the `vpc-infrastructure` plugin to the IBM Cloud CLI.
 
