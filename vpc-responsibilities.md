@@ -45,7 +45,7 @@ IBM's responsibilities:
 Your responsibilities:
 - Use the provided API, CLI, or UI console to provision compute and storage, and to adjust networking configurations to meet the needs of your workload.
 - Make sure any self-provided CIDR blocks do not conflict with CIDR blocks used by resources external to your VPC that you intend to consume.
-- Design and deploy your workload in a way that achieves high availability using our provided tools, such as multiple availability zones, regions, and load balancers. At a high level, deploy your workloads in different zones of the region, use at least two load balancers located in different zones, and either use DNS records to point to the load balancers, or ensure that your application can handle a list of IP addresses that it can connect to. More details can be found under [deploy isolated workloads across multiple locations and zones](/docs/vpc-on-classic?topic=solution-tutorials-vpc-multi-region).
+- Design and deploy your workload in a way that achieves high availability using our provided tools, such as multiple availability zones and load balancers. At a high level, deploy your workloads in different zones of the region, use at least two load balancers located in different zones, and either use DNS records to point to the load balancers, or ensure that your application can handle a list of IP addresses that it can connect to. More details can be found under [deploy isolated workloads across multiple locations and zones](/docs/vpc-on-classic?topic=solution-tutorials-vpc-multi-region).
 
 ### VPC Workloads
 

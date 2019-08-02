@@ -29,7 +29,7 @@ You may set up access to your {{site.data.keyword.cloud}} Classic Infrastructure
 
 When you've set up a VPC for classic access, every compute host (VSI or Bare Metal) without a public interface in your classic account can send and receive packets to and from the classic access VPC. However, remember that firewalls, gateways, Network ACLs, or security groups can filter this traffic. As a best practice, we recommend that you allow only the traffic that's required for your applications to function properly.
 
-In hosts with a public interface, you must add a route back to your Classic-enabled VPC.
+In classic account hosts with a public interface, you must add a route that points back to your Classic-enabled VPC. This route must include the subnets of your Classic-enabled VPC as a destination and the gateway address for traffic that leaves the private interface of the host as the next hop.
 {: important}
 
 ## Pre-requisites:

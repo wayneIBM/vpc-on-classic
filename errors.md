@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-07-24"
+lastupdated: "2019-07-30"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -25,6 +25,11 @@ subcollection: vpc-on-classic
 
 When you receive an error message from the {{site.data.keyword.cloud}} Virtual Private Cloud APIs, you can use the message ID to find more information about how to resolve the problem.
 {:shortdesc}
+
+## account_missing
+**Message**: The account in the token was empty or did not exist in the request.
+
+Recreate a token with a valid account and try again.
 
 ## account_type_invalid
 **Message**: You must have a Pay-As-You-Go account to provision a Virtual Private Cloud.
@@ -995,6 +1000,13 @@ If using the CLI, you can run `ibmcloud is vpn-gateways` to list the VPN gateway
 In some situations, this error can occur even when the console shows 0 VPN gateways. Deletion is asynchronous, and it may take a few minutes for the internal status to change. Try your subnet deletion again in a few minutes.
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## subnet_out_of_ip_addresses
+**Message**: There are no more IP addresses available in the subnet.
+
+There was a request to allocate an IP address in the subnet, but the subnet is out of IP addresses.  Try using a different subnet, or delete IP addresses in the subnet to free up space.  
+
+To find the IP addresses currently allocated in the subnet, run the API command `GET /v1/subnets/{subnet ID}/reserved_ips?version=2019-12-31&future_version=true&generation=1` (disclaimer: this is currently a Beta API). 
 
 ## subnet_unknown_state
 **Message**: The subnet `<subnet_id>` is in an invalid state for the requested operation.
