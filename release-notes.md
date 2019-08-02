@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-07-11"
+lastupdated: "2019-08-02"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,15 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 2 August 2019
+{: #aug-02-2019}
+
+**Custom Images:** You can now import your own images (in VHD format).  After the image has been uploaded to a region, you can use that image to provision new instances in that region. You can rename the image or delete it when you no longer need it. 
+- Learn about [importing and managing images](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-managing-images).
+- Start [importing your custom images using the UI](https://{DomainName}/vpc/compute/images){: external}.
+- Learn how to import and use [custom images using the CLI](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#image-create).
+- Use version `2019-07-30` when you use the [Create Image API](https://{DomainName}/apidocs/vpc-on-classic#create-an-image){: external}.
 
 ## 26 July 2019
 {: #july-26-2019}
