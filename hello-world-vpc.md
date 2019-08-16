@@ -56,7 +56,6 @@ This document shows you how to create {{site.data.keyword.cloud}} Virtual Privat
   ```
   {: pre}
 
-
 3. Generate a public SSH key to provision Virtual Server Instances (VSIs).
 
 You may have a public SSH key already. Look for a file called ``id_rsa.pub`` under an ``.ssh`` directory under your home directory, for example, ``/Users/<USERNAME>/.ssh/id_rsa.pub``. The file starts with ``ssh-rsa`` and ends with your email address.

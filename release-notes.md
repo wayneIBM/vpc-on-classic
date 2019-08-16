@@ -29,7 +29,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 ## 2 August 2019
 {: #aug-02-2019}
 
-**Custom Images:** You can now import your own images (in VHD format).  After the image has been uploaded to a region, you can use that image to provision new instances in that region. You can rename the image or delete it when you no longer need it. 
+**Custom Images:** You can now import your own images (in VHD format).  After the image has been uploaded to a region, you can use that image to provision new instances in that region. You can rename the image or delete it when you no longer need it.
 - Learn about [importing and managing images](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-managing-images).
 - Start [importing your custom images using the UI](https://{DomainName}/vpc/compute/images){: external}.
 - Learn how to import and use [custom images using the CLI](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#image-create).
@@ -122,7 +122,7 @@ Log in to the [IBM Cloud Console](https://{DomainName}/vpc/overview){: external}
 
 - **Load Balancer view and edit policies are now available in the User Interface.** A new function, to view and edit load balancer policies, is available in the user interface.
 
-For more information, see the [Load balancer documentation](/docs/infrastructure/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc).
+For more information, see the [Load balancer documentation](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc).
 
 
 ## 10 May 2019

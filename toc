@@ -9,12 +9,7 @@ Virtual Private Cloud on Classic
     about-vpc-is.md
     vpc-responsibilities.md
     vpc-quotas.md
-
-    {: .topicgroup}
-    Pricing
-        pricing.md
-        vpc-vsi-pricing.md
-        block-storage-is-pricing.md
+    pricing.md
 
     {: .topicgroup}
     Tutorials

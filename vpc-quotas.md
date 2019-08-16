@@ -51,7 +51,7 @@ Accounts have the following quotas:
 | ------- | :------: |
 | Virtual Server Instances (VSIs) | 100 per account by default |
 | vNICs per VSI | 5 per VSI |
-| Floating IP addresses | 1 per VSI |
+| Floating IP addresses | 100 per zone per account |
 | SSH Keys | 100 per account |
 
 

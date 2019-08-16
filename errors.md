@@ -1006,7 +1006,7 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 
 There was a request to allocate an IP address in the subnet, but the subnet is out of IP addresses.  Try using a different subnet, or delete IP addresses in the subnet to free up space.  
 
-To find the IP addresses currently allocated in the subnet, run the API command `GET /v1/subnets/{subnet ID}/reserved_ips?version=2019-12-31&future_version=true&generation=1` (disclaimer: this is currently a Beta API). 
+To find the IP addresses currently allocated in the subnet, run the API command `GET /v1/subnets/{subnet ID}/reserved_ips?version=2019-12-31&future_version=true&generation=1` (disclaimer: this is currently a Beta API).
 
 ## subnet_unknown_state
 **Message**: The subnet `<subnet_id>` is in an invalid state for the requested operation.
@@ -1466,7 +1466,7 @@ Equivalent CLI command: `ibmcloud is vpn-gateway-connections VPN_GATEWAY_ID`
 ## vpn_connection_local_subnets_quota_exceeded_for_connection
 **Message**: Local subnets for the VPN connection has reached the quota.
 
-The quotas per resource are specified on the [Quotas](/docs/infrastructure/vp?topic=vpc-quotas#vpn-quotas) page.
+The quotas per resource are specified on the [Quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vpn-quotas) page.
 
 To view the current local subnets for a VPN connection, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `local_cidrs` field.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connection VPN_GATEWAY_ID CONNECTION_ID`
