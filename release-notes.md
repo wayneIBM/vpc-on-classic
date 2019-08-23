@@ -29,7 +29,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 ## 23 August 2019
 {: #aug-23-2019}
 
-- **Live Chat** is now available from the VPC Infrastructure user interfaces pages.
+- **Live Chat** is now available from the VPC Infrastructure user interface pages.
 - **User Interface improvements** allow you to create a subnet from the VPC detail page and attach an existing public gateway to a subnet.
 - **Custom VPC Routes** can now be created via the command line interface. Learn more in the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#vpc-routes).
 
