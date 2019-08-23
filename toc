@@ -27,7 +27,7 @@ Virtual Private Cloud on Classic
         [Storage for VPC](/vpc-on-classic-block-storage/vpc-on-classic-block-storage-getting-started)
         [Load Balancer for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)
         [VPN for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-vpn-with-your-vpc)
-        [Architecture Center VPC Solutions](https://www.ibm.com/cloud/garage/architectures/public-cloud/allvpcsolutions)
+        [Architecture Center VPC Solutions](https://www.ibm.com/cloud/garage/architectures/virtual-private-cloud-subdomain)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -38,7 +38,7 @@ Virtual Private Cloud on Classic
     vpc-regions.md
 
     {: .topicgroup}
-    Manage Access
+    Manage access
         about-resources.md
         vpc-user-permissions.md
         vpc-admin-guide.md

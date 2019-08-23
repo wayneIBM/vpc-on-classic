@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-02"
+lastupdated: "2019-08-23"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,13 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 23 August 2019
+{: #aug-23-2019}
+
+- **Live Chat** is now available from the VPC Infrastructure user interfaces pages.
+- **User Interface improvements** allow you to create a subnet from the VPC detail page and attach an existing public gateway to a subnet.
+- **Custom VPC Routes** can now be created via the command line interface. Learn more in the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#vpc-routes).
 
 ## 2 August 2019
 {: #aug-02-2019}
