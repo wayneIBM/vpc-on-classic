@@ -38,7 +38,7 @@ Virtual Private Cloud on Classic
     vpc-regions.md
 
     {: .topicgroup}
-    Manage access
+    Managing access
         about-resources.md
         vpc-user-permissions.md
         vpc-admin-guide.md
