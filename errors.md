@@ -503,7 +503,7 @@ A listener with `https` or `http` protocol can only be associated with a pool wi
 Please choose a different port.
 
 ## load_balancer_delete_conflict
-**Message**: The load balancer with ID <load_balancer_id> cannot be deleted because its status is one of these:  
+**Message**: The load balancer with ID <load_balancer_id> cannot be deleted because its status is one of these:
 * UPDATE_PENDING
 * CREATE_PENDING
 * DELETE_PENDING
@@ -968,6 +968,15 @@ If using the CLI, you can run `ibmcloud is public-gateways` to list the public g
 
 If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
+## subnet_not_empty_iks_worker_node_exists
+**Message**: Cannot delete the subnet while it is in use by IBM Cloud Kubernetes Service. Please remove Kubernetes worker nodes from the subnet and retry.
+
+There was a request to delete a subnet, but the subnet still has some IKS worker nodes on it. You must delete the IKS worker nodes before you can delete the subnet.
+
+The `value` field inside the error message should contain the ID list of IKS clusters that are on the subnet.
+
+If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
 ## subnet_not_empty_ipaddr_exists
 **Message**: Cannot delete the subnet while it contains IP addresses. Please delete any server instance associated with the IP address and retry.
 
@@ -1004,7 +1013,7 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 ## subnet_out_of_ip_addresses
 **Message**: There are no more IP addresses available in the subnet.
 
-There was a request to allocate an IP address in the subnet, but the subnet is out of IP addresses.  Try using a different subnet, or delete IP addresses in the subnet to free up space.  
+There was a request to allocate an IP address in the subnet, but the subnet is out of IP addresses.  Try using a different subnet, or delete IP addresses in the subnet to free up space.
 
 To find the IP addresses currently allocated in the subnet, run the API command `GET /v1/subnets/{subnet ID}/reserved_ips?version=2019-12-31&future_version=true&generation=1` (disclaimer: this is currently a Beta API).
 
@@ -1018,7 +1027,7 @@ The subnet must be in `available` status before you can operate it. Try again in
 
 There was a request to attach a floating IP address to a server’s network interface, but the network interface already has a floating IP attached to it.
 
-To find the floating IP address currently attached to a network interface, run the API command `GET /v1/floating_ips?version=2019-05-31&generation=1` and look for the network interface ID in the `target.id` field.  
+To find the floating IP address currently attached to a network interface, run the API command `GET /v1/floating_ips?version=2019-05-31&generation=1` and look for the network interface ID in the `target.id` field.
 
 If you are using the CLI, run the command `ibmcloud is floating-ips` and look at the `Target` value. Be aware that the CLI truncates the network interface ID at the first dash (“-“) character. For example, a server’s primary network interface with an ID of `abdfcb29-b3c5-4e4a-b7a0-cf0300154699` appears as `primary(abdfcb29-.)` in the CLI output.
 

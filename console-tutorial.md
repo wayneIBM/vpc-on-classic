@@ -114,6 +114,8 @@ To create a virtual server instance in the newly created subnet:
 1. Click **Compute > Virtual server instance** in the navigation pane and click **New instance**.
 1. Enter a name for the instance, such as `my-instance`.
 1. Select the VPC that you created.
+1. Select a resource group for the instance. Resource groups enable you to organize your account resources for access control and billing purposes. For more information, see [Best practices for organizing resources in a resource group](/docs/resources?topic=resources-bp_resourcegroups).
+1. _Optional:_ Enter tags to help you organize and find your resources. You can add more tags later. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
 1. In the **Location** field, select the zone in which to create the instance.
 1. To set the instance size, select one of the popular profiles or click **All profiles** to choose a different core and RAM combination that's most appropriate for your workload.
 1. Select an existing SSH key or add a new SSH key that will be used to access the virtual server instance. To add an SSH key, click **New key** and name the key. After you enter your previously generated public key value, click **Add SSH key**.

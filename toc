@@ -16,7 +16,9 @@ Virtual Private Cloud on Classic
         /tutorials/solution-tutorials-vpc-public-app-private-backend
         /tutorials/solution-tutorials-vpc-multi-region
         /tutorials/solution-tutorials-vpc-site2site-vpn
+        /tutorials/solution-tutorials-vpc-app-deploy
         /tutorials/solution-tutorials-vpc-secure-management-bastion-server
+        /containers/containers-vpc_ks_tutorial
 
     {: .topicgroup}
     Related Links
@@ -36,7 +38,7 @@ Virtual Private Cloud on Classic
     vpc-regions.md
 
     {: .topicgroup}
-    Administrative tasks
+    Manage Access
         about-resources.md
         vpc-user-permissions.md
         vpc-admin-guide.md
@@ -60,7 +62,7 @@ Virtual Private Cloud on Classic
 
     {: .navgroup id="reference"}
     vpc-glossary.md
-    [API reference for VPC](https://cloud.ibm.com/apidocs/vpc-on-classic)
+    [API reference for VPC](https://{DomainName}/apidocs/vpc-on-classic)
     quick-guide-to-resources.md
     /vpc-infrastructure-cli-plugin/vpc-infrastructure-cli-plugin-vpc-reference
     vpc-endpoints.md
