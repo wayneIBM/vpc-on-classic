@@ -35,7 +35,7 @@ To get started with {{site.data.keyword.vpc_full}}:
 5. Reserve a floating IP address, and associate it with a virtual server instance if you want to reach it from the internet.
 5. Deploy your service or applications across the virtual server instances.
 
-## Prerequisites
+## Before you begin
 
  * **User Permissions**: Be sure that your user has sufficient permissions to create and manage resources in your VPC. For a list of required permissions, see [Granting permissions needed for VPC users](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
 

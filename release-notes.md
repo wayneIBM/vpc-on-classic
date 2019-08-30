@@ -29,7 +29,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 ## 23 August 2019
 {: #aug-23-2019}
 
-- **Live Chat** is now available from the VPC Infrastructure user interface pages.
+- **Live Chat** is now available from the VPC Infrastructure user interfaces pages.
 - **User Interface improvements** allow you to create a subnet from the VPC detail page and attach an existing public gateway to a subnet.
 - **Custom VPC Routes** can now be created via the command line interface. Learn more in the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#vpc-routes).
 
@@ -62,7 +62,7 @@ for use cases and examples.
 
 - **Support added for tilde to designate the home directory** for SSH key file path and also for VSI provisioning of volume or user data file paths.
 
-- **Added bandwidth cap information display** for CPU, Memory, and Network bandwidth caps that apply to instance profiles and profile commands.
+- **Added CPU, memory, and network performance** information about the profile to the `instance-profile` list command.
 
 **Updates to the UI**
 
