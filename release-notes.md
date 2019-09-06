@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-08-23"
+lastupdated: "2019-09-06"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,11 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 6 September 2019
+
+- **New API version** is available as of `2019-08-06`, and includes enhanced field and parameter validation. Refer to the [VPC API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for the correct usage.
+- **Activity Tracker with LogDNA** is available in new locations. These locations will be used by VPC starting on **September 26, 2019**. The list of [supported locations](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#at-supported-locations) will be updated and instructions will be provided on how to get events in the new locations.
 
 ## 23 August 2019
 {: #aug-23-2019}

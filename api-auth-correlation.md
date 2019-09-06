@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-04"
+lastupdated: "2019-09-06"
 
 keywords: vpc, resource, policies, authorization, resource type, resource groups, roles, API, CLI, editor, viewer, administrator, operator
 
@@ -20,84 +20,113 @@ subcollection: vpc-on-classic
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# Resource authorizations required for API and CLI calls
+# Roles required to manage VPC resources
 {: #resource-authorizations-required-for-api-and-cli-calls}
 
-The table below lists the authorizations required to interact with {{site.data.keyword.cloud}} Virtual Private Cloud Infrastructure objects. This information is particularly helpful to know when you're making API calls. Here's what you need to know to use this table:
+The table below lists the authorizations required to interact with {{site.data.keyword.vpc_full}} Infrastructure resources.
 
 The terms _attached_ or _unattached_ refer to whether the resource is associated with a VPC or VPCs (either directly or indirectly through the resource's subnets). An unattached floating IP or Network ACL has no subnets, and therefore it is not associated with any VPC, so authorization by VPC is not applicable.
 
-* **View** and **List** actions correspond to the **Viewer** roles.
-* **Operate** actions correspond to the **Operator** role.
-* **Update** and related actions correspond to **Editor** or **Administrator** roles.
-* Resources are protected by authorization, resource reference objects are not (ID, CRN, and so forth).
+In order for a user to be allowed to **create** resources in any resource group, including `Default`, the user must have **Viewer** on the resource group in addition to the role required on the resource type.
+{: tip}
 
+The permission details are available both by resource operation below and [by role](#byrole) further down.
 
-| Resource | Operation | Required Authorization |
+## By resource action 
+{: #byaction}
+
+For each resource and desired operation, see in the table below what is the required role.
+
+| Resource | Operation | Required Role |
 |--------|--------|---------|
-| VPC | Create | View authorization on the Resource Group for that VPC, and Update authorization on VPC Resources|
-| VPC | Update, Delete |  Update authorization on VPC |
-| VPC |  View, List | View authorization on VPC  |
-| VPC default ACL, default SG|  View, List | View authorization on VPC |
-| VPC address prefixes |  Create, Update, Delete | Update authorization on VPC |
-| VPC address prefixes |  View, List | View authorization on VPC  |
+| VPC | Create | Viewer on the Resource Group and Editor on Virtual Private Cloud |
+| VPC | Update, Delete |  Editor on the VPC |
+| VPC |  View, List | Viewer on the VPC  |
+| VPC default ACL, default SG |  View, List | Viewer on the VPC |
+| VPC address prefixes |  Create, Update, Delete | Editor on the VPC |
+| VPC address prefixes |  View, List | Viewer on the VPC  |
 |—————|——————|———————|
-| Floating IP (unassociated) | Create, Update, Delete | Any Account user and View authorization on all Account Management Services, if the resource is created in the default resource group. Refer to [Setting up Viewer access](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources#setting-up-viewer-access) for instruction on setting up viewer access. **Note: Associating and disassociating are part of the Floating IP Update operation**|
-| Floating IP (unassociated) | View, List | Account user |
-| Floating IP (associated) | Update | Update authorization for the associated subnet's VPC (you cannot Create or Delete a floating IP after it is associated) |
-| Floating IP (associated) | View, List | View authorization for the floating IP’s associated subnet's VPC |
+| Floating IP (unattached) | Create, Update, Delete | Account user **Note: Associating and disassociating are part of the Floating IP Update operation**|
+| Floating IP (unattached) | View, List | Account user |
+| Floating IP (attached) | Update | Editor on the parent VPC |
+| Floating IP (attached) | View, List | Viewer on the parent VPC |
 |——————|———————|————————|
-| Network ACL (unattached), ACL rules | Create, Update, Delete | Any Account user |
-| Network ACL (unattached), ACL rules | View, List | Any Account user |
-| Network ACL (attached), ACL rules | Create, Update, Delete | Update authorization on all of the attached subnets associated VPC |
-| Network ACL (attached), ACL rules | View, List | View authorization on at least 1 of the attached subnets associated VPC |
+| Network ACL (unattached), ACL rules | Create, Update, Delete | Account user |
+| Network ACL (unattached), ACL rules | View, List | Account user |
+| Network ACL (attached), ACL rules | Create, Update, Delete | Editor on all parent VPCs |
+| Network ACL (attached), ACL rules | View, List | Viewer on one parent VPC |
 |——————|———————|————————|
-| Public gateway | Create, Update, Delete |  Update authorization on the PGW’s VPC |
-| Public gateway | View, List | View authorization on the PGW’s VPC |
+| Public gateway | Create, Update, Delete | Editor on parent VPC |
+| Public gateway | View, List | Viewer on parent VPC |
 |—————————|————————|———————————|
-| Geography | View, List |  For regions and zones, any Account user |
+| Geography (Regions, Zones) | Create, Update, Delete |  Operations not available |
+| Geography (Regions, Zones) | View, List |  Account user |
 |———————|————————|—————————|
-| SSH key | Create, Update, Delete | Update authorization for the SSH key |
-| SSH key | View, List | View authorization for the SSH key |
+| SSH key | Create, Update, Delete | Editor on key |
+| SSH key | View, List | Viewer on key |
 |————————|—————————|————————|
-| Subnet | Create, Update, Delete | Update authorization for the subnet’s VPC |
-| Subnet | View, List | View authorization for the subnet’s VPC |
-| Subnet ACL or PGW | Attach, Detach | Update authorization for the subnet’s VPC |
-| Subnet ACL or PGW | View, List | View authorization for the subnet’s VPC |
+| Subnet | Create, Update, Delete | Editor on the parent VPC |
+| Subnet | View, List | Viewer on the parent VPC |
+| Subnet ACL or PGW | Attach, Detach | Editor on the parent VPC |
+| Subnet ACL or PGW | View, List | Viewer on the parent VPC |
 |——————|—————————|————————|
-| Security group | Get     | View authorization on the security group.
-| Security group | List    | View authorization on the security group (or else the group is omitted from the response.)
-| Security group | Create  | View authorization on the resource group for that Security Group<br />Edit authorization on the security group that will be created (for example, Edit authorization on all security groups, or Edit authorization on the resource group in which the security group will be created.)<br />View authorization on the VPC in which the group will be created.
-| Security group | Update / Delete  | Edit authorization on the security group.
-| Security group rule | Get / List | View authorization on the security group.
-| Security group rule | Create / Update / Delete | Edit authorization on the security group.
-| Security group network interface | Get     | View authorization on the security group.<br />View authorization on the instance.
-| Security group network interface | List    | View authorization on the security group (or else a 404 response results.)<br />View authorization on the instance to which the network interface belongs (or else the interface is omitted from the response.)
-| Security group network interface | Attach / Detach | Operate authorization on the security group.<br />Edit authorization on the instance to which the network interface belongs.
+| Security group | Create  | Viewer on the resource group for that security group, Editor on the security group, and Viewer on the parent VPC |
+| Security group | Update, Delete  | Editor on the security group |
+| Security group | View, List   | Viewer on the security group |
+| Security group rule | View,  List | Viewer on the security group |
+| Security group rule | Create, Update, Delete | Editor on the security group |
+| Security group network interface | View, List | Viewer on the security group, and Viewer on the instance |
+| Security group network interface | Attach, Detach | Operator on the security group and Editor on the instance |
 |—————————|—————————|—————————|
-| Images | View, List  | Any Account user |
+| Images | Create, Update, Delete  | Editor on the image |
+| Images | View, List | Viewer on the image |
 |—————————|—————————|—————————|
-| Instances | Create| Update authorization for the Instance and Volume<br />Operate authorization for VPC<br />Operate authorization for Security Group if they are specified|
-| Instances | Update, Delete | Update authorization for the Instance |
-| Instances | View, List  | View authorization for the Instance |
-| Instance actions | Create, Update, Delete | Update authorization for the Instance|
-| Instance actions, Initialization, NICs| View, List  | View authorization for the Instance |
-| Instance FIPs | View, List | View authorization for the Instance and the associated subnet's VPC |
-| Instance FIPs | Associate | Update authorization for the Instance<br />Operate authorization for the associated subnet's VPC|
-| Instance FIPs | Disassociate | Update authorization for the Instance |
+| Instance | Create| Editor on the instance and volume (if specified), Operator on the VPC, and Operator on the security group (if specified) |
+| Instance | Update, Delete | Editor on the instance |
+| Instance | View, List  | Viewer on the instance |
+| Instance actions | Create, Update, Delete | Editor on the instance |
+| Instance actions, Initialization, NICs| View, List | Viewer on the instance |
+| Instance FIPs | View, List | Viewer on the instance and Viewer on the VPC |
+| Instance FIPs | Attach | Editor on the instance and Operator on the VPC|
+| Instance FIPs | Detach | Editor on the instance |
 |————————|——————|————————|
-| VPN gateway | Create, Update, Delete | Update authorization for the VPN |
-| VPN gateway | View, List  | View authorization for the VPN |
-| VPN gateway connections | Create, Update, Delete | Update authorization for the VPN |
-| VPN gateway connections | View, List  | View authorization for the VPN |
-| VPN gateway ike_policies, ipsec_policies and connections | Create, Update, Delete | Update authorization for the VPN |
-| VPN gateway ike_policies, ipsec_policies and connections|View, List  | View authorization for the VPN |
+| VPN gateway | Create, Update, Delete | Editor on the VPN gateway|
+| VPN gateway | View, List  | Viewer on the VPN gateway |
+| VPN gateway connections | Create, Update, Delete | Editor on the VPN gateway |
+| VPN gateway connections | View, List  | Viewer on the VPN gateway |
+| VPN gateway ike_policies, ipsec_policies and connections | Create, Update, Delete | Editor on the VPN gateway |
+| VPN gateway ike_policies, ipsec_policies and connections|View, List  | Viewer on the VPN gateway |
 |————————|——————|————————|
-| Load Balancer | Create, Update, Delete | Update authorization for the Load Balancer |
-| Load Balancer | View, List  | View authorization for the Load Balancer |
-| Load Balancer  pools and listeners | Create, Update, Delete | Update authorization for the Load Balancer |
-| Load Balancer pools and listeners | View, List  | View authorization for the Load Balancer |
+| Load Balancer | Create, Update, Delete | Editor on the load balancer |
+| Load Balancer | View, List  | Viewer on the load balancer |
+| Load Balancer  pools and listeners | Create, Update, Delete | Editor on the load balancer |
+| Load Balancer pools and listeners | View, List  | Viewer on the load balancer |
 |————————|——————|————————|
-| Volumes | Create, Update, Delete | Update authorization for the Volume
-| Volumes | View, List  | View authorization for the volume |
-| Volume profiles | View, List  | Any Account user |
+| Volumes | Create, Update, Delete | Editor on the volume
+| Volumes | View, List  | Viewer on the volume |
+| Volume profiles | View, List  |  Account user |
+{: caption="Table 1. Roles required per VPC resource action" caption-side="bottom"}
+
+## By user role 
+{: #byrole}
+
+For each resource, see in the table below what each role allows the user to perform.
+
+| Resource | Account User | Resource Viewer Role | Resource Operator Role | Resource Editor Role |
+|--------|------|---------|--------|---------|
+| **VPC** | | View/List VPC <br> View/List default ACL and default Security Group <br> View/List address prefixes| | Create/Update/Delete VPC <br> Create/Update/Delete address prefix | 
+| **Floating IP** | View/List unattached FIP <br> Create/Update/Delete unattached FIP | View/List attached FIP if VPC Viewer | | Update attached FIP if VPC Editor |
+| **Network ACL** | View/List/Create/Update/Delete unattached ACLs and ACL rules | View/List attached ACLs, rules if Viewer on one VPC with attached subnets | |Create/Update/Delete attached ACL, ACL rules if Editor on all VPCs with attached subnets | 
+| **Public gateway** | |View/List public gateway if VPC Viewer | |Create/Update/Delete public gateway if VPC Editor | 
+| **Geography** | View/List regions <br> View/List zones | | | | 
+| **SSH Key** | | View/List key | | Create/Update/Delete key | 
+| **Subnet** | | View/List subnet if VPC Viewer <br> View/List subnet ACL, public gateway if VPC Viewer | | Create/Update/Delete subnet if VPC Editor <br> Attach/Detach subnet ACL, public gateway if VPC Editor | 
+| **Security Group** | | View/List security group <br> View/List security group rules <br> View/List security group network interfaces if instance viewer | Attach/Detach security group network interfaces if instance Editor | Create security group <br> Update/Delete security group <br> Create/Update/Delete security group rule |
+| **Images** | View/List image | | | | 
+| **Instance** | | View/List instance <br> View/List instance actions, initialization, NICs <br> View/List instance FIPs if VPC Viewer | | Create instance if volume Editor <br> Update/Delete instance <br> Create/Update/Delete instance actions <br> Attach instance FIP if VPC Operator <br> Detach instance FIP |
+| **Volume** | View/List volume profiles | View/List volume | | Create/Update/Delete volume|
+| **VPN Gateway** | |View/List VPN gateway, connections, policies | | Create/Update/Delete VPN gateway, connections, policies |
+| **Load Balancer** | | View/List load balancer, pools, listeners | |Create/Update/Delete load balancer, pools, listeners |
+{: caption="Table 2. Operations allowed on VPC resources by role" caption-side="bottom"}
+
+

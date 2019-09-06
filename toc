@@ -41,7 +41,6 @@ Virtual Private Cloud on Classic
     Managing access
         about-resources.md
         vpc-user-permissions.md
-        vpc-admin-guide.md
         api-auth-correlation.md
 
     {: .topicgroup}
