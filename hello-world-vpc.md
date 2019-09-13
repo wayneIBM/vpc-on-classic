@@ -79,7 +79,7 @@ ibmcloud login -a cloud.ibm.com
 ```
 {: pre}
 
-During the login process, you will be prompted to choose a region during login. VPC may not be available in all regions. Refer to [Creating VPCs in different regions](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region) to see which regions are available today.
+During the login process, you will be prompted to choose a region during login. VPC may not be available in all regions. Refer to [Creating VPCs in different regions](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region) to see which regions are available today. The VPC resources will be created in the region chosen. For this example, the region chosen was `us-south`.
 {: important}
 
 ## Step 2: Set generation target.
@@ -105,27 +105,30 @@ ibmcloud is vpc-create helloworld-vpc
 You should see output like this:
 
 ```
-Creating VPC helloworld-vpc in resource group Default under account <Account Name> as user <User>...
+Creating vpc helloworld-vpc in resource group Default under account <Account Name> as user <User>...
 
-ID        ba9e785a-3e10-418a-811c-56cfe5669676   
-Name      helloworld-vpc   
-Default   no   
-Created   1 second ago   
-Status    available   
+ID                       b4f815a3-d235-4533-b50c-8c312a49ae6a   
+Name                     helloworld-vpc   
+Classic access           no   
+Default network ACL      allow-all-network-acl-b4f815a3-d235-4533-b50c-8c312a49ae6a(e8732f98-d896-49fb-baaa-8ab71bedfdd2)   
+Default security group   swampland-paternal-irritant-footgear(2d364f0a-a870-42c3-a554-000001973050)   
+Resource group           60c13b1fc20f49969cd8fbf244671e6e   
+Created                  2019-09-13T13:55:05-05:00   
+Status                   available   
 ```
 {:screen}
 
 Save the ID in a variable so we can use it later, for example:
 
 ```
-vpc="ba9e785a-3e10-418a-811c-56cfe5669676"
+vpc="b4f815a3-d235-4533-b50c-8c312a49ae6a"
 ```
 {: pre}
 
 ## Step 4: Create a subnet and save the subnet ID.
 {: #step-4-create-a-subnet-and-save-the-subnet-id}
 
-Let's pick the `us-south-2` zone for the subnet's location and call the subnet _helloworld-subnet_.
+Let's pick the `us-south-2` zone for the subnet's location and call the subnet _helloworld-subnet_. The zone needs to be in the region chosen in step 1. To view the zones available for the region, run the following command: `ibmcloud is zones us-south`, substituting `us-south` for the region chosen in step 1.  
 
 ```
 ibmcloud is subnet-create helloworld-subnet $vpc us-south-2 --ipv4-address-count 8
@@ -135,29 +138,25 @@ ibmcloud is subnet-create helloworld-subnet $vpc us-south-2 --ipv4-address-count
 You should see output like this:
 
 ```
-Creating Subnet helloworld-subnet in resource group Default under account <Account Name> as user <User>...
+Creating subnet helloworld-subnet under account <Account Name> as user <User>...
 
-ID               50ba0da9-279a-4791-b7cb-cd3d7b2bc14d   
-Name             helloworld-subnet   
-IPv*             ipv4   
-IPv4 CIDR        10.240.64.0/29  
-IPv6 CIDR        -   
-Addr available   3   
-Addr Total       8   
-Gen              -   
-ACL              allow-all-network-acl-ba9e785a-3e10-418a-811c-56cfe5669676(e9c2790b-cee2-465a-8539-d8cd90d33621)   
-Gateway          -   
-Created          now   
-Status           pending   
-Zone             us-south-2   
-VPC              helloworld-vpc(ba9e785a-3e10-418a-811c-56cfe5669676)   
+ID                  654eba48-a431-4f81-a278-671e234778bf   
+Name                helloworld-subnet   
+IPv4 CIDR           10.240.64.0/29   
+Address available   3   
+Address total       8   
+ACL                 allow-all-network-acl-b4f815a3-d235-4533-b50c-8c312a49ae6a(e8732f98-d896-49fb-baaa-8ab71bedfdd2)   
+Created             2019-09-13T13:56:38-05:00   
+Status              pending   
+Zone                us-south-2   
+VPC                 helloworld-vpc(b4f815a3-d235-4533-b50c-8c312a49ae6a)   
 ```
 {:screen}
 
 Save the ID in a variable so we can use it later, for example:
 
 ```
-subnet="50ba0da9-279a-4791-b7cb-cd3d7b2bc14"
+subnet="654eba48-a431-4f81-a278-671e234778bf"
 ```
 {: pre}
 
@@ -563,6 +562,10 @@ helloworld-vsi says Hello, World!
 
 To use your block storage volume as a filesystem, you'll need to partition the volume, format the volume, and then mount it as a filesystem.
 
+Use the following procedure to complete steps for using your block storage volume on a Linux system.
+
+**Note**: Depending on your Linux distribution, devices show up with different paths. For example, Ubuntu block devices show up as `xvda`, `xvdb`, and so on, as in the following examples.
+
 On Linux, run the following command to list all block storage volumes from your instance:
 
 ```
@@ -577,39 +580,43 @@ NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 xvda    202:0    0  100G  0 disk
 ├─xvda1 202:1    0  256M  0 part /boot
 └─xvda2 202:2    0 99.8G  0 part /
-xvdc    202:32   0  100G  0 disk
-xvdp    202:240  0   64M  0 disk
+xvdb    202:32   0  100G  0 disk
 ```
 {:screen}
 
-Volume `xvdc` is your new block storage data volume.
+Volume `xvdb` is your new block storage data volume.
 
-Run the following command to partition the volume. To begin, use command `n` for new partition.
-
-```
-fdisk /dev/xvdc
-```
-{:pre}
-
-Format the volume.
+Run the following command to partition the volume.
 
 ```
-/sbin/mkfs -t ext3 /dev/xvdc
+fdisk /dev/xvdb
 ```
 {:pre}
 
-Label the volume as "hellovol".
+Type the `n` command for a new partition, then `p` for primary partition.
 
 ```
-/sbin/e2label /dev/xvdc /hellovol
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): p
+```
+{:pre}
+
+Complete the prompts to define the partition's first cylinder number and last cylinder number.  Ater creating a new partition, run the `w` command to save changes to the partition table. Reboot your system to verify newly created partition.
+
+Format the volume partition.
+
+```
+/sbin/mkfs -t ext3 /dev/xvdb
 ```
 {:pre}
 
 Create the directory and mount the volume as a filesystem.
 
 ```
-mkdir /hellovol
-mount /dev/xvdc /hellovol
+mkdir /hellovol_dir
+mount /dev/xvdb /hellovol_dir
 ```
 {: codeblock}
 
@@ -632,15 +639,15 @@ tmpfs               5120       0      5120   0% /run/lock
 tmpfs            4084664       0   4084664   0% /sys/fs/cgroup
 /dev/xvda1        245679   64360    168212  28% /boot
 tmpfs             817040       0    817040   0% /run/user/0
-/dev/xvdc      103081248   61176  97777192   1% /hellovol
+/dev/xvdb      103081248   61176  97777192   1% /hellovol_dir
 ```
 {:screen}
 
-To change directory into your new filesystem and create a file, do something like this:
+Go to the directory in your new filesystem and create a file:
 
 ```
-cd /hellovol
-touch hellovolume
+cd /hellovol_dir
+touch hellovol_file1
 ```
 {:codeblock}
 

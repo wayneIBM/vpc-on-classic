@@ -24,7 +24,7 @@ subcollection: vpc-on-classic
 {:external: target="_blank" .external}
 
 
-# Getting Help and Support
+# Getting help and support
 {: #getting-help-and-support}
 
 

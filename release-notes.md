@@ -26,7 +26,13 @@ subcollection: vpc-on-classic
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
 
+## 13 September 2019
+{: #sept-13-2019}
+
+- **Default address prefixes for a VPC** can now be customized using the [API](https://{DomainName}/apidocs/vpc-on-classic#create-a-vpc){: external}. Starting with API version `2019-08-27`, a VPC can be created without a default address prefix by specifying the option `address_prefix_management=manual` in the request. Learn more about [Designing an Addressing Plan for a VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-vpc-addressing-plan-design).
+
 ## 6 September 2019
+{: #sept-06-2019}
 
 - **New API version** is available as of `2019-08-06`, and includes enhanced field and parameter validation. Refer to the [VPC API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for the correct usage.
 - **Activity Tracker with LogDNA** is available in new locations. These locations will be used by VPC starting on **September 26, 2019**. The list of [supported locations](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#at-supported-locations) will be updated and instructions will be provided on how to get events in the new locations.
@@ -36,7 +42,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 - **Live Chat** is now available from the VPC Infrastructure user interfaces pages.
 - **User Interface improvements** allow you to create a subnet from the VPC detail page and attach an existing public gateway to a subnet.
-- **Custom VPC Routes** can now be created via the command line interface. Learn more in the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#vpc-routes).
+- **Custom VPC Routes** can now be created using the command line interface. Learn more in the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#vpc-routes).
 
 ## 2 August 2019
 {: #aug-02-2019}
@@ -102,7 +108,7 @@ for use cases and examples.
 
 **Updates to the SDK**
 
-- **Terraform provider v0.17.1** has been released. Please download the [latest binary](https://github.com/IBM-Cloud/terraform-provider-ibm/releases/tag/v0.17.1){: external}.
+- **Terraform provider v0.17.1** has been released, download the [latest binary](https://github.com/IBM-Cloud/terraform-provider-ibm/releases/tag/v0.17.1){: external}.
 - **Docker Image** also has been updated with the latest Terraform provider. You can pull the latest Docker image by using this command:  `docker pull ibmterraform/terraform-provider-ibm-docker:latest`
 - Remember to set `generation` as a provider argument or export `IC_GENERATION= 1` so that your code will work with the currently released version of VPC on classic infrastructure. By default the value is set to 2 (VPC, coming soon, now in Beta).
 - Provider arguments(`bluemix_api_key` and `bluemix_timeout`) have been deprecated, so a warning could be thrown when you run Terraform plan or apply.

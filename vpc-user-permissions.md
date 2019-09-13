@@ -156,9 +156,9 @@ Repeat the previous steps to accomplish these tasks:
 ## Next steps
 {: #permissions-next-steps}
 
-The two example teams are now set up to use VPCs. At this point, members of the `test_team_manage_vpcs` and `production_team_manage_vpcs` access groups can create VPCs in their assigned resource groups. 
+The two example teams are now set up to use VPCs. At this point, members of the `test_team_manage_vpcs` and `production_team_manage_vpcs` access groups can create VPCs in their assigned resource groups.
 
 ## Related Links
 {: #related-links}
 
-- Learn how to [Managing IAM access, API keys, service IDs, and access groups via CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam).
+- Learn how to [Managing IAM access, API keys, service IDs, and access groups using the CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam).

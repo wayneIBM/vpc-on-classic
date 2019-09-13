@@ -48,7 +48,9 @@ VPC Infrastructure | Virtual Private Cloud  | vpc | itself
 Floating IPs and Network ACLs can be created with authorization at the account level if unassigned. However, as soon as a floating IP is assigned to an instance or an ACL is assigned to a subnet, these resources become subject to the VPC's authorization level.
 {: note}
 
-VPC Infrastructure uses an inherited model for access control. A role on the resource hierarchy, such as group, service, type or instance, is inherited to the resources down the hierarchy. The access to a resource is determined by the resulting union of roles on the resource.
+VPC Infrastructure uses an inherited model for access control. A role on the resource hierarchy, such as group, service, type or instance, is inherited to the resources down the hierarchy. The access to a resource is determined by the resulting union of roles on the resource. The following diagram is a visual representation of the model. 
+
+![IAM model for VPC Infrastructure](images/vpc-iam.svg "IAM model for VPC Infrastructure"){: caption="Figure: IAM model for VPC Infrastructure" caption-side="bottom"}
 
 ## Resource policies
 {: #resource-policies}

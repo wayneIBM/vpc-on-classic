@@ -22,12 +22,10 @@ subcollection: vpc-on-classic
 # Quotas
 {: #quotas}
 
-This document covers quotas and limits for your {{site.data.keyword.cloud}} Virtual Private Cloud and the resources available within it.
+This document covers quotas and limits for your {{site.data.keyword.cloud}} Virtual Private Cloud and the resources available within it. Unless noted, the quotas cannot be changed.
 
 ## VPC quotas
 {: #vpc-quotas}
-
-Accounts have the following quotas:
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
@@ -49,11 +47,14 @@ Accounts have the following quotas:
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
-| Virtual Server Instances (VSIs) | 100 per account by default |
+| Virtual Server Instances (VSIs) | 100 per region <sup>1</sup> |
 | vNICs per VSI | 5 per VSI |
-| Floating IP addresses | 100 per zone per account |
+| Floating IP addresses | 100 per zone per account <sup>2</sup> |
 | SSH Keys | 100 per account |
 
+<sup>1</sup> You can request to increase the VSI limit by submitting a [support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) ticket. Consider other related resource limits that need to be increased as well, such as floating IPs.
+
+<sup>2</sup> You can request to increase the floating IP limit by submitting a [support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) ticket.
 
 ## Security groups quotas
 {: #security-groups-quotas}

@@ -62,10 +62,10 @@ Your responsibilities:
 
 IBM's responsibilities:
 - Maintain controls commensurate to current industry compliance standards.
-- Enable security features, such as encrypted disks with BYOK via KeyProtect.
+- Enable security features, such as encrypted disks with BYOK using KeyProtect.
 - Continuously monitor stock images to detect vulnerability and security compliance issues.
 - Use IBM Cloud Identity and Access Management (IAM) for authentication and authorization of VPC resources.
-- Provide audit records of the VPC resource lifecycle via IBM Activity Tracker with LogDNA, and monitoring of those resources using IBM Monitoring with Grafana.
+- Provide audit records of the VPC resource lifecycle using IBM Activity Tracker with LogDNA, and monitoring of those resources using IBM Monitoring with Grafana.
 
 Your responsibilities:
 - Use security groups and network ACLs to secure your virtual server instances, such as restricting what IP addresses can SSH into the instance.

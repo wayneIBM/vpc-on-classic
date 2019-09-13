@@ -431,7 +431,7 @@ curl -X GET "$rias_endpoint/v1/vpcs/$vpc/default_security_group?version=$version
 Store the security group ID in a variable.
 
 ```bash
-sg=2d364f0a-a870-42c3-a554-000000981149
+sg="<YOUR_SECURITY_GROUP_ID>"
 ```
 {: pre}
 

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-09-06"
 keywords: vpc, features, benefits, isolation, provisioning, security, cloud-native, workloads, BYOIP
 
 subcollection: vpc-on-classic
@@ -52,7 +52,9 @@ A VPC is divided into subnets, using a range of private IP addresses. However, b
 
 Create multiple VPCs and subnets easily by using the suggested prefix ranges and pre-configured network security policies or design and define your own address prefixes and custom security policies.
 
-CIDR blocks 161.26/16 and 166.8/14 are both reserved and routed into every subnet. Read about our [Service endpoints available for IBM Cloud VPC](/docs/vpc-on-classic?topic=vpc-on-classic-service-endpoints-available-for-ibm-cloud-vpc). Further, CIDR block 10.240/13 is reserved for VPC address prefixes and divided up among zones [in a predefined way](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#ibm-cloud-vpc-and-address-prefixes) and cannot be changed.
+CIDR blocks 161.26/16 and 166.8/14 are both reserved and routed into every subnet. Read about our [Service endpoints available for IBM Cloud VPC](/docs/vpc-on-classic?topic=vpc-on-classic-service-endpoints-available-for-ibm-cloud-vpc). 
+
+In API versions before `2019-08-27`, CIDR block 10.240/13 is reserved for VPC default address prefixes and divided up among zones [in a predefined way](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets#ibm-cloud-vpc-and-address-prefixes) and cannot be changed. In API versions `2019-08-27` and newer, VPC default address prefixes can be deleted and VPCs can be created without a default address prefix.
 {: important}
 
 ### Internet access

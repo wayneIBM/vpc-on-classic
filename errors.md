@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-07-30"
+lastupdated: "2019-09-07"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -50,7 +50,7 @@ To see if a VPC is using the network ACL, use the `GET /v1/vpcs?version=2019-05-
 
 A network ACL rule would block the necessary network connections that are needed to perform the desired action.
 
-If you are trying to create an instance, please ensure that your subnet's ACL rules allow connectivity to all addresses in `161.26.0.0/16` on source/destination ports `53`, `1688`, `80`, `443`, and `8443`.
+If you are trying to create an instance, ensure that your subnet's ACL rules allow connectivity to all addresses in `161.26.0.0/16` for tcp and udp on source/destination ports `53`, `1688`, `80`, `443`, and `8443`.
 
 ## address_prefix_conflict
 **Message**: The address prefix with this CIDR is in use.
@@ -101,6 +101,36 @@ Only one VPC with Classic Access can be created per region. To list the VPC with
 
 The linked classic account is not VRF-enabled. A classic access VPC requires the linked classic account to be VRF-enabled. To enable your account for VRF, refer to [VRF on IBM Cloud](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc#vrf-conversion).
 
+## cos_file_too_large
+**Message**: The file from cloud object store is greater than 100 GB.
+
+The file specified is too large. Only files less than 100 GB are allowed.
+
+## cos_invalid_file_extension
+**Message** The URI provided contains an unsupported file extension.
+
+The file extension in the URI must be ".vhd".
+
+## cos_not_authorized
+**Message**: You are not authorized to access the cloud object store resource.
+
+This error occurs if a user tries to import an image from a cloud object store to which they do not have access. Use the [Granting access between services](/docs/iam?topic=iam-serviceauth){: external} to help you grant authorization from the image service to the cloud object store bucket.
+
+## cos_not_found
+**Message**: Cloud object storage resource not found.
+
+The cloud object storage resource specified could not be found. Verify that the resource identification is correct.
+
+## cos_region_mismatch
+**Message**: Cloud object storage resource not found in the target region.
+
+The cloud object storage bucket specified could not be found in the target region. Make sure the bucket exists in the target region.
+
+## cos_scheme_uri_invalid
+**Message**: The cloud object storage URI provided is not in the correct format.
+
+This error occurs if the URI has an incorrect scheme. The URI should follow this format: `cos://<region>/<bucket>/<sourceFile>`
+
 ## default_address_prefix_not_found
 **Message**: Default address prefix not found.
 
@@ -109,14 +139,14 @@ You may see this error message when the default address prefix is not found.
 ## duplicate_error
 **Message**: The input provided already exists.
 
-The resource specified already exists. Try using a different name for the resource you want to create. For example, when creating a new VPC, you can list existing VPCs by running `ibmcloud is vpcs`.  Choose a name that does not conflict.
+The resource specified already exists. Try using a different name for the resource you want to create. For example, when creating a new VPC, you can list existing VPCs by running `ibmcloud is vpcs`, and choose a name that is not shown.
 
 ## field_no_longer_supported
 **Message**: The field is no longer supported and should not be supplied.
 
 The field provided was once supported but is no longer supported in the version specified. Look at the `target` values to determine which field is no longer supported.
 
-For details, please refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+For details, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 
 ## floating_ip_in_use
@@ -176,7 +206,7 @@ The value of the parameter `health monitor delay` must be greater than the value
 ## http_request_size_exceeded
 **Message**: The HTTP request is too large.
 
-This problem occurs when the payload you have sent in your request has too many characters. Please try again with a smaller payload. For example, instead of trying to do everything in a single request, try creating a minimal resource in one request, and then appending state to it incrementally in several subsequent requests.
+This problem occurs when the payload you have sent in your request has too many characters. Try again with a smaller payload. For example, instead of trying to do everything in a single request, try creating a minimal resource in one request, and then appending state to it incrementally in several subsequent requests.
 
 Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -224,7 +254,7 @@ Try again in a few minutes. If this problem persists, [contact support](/docs/vp
 ## ike_policy_not_found
 **Message**: The IKE policy `<ike_policy_id>` could not be found.
 
-You referenced an IKE policy that does not exist. Please review your request to ensure that you specified the proper IKE policy ID. Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+You referenced an IKE policy that does not exist. Review your request to ensure that you specified the proper IKE policy ID. Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## ike_policy_not_updated
 **Message**: The IKE policy `<ike_policy_id>` could not be updated.
@@ -271,7 +301,7 @@ Windows instances only support one key.
 ## insufficient_space_for_subnet
 **Message**: Insufficient space for subnet in address prefix.
 
-The subnet cannot be created because the number of addresses requested cannot be allocated. Please try again using a smaller address count or a larger CIDR.
+The subnet cannot be created because the number of addresses requested cannot be allocated. Try again using a smaller address count or a larger CIDR.
 
 ## internal_error
 **Message**: An internal error occurred.
@@ -400,7 +430,7 @@ Try again in a few minutes. If this problem persists, [contact support](/docs/vp
 ## ipsec_policy_not_found
 **Message**: The IPsec policy `<ipsec_policy_id>` could not be found.
 
-You referenced an IPsec policy that does not exist. Please review your request and specify a valid IPsec policy ID. If you are sure the policy exists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+You referenced an IPsec policy that does not exist. Review your request and specify a valid IPsec policy ID. If you are sure the policy exists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## ipsec_policy_not_updated
 **Message**: The IPsec policy `<ipsec_policy_id>` could not be updated.
@@ -440,7 +470,7 @@ In Linux operating systems, you can run the following command to valid the publi
 ## listener_certificate_not_found
 **Message**: Certificate instance with CRN `<listener_certificate_crn>` cannot be found or no permission to access the certificate instance.
 
-Please provide an existing certificate instance CRN or ask your account administrator to grant you access permissions to the provided certificate instance.
+Provide an existing certificate instance CRN or ask your account administrator to grant you access permissions to the provided certificate instance.
 
 ## listener_duplicate_port
 **Message**: Port `<listener_port>` is used by another listener instance. Please choose a different port.
@@ -480,12 +510,12 @@ Listener port is a required field.
 ## listener_missing_protocol
 **Message**: Listener protocol is missing.
 
-Listener protocol is a required field. Please provide the listener protocol in your request. The acceptable values are `http`, `https` and `tcp`.
+Listener protocol is a required field. The acceptable values are `http`, `https` and `tcp`.
 
 ## listener_not_found
 **Message**: The listener with ID `<listener_id>` cannot be found.
 
-Please provide an existing listener ID.
+Provide an existing listener ID.
 
 ## listener_over_quota
 **Message**: Listener cannot be created. Quota of listeners for the load balancer resource has reached the maximum limit.
@@ -500,7 +530,7 @@ A listener with `https` or `http` protocol can only be associated with a pool wi
 ## listener_reserved_port_conflict
 **Message**: Listener port `<listener_port>` is one of the reserved ports. The port range of 56500 to 56520 is reserved for management purposes. Choose a different port.
 
-Please choose a different port.
+Choose a different port.
 
 ## load_balancer_delete_conflict
 **Message**: The load balancer with ID <load_balancer_id> cannot be deleted because its status is one of these:
@@ -509,7 +539,7 @@ Please choose a different port.
 * DELETE_PENDING
 * MAINTENANCE_PENDING
 
-Please delete the load balancer when it is in ACTIVE status.
+Try deleting the load balancer when it is in ACTIVE status.
 
 ## load_balancer_duplicate_name
 **Message**: Name `<load_balancer_name>` is used by another load balancer instance. Please choose a different name.
@@ -542,7 +572,7 @@ Names may not be empty. A valid load balancer name starts with a letter, followe
 ## load_balancer_invalid_subnet
 **Message**: The subnet with ID <subnet_id>  is not valid. Make sure to use an existing subnet with 'available' status.
 
-Please provide valid subnets that are in `available` status when entering your request to create a load balancer.
+Provide valid subnets that are in `available` status when entering your request to create a load balancer.
 
 ## load_balancer_missing_is_public
 **Message**: 'is_public' field is missing.
@@ -593,7 +623,7 @@ No information was given for updating a load balancer instance with the ID you s
 * DELETE_PENDING
 * MAINTENANCE_PENDING
 
-Please update the load balancer when it is in ACTIVE status.
+Try updating the load balancer when it is in ACTIVE status.
 
 ## member_duplicate_address_and_port
 **Message**:  Member with address <member_address> and port <member_port> already exists in the pool.
@@ -678,7 +708,7 @@ If you have correct authorization but you are still getting this error, [contact
 ## not_found
 **Message**: Please check whether the resource you are requesting exists.
 
-You referenced a resource that does not exist or one to which you do not have access. Please review your request to ensure that you specified the proper IDs and references.
+You referenced a resource that does not exist or one to which you do not have access. Review your request to ensure that you specified the proper IDs and references.
 
 Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for additional help. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -794,7 +824,7 @@ To see a list of reserved IPs, use the `GET /v1/subnets/{subnet_id}/reserved_ips
 ## security_group_active_transactions
 **Message**: The interface cannot be attached or detached until the instance appears in Active state.
 
-The instance must be active before its network interfaces can be attached to a security group. Use `GET /v1/instances/{id}?version=2019-05-31&generation=1` or `ibmcloud is instance` to check on the status of the instance. Once the status is `running`, please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+The instance must be active before its network interfaces can be attached to a security group. Use `GET /v1/instances/{id}?version=2019-05-31&generation=1` or `ibmcloud is instance` to check on the status of the instance. Once the status is `running`, try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## security_group_already_attached
 **Message**: The interface is already attached to the security group.
@@ -850,12 +880,12 @@ If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-cl
 ## security_group_limit_exceeded
 **Message**: Exceeded security group limit.
 
-You have attempted to create a new security group, but you are currently at your account quota. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas). Evaluate your strategy for assigning instances to security groups. It is often possible to reduce the overall number of security groups by assigning multiple instances to the same security group. This strategy will reduce the number of security groups, and drop you below your account quota. In rare cases, generally for large organizations, there is a need for expanding the quota. In this case, please [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) to inquire if this is possible.
+You have attempted to create a new security group, but you are currently at your account quota. The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#security-groups-quotas). Evaluate your strategy for assigning instances to security groups. It is often possible to reduce the overall number of security groups by assigning multiple instances to the same security group. This strategy will reduce the number of security groups, and drop you below your account quota. In rare cases, generally for large organizations, there is a need for expanding the quota. In this case, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) to inquire if this is possible.
 
 ## security_group_network_interface_not_active
 **Message**: The interface cannot be attached because it is not active.
 
-Network interfaces must be active before attaching to security groups. Use `GET /v1/instances/{id}/network_interfaces/{id}?version=2019-05-31&generation=1` or `ibmcloud is instance-network-interface` to view the status of an interface. Once the status is 'available', please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Network interfaces must be active before attaching to security groups. Use `GET /v1/instances/{id}/network_interfaces/{id}?version=2019-05-31&generation=1` or `ibmcloud is instance-network-interface` to view the status of an interface. Once the status is 'available', try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## security_group_not_attached
 **Message**: The interface is not attached.
@@ -875,7 +905,7 @@ To attach a network interface to a security group, the instance must be in the s
 ## security_group_order_bindings
 **Message**: Cannot delete the security group while it has pending instance orders.
 
-If an instance was created with security group(s) specified on the network interfaces, the instance and network interfaces must be active before the security group can be deleted. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached network interfaces and their status. Once the status of the interfaces is 'available', please try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+If an instance was created with security group(s) specified on the network interfaces, the instance and network interfaces must be active before the security group can be deleted. Use `GET /v1/security_groups/{id}/network_interfaces?version=2019-05-31&generation=1` or `ibmcloud is security-group-network-interfaces` to view attached network interfaces and their status. Once the status of the interfaces is 'available', try again. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## security_group_port_max_less_than_port_min
 **Message**: TCP/UDP max port cannot be less than min port.
@@ -1088,7 +1118,7 @@ Certain IP address ranges are reserved. More information about reserved IP range
 ## validation_invalid_ipv6_cidr
 **Message**: The value is not a valid IPv6 CIDR.
 
-Currently, IPv6 is not supported. Please use an IPv4 address.
+Currently, IPv6 is not supported, use an IPv4 address.
 
 ## validation_invalid_address
 **Message**: The value is not a valid address.
@@ -1115,14 +1145,14 @@ To fix this problem, be sure the content of your request conforms to the [API do
 ## validation_max_value
 **Message**: A value provided for a parameter is larger than allowed.
 
-Provide a smaller value that meets the maximum as given by the [specification](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+Provide a smaller value that meets the maximum as given by the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## validation_min_value
 **Message**: A value provided for a parameter is smaller than allowed.
 
 You may get this error if you try to create a subnet with `total_ipv4_address_count` less than 8.
 
-Provide a larger value that meets the minimum as given by the [specification](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+Provide a larger value that meets the minimum as given by the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## validation_not_null
 **Message**: The field supplied must be null.
@@ -1188,7 +1218,7 @@ Make sure your request conforms to the [API documentation](https://{DomainName}/
 ## validation_unique_failed
 **Message**: The field supplied must be unique.
 
-You might have specified a name that is already in use. Please try a different value.
+You might have specified a name that is already in use. Try a different value.
 
 Make sure your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
@@ -1200,7 +1230,7 @@ The version query parameter must be 2019-05-31 or later.
 ## volume_action_invalid_request
 **Message**: The volume cannot be attached or detached from the instance in its current status.
 
-You cannot attach or detach a volume when the target instance is in `deleting`, `pending`, `starting`, `stopping` or `restarting` status, or it has another volume attachment in `attaching` or `detaching` status. If the status of the instance or volume attachment does not change, please [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+You cannot attach or detach a volume when the target instance is in `deleting`, `pending`, `starting`, `stopping` or `restarting` status, or it has another volume attachment in `attaching` or `detaching` status. If the status of the instance or volume attachment does not change, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## volume_attachment_delete_invalid_request
 **Message**: The volume attachment cannot be deleted.
@@ -1401,9 +1431,7 @@ For further instructions to fix this problem, refer to the [API documentation](h
 ## vpn_connection_cidr_not_created
 **Message**: A CIDR block could not be added to the VPN connection `<vpn_connection_id>`.
 
-Provide a valid CIDR that meets the requirements given by the specification.
-
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+Provide a valid CIDR that meets the requirements given by the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## vpn_connection_cidr_not_deleted
 **Message**: A CIDR block could not be deleted from the VPN connection `<vpn_connection_id>`.
@@ -1437,7 +1465,7 @@ Equivalent CLI command: `ibmcloud is vpn-gateway-connection VPN_GATEWAY_ID CONNE
 ## vpn_connection_cidr_overlap
 **Message**: The CIDR block `<cidr_block_1>` overlaps with `<cidr_block_2>`. Two peer CIDR blocks cannot overlap on the same VPC and two local CIDR blocks cannot overlap on the same connection.
 
-Provide a valid CIDR that meets the requirements given by the specification.
+Provide a valid CIDR that meets the requirements given by the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}..
 
 To view the connection's CIDR blocks, use the `GET /vpn_gateways/<vpn_gateway_id>/connections/<vpn_connection_id>` API and check the `local_cidrs` and `peer_cidrs` fields.
 Equivalent CLI command: `ibmcloud is vpn-gateway-connection VPN_GATEWAY_ID CONNECTION_ID`
@@ -1460,9 +1488,7 @@ A valid PSK should only contain 6 to 128 characters which are letters, digits, `
 ## vpn_connection_local_cidrs_required
 **Message**: At least one local CIDR block is required when creating a VPN connection.
 
-Provide a valid local CIDR that meets the requirements given by the specification.
-
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+Provide a valid local CIDR that meets the requirements given by the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## vpn_connection_local_subnets_quota_exceeded
 **Message**: Local subnets across VPN connections for the VPN gateway `<vpn_gateway_id>` has reached the quota.
@@ -1508,9 +1534,7 @@ Another connection which has a matching local CIDR and peer CIDR to this one exi
 ## vpn_connection_peer_cidrs_required
 **Message**: At least one peer CIDR block is required when creating a VPN connection.
 
-Provide a valid peer CIDR that meets the requirements given by the specification.
-
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+Provide a valid peer CIDR that meets the requirements given by the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## vpn_connection_peer_subnets_quota_exceeded
 **Message**: Peer subnets across VPN connections for the VPN gateway `<vpn_gateway_id>` has reached the quota.
@@ -1541,9 +1565,7 @@ Try again in a few minutes. If this problem persists, [contact support](/docs/vp
 ## vpn_connection_update_cidrs_not_permitted
 **Message**: CIDR blocks cannot be changed when updating a connection. Please use the correct API when creating or deleting CIDR blocks.
 
-Provide a valid request value that meets the requirements given by the specification.
-
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+Provide a valid request value that meets the requirements given by the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## vpn_connections_quota_exceeded
 **Message**: The VPN connection cannot be created because the VPN gateway `<vpn_gateway_id>` has reached the quota.
@@ -1611,7 +1633,7 @@ Try again in a few minutes. If this problem persists, [contact support](/docs/vp
 ## vpn_gateway_subnet_not_found
 **Message**: Could not find the subnet `<subnet_id>` for the given VPN gateway.
 
-You've referenced a subnet that does not exist. Please review your request to ensure that you specified the proper subnet ID. Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+You've referenced a subnet that does not exist. Review your request to ensure that you specified the proper subnet ID. Try again in a few minutes. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 
 ## vpn_gateway_subnet_status_error
 **Message**: The VPN gateway could not be created due to subnet status.
