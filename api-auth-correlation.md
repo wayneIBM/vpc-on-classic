@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-20"
 
 keywords: vpc, resource, policies, authorization, resource type, resource groups, roles, API, CLI, editor, viewer, administrator, operator
 
@@ -23,23 +23,23 @@ subcollection: vpc-on-classic
 # Roles required to manage VPC resources
 {: #resource-authorizations-required-for-api-and-cli-calls}
 
-The table below lists the authorizations required to interact with {{site.data.keyword.vpc_full}} Infrastructure resources.
+This page describes the authorization levels required to interact with {{site.data.keyword.vpc_full}} Infrastructure resources.
 
-The terms _attached_ or _unattached_ refer to whether the resource is associated with a VPC or VPCs (either directly or indirectly through the resource's subnets). An unattached floating IP or Network ACL has no subnets, and therefore it is not associated with any VPC, so authorization by VPC is not applicable.
+The terms _attached_ or _unattached_ refer to whether the resource is associated with one or more VPCs, either directly or indirectly through the resource's subnets. When an unattached floating IP or Network ACL has no subnets, it is not associated with any VPC, so authorization by VPC is not applicable.
 
-In order for a user to be allowed to **create** resources in any resource group, including `Default`, the user must have **Viewer** on the resource group in addition to the role required on the resource type.
+In order for a user to be allowed to **create** resources in any resource group, including `Default` group, the user must have **Viewer** privileges on the resource group, in addition to the role required on the resource type.
 {: tip}
 
-The permission details are available both by resource operation below and [by role](#byrole) further down.
+Permission details are available by both resource action and [by role](#byrole).
 
 ## By resource action
 {: #byaction}
 
-For each resource and desired operation, see in the table below what is the required role.
+The following table defines the resource action allowed for each role.
 
 | Resource | Operation | Required Role |
 |--------|--------|---------|
-| VPC | Create | Editor on Virtual Private Cloud |
+| VPC | Create | Editor on the Virtual Private Cloud resource|
 | VPC | Update, Delete |  Editor on the VPC |
 | VPC |  View, List | Viewer on the VPC  |
 | VPC default ACL, default SG |  View, List | Viewer on the VPC |
@@ -112,11 +112,11 @@ For each resource and desired operation, see in the table below what is the requ
 ## By user role
 {: #byrole}
 
-For each resource, see in the table below what each role allows the user to perform.
+The following table describes what actions can be performed on each resource by role.
 
 | Resource | Account User | Resource Viewer Role | Resource Operator Role | Resource Editor Role |
 |--------|------|---------|--------|---------|
-| **VPC** | | View/List VPC <br> View/List default ACL and default Security Group <br> View/List address prefixes| | Create/Update/Delete VPC <br> Create/Update/Delete address prefix |
+| **VPC** | | View/List VPC <br> View/List default ACL and default security group <br> View/List address prefixes| | Create/Update/Delete VPC <br> Create/Update/Delete address prefix |
 | **Floating IP** | View/List unattached FIP <br> Create/Update/Delete unattached FIP | View/List attached FIP if VPC Viewer | | Update attached FIP if VPC Editor |
 | **Network ACL** | View/List/Create/Update/Delete unattached ACLs and ACL rules | View/List attached ACLs, rules if Viewer on one VPC with attached subnets | |Create/Update/Delete attached ACL, ACL rules if Editor on all VPCs with attached subnets |
 | **Public gateway** | |View/List public gateway if VPC Viewer | |Create/Update/Delete public gateway if VPC Editor |

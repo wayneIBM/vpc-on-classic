@@ -43,7 +43,8 @@ In classic account hosts with a public interface, you must add a route that poin
 Firewalls, gateways, Network ACLs, or security groups can filter out some or all of the network traffic between Classic and VPC resources.
 {: important}
 
-All subnets in a VPC with classic access will be shared into the Classic Infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To avoid IP address conflicts, **do not use** IP addresses on the `10.0.0.0/8` space when creating subnets in a Classic Access VPC.
+All subnets in a VPC with classic access will be shared into the Classic Infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To avoid IP address conflicts, it is recommended that you do not use IP addresses in the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. In addition,
+you should not use addresses from your classic infrastructure subnet(s). To find your classic infrastucture subnet, [see this page](https://cloud.ibm.com/docs/infrastructure/subnets?topic=subnets-view-all-subnets)
 {: important}
 
 ## Create a Classic Access VPC
@@ -140,8 +141,8 @@ Migration is completed by the {{site.data.keyword.cloud_notm}} Network Engineeri
 ## Limitations
 {: #vpc-limitations}
 
-* Only your private (or "back" in old documentation) networks will be connected to your account's private implicit router.
-* Only subnets allocated with classic APIs are connected to the classic side of your private implicit router. The routing function of the implicit router does not work between subnets on classic VLANs.
+* Only your private (or "backend" in old documentation) networks will be connected to your account's private implicit router.
+* Only subnets allocated to your classic infrastructure with IBM Cloud provisioning systems are connected to the classic side of your private implicit router. The routing function of the implicit router does not work between subnets on classic VLANs.
 * Only one VPC per region, per account can be enabled for Classic Access.
 
 Depending on the OS you've installed on your classic VSIs or bare metal servers, your configuration procedure will vary. For more information, see [About public virtual servers](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).

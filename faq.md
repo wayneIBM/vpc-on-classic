@@ -132,22 +132,16 @@ The VPC API enforces this limit.
 The API automatically creates a floating IP along with the public gateway if an existing floating IP is not specified. And yes, that floating IP will show up in the list.
 
 
-## How does VRF affect my other networking capabilities and my subnets?
-{: #faq-14}
-{:faq}
-
-Caveats for VLANs and VRF:
-
-* Inter-account VLAN spanning is not allowed in the VRF environment.
-* IPSec VPN service is limited.
-
-VRF does not prevent SSL or PPTP VPN access, but its behavior changes. Without VRF, one VPN connection is enough to see all servers on your account. With VRF, you can only access resources in the market associated with your VPN. So if you connect to the DAL VPN, you can only connect to DAL servers.
-{: note}
-
 ## What is the correct way to use the `instance-network-interface-floating-ip-add` subcommand in VPC? Does one create/allocate a floating IP address beforehand?
-{: #faq-15}
+{: #faq-14}
 {:faq}
 
  You have to allocate a floating IP first, and then provide the FIP address on the interface floating IP `add` command.
 
  For example: `ibmcloud is floating-ip-reserve FLOATING_IP_NAME (--zone ZONE | --nic NIC_ID)`. Provide the zone.
+
+## If I use 10.x addresses to access an infrastructure service from my Classic VRF, can I use this same address to access this service from a Classic Access VPC?
+{: #faq-15}
+{:faq}
+
+No, you have to use the 161.26 address to access infrastructure services from a Classic Access VPC.

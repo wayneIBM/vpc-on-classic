@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-08-15"
+lastupdated: "2019-09-17"
 
 keywords: vpc, pricing, billing, data, instance, VSI, block, storage, paygo, transfer, floating, server, VPC, allowance, gateway, egress, minimal charges, ARP, traffic
 
@@ -117,6 +117,61 @@ Data transfer to the internet as a result of using VPNaaS is charged as regular 
 {{site.data.keyword.vsi_is_full}} is offered in select regions with up to 62 vCPU and 248 GB RAM to fit any workload need. You're billed at an hourly rate only, with discounts applied the longer your instance is running. Virtual server usage times are calculated per second, for both the in use time and suspended time of your instance. For example, if your instance runs for 45 minutes and 32 seconds, you're billed for 45 minutes and 32 seconds.
 {:shortdesc}
 
+### Base instance prices
+{: #base-instance-prices}
+
+Base instance prices start at $0.087 per hour. When you create a virtual server, you are prompted to select a virtual server family and select a profile configuration. When you make your selection, the associated hourly rate is displayed in the table. <!-- You can also use the Pricing Calculator to estimate your costs. --> 
+
+| Profile | vCPU | RAM | PayGo / Hour |
+|---------|---------|---------|---------|
+| bc1-2x8 | 2 | 8 | $0.099 |
+| bc1-4x16 | 4 | 16 | $0.199 |
+| bc1-8x32 | 8 | 32 | $0.397 |
+| bc1-16x64 | 16 | 64 | $0.795 |
+| bc1-32x128 | 32  | 128 | $1.590 |
+| bc1-48x192 | 48 | 192 | $2.385 |
+| bc1-62x248 | 62 | 248 | $3.080 |
+| cc1-2x4 | 2 | 4 | $0.087 |
+| cc1-4x8 | 4 | 8 | $0.174 |
+| cc1-8x16 | 8 | 16 | $0.348 |
+| cc1-16x32 | 16 | 32 | $0.695 |
+| cc1-32x64 | 32  | 64 | $1.391 |
+| mc1-2x16 | 2 | 16 | $0.124 |
+| mc1-4x32 | 4 | 32 | $0.248 |
+| mc1-8x64 | 8 | 64 | $0.497 |
+| mc1-16x128 | 16 | 128 | $0.994 |
+| mc1-32x256 | 32 | 256 | $1.987 |
+{: caption="Table 1. Virtual server pricing by profile option" caption-side="top"}
+
+The region where your virtual server is created determines if a regional pricing uplift applies for your virtual server.
+
+| Region         | Pricing Uplift | 
+| -------------- | ----------------- | 
+| us-south       | 0%                |                 
+| eu-de          | 10%               |                  
+| jp-tok         | 13%               |                  
+| eu-gb          | 7%                |                  
+| au-syd         | 20%               |
+{: caption="Table 2. Regional pricing uplift" caption-side="top"}  
+
+### Included operating systems
+{: #included-operating-systems}
+
+The following operating systems are included free of charge:
+
+* CentOS 7.latest
+* Ubuntu 16.04 LTS, 18.04 (minimal)
+* Debian 8.latest, 9.latest (minimal)
+
+Premium operating systems and other add-ons are available. You'll see pricing reflected in your Cost Summary.
+
+| Premium operating system       | Amount of data    |  PayGo Pricing     |
+| ------------------------------ | ----------------- | ---------------------- |
+| Red Hat Enterprise Linux 7.x   | 1-4 cores         | $.08 per core per hour   |                
+| Red Hat Enterprise Linux 7.x   | 5-64 cores        | $.13 per core per hour   |                 
+| Windows 2012, 2012 R2, 2016    |                   | $.04 per core per hour  |            
+{: caption="Table 3. Premium operating system pricing" caption-side="top"} 
+
 
 ### Sustained usage
 {: #sustained-usage}
@@ -130,7 +185,7 @@ While the instances are charged at an hourly rate, the longer your instance is r
 | 41-60%                        | 10%       |                  
 | 61-80%                        | 15%        |                  
 | 81-100%                       | 20% |
-{: caption="Table 1. Tiered discounts" caption-side="top"}  
+{: caption="Table 4. Tiered discounts" caption-side="top"}  
 
 These discounted tiers provide you with a 10% savings for keeping instances running monthly versus hourly. This discount only applies to base hourly rates; it doesn't apply to software, storage, network, or other charges.
 
@@ -148,25 +203,11 @@ Say you purchase an instance from the Balanced virtual server family, with 16 CP
 | 41-60%                        | 10%       |    $104.46  |            
 | 61-80%                        | 15%        |    $98.66    |                
 | 81-100%                       | 20% |       $92.86      |
-{: caption="Table 2. Tiered discounts example" caption-side="top"}  
+{: caption="Table 5. Tiered discounts example" caption-side="top"}  
 
 Your total bill, if left running for the entire month, with this model is $522.32. The discounts result in an overall monthly savings of 10%, compared to the hourly rate.
 
-### Base instance prices
-{: #base-instance-prices}
 
-Base instance prices start at $0.087 per hour. When you create a virtual server, you are prompted to select a virtual server family and select a profile configuration. When you make your selection, the associated hourly rate is displayed in the table. <!-- You can also use the Pricing Calculator to estimate your costs. --> 
-
-### Included operating systems
-{: #included-operating-systems}
-
-The following operating systems are included free of charge:
-
-* CentOS 7.latest
-* Ubuntu 16.04 LTS, 18.04 (minimal)
-* Debian 8.latest, 9.latest (minimal)
-
-There are premium operating systems and other add-ons available. You'll see pricing reflected in your Cost Summary.
 
 ### Suspend billing
 {: #suspend-billing}
@@ -176,7 +217,7 @@ When you power off an instance, you don't accrue costs for certain compute resou
 In situations where you want to scale your infrastructure up and down in response to workload needs, you can use the suspend billing feature as a faster alternative to creating and deleting instances.
 {:tip}
 
-### Billing details
+#### Billing details
 {: #billing-details}
 
 It's important to understand what costs stop accruing and what costs persist when your virtual server instance is powered off.
@@ -194,7 +235,7 @@ Review the following table for details on how suspend billing impacts various re
 | Operating system licenses     |          X        |                  |
 | Floating IPs, Load balancers, or other attached networking offerings |                   |         X        |
 | Storage                       |                   |         X        |
-{: caption="Table 1. Resource billing details" caption-side="top"}   
+{: caption="Table 6. Resource billing details" caption-side="top"}   
 
 Usage times are calculated per second, for both the in use time and suspended time of your virtual server instance. Even if you never initiate the suspend billing feature by powering off your instance, the billing is calculated per second of the instance's lifecycle. 
 {:note}
