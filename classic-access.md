@@ -44,7 +44,7 @@ Firewalls, gateways, Network ACLs, or security groups can filter out some or all
 {: important}
 
 All subnets in a VPC with classic access will be shared into the Classic Infrastructure VRF, which uses IP addresses in the `10.0.0.0/8` space. To avoid IP address conflicts, it is recommended that you do not use IP addresses in the `10.0.0.0/14`, `10.200.0.0/14`, `10.198.0.0/15`, and `10.254.0.0/16` blocks. In addition,
-you should not use addresses from your classic infrastructure subnet(s). To find your classic infrastucture subnet, [see this page](https://cloud.ibm.com/docs/infrastructure/subnets?topic=subnets-view-all-subnets)
+you should not use addresses from your classic infrastructure subnets. To view the list of your classic infrastructure subnets, see [View all Subnets](/docs/infrastructure/subnets?topic=subnets-view-all-subnets).
 {: important}
 
 ## Create a Classic Access VPC
