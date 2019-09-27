@@ -386,6 +386,11 @@ The version must comply with the format _YYYY-MM-DD_. For single-digit months or
 
 The date given in the version parameter must be later than 2019-01-01 but before the current date.
 
+## invalid_template
+**Message**: The template provided is not valid.
+
+To fix this problem, be sure the template provided is valid and that your request conforms to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+
 ## invalid_zone
 **Message**: Please check whether the resources you are requesting are in the same zone.
 
@@ -1094,7 +1099,7 @@ For example, the following value would be invalid because `northbound` is not a 
 }
 ```
 
-Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} or the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference) for acceptable values.
+Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} or the [CLI reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference) for acceptable values.
 
 ## validation_failure
 **Message**: The JSON provided did not match the expected structure.
@@ -1370,7 +1375,7 @@ You are out of quota for the current account. Try deleting some volumes or conta
 ## volume_resource_group_id_invalid
 **Message**: The resource group ID specified in the request is not valid.
 
-The resource group ID that you specified in the request is not valid. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#storage) for more information.
+The resource group ID that you specified in the request is not valid. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#storage) for more information.
 
 ## volume_resource_group_not_authorized
 **Message**: The current action is not authorized on the specified resource group.
@@ -1380,7 +1385,7 @@ You are not authorized to list or create volumes in the specified resource group
 ## volume_resource_group_not_found
 **Message**: A resource group with the specified ID could not be found.
 
-The resource group ID could not be found because you might have entered it incorrectly or it does not exist. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#storage) for more information.
+The resource group ID could not be found because you might have entered it incorrectly or it does not exist. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#storage) for more information.
 
 ## volume_start_not_found
 **Message**: A volume with the ID specified as the page start parameter is not found.

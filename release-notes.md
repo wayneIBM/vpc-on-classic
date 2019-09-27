@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-09-26"
 
 keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -26,6 +26,19 @@ subcollection: vpc-on-classic
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
 
+## 27 September 2019
+{: #sept-27-2019}
+
+**Updates to the UI**
+- Tags can now be added to Floating IPs.
+- Custom network routes can now be added to a Virtual Private Cloud from the user interface. Click on the **Routes** menu option in the Virtual Private Cloud details page. 
+- A metric overview for CPU, memory, and traffic is now available in the instance overview page.
+- Price estimates for VPC, VPN, Load Balancer, volumes, and custom images are now available in the provisioning pages.
+
+**Activity Tracker with LogDNA Location update**
+- Activity Tracker with LogDNA is now available in the London and Sydney data centers. These locations will be used by VPC starting on **October 3, 2019**. Currently, VPC events in London and Sydney were being sent to Frankfurt but after October 3, these events will be sent to London and Sydney accordingly.
+
+
 ## 13 September 2019
 {: #sept-13-2019}
 
@@ -35,14 +48,14 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 {: #sept-06-2019}
 
 - **New API version** is available as of `2019-08-06`, and includes enhanced field and parameter validation. Refer to the [VPC API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for the correct usage.
-- **Activity Tracker with LogDNA** is available in new locations. These locations will be used by VPC starting on **September 26, 2019**. The list of [supported locations](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#at-supported-locations) will be updated and instructions will be provided on how to get events in the new locations.
+
 
 ## 23 August 2019
 {: #aug-23-2019}
 
 - **Live Chat** is now available from the VPC Infrastructure user interfaces pages.
 - **User Interface improvements** allow you to create a subnet from the VPC detail page and attach an existing public gateway to a subnet.
-- **Custom VPC Routes** can now be created using the command line interface. Learn more in the [CLI reference](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#vpc-routes).
+- **Custom VPC Routes** can now be created using the command line interface. Learn more in the [CLI reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#vpc-routes).
 
 ## 2 August 2019
 {: #aug-02-2019}
@@ -50,7 +63,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 **Custom Images:** You can now import your own images (in VHD format).  After the image has been uploaded to a region, you can use that image to provision new instances in that region. You can rename the image or delete it when you no longer need it.
 - Learn about [importing and managing images](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-managing-images).
 - Start [importing your custom images using the UI](https://{DomainName}/vpc/compute/images){: external}.
-- Learn how to import and use [custom images using the CLI](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference#image-create).
+- Learn how to import and use [custom images using the CLI](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#image-create).
 - Use version `2019-07-30` when you use the [Create Image API](https://{DomainName}/apidocs/vpc-on-classic#create-an-image){: external}.
 
 ## 26 July 2019

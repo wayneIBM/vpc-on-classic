@@ -63,7 +63,7 @@ Virtual Private Cloud on Classic
     vpc-glossary.md
     [API reference for VPC](https://{DomainName}/apidocs/vpc-on-classic)
     quick-guide-to-resources.md
-    /vpc-infrastructure-cli-plugin/vpc-infrastructure-cli-plugin-vpc-reference
+    vpc-cli-reference.md
     vpc-endpoints.md
     at-events.md
     [Go and Python Example Code](https://github.com/IBM-Cloud/vpc-api-samples)

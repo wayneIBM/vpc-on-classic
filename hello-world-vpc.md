@@ -711,4 +711,4 @@ ibmcloud is volume-delete $vol
 
 You've successfully provisioned and connected to your Virtual Private Cloud instance using the IBM Cloud CLI. To try out more CLI commands, explore the full reference:
 
-* [CLI Reference for VPC](/docs/vpc-on-classic?topic=vpc-infrastructure-cli-plugin-vpc-reference)
+* [CLI Reference for VPC](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference)

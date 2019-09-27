@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-07-10"
+lastupdated: "2019-09-27"
 
 keywords: activity tracker, vpc, events, logdna
 
@@ -35,41 +35,41 @@ The {{site.data.keyword.at_full}} service records user-initiated activities to c
 
 | Resource  | Action  | Description  |
 |:----------------|:-----------------------|:-----------------------|
-| vpc  | is.vpc.vpc.create   | VPC was created.  |
-| vpc  | is.vpc.vpc.update   | VPC was updated.  |
-| vpc  | is.vpc.vpc.delete   | VPC was deleted.  |
-| vpc  | is.vpc.address-prefix.create  | Address Prefix was added to VPC.  |
-| vpc  | is.vpc.address-prefix.update  | VPC Address Prefix was updated.   |
-| vpc  | is.vpc.address-prefix.delete  | Address Prefix was removed from VPC.  |
-| vpc  | is.vpc.vpc-route.create   | Route was added to VPC.   |
-| vpc  | is.vpc.vpc-route.update   | VPC Route was updated.  |
-| vpc  | is.vpc.vpc-route.delete   | Route was removed from VPC.   |
-| floating-ip  | is.floating-ip.floating-ip.delete   | Floating IP was created.  |
-| floating-ip  | is.floating-ip.floating-ip.delete   | Floating IP was updated.  |
-| floating-ip  | is.floating-ip.floating-ip.delete   | Floating IP was deleted.  |
-| network-acl  | is.network-acl.network-acl.create   | Network ACL was created.  |
-| network-acl  | is.network-acl.network-acl.update   | Network ACL was updated.  |
-| network-acl  | is.network-acl.network-acl.delete   | Network ACL was deleted.  |
-| network-acl  | is.network-acl.rule.create  | Rule was added to Network ACL.  |
-| network-acl  | is.network-acl.rule.update  | Network ACL Rule was updated.   |
-| network-acl  | is.network-acl.rule.delete  | Rule was removed from Network ACL.  |
-| public-gateway | is.public-gateway.public-gateway.create   | Public Gateway was created.   |
-| public-gateway | is.public-gateway.public-gateway.update   | Public Gateway was updated.   |
-| public-gateway | is.public-gateway.public-gateway.delete   | Public Gateway was deleted.   |
-| security-group | is.security-group.security-group.create   | Security Group create   |
-| security-group | is.security-group.security-group.delete   | Security Group delete   |
-| security-group | is.security-group.security-group.update   | Security Group update   |
-| security-group | is.security-group.security-group.rule-create  | Security Group rule create  |
-| security-group | is.security-group.security-group.rule-delete  | Security Group rule delete  |
-| security-group | is.security-group.security-group.rule-update  | Security Group rule update  |
-| security-group | is.security-group.security-group.interface-attach | Security Group interface attach   |
-| security-group | is.security-group.security-group.interface-detach | Security Group interface detach   |
-| subnet   | is.subnet.subnet.create   | Subnet was created.   |
-| subnet   | is.subnet.subnet.update   | Subnet was updated.   |
-| subnet   | is.subnet.subnet.delete   | Subnet was deleted.   |
-| subnet   | is.subnet.network-acl.update  | Subnet's Network ACL was replaced.   |
-| subnet   | is.subnet.public-gateway.operate  | Public Gateway was attached to Subnet.  |
-| subnet   | is.subnet.public-gateway.operate  | Public Gateway was detached from Subnet.  |
+| vpc  | is.vpc.vpc.create   | VPC was created  |
+| vpc  | is.vpc.vpc.update   | VPC was updated  |
+| vpc  | is.vpc.vpc.delete   | VPC was deleted  |
+| vpc  | is.vpc.address-prefix.create  | Address Prefix was added to VPC  |
+| vpc  | is.vpc.address-prefix.update  | VPC Address Prefix was updated  |
+| vpc  | is.vpc.address-prefix.delete  | Address Prefix was removed from VPC  |
+| vpc  | is.vpc.vpc-route.create   | Route was added to VPC   |
+| vpc  | is.vpc.vpc-route.update   | VPC Route was updated  |
+| vpc  | is.vpc.vpc-route.delete   | Route was removed from VPC   |
+| floating-ip  | is.floating-ip.floating-ip.delete   | Floating IP was created  |
+| floating-ip  | is.floating-ip.floating-ip.delete   | Floating IP was updated  |
+| floating-ip  | is.floating-ip.floating-ip.delete   | Floating IP was deleted  |
+| network-acl  | is.network-acl.network-acl.create   | Network ACL was created  |
+| network-acl  | is.network-acl.network-acl.update   | Network ACL was updated  |
+| network-acl  | is.network-acl.network-acl.delete   | Network ACL was deleted  |
+| network-acl  | is.network-acl.rule.create  | Rule was added to Network ACL  |
+| network-acl  | is.network-acl.rule.update  | Network ACL Rule was updated  |
+| network-acl  | is.network-acl.rule.delete  | Rule was removed from Network ACL  |
+| public-gateway | is.public-gateway.public-gateway.create   | Public Gateway was created   |
+| public-gateway | is.public-gateway.public-gateway.update   | Public Gateway was updated   |
+| public-gateway | is.public-gateway.public-gateway.delete   | Public Gateway was deleted   |
+| security-group | is.security-group.security-group.create   | Security Group was created   |
+| security-group | is.security-group.security-group.delete   | Security Group was deleted   |
+| security-group | is.security-group.security-group.update   | Security Group was updated   |
+| security-group | is.security-group.security-group-rule.create  | Rule was added to Security Group  |
+| security-group | is.security-group.security-group-rule.delete  | Rule was removed from Security Group  |
+| security-group | is.security-group.security-group-rule.update  | Security Group Rule was updated  |
+| security-group | is.security-group.security-group-interface.attach | Interface was attached to Security Group   |
+| security-group | is.security-group.security-group-interface.detach | Interface was removed from Security Group  |
+| subnet   | is.subnet.subnet.create   | Subnet was created   |
+| subnet   | is.subnet.subnet.update   | Subnet was updated   |
+| subnet   | is.subnet.subnet.delete   | Subnet was deleted  |
+| subnet   | is.subnet.network-acl.update  | Subnet's Network ACL was replaced   |
+| subnet   | is.subnet.public-gateway.operate  | Public Gateway was attached to Subnet  |
+| subnet   | is.subnet.public-gateway.operate  | Public Gateway was detached from Subnet  |
 
 ## List of events: Compute resources
 {: #events-computes}
@@ -78,19 +78,19 @@ The following table lists the actions related to compute resources and the gener
 
 | Resource  | Action  | Description  |
 |:----------------|:-----------------------|:-----------------------|
-| instance   | is.instance.instance.create   | Instance was created.   |
-| instance   | is.instance.instance.delete   | Instance was deleted.   |
-| instance   | is.instance.instance.update   | Instance was updated.   |
-| instance   | is.instance.action.create   | Instance action was created.  |
-| instance   | is.instance.action.delete   | Pending instance action was deleted.  |
+| instance   | is.instance.instance.create   | Instance was created   |
+| instance   | is.instance.instance.delete   | Instance was deleted   |
+| instance   | is.instance.instance.update   | Instance was updated   |
+| instance   | is.instance.action.create   | Instance action was created  |
+| instance   | is.instance.action.delete   | Pending instance action was deleted  |
 | instance   | is.instance.network_interface.floating_ip.create  | Floating ip was associated to instance network interface  |
 | instance   | is.instance.network_interface.floating_ip.delete  | Floating ip was Disassociated from instance network interface |
 | instance   | is.instance.volume_attachement.create   | Instance volume attachment was created  |
 | instance   | is.instance.volume_attachement.delete   | Instance volume attachment was deleted  |
 | instance   | is.instance.volume_attachement.update   | Instance volume attachment was updated  |
-| key  | is.key.key.create   | key was created.  |
-| key  | is.key.key.delete   | key was deleted.  |
-| key  | is.key.key.update   | key was updated.  |
+| key  | is.key.key.create   | Key was created  |
+| key  | is.key.key.delete   | Key was deleted  |
+| key  | is.key.key.update   | Key was updated  |
 
 ## List of events: Image resources
 {: #events-images}
@@ -110,7 +110,7 @@ The following table lists the actions related to storage resources and the gener
 
 | Resource  | Action  | Description  |
 |:----------------|:-----------------------|:-----------------------|
-| volume  | is.volume.volume.create  |  Volume was created  |
+| volume  | is.volume.volume.create  | Volume was created  |
 | volume  | is.volume.volume.update  | Volume was updated |
 | volume  | is.volume.volume.delete  | Volume was deleted  |
 
@@ -151,18 +151,27 @@ The following table lists the actions related to VPNs and the generation of even
 
 | Resource  | Action  | Description  |
 |:----------------|:-----------------------|:-----------------------|
-| vpn  | is.vpn.vpn.create   | VPN was created   |
-| vpn  | is.vpn.vpn.delete   | VPN was deleted   |
-| vpn  | is.vpn.vpn.update   | VPN was updated   |
-| vpn  | is.vpn.vpn.update   | VPN connection was created  |
-| vpn  | is.vpn.vpn.update   | VPN connection was deleted  |
-| vpn  | is.vpn.vpn.update   | VPN connection was updated  |
-
+| vpn  | is.vpn.vpn-gateway.create   | VPN Gateway was created |
+| vpn  | is.vpn.vpn-gateway.delete   | VPN Gateway was deleted |
+| vpn  | is.vpn.vpn-gateway.update   | VPN Gateway was updated |
+| vpn  | is.vpn.vpn-connection.create   | VPN connection was created on VPN Gateway |
+| vpn  | is.vpn.vpn-connection.delete   | VPN connection was deleted from VPN Gateway |
+| vpn  | is.vpn.vpn-connection.update   | VPN connection was updated on VPN Gateway |
+| vpn  | is.vpn.vpn-connection_local-cidr.create   | Local subnet was created on VPN Connection |
+| vpn  | is.vpn.vpn-connection_local-cidr.delete   | Local subnet was deleted from VPN Connection |
+| vpn  | is.vpn.vpn-connection_peer-cidr.create   | Peer subnet was created on VPN Connection |
+| vpn  | is.vpn.vpn-connection_peer-cidr.delete   | Peer subnet was deleted from VPN Connection |
+| vpn  | is.vpn.ike-policy.create   | IKE policy was created |
+| vpn  | is.vpn.ike-policy.delete   | IKE policy was deleted |
+| vpn  | is.vpn.ike-policy.update   | IKE policy was updated |
+| vpn  | is.vpn.ipsec-policy.create   | IPsec policy was created |
+| vpn  | is.vpn.ipsec-policy.delete   | IPsec policy was deleted |
+| vpn  | is.vpn.ipsec-policy.update   | IPsec policy was updated |
 
 ## Supported locations
 {: #at-supported-locations}
 
-{{site.data.keyword.at_full}} support is available currently for the Dallas and Frankfurt locations. The following table lists the Activity Tracker with LogDNA location for each VPC region.
+{{site.data.keyword.at_full}} support is available currently for the Dallas, Tokyo, and Frankfurt locations. The following table lists the Activity Tracker with LogDNA location for each VPC region.
 
 | VPC Region | Activity Tracker with LogDNA Location |
 |--------------|---------------------------------------|
