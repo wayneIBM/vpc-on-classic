@@ -2,9 +2,9 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-09-20"
+lastupdated: "2019-09-27"
 
-keywords: cli, reference, commands
+keywords: cli, reference, commands, generation 1, classic
 
 subcollection: vpc-on-classic
 
@@ -25,13 +25,12 @@ subcollection: vpc-on-classic
 # IBM Cloud CLI for VPC Reference
 {: #vpc-reference}
 
-This document provides a reference of the command line interface (CLI) commands available for the functionality of the {{site.data.keyword.cloud}} Virtual Private Cloud. The commands are organized into sections according to functionality: first for setting the target version of Virtual Private Cloud you'll be using, then for network, compute, regions, VPN, load balancers, and storage. Similar commands to execute these functions also are available as [API commands](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+This document provides a reference of the command line interface (CLI) commands available for the functionality of the {{site.data.keyword.cloud}} Virtual Private Cloud. The commands are organized into sections according to functionality such as network, compute, regions, VPN, load balancers, and storage. Similar commands to execute these functions also are available as [API commands](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## Prerequisites:
 
-Install the [IBM Cloud CLI](/docs/cli?topic=cloud-cli-install-ibmcloud-cli).
-
-Install or update the vpc-infrastructure plugin.
+1. Install the [IBM Cloud CLI](/docs/cli?topic=cloud-cli-install-ibmcloud-cli).
+2. Install or update the vpc-infrastructure plugin.
 
   ```
   ibmcloud plugin install vpc-infrastructure
@@ -52,12 +51,18 @@ Install or update the vpc-infrastructure plugin.
   ```
   {: pre}
 
+3. Set target generation as `1`.
+
+   ```
+   ibmcloud is target --gen 1
+   ```
+   {: pre}
 
 
 ## Target Commands
 {: #target}
 
-This command targets the generation of Virtual Private Cloud, 1 (on Classic), or 2 (Next Generation).
+This command targets the generation of compute resources in the Virtual Private Cloud, (Gen 1) or ( Gen 2).
 
 ### `ibmcloud is target`
 
@@ -1280,11 +1285,12 @@ This section contains a reference for the CLI commands related to Compute functi
 
 **View initialization details of a server instance.**
 
-`ibmcloud is instance-initialization-values INSTANCE [--json]`
+`ibmcloud is instance-initialization-values INSTANCE [--private-key (KEY | @KEY_FILE)] [--json]`
 
 **Options**
 
 - `INSTANCE`: ID of the instance.
+- `--private-key`: key|@key-file. The private key in PEM format to decrypt Windows administrator default password.
 - `--json`: Format output in JSON.
 
 ---

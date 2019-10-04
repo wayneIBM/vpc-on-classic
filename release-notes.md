@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-09-26"
+lastupdated: "2019-10-03"
 
-keywords: release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
+keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
 subcollection: vpc-on-classic
 
@@ -26,12 +26,18 @@ subcollection: vpc-on-classic
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
 
+## 04 October 2019
+{: #oct-04-2019}
+
+**Activity Tracker with LogDNA Location update**
+- Activity Tracker with LogDNA is now available in the London and Sydney data centers. These locations are now being used by VPC. See [Supported Locations](/docs/vpc-on-classic?topic=vpc-on-classic-at-events#at-supported-locations) for more information.
+
 ## 27 September 2019
 {: #sept-27-2019}
 
 **Updates to the UI**
 - Tags can now be added to Floating IPs.
-- Custom network routes can now be added to a Virtual Private Cloud from the user interface. Click on the **Routes** menu option in the Virtual Private Cloud details page. 
+- Custom network routes can now be added to a Virtual Private Cloud from the user interface. Click on the **Routes** menu option in the Virtual Private Cloud details page.
 - A metric overview for CPU, memory, and traffic is now available in the instance overview page.
 - Price estimates for VPC, VPN, Load Balancer, volumes, and custom images are now available in the provisioning pages.
 

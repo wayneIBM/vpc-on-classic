@@ -3,9 +3,9 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-09-27"
+lastupdated: "2019-10-03"
 
-keywords: activity tracker, vpc, events, logdna
+keywords: vpc event, vpc activity tracker, vpc logdna
 
 subcollection: vpc-on-classic
 
@@ -171,15 +171,15 @@ The following table lists the actions related to VPNs and the generation of even
 ## Supported locations
 {: #at-supported-locations}
 
-{{site.data.keyword.at_full}} support is available currently for the Dallas, Tokyo, and Frankfurt locations. The following table lists the Activity Tracker with LogDNA location for each VPC region.
+The following table lists the Activity Tracker with LogDNA location for each VPC region.
 
 | VPC Region | Activity Tracker with LogDNA Location |
 |--------------|---------------------------------------|
 | us-south   | Dallas  |
 | jp-tok   | Tokyo  |
 | eu-de  | Frankfurt  |
-| eu-gb  | Frankfurt |
-| au-syd  | Dallas |
+| eu-gb  | London |
+| au-syd  | Sydney |
 
 ## Where to look for events
 {: #at-events-ui}
