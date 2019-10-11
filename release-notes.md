@@ -26,6 +26,11 @@ subcollection: vpc-on-classic
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
 
+## 11 October 2019
+{: #oct-11-2019}
+
+- **Cost estimates** are now available from the [VPC instance provisioning](https://cloud.ibm.com/vpc/provision/vs){: external} user interface. Press the **Add to estimate** button to add the cost to the estimate and then you can **Review estimate** or **Clear estimate** when finished.
+
 ## 04 October 2019
 {: #oct-04-2019}
 
