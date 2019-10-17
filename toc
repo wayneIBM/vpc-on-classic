@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="vpc-on-classic" category="vpc,network,storage" audience="service" arm="4135753" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
-Virtual Private Cloud on Classic
+Virtual Private Cloud (Gen 1 compute)
 
     {: .navgroup id="learn"}
     getting-started.md
@@ -76,6 +76,7 @@ Virtual Private Cloud on Classic
     known-limitations.md
     troubleshooting.md
     release-notes.md
+    api-change-log.md
     errors.md
     getting-help.md
     {: .navgroup-end}

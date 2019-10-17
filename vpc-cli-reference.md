@@ -25,7 +25,12 @@ subcollection: vpc-on-classic
 # IBM Cloud CLI for VPC Reference
 {: #vpc-reference}
 
-This document provides a reference of the command line interface (CLI) commands available for the functionality of the {{site.data.keyword.cloud}} Virtual Private Cloud. The commands are organized into sections according to functionality such as network, compute, regions, VPN, load balancers, and storage. Similar commands to execute these functions also are available as [API commands](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+This document provides a reference of the command line interface (CLI) commands available for the functionality of the {{site.data.keyword.cloud}} Virtual Private Cloud (Gen 1 compute). 
+
+This VPC CLI is for use with generation 1 compute resources. Generation 1 resources aren't compatible with generation 2 resources. To view the CLI for generation 2 resources, see the [CLI for VPC for generation 2 compute](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference). 
+{:tip}
+
+The commands are organized into sections according to functionality such as network, compute, regions, VPN, load balancers, and storage. Similar commands to execute these functions also are available as [API commands](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## Prerequisites:
 
@@ -50,8 +55,8 @@ This document provides a reference of the command line interface (CLI) commands 
   ibmcloud plugin list
   ```
   {: pre}
-
-3. Set target generation as `1`.
+  
+3. Set target generation for compute resources as `1`. 
 
    ```
    ibmcloud is target --gen 1
@@ -62,7 +67,7 @@ This document provides a reference of the command line interface (CLI) commands 
 ## Target Commands
 {: #target}
 
-This command targets the generation of compute resources in the Virtual Private Cloud, (Gen 1) or ( Gen 2).
+This command targets the generation of compute resources, (Gen 1) or ( Gen 2).
 
 ### `ibmcloud is target`
 
@@ -70,7 +75,7 @@ This command targets the generation of compute resources in the Virtual Private 
 
 **Options**
 
-- `--gen`: Generation of Virtual Private Cloud. Default is 2.
+- `--gen`: Generation of Virtual Private Cloud. Default is 2. You must set the value to '1' to access generation 1 resources.
 
 
 ## Network Commands

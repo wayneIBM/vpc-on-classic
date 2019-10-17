@@ -49,7 +49,6 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 **Activity Tracker with LogDNA Location update**
 - Activity Tracker with LogDNA is now available in the London and Sydney data centers. These locations will be used by VPC starting on **October 3, 2019**. Currently, VPC events in London and Sydney were being sent to Frankfurt but after October 3, these events will be sent to London and Sydney accordingly.
 
-
 ## 13 September 2019
 {: #sept-13-2019}
 
@@ -59,7 +58,6 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 {: #sept-06-2019}
 
 - **New API version** is available as of `2019-08-06`, and includes enhanced field and parameter validation. Refer to the [VPC API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external} for the correct usage.
-
 
 ## 23 August 2019
 {: #aug-23-2019}
@@ -134,7 +132,7 @@ for use cases and examples.
 
 - **Terraform provider v0.17.1** has been released, download the [latest binary](https://github.com/IBM-Cloud/terraform-provider-ibm/releases/tag/v0.17.1){: external}.
 - **Docker Image** also has been updated with the latest Terraform provider. You can pull the latest Docker image by using this command:  `docker pull ibmterraform/terraform-provider-ibm-docker:latest`
-- Remember to set `generation` as a provider argument or export `IC_GENERATION= 1` so that your code will work with the currently released version of VPC on classic infrastructure. By default the value is set to 2 (VPC, coming soon, now in Beta).
+- Remember to set `generation` as a provider argument or export `IC_GENERATION= 1` so that your code will work with the currently released version of VPC for generation 1 compute resources. By default the value is set to 2 (VPC, coming soon, now in Beta).
 - Provider arguments(`bluemix_api_key` and `bluemix_timeout`) have been deprecated, so a warning could be thrown when you run Terraform plan or apply.
 
 ## 7 June 2019
@@ -153,7 +151,7 @@ Log in to the [IBM Cloud Console](https://{DomainName}/vpc/overview){: external}
 ## 31 May 2019
 {: #may-31-2019}
 
-**New API version available.** The VPC on Classic API version has been updated from `2019-01-01` to `2019-05-31`. For guidelines and best practices, see  [Versioning](https://{DomainName}/apidocs/vpc-on-classic#versioning){: external} in the Virtual Private Cloud on Classic API.
+**New API version available.** The VPC API version for use with generation 1 compute resources has been updated from  `2019-01-01` to `2019-05-31`. For guidelines and best practices, see  [Versioning](https://{DomainName}/apidocs/vpc-on-classic#versioning){: external}.
 
 ## 24 May 2019
 {: #may-24-2019}

@@ -27,7 +27,10 @@ subcollection: vpc-on-classic
 # Creating a VPC using the REST APIs
 {: #creating-a-vpc-using-the-rest-apis}
 
-This document shows you how to create {{site.data.keyword.cloud}} Virtual Private Cloud resources using the REST APIs using `curl`. For code snippets calling the REST APIs using Go and Python, see this [example code](https://github.com/IBM-Cloud/vpc-api-samples/tree/gen1){: external}.
+This document shows you how to use the REST APIs and `curl` commands to create an {{site.data.keyword.cloud}} Virtual Private Cloud for generation 1 compute resources. For code snippets calling the REST APIs using Go and Python, see this [example code](https://github.com/IBM-Cloud/vpc-api-samples/tree/gen1){: external}.
+
+To create a Virtual Private Cloud for generation 2 compute, see [Using the REST APIs to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis).
+{: tip}
 
 ## Prerequisites
 

@@ -321,7 +321,7 @@ An unexpected error occurred. This problem may be temporary. Try the request aga
 ## invalid_generation_parameter
 **Message**: The generation query parameter must be set to 1.
 
-For versions on and after 5/31/2019, the `generation` query parameter must be set to 1 to allow VPC on Classic API requests.
+For versions on and after 5/31/2019, the 'generation' query parameter must be set to 1 to allow VPC API requests for use with generation 1 compute resources.
 
 How to set the generation parameter
 
@@ -678,7 +678,7 @@ The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-o
 ## missing_generation_parameter
 **Message**: The generation query parameter is required.
 
-For versions on and after 5/31/2019, the `generation` query parameter is required for VPC on Classic API requests.
+For versions on and after 5/31/2019, the `generation` query parameter is required for VPC for generation 1 compute resources API requests.
 
 ## missing_ims_account_id
 **Message**: None

@@ -21,12 +21,14 @@ subcollection: vpc-on-classic
 {:DomainName: data-hd-keyref="DomainName"}
 {:external: target="_blank" .external}
 
-# Getting started with Virtual Private Cloud on Classic
+# Getting started with Virtual Private Cloud (Gen 1 compute)
 {: #getting-started}
 [comment]: # (linked help topic)
 
+New! Check out Virtual Private Cloud for generation 2 virtual server profiles. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
+{:tip} 
 
-To get started with {{site.data.keyword.vpc_full}}:
+To get started with {{site.data.keyword.vpc_full}} (Gen 1 compute):
 
 1. Create a Virtual Private Cloud.
 2. Create one or more subnets in the Virtual Private Cloud in one or more zones.
