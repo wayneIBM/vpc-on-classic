@@ -75,7 +75,7 @@ This command targets the generation of compute resources, (Gen 1) or ( Gen 2).
 
 **Options**
 
-- `--gen`: Generation of Virtual Private Cloud. Default is 2. You must set the value to '1' to access generation 1 resources.
+- `--gen`: Generation of compute resources. Default is '2'. You must set the value to '1' to access generation 1 resources.
 
 
 ## Network Commands
@@ -430,11 +430,12 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **View details of a subnet.**
 
-`ibmcloud is subnet SUBNET [--json]`
+`ibmcloud is subnet SUBNET [--show-attached] [--json]`
 
 **Options**
 
 - `SUBNET`: ID of the subnet.
+- `--show-attached`: View details of resources (instances,load balancers,VPN gateways) attached to the subnet.
 - `--json`: Format output in JSON.
 
 ---

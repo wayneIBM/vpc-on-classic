@@ -81,13 +81,16 @@ The following table lists the actions related to compute resources and the gener
 | instance   | is.instance.instance.create   | Instance was created   |
 | instance   | is.instance.instance.delete   | Instance was deleted   |
 | instance   | is.instance.instance.update   | Instance was updated   |
+| instance | is.instance.instance.start | Instance was started |
+| instance | is.instance.instance.stop | Instance was stopped |
+| instance | is.instance.instance.reboot | Instance was rebooted |
 | instance   | is.instance.action.create   | Instance action was created  |
 | instance   | is.instance.action.delete   | Pending instance action was deleted  |
-| instance   | is.instance.network_interface.floating_ip.create  | Floating ip was associated to instance network interface  |
-| instance   | is.instance.network_interface.floating_ip.delete  | Floating ip was Disassociated from instance network interface |
-| instance   | is.instance.volume_attachement.create   | Instance volume attachment was created  |
-| instance   | is.instance.volume_attachement.delete   | Instance volume attachment was deleted  |
-| instance   | is.instance.volume_attachement.update   | Instance volume attachment was updated  |
+| instance   | is.instance.network-interface_floating-ip.create | Floating ip was associated to instance network interface  |
+| instance   | is.instance.network-interface_floating-ip.delete | Floating ip was Disassociated from instance network interface |
+| instance   | is.instance.volume-attachement.create  | Instance volume attachment was created  |
+| instance   | is.instance.volume-attachement.delete  | Instance volume attachment was deleted  |
+| instance   | is.instance.volume-attachement.update  | Instance volume attachment was updated  |
 | key  | is.key.key.create   | Key was created  |
 | key  | is.key.key.delete   | Key was deleted  |
 | key  | is.key.key.update   | Key was updated  |
