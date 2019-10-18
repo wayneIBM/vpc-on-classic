@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-03"
+lastupdated: "2019-10-18"
 
 keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,12 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 18 October 2019
+{: #oct-18-2019}
+
+- **Virtual Private Cloud for generation 2 virtual server profiles is now generally available**. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
+- **Security Group names no longer have to be unique in an account**. However, the Security Group name must still be unique in the VPC. To learn more about Security Groups, see [Using Security Groups](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups).
 
 ## 11 October 2019
 {: #oct-11-2019}
