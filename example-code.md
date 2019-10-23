@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-07-08"
+lastupdated: "2019-10-22"
 
 
 keywords: vpc, vpc examples, create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
@@ -489,7 +489,7 @@ curl -X GET "$rias_endpoint/v1/volume/profiles?version=$version&generation=1" \
 Profiles can be general-purpose (3 IOPS/GB), 5iops-tier, 10iops-tier, and custom. See [About Block Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about#capacity-performance)
 for information about volume capacity and IOPS ranges based on the volume profile you select.
 
-You don't have to provide a volume name in the request, the system creates one by default.  This example specifies a volume name, `helloworld-vol`.  All volume names must be unique.
+You don't have to provide a volume name in the request, the system creates one by default.  This example specifies a volume name, `helloworld-vol`.  Volume names must be unique and can use a combination of lowercase alpha-numeric characters (a-z, 0-9) and the minus sign (-).
 
 ```bash
 curl -X POST "$rias_endpoint/v1/volumes?version=$version&generation=1" \

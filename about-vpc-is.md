@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2019
-lastupdated: "2019-09-06"
+lastupdated: "2019-10-23"
 keywords: vpc, features, benefits, isolation, provisioning, security, cloud-native, workloads, BYOIP
 
 subcollection: vpc-on-classic
@@ -36,7 +36,6 @@ You can manage network services and launch instances as needed to support your m
 * Utilize high-speed networking and storage devices
 * Allow Always On services (control plane)
 * Provide and utilize core services:  IPAM, VPN, firewalls, SSH, DNS, and L4 Load Balancing
-* Set up other services: auto-scaling, CDNs, 3rd-party NFV
 
 The VPC Overview figure, which follows, illustrates the available VPC components and how they work together to provide you the service and connectivity you may need. Refer back to this figure as you dive into topics that give more details on each component.
 
