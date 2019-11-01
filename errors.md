@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-10-22"
+lastupdated: "2019-10-29"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -1330,7 +1330,7 @@ The volume name specified in the request already exists. Provide a volume name t
 ## volume_name_invalid
 **Message**: The volume name specified in the request is not valid.
 
-Volume names can use lowercase alpha-numeric characters (a-z, 0-9), the minus sign (-), and be up to 63 characters long.
+Volume names can use lowercase alpha-numeric characters (a-z, 0-9), the hyphen (-), and be up to 63 characters long. Volume names must begin with an alpha character.
 
 ## volume_not_available
 **Message**: The Volume is not available. Volume can only be modified in available status. Current volume `<volume_id>` status is `<volume_status>`, where `<volume_id>` is the volume ID provided in the request and `<volume_status>` is the current volume status.

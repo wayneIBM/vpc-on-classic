@@ -746,11 +746,11 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **List all VPCs.**
 
-`ibmcloud is vpcs [--classic-access] [--json]`
+`ibmcloud is vpcs [--classic-access true | false ] [--json]`
 
 **Options**
 
-- `--classic-access`: This flag lists VPCs that have Classic access enabled. The default value is false.
+- `--classic-access`: This flag lists VPCs that have Classic access enabled. Enumeration type: true, false. If unspecified, it returns all VPCs with and without classic access enabled.
 - `--json`: Format output in JSON.
 
 ---
@@ -760,11 +760,12 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **View details of a VPC.**
 
-`ibmcloud is vpc VPC [--json]`
+`ibmcloud is vpc VPC [--show-attached] [--json]`
 
 **Options**
 
 - `VPC`: ID of the vpc.
+- `--show-attached`: View details of resources (Subnets,VPC Routes and Address Prefix) attached to this VPC.
 - `--json`: Format output in JSON.
 
 ---
@@ -774,12 +775,14 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Create a VPC.**
 
-`ibmcloud is vpc-create VPC_NAME [--classic-access] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
+`ibmcloud is vpc-create VPC_NAME [--classic-access] [--address-prefix-management auto | manual] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
+
 
 **Options**
 
 - `VPC_NAME`: Name of the VPC
 - `--classic-access`: This flag indicates whether the VPC should be connected to Classic Infrastructure. The default  is false.
+- `--address-prefix-management`: This flag indicates whether a default address prefix should be automatically created for each zone in this VPC. Enumeration type: auto, manual. If 'manual', this VPC will be created with no default address prefixes. If unspecified, default is 'auto'.
 - `--resource-group-id`: ID of the resource group. This option is mutually exclusive with --resource-group-name.
 - `--resource-group-name`: Name of the resource group. This option is mutually exclusive with --resource-group-id.
 - `--json`: Format output in JSON.
@@ -849,7 +852,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Create an address prefix.**
 
-`ibmcloud is vpc-address-prefix-create PREFIX_NAME VPC ZONE_NAME CIDR [--json]`
+`ibmcloud is vpc-address-prefix-create PREFIX_NAME VPC ZONE_NAME CIDR [--default false | true] [--json]`
 
 **Options**
 
@@ -857,6 +860,7 @@ This section provides a reference to the command line interface (CLI) commands a
 - `VPC`: ID of the vpc.
 - `ZONE`: Name of the zone.
 - `CIDR`: The CIDR block for this prefix.
+- `--default`: This flag indicates whether this is the default prefix for this zone in this VPC. Enumeration type: true, false. If unspecified, the default is false.
 - `--json`: Format output in JSON.
 
 ---
@@ -881,12 +885,13 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Update an address prefix.**
 
-`ibmcloud is vpc-address-prefix-update VPC PREFIX [--name NEW_NAME] [--json]`
+`ibmcloud is vpc-address-prefix-update VPC PREFIX [--name NEW_NAME] [--default false | true] [--json]`
 
 **Options**
 
 - `VPC`: ID of the vpc.
 - `PREFIX`: ID of the vpc address prefix.
+- `--default`: This flag indicates whether this is the default prefix for this zone in this VPC. Enumeration type: true, false. If unspecified, the default is false.
 - `--name`: New name of the address prefix.
 - `--json`: Format output in JSON.
 
@@ -1636,7 +1641,7 @@ This section gives details about the CLI commands available for working with VPN
 - `IKE_POLICY_NAME`: Name of the IKE policy.
 - `AUTHENTICATION_ALGORITHM`: The authentication algorithm. Enumeration type: `md5`, `sha1`, `sha256`.
 - `DH_GROUP`: The Diffie-Hellman group. Enumeration type: `2`, `5`, `14`.
-- `ENCRYPTION_ALGORITHM`: The encryption algorithm. Enumeration type: `3des`, `aes128`, `aes256`.
+- `ENCRYPTION_ALGORITHM`: The encryption algorithm. Enumeration type: `triple_des`, `aes128`, `aes256`.
 - `IKE_VERSION`: The IKE protocol version. Enumeration type: `1`, `2`.
 - `--key-lifetime`: The key lifetime in seconds. Maximum: 86400, Minimum: 1800 (default: 28800).
 - `--resource-group-id`: ID of the resource group. This option is exclusive with --resource-group-name.
@@ -1664,14 +1669,14 @@ This section gives details about the CLI commands available for working with VPN
 
 **Update an IKE policy.**
 
-`ibmcloud is ike-policy-update IKE_POLICY_ID [--authentication_algorithm md5 | sha1 | sha256] [--dh-group 2 | 5 | 14] [--encryption-algorithm 3des | aes128 | aes256] [--ike-version 1 | 2] [--key-lifetime KEY_LIFETIME] [--name NEW_NAME] [--json]`
+`ibmcloud is ike-policy-update IKE_POLICY_ID [--authentication_algorithm md5 | sha1 | sha256] [--dh-group 2 | 5 | 14] [--encryption-algorithm triple_des | aes128 | aes256] [--ike-version 1 | 2] [--key-lifetime KEY_LIFETIME] [--name NEW_NAME] [--json]`
 
 **Options**
 - `IKE_POLICY_ID` ID of the IKE policy.
 - `--name`: New name of the IKE policy.
 - `--authentication-algorithm`: The authentication algorithm. Enumeration type: `md5`, `sha1`, `sha256`.
 - `--dh-group`: The Diffie-Hellman group. Enumeration type: `2`, `5`, `14`.
-- `--encryption-algorithm`: The encryption algorithm. Enumeration type: `3des`, `aes128`, `aes256`.
+- `--encryption-algorithm`: The encryption algorithm. Enumeration type: `triple_des`, `aes128`, `aes256`.
 - `--ike-version`: The IKE protocol version. Enumeration type: `1`, `2`.
 - `--key-lifetime`: The key lifetime in seconds. Maximum: 86400, Minimum: 1800.
 - `--json`: Format output in JSON.
@@ -1728,7 +1733,7 @@ This section gives details about the CLI commands available for working with VPN
 **Options**
 - `IPSEC_POLICY_NAME`: Name of the IPsec policy.
 - `AUTHENTICATION_ALGORITHM`: The authentication algorithm. Enumeration type: `md5`, `sha1`, `sha256`.
-- `ENCRYPTION_ALGORITHM`: The encryption algorithm. Enumeration type: `3des`, `aes128`, `aes256`.
+- `ENCRYPTION_ALGORITHM`: The encryption algorithm. Enumeration type: `triple_des`, `aes128`, `aes256`.
 - `PFS`: Perfect Forward Secrecy. Enumeration type: disabled, `group_2`, `group_5`, `group_14`.
 - `--key-lifetime`: The key lifetime in seconds. Maximum: 86400, Minimum: 1800 (default: 3600).
 - `--resource-group-id`: ID of the resource group. This option is exclusive with --resource-group-name.
@@ -1756,14 +1761,14 @@ This section gives details about the CLI commands available for working with VPN
 
 **Update an IPsec policy.**
 
-`ibmcloud is ipsec-policy-update IPSEC_POLICY_ID [--authentication_algorithm md5 | sha1 | sha256] [--pfs disabled | group_2 | group_5 | group_14] [--encryption-algorithm 3des | aes128 | aes256] [--key-lifetime KEY_LIFETIME] [--name NEW_NAME] [--json]`
+`ibmcloud is ipsec-policy-update IPSEC_POLICY_ID [--authentication_algorithm md5 | sha1 | sha256] [--pfs disabled | group_2 | group_5 | group_14] [--encryption-algorithm triple_des | aes128 | aes256] [--key-lifetime KEY_LIFETIME] [--name NEW_NAME] [--json]`
 
 **Options**
 - `IPSEC_POLICY_ID`: ID of the IPsec policy.
 - `--name`: New name of the IPsec policy.
 - `--authentication-algorithm`: The authentication algorithm. Enumeration type: `md5`, `sha1`, `sha256`.
 - `--pfs`: Perfect Forward Secrecy. Enumeration type: `disabled`, `group_2`, `group_5`, `group_14`.
-- `--encryption-algorithm`: The encryption algorithm. Enumeration type: `3des`, `aes128`, `aes256`.
+- `--encryption-algorithm`: The encryption algorithm. Enumeration type: `triple_des`, `aes128`, `aes256`.
 - `--key-lifetime`: The key lifetime in seconds. Maximum: 86400, Minimum: 1800.
 - `--json`: Format output in JSON.
 

@@ -85,7 +85,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 {: #july-26-2019}
 
 - **Advanced Routing** is now available in Networking for VPC. Refer to [Setting Up Advanced Routing in VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-advanced-routing-in-vpc)
-for use cases and examples.
+for information on how to create these custom routes.
 
 - **Improved instance monitoring data** with filtering is available in the User Interface.
 
