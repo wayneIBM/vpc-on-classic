@@ -101,7 +101,7 @@ To configure the ACL:
 1. Click **Add rule** to configure inbound and outbound rules that define what traffic is allowed in or out of the subnet. For each rule, specify the following information:  
    * Select whether to allow or deny the specified traffic.
    * Select the protocol to which the rule applies.  
-   * For the source and destination of the rule, specify the IP range and ports for which the rule applies. For example, if you want all inbound traffic to be allowed to the IP range 192.168.0.0/24 in your subnet, specify **Any** as the source and 192.168.0.0/24 as the destination. But if you want to allow inbound traffic only from 169.168.0.0/24 to your entire subnet, specify 169.168.0.0/24 as the source and **Any** as the destination for the rule. 
+   * For the source and destination of the rule, specify the IP range and ports for which the rule applies. For example, if you want all inbound traffic to be allowed to the IP range 192.168.0.0/24 in your subnet, specify **Any** as the source and 192.168.0.0/24 as the destination. But if you want to allow inbound traffic only from 169.168.0.0/24 to your entire subnet, specify 169.168.0.0/24 as the source and **Any** as the destination for the rule.
    * Specify the rule's priority. Rules with lower numbers are evaluated first and override rules with higher numbers. For example, if a rule with priority 2 allows HTTP traffic and a rule with priority 5 denies all traffic, HTTP traffic is still allowed.  
 1. When you finish creating rules, click the **All access control lists** breadcrumb at the beginning of the page.
 
@@ -150,8 +150,8 @@ To create a virtual server instance in the newly created subnet:
 
 1. Select an existing SSH key or add a new SSH key that will be used to access the virtual server instance. To add an SSH key, click **New key** and name the key. After you enter your previously generated public key value, click **Add SSH key**.
 
-Keys only can be added initially as part of creating the VSI. No tooling exists to add keys later.
-{:tip}
+    Keys only can be added initially as part of creating the VSI. No tooling exists to add keys later.
+    {:tip}
 
 1. _Optional:_ Enter user data to run common configuration tasks when your instance starts. For example, you can specify cloud-init directives or shell scripts for Linux images. For more information, see [User Data](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-user-data).
 1. Note the boot volume. In the current release, 100 GB is allotted for the boot volume. *Auto Delete* is enabled for the volume; it will be deleted automatically if the instance is deleted.
@@ -291,7 +291,7 @@ To create a load balancer:
     * **Virtual private cloud**: Select your VPC.
     * **Resource group**: Select a resource group for the load balancer.
     * **Tags**: (Optional) Enter tags to help you organize and find your resources. You can add more tags later. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
-    * **Type**: Select the load balancer type. 
+    * **Type**: Select the load balancer type.
       * A public load balancer has a public IP address, which means that it can route requests from clients over the internet.
       * A private load balancer has a private IP address, which means that it is accessible only to internal clients on your private subnets, within the same region and VPC.
     * **Region**: Indicates the region in which the  load balancer will be created; that is, the region selected for your VPC.
