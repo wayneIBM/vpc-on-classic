@@ -60,7 +60,6 @@ Virtual Private Cloud (Gen 1 compute)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    vpc-glossary.md
     [API reference for VPC](https://{DomainName}/apidocs/vpc-on-classic)
     quick-guide-to-resources.md
     vpc-cli-reference.md

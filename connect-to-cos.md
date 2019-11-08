@@ -119,6 +119,7 @@ If a networking failure results in a partition, such that the datacenter is unab
 | Milan, Italy | `s3.direct.mil01.cloud-object-storage.appdomain.cloud` |
 | Montréal, Canada | `s3.direct.mon01.cloud-object-storage.appdomain.cloud` |
 | Oslo, Norway | `s3.direct.osl01.cloud-object-storage.appdomain.cloud` |
+| Paris, France | `s3.direct.par01.cloud-object-storage.appdomain.cloud` |
 | San Jose, USA | `s3.direct.sjc04.cloud-object-storage.appdomain.cloud` |
 | São Paulo, Brazil | `s3.direct.sao01.cloud-object-storage.appdomain.cloud` |
 | Seoul, South Korea | `s3.direct.seo01.cloud-object-storage.appdomain.cloud` |
