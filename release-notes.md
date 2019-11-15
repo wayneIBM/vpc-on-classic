@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-10-18"
+lastupdated: "2019-11-14"
 
 keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,13 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 15 November 2019
+{: #nov-15-2019}
+
+- **Cost estimates** with more detail are now available when you order [Load Balancers for VPC](https://cloud.ibm.com/vpc/provision/loadBalancer).
+- **View attached resources of a VPC or subnet using the CLI** with the `--show-attached` option. See the [VPC CLI reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference) for details.
+
 
 ## 18 October 2019
 {: #oct-18-2019}

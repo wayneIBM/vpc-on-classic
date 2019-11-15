@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-10-29"
+lastupdated: "2019-11-14"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -1330,7 +1330,7 @@ The volume name specified in the request already exists. Provide a volume name t
 ## volume_name_invalid
 **Message**: The volume name specified in the request is not valid.
 
-Volume names can use lowercase alpha-numeric characters (a-z, 0-9), the hyphen (-), and be up to 63 characters long. Volume names must begin with an alpha character.
+Volume names can use lowercase alpha-numeric characters (a-z, 0-9), the hyphen (-), and be up to 63 characters long. Volume names must begin with a lowercase letter.
 
 ## volume_not_available
 **Message**: The Volume is not available. Volume can only be modified in available status. Current volume `<volume_id>` status is `<volume_status>`, where `<volume_id>` is the volume ID provided in the request and `<volume_status>` is the current volume status.
@@ -1355,22 +1355,27 @@ Contact [customer support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-hel
 ## volume_profile_capacity_iops_invalid
 **Message**: The volume profile specified in the request is not valid for the provided capacity and/or IOPS.
 
-The volume capacity and/or IOPS value that you specified in the request is not allowed by the volume profile. See the [IBM Cloud Block Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about) documentation for valid minimum and maximum capacity and IOPS values for a Custom profile.
+The volume capacity and/or IOPS value that you specified in the request is not allowed by the volume profile. See the documentation for valid minimum and maximum capacity and IOPS values for a [Custom profile](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-profiles#custom).
+
+## volume_profile_invalid
+**Message**: The volume profile in the request is not valid.
+
+The volume profile is missing in the request. Provide one of the following volume profiles in the request: `general-purpose`, `5iops-tier`, `10iops-tier`, and `custom`. See the documentation for more information about [{{site.data.keyword.block_storage_is_short}} profiles](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-profiles).
 
 ## volume_profile_iops_invalid
 **Message**: The volume profile specified in the request cannot accept custom IOPS.
 
-Your volume profile does not accept a Custom IOPS value. You might have specified a Tiered IOPS profile, which does not require that you specify an IOPS value. If you want to provide a specific IOPS value, use the Custom IOPS profile.
+Your volume profile does not accept a Custom IOPS value. You might have specified a Tiered IOPS profile, which does not require that you specify an IOPS value. If you want to provide a specific IOPS value, use the Custom IOPS profile. For more information, see [{{site.data.keyword.block_storage_is_short}} profiles](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-profiles).
 
 ## volume_profile_name_missing
 **Message**: The required volume profile name is missing in the request.
 
-The volume profile name is missing in the request body when creating a volume or in the request parameter when getting a volume. Provide a volume profile name in your request and try again. If you don't know the volume profile name, specify `ibmcloud is volume-profiles` in the CLI or use `GET $rias_endpoint/v1/volume/profiles/?version=YYYY-MM-DD` in the API request and search the list.
+The volume profile name is missing in the request body when creating a volume or in the request parameter when getting a volume. Provide a volume profile name in your request and try again. These are: `general-purpose`, `5iops-tier`, `10iops-tier`, and `custom`. See the documentation for more information about [{{site.data.keyword.block_storage_is_short}} profiles](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-profiles).
 
 ## volume_profile_not_found
 **Message**: A volume profile with the specified name is not found.
 
-A volume profile with that name could not be found. Verify that you provided the correct volume profile name. If you don't know the volume profile name, specify `ibmcloud is volume-profiles` in the CLI or use `GET $rias_endpoint/v1/volume/profiles/?version=YYYY-MM-DD` in the API request and search the list.
+A volume profile with that name could not be found. Verify that you provided the correct volume profile name. These are: `general-purpose`, `5iops-tier`, `10iops-tier`, and `custom`. See the documentation for more information about [{{site.data.keyword.block_storage_is_short}} profiles](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-profiles).
 
 ## volume_quota_reached
 **Message**: The volume quota has been reached.
