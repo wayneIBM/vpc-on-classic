@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-05-29"
+lastupdated: "2019-11-20"
 
 keywords: vpc, vpc cli, create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
 
@@ -63,7 +63,7 @@ To create a Virtual Private Cloud for generation 2 compute, see [Using the CLI t
 
 You may have a public SSH key already. Look for a file called ``id_rsa.pub`` under an ``.ssh`` directory under your home directory, for example, ``/Users/<USERNAME>/.ssh/id_rsa.pub``. The file starts with ``ssh-rsa`` and ends with your email address.
 
-If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the ``ssh-keygen`` command and following the prompts.
+If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the ``ssh-keygen`` command (on Linux or macOS servers) and following the prompts. For Windows operating systems, you can use a tool like PuTTYgen to generate an SSH key.
 
 
 ## Step 1: Log in to IBM Cloud.
@@ -128,17 +128,23 @@ vpc="b4f815a3-d235-4533-b50c-8c312a49ae6a"
 ```
 {: pre}
 
+The previous example does not create a VPC with classic access. If you require the VPC to have access to your classic resources, see [Setting up access to your Classic Infrastructure from VPC](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc). You can only enable a VPC for classic access while creating it. In addition, you can only have one classic access VPC in your account at any time.
+{: important}
+
 ## Step 4: Create a subnet and save the subnet ID.
 {: #step-4-create-a-subnet-and-save-the-subnet-id}
 
-Let's pick the `us-south-2` zone for the subnet's location and call the subnet _helloworld-subnet_. The zone needs to be in the region chosen in step 1. To view the zones available for the region, run the following command: `ibmcloud is zones us-south`, substituting `us-south` for the region chosen in step 1.  
+Pick the `us-south-2` zone for the subnet's location and call the subnet _helloworld-subnet_. The zone needs to be in the region chosen in step 1. To view the zones available for the region, run the command `ibmcloud is zones us-south`, substituting `us-south` for the region chosen in step 1.
+
+This example creates a subnet with a size of 8. A subnet cannot be resized after it is created, so update the size of the subnet if needed.
+{: important}
 
 ```
 ibmcloud is subnet-create helloworld-subnet $vpc us-south-2 --ipv4-address-count 8
 ```
 {: pre}
 
-You should see output like this:
+You should see output similar to the following:
 
 ```
 Creating subnet helloworld-subnet under account <Account Name> as user <User>...

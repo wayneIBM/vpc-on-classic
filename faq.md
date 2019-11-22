@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-05-31"
+lastupdated: "2019-11-20"
 
 keywords: vpc, FAQ, faqs, limit, resource, vNIC, VSI, PGW, console, VRF, bandwidth, COS, egress, load balancer
 
@@ -36,7 +36,7 @@ Yes, you can set up access to your {{site.data.keyword.cloud}} classic infrastru
 {: #faq-1}
 {:faq}
 
-Currently, the limit is 100. If this limit is exceeded, you might receive an "internal error" message.
+Currently, the limit is 100. If this limit is exceeded, you will receive an error message.
 
 ## Can any of my VPC resource names begin with a number?
 {: #faq-2}
@@ -48,25 +48,25 @@ No, although the name can contain numbers, it must begin with a letter.
 {: #faq-3}
 {:faq}
 
-Yes, the UI blocks consecutive double dashes, underscores, and periods from being part of a VSI name.
+Yes, the UI blocks consecutive double dashes, underscores, and periods from being part of a virtual server instance name.
 
 ## Can a VSI be created without a subnet, just with Floating IP?
 {: #faq-9}
 {:faq}
 
-No.
+No, a virtual server instance must be provisioned in a subnet.
 
 ## Can a VSI be attached to more than one VPC?
 {: #faq-10}
 {:faq}
 
-No.
+No, a virtual server instance can be provisioned in only one VPC.
 
 ## Can a subnet size be changed after it is created in a VPC?
 {: #faq-11}
 {:faq}
 
-No.
+No, a subnet cannot be resized after it has been created.
 
 ## Are there egress bandwidth charges for traffic from VPC to COS?
 {: #faq-17}
@@ -99,7 +99,7 @@ However, if we add an "address" resource in the API under the networking area, w
 {: #faq-5}
 {:faq}
  
-Yes.
+Yes, a vNIC on a virtual server instance has a private IP and can be attached to floating IP.
 
 ## In the IBM Cloud Console UI for VPC, there is a ”toggle" for each subnet to attach or detach to or from the Public Gateway (PGW). Who creates the PGW? Will the PGW be ready when a customer wants to attach the subnet to the PGW in the UI?
 {: #faq-6}

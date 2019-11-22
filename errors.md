@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-20"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -470,7 +470,7 @@ The only supported key type is `rsa`.
 
 The public key provided in the request is not valid. Check the value or regenerate the public key and try again.
 
-In Linux operating systems, you can run the following command to valid the public key `ssh-keygen -l -v -f <key_file>`.
+In Linux or macOS operating systems, you can run the following command to validate the public key `ssh-keygen -l -v -f <key_file>`.
 
 ## listener_certificate_not_found
 **Message**: Certificate instance with CRN `<listener_certificate_crn>` cannot be found or no permission to access the certificate instance.

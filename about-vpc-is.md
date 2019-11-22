@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2017, 2019
-lastupdated: "2019-10-23"
+lastupdated: "2019-11-22"
 keywords: vpc, features, benefits, isolation, provisioning, security, cloud-native, workloads, BYOIP
 
 subcollection: vpc-on-classic
@@ -47,7 +47,7 @@ The following sections give you an overview of the features available in IBM Clo
 
 {{site.data.keyword.cloud_notm}} VPC offers easy and comprehensive networking capabilities, including the ability to create multiple Virtual Private Clouds in [multi-zone regions available globally](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region), subnets in different zones, [IP address range selection](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets), virtual firewalls, ([security groups](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups) and [network ACLs](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-network-acls)), site-to-site virtual private networks ([VPN](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-vpn-with-your-vpc)), and load balancing ([LBaaS](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)) with elasticity.
 
-A VPC is divided into subnets, using a range of private IP addresses. However, by default, all resources (such as VSIs) within the same VPC can communicate with each other, regardless of their subnet. Subnets are contained within a single zone, and they cannot span multiple zones, which helps with security, with reducing latency, and with high availability.
+A VPC is divided into subnets, using a range of private IP addresses. However, by default, all resources (such as VSIs) within the same VPC can communicate with each other, regardless of their subnet. Subnets are contained within a single zone which helps with security, with reducing latency, and with high availability.
 
 Create multiple VPCs and subnets easily by using the suggested prefix ranges and pre-configured network security policies or design and define your own address prefixes and custom security policies.
 

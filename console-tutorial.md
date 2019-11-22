@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-11-11"
+lastupdated: "2019-11-20"
 
 keywords: vpc, vpc ui, create, configure, permissions, ACL, virtual, server, instance, subnet, block, storage, volume, security, group, images, Windows, Linux, example, monitoring, VPN, load balancer, IKE, IPsec
 
@@ -53,7 +53,7 @@ After you enter data on the provisioning pages, you can click the **Get sample A
 {: #before}
 Make sure you have sufficient permissions to create and manage resources in your VPC. For more information, see [Managing user permissions for VPC resources](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
 
-Generate an SSH key, which will be used to connect to the virtual server instance. For example, generate an SSH key on your Linux server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file.
+Generate an SSH key, which will be used to connect to the virtual server instance. For example, generate an SSH key on your Linux or macOS server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file. For Windows operating systems, you can use a tool like PuTTYgen to generate an SSH key.
 
 If you plan to create a load balancer and use HTTPs for the listener, an SSL certificate is required. You can manage certificates with [IBM Certificate Manager](https://{DomainName}/catalog/services/certificate-manager){: external}. You must also create an authorization to allow your load balancer instance to access the Certificate Manager instance that contains the SSL certificate. You can create an authorization through [Identity and Access Authorizations](https://{DomainName}/iam/authorizations){: external}. For the source, select **VPC Infrastructure** as the Source service, **Load Balancer for VPC** as the Resource type, and **All resource instances** for the Source resource instance. Select **Certificate Manager** as the Target service and assign **Writer** for the service access role. Set the Target service instance to  **All instances** or to your specific Certificate Manager instance. For more information, see [Using Load Balancers in IBM Cloud VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc).
 
@@ -69,6 +69,10 @@ To create a VPC and subnet:
 1. Select or create the default ACL for new subnets in this VPC. In this tutorial, let's create a new default ACL. We'll configure rules for the ACL later.
 1. Select whether the default security group allows inbound SSH and ping traffic to virtual server instances in this VPC. We'll configure more rules for the default security group later.
 1. _Optional:_ Select whether you want to enable your VPC to access classic infrastructure resources. For more information, see [Setting up access to classic infrastructure](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc).
+    
+    You can only enable a VPC for classic access while creating it. In addition, you can only have one classic access VPC enabled in your account at any time.
+    {: important}
+
 1. _Optional:_ Clear the **Default address prefixes** option if you don't want to assign default address prefixes to each zone in your VPC. After you create your VPC, you can go to its details page and set your own address prefixes.
 1. Enter a name for the new subnet in your VPC, such as `my-subnet`.
 1. Select a resource group for the subnet.
@@ -78,6 +82,10 @@ To create a VPC and subnet:
     {: tip}
 
 1. Enter an IP range for the subnet in CIDR notation, for example: `10.240.0.0/24`. In most cases, you can use the default IP range. If you want to specify a custom IP range, you can use the IP range calculator to select a different address prefix or change the number of addresses.
+
+    A subnet cannot be resized after it has been created.
+    {: important}
+
 1. Select an ACL for the subnet. Select **Use VPC default** to use the default ACL that's created for this VPC.
 1. Attach a public gateway to the subnet to allow all attached resources to communicate with the public internet.  
 
@@ -383,7 +391,12 @@ To create a VPN:
     * Select **Auto** if you want the cloud gateway to try to automatically establish the connection.
     * Select or create custom policies if you need to enforce particular security requirements, or the VPN gateway for the other network doesn't support the security proposals that are tried by auto-negotiation.
 
-  **Important**: The IKE and IPsec security parameters that you specify for the connection must be the same parameters that are set on the gateway for the network outside your VPC. 
+  **Important**: The IKE and IPsec security parameters that you specify for the connection must be the same parameters that are set on the gateway for the network outside your VPC.
+  
+## Viewing resources associated with a VPC
+{: #vpc-layout} 
+
+You can quickly view the resources that are associated with a VPC by accessing the resource view: In the navigation, click **VPC layout**. You can select the VPC that you are interested in, if your account has multiple VPCs configured. For each VPC you can see the associated subnets, and within each subnet you can see how many instances are running, stopped, and failed. You can also see how many IP addresses are available in each subnet. From the lists of instances and associated IP addresses, you can click a specific instance to view its details.  
 
 ## Congratulations!
 

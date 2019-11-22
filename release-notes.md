@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-14"
+lastupdated: "2019-11-22"
 
 keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,11 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 22 November 2019
+{: #nov-22-2019}
+
+- **VPC layout** You can quickly view the resources that are associated with a VPC in the {{site.data.keyword.cloud_notm}} console. For more information, see [Viewing resources associated with a VPC](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-ibm-cloud-console#vpc-layout).
 
 ## 15 November 2019
 {: #nov-15-2019}

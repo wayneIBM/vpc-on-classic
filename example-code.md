@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-10-22"
+lastupdated: "2019-11-20"
 
 
 keywords: vpc, vpc examples, create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
@@ -38,7 +38,8 @@ To create a Virtual Private Cloud for generation 2 compute, see [Using the REST 
 
    You may have a public SSH key already. Look for a file called `id_rsa.pub` under an `.ssh` directory under your home directory, for example, `/Users/<USERNAME>/.ssh/id_rsa.pub`. The file starts with `ssh-rsa` and ends with your email address.
 
-   If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the `ssh-keygen` command and following the prompts.
+   If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the `ssh-keygen` command (in Linux or macOS servers) and following the prompts. For Windows operating systems, you can use a tool like PuTTYgen to generate an SSH key.
+
 2.  Make sure you have an API key for your IBM Cloud account. If you don't have an API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#create_user_key). You will need to store this API key in an environment variable in Step 1.
 
 ## Step 1: Store your API Key as a variable
@@ -126,8 +127,7 @@ curl -X GET "$rias_endpoint/v1/regions/us-south/zones?version=$version&generatio
 ```
 {: pre}
 
-Update the region name in the parameter, `us-south` above, depending on the region endpoint you are using. A region endpoint only knows
-about its own zones, so if you are using the endpoint in TOKYO, use `jp-tok`.
+Update the region name in the parameter, `us-south` above, depending on the region endpoint you are using. A region endpoint only knows about its own zones, so if you are using the endpoint in TOKYO, use `jp-tok`.
 {: note}
 
 ## Step 6: Run the GET profiles API
@@ -192,6 +192,9 @@ vpc="<YOUR_VPC_ID>"
 ```
 {: pre}
 
+The previous example does not create a VPC with classic access. If you require the VPC to have access to your classic resources, see [Setting up access to your Classic Infrastructure from VPC](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc). You can only enable a VPC for classic access while creating it. In addition, you can only have one classic access VPC in your account at any time.
+{: important}
+
 ## Step 10: Create a subnet
 
 Create a subnet in your {{site.data.keyword.cloud_notm}} VPC. The following example creates a VPC in the `us-south-2` zone.
@@ -202,6 +205,9 @@ The following example uses the [default address prefix](/docs/vpc-on-classic-net
 To get a list of address prefixes for your vpc, run the following command
 `curl -X GET  "$rias_endpoint/v1/vpcs/$vpc/address_prefixes?version=$version&generation=1" -H "Authorization:$iam_token"`..
 {: tip}
+
+A subnet cannot be resized after it is created. 
+{: important}
 
 ```bash
 curl -X POST "$rias_endpoint/v1/subnets?version=$version&generation=1" \
@@ -343,7 +349,6 @@ curl -X POST "$rias_endpoint/v1/instances?version=$version&generation=1" \
   -H "Authorization:$iam_token" \
   -d '{
         "name": "server-1",
-        "type": "virtual",
         "zone": {
           "name": "us-south-2"
         },
@@ -356,7 +361,7 @@ curl -X POST "$rias_endpoint/v1/instances?version=$version&generation=1" \
           }
         },
         "keys":[{"id": "'$key'"}],
-        "flavor": {
+        "profile": {
           "name": "'$profile_name'"
          },
         "image": {
