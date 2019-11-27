@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-08-26"
+lastupdated: "2019-11-25"
 
 keywords: vpc, resource, access, role, role-based, authorization, policy, access group, resource group, permission, assign, administrator, operator, editor, viewer, user, team, scenario, manage, create, IAM
 
@@ -45,19 +45,17 @@ This scenario covers the basic steps needed to set up an individual user. We wil
 ### Inviting a new user to create or manage VPC Infrastructure resources
 {: #inviting-a-new-user-to-create-or-manage-vpc-resources}
 
-Invite an IBM Cloud user to your account and give them access to `VPC Infrastructure` so they can create and manage VPC resources.
+Invite an IBM Cloud user to your account and give them access to `VPC Infrastructure` so that they can view, create, and update all VPC resources in the Default resource group.
 
-1. Navigate to the [IAM Users UI](https://{DomainName}/iam/users){: external} in the IBM Cloud Console.
-2. On the **Users** page, click **Invite users**.
-3. On the **Invite users** page, in the **Users** section, enter the email addresses of the users you want to invite in the **Email address** field.
-4.  In the **Access** section, expand **Services**, and then complete the following tasks:
-  * In the **Assign access to** drop-down list, select **Resource group**.
-  * In the **Resource group** drop-down list, select **All resource groups** or the specific resource group you want to grant access to the user.
-  * In the **Assign access to a resource group** drop-down list, select at least **Viewer** to allow the user to create new resources in the resource group. It can be set to **No access** if you do not want to allow the users to create new resources.
-  * In the **Services** drop-down list, select **VPC Infrastructure**.
-  * In the **Resource type** drop-down list, select **All resource types** to give the user access to all [VPC resource types](/docs/vpc-on-classic?topic=vpc-on-classic-about-vpc-infrastructure-resources). Optionally, you can select individual resource types to grant specific resource permissions.
-  * In the **Select roles** section, select the platform access roles you want to assign to the users. It can be **Administrator**, **Editor**, **Operator**, or **Viewer**, depending on the role you would like to assign the users. See [Roles required to manage VPC resources](/docs/vpc-on-classic?topic=vpc-on-classic-resource-authorizations-required-for-api-and-cli-calls) to determine which permissions are needed. **Editor** role gives a user the power to create, update, and delete resources.
-  * Click **Invite users**.
+1. Go to the [IAM Users](https://cloud.ibm.com/iam/users){: external} page in the IBM Cloud console and click **Invite users**.
+2. In the **Users** section of the Invite users page, enter the email addresses of the users that you want to invite in the **Email address** field.
+3. In the **Assign users additional access** section, select **IAM services** and complete the following tasks:
+  * From the **Enter or select a service** list, select **VPC infrastructure**.
+  * From the **Enter or select a resource group** list, select the Default resource group.
+  * From the **Resource type** list, select **All resource types**.
+  * In the **Platform access** area, select **Editor**.
+  * In the **Resource group access** area, select **Viewer**.
+  * Scroll to the end of the page and click **Add**.
 
 If you would like to give the user permissions to create their own resource groups, learn about [Creating and managing resource groups](/docs/resources?topic=resources-rgs#create_rgs).
 

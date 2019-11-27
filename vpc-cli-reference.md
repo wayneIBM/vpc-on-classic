@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-09-27"
+lastupdated: "2019-11-27"
 
 keywords: cli, reference, commands, generation 1, classic
 
@@ -510,7 +510,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 `ibmcloud is subnet-public-gateway SUBNET [--json]`
 
-**options**
+**Options**
 
 - `SUBNET`: ID of the subnet.
 - `--json`: Format output in JSON.
@@ -1221,7 +1221,7 @@ This section contains a reference for the CLI commands related to Compute functi
 ### `ibmcloud is instance`
 {: #instance}
 
-**View details of a server instance.
+**View details of a server instance.**
 
 `ibmcloud is instance INSTANCE [--json]`
 
@@ -1264,7 +1264,7 @@ This section contains a reference for the CLI commands related to Compute functi
 {: #instance-update}
 
 
-**Update a server instance.
+**Update a server instance.**
 
 `ibmcloud is instance-update INSTANCE [--name NEW_NAME] [--json]`
 
@@ -1462,7 +1462,7 @@ This section contains a reference for the CLI commands related to Compute functi
 
 `ibmcloud is instance-volume-attachment INSTANCE VOLUME_ATTACHMENT [--json]`
 
-**options**
+**Options**
 
 - `INSTANCE`: ID of the instance.
 - `VOLUME_ATTACHMENT`: ID of the volume attachment.
@@ -1476,7 +1476,7 @@ This section contains a reference for the CLI commands related to Compute functi
 
 `ibmcloud is instance-volume-attachment-add NAME INSTANCE VOLUME [--auto-delete true | false] [--json]`
 
-**options**
+**Options**
 
 - `NAME`: Name of the volume attachment.
 - `INSTANCE`: ID of the instance.
@@ -1492,7 +1492,7 @@ This section contains a reference for the CLI commands related to Compute functi
 
 `ibmcloud is instance-volume-attachment-detach INSTANCE VOLUME_ATTACHMENT [-f, --force]`
 
-**options**
+**Options**
 
 - `INSTANCE`: ID of the instance.
 - `VOLUME_ATTACHMENT`: ID of the volume attachment.
@@ -1506,7 +1506,7 @@ This section contains a reference for the CLI commands related to Compute functi
 
 `ibmcloud is instance-volume-attachment-update INSTANCE VOLUME_ATTACHMENT [--name NEW_NAME] [--auto-delete true | false] [--json]`
 
-**options**
+**Options**
 
 - `INSTANCE`: ID of the instance.
 - `VOLUME_ATTACHMENT`: ID of the volume attachment.
@@ -1522,7 +1522,7 @@ This section contains a reference for the CLI commands related to Compute functi
 
 `ibmcloud is instance-volume-attachments INSTANCE [--json]`
 
-**options**
+**Options**
 
 - `INSTANCE`: ID of the instance.
 - `--json`: Format output in JSON.
@@ -2191,7 +2191,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policies LOAD_BALANCER_ID LISTENER_ID [--json]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2206,7 +2206,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy LOAD_BALANCER_ID LISTENER_ID POLICY_ID [--json]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2222,7 +2222,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy-create LOAD_BALANCER_ID LISTENER_ID --priority PRIORITY --action ACTION [--name NAME] [--target-id TARGET_ID] [--target-http-status-code TARGET_HTTP_STATUS_CODE] [--target-url TARGET_URL] [--rules LISTENER_POLICY_RULES_JSON | @LISTENER_POLICY_RULES_JSON_FILE] [--json]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2244,7 +2244,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy-delete LOAD_BALANCER_ID LISTENER_ID POLICY_ID [-f, --force]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2260,7 +2260,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy-update LOAD_BALANCER_ID LISTENER_ID POLICY_ID [--name NAME] [--priority PRIORITY] [--target-id TARGET_ID] [--target-http-status-code TARGET_HTTP_STATUS_CODE] [--target-url TARGET_URL] [--json]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2281,7 +2281,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy-rules LOAD_BALANCER_ID LISTENER_ID POLICY_ID [--json]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2297,7 +2297,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy-rule LOAD_BALANCER_ID LISTENER_ID POLICY_ID RULE_ID [--json]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2314,7 +2314,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy-rule-create LOAD_BALANCER_ID LISTENER_ID POLICY_ID --condition CONDITION --type TYPE --value VALUE [--field FIELD] [--json]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2334,7 +2334,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy-rule-update LOAD_BALANCER_ID LISTENER_ID POLICY_ID RULE_ID [--condition CONDITION] [--type TYPE] [--value VALUE] [--field FIELD] [--json]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
@@ -2355,7 +2355,7 @@ This section gives details about the CLI commands available for working with loa
 
 `ibmcloud is load-balancer-listener-policy-rule-delete LOAD_BALANCER_ID LISTENER_ID POLICY_ID RULE_ID [-f, --force]`
 
-**options**
+**Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
