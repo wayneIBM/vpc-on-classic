@@ -27,7 +27,10 @@ subcollection: vpc-on-classic
 
 When you're ready to run workloads, you can reach two types of endpoints: Infrastructure as a Service (IaaS) endpoints and Cloud Service Endpoints (CSE). The IaaS endpoints are pre-provisioned and ready to go; however, the CSEs must be provisioned separately before they can be used.
 
-Endpoints for these services use _routable addresses_; that is, addresses outside of those specified in RFC 1918, and these addresses might look as if they are communicating through the public Internet, but traffic to and from these endpoints does not leave the cloud. Therefore, this traffic avoids the bandwidth charges associated with traffic that exits the cloud and goes onto the public Internet.
+Endpoints for these services use _routable addresses_; that is, addresses outside of those specified in RFC 1918, and these addresses might look as if they are communicating through the public Internet, but traffic to and from these endpoints does not leave the cloud. Therefore, this traffic avoids the bandwidth charges associated with traffic that exits the cloud and goes onto the public Internet. 
+
+Virtual server instances are able to reach the IaaS endpoints without the need of a public gateway.
+{: important}
 
 ## Infrastructure as a Service (IaaS) endpoints
 {: #infrastructure-as-a-service-iaas-endpoints}

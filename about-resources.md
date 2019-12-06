@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2018, 2019
 
-lastupdated: "2019-09-19"
+lastupdated: "2019-11-27"
 
 keywords: vpc, vpc resources, resource, policies, authorization, resource type, resource groups, roles, load balancer, VPN, operator, editor, viewer, admin
 
@@ -30,23 +30,26 @@ subcollection: vpc-on-classic
 Not all VPC resources are controlled by individual resource level access control policies. Some resources inherit the access control from the account or parent VPC.
 {: important}
 
-Service | Resource type | Resource instance | Access Control Level
----------------|---------------|---------------
-VPC Infrastructure | Virtual Private Cloud  | vpc | itself
-| Block Storage for VPC  | volume | itself  
-| _Coming soon_     | floating ip* | Account
-| Image Service for VPC  | image | itself
-| Load Balancer for VPC  | load balancer | itself
-| Network ACL  | network acl* | Account
-| _Coming soon_     | public gateway | parent vpc
-| Security Group for VPC  | security group | itself
-| SSK Key for VPC  | key | itself
-| Subnet  | subnet | parent vpc
-| Virtual Server for VPC  | instance | itself
-| VPN for VPC  | vpn | itself
+| Service | Resource type | Resource | Access Control Level | Support of custom resource groups |
+| ---------------|---------------|---------------|-----|-----|
+| VPC Infrastructure | Virtual Private Cloud  | vpc | itself | Yes |
+| | Block Storage for VPC  | volume | itself  |  Yes |
+| | Floating IP for VPC    | floating ip* | Account | No |
+| | Image Service for VPC  | image | itself | Yes |
+| | Load Balancer for VPC  | load balancer | itself | Yes  |
+| | Network ACL  | network acl* | Account | No |
+| | Public Gateway for VPC     | public gateway | parent vpc | No  |
+| | Security Group for VPC  | security group | itself | Yes |
+| | SSK Key for VPC  | key | itself | Yes |
+| | Subnet  | subnet | parent vpc | No |
+| | Virtual Server for VPC  | instance | itself | Yes |
+| | VPN for VPC  | vpn | itself | Yes |
 
 Floating IPs and Network ACLs can be created with authorization at the account level if unassigned. However, as soon as a floating IP is assigned to an instance or an ACL is assigned to a subnet, these resources become subject to the VPC's authorization level.
 {: note}
+
+Floating IPs are always created in the _Default_ resource group so a user must have **Viewer** privileges on this resource group in order to have authorization to create Floating IPs.
+{: important}
 
 VPC Infrastructure uses an inherited model for access control. A role on the resource hierarchy, such as group, service, type, or instance, is inherited to the resources down the hierarchy. The access to a resource is determined by the resulting union of roles on the resource. The following diagram is a visual representation of the model. 
 
@@ -65,15 +68,15 @@ Generally, access to resources in a VPC is controlled by policies. To customize 
 ## Resources and resource groups
 {: #resources-and-resource-groups}
 
-A resource group is a collection of resources, such as an entire VPC or a single subnet and its ACL, that is associated to establish authorization and usage. A resource group is a collection of infrastructure that a project, a department, or a team might use.
+A resource group is a collection of resources that is associated to establish authorization and usage. A resource group is a collection of infrastructure that a project, a department, or a team might use.
 
 Use the search CLI to display tags attached to a resource. Use filters to display only the instances you care about, such as `ibmcloud resource search name:` or `ibmcloud resource search 'service_name:is AND type:vpc'`.
 {: tip}
 
 Large enterprises may want to divide a VPC into resource groups. Smaller companies may not need to divide their VPC into resource groups, because all of their team would be using the entire VPC. Learn more about [Working with resources](/docs/resources?topic=resources-resource).
 
-Assignment of a resource to a resource group can be done ONLY when you create a VPC. Resources cannot change resource groups after they are created.
-{: note}
+Not all VPC resources can be assigned to a resource group. See the [table above](#about-vpc-infrastructure-resources) for specifics. In addition, assignment of a resource to a resource group can be done ONLY when you create it. Resources cannot change resource groups after they are created. 
+{: important}
 
 Defining resource groups requires advance planning. Before you set up your {{site.data.keyword.cloud_notm}} VPC, know how you'll assign the resources and the users in your organization to each resource group.
 {: tip}

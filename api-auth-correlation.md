@@ -27,8 +27,11 @@ This page describes the authorization levels required to interact with {{site.da
 
 The terms _attached_ or _unattached_ refer to whether the resource is associated with one or more VPCs, either directly or indirectly through the resource's subnets. When an unattached floating IP or Network ACL has no subnets, it is not associated with any VPC, so authorization by VPC is not applicable.
 
-In order for a user to be allowed to **create** resources in any resource group, including `Default` group, the user must have **Viewer** privileges on the resource group, in addition to the role required on the resource type.
+In order for a user to be allowed to **create** resources in any resource group, including _Default_ group, the user must have **Viewer** privileges on the resource group, in addition to the role required on the resource type. In order for a user to be allowed to create Floating IPs, the user must have **Viewer** privileges on the _Default_ resource group since that is where the Floating IPs are created.
 {: tip}
+
+Not all VPC resources can be assigned to a resource group. See the [resource table](/docs/vpc-on-classic?topic=vpc-on-classic-about-vpc-infrastructure-resources) for specifics.
+{: important}
 
 Permission details are available by both resource action and [by role](#byrole).
 

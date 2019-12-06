@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2019
-lastupdated: "2019-11-20"
+lastupdated: "2019-12-03"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -317,6 +317,11 @@ An unexpected error occurred. This problem may be temporary. Try the request aga
 **Message**: Please contact your administrator.
 
 An unexpected error occurred. This problem may be temporary. Try the request again in a few minutes. If this error persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+
+## invalid_action_for_public_image
+**Message**: The action cannot be performed on a public image.
+
+Public images cannot be added, modified, or deleted.
 
 ## invalid_generation_parameter
 **Message**: The generation query parameter must be set to 1.
@@ -1325,7 +1330,7 @@ When creating a volume, the IOPS value specified in the request must be a positi
 ## volume_name_duplicate
 **Message**: The volume name is a duplicate. Volume name `<volume_name>` provided in the request already exists, where `<volume_name>` is the provided volume name.
 
-The volume name specified in the request already exists. Provide a volume name that is not currently in use.
+The volume name specified in the request already exists in the VPC infrastructure. Provide a different name for the volume. For more information about volume naming, refer to [the volume naming guidelines](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-managing-block-storage#volume-name-conventions).
 
 ## volume_name_invalid
 **Message**: The volume name specified in the request is not valid.

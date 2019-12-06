@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-11-22"
+lastupdated: "2019-12-06"
 
 keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,18 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 6 December 2019
+{: #dec-6-2019}
+
+**New version `0.5.9` of the CLI plug-in `vpc-infrastructure` has been released**, which includes the following enhancements:
+- The command `ibmcloud target -g YOUR_GROUP` can be used to filter VPC resources in that resource group only
+- Get commands now show Name and ID in separate columns
+- The instance list command now shows floating IP data
+- The instance details command now shows network interface data
+
+Not all VPC resources can be assigned to a resource group. See the [resource table](/docs/vpc-on-classic?topic=vpc-on-classic-about-vpc-infrastructure-resources) for specifics.
+{: important}
 
 ## 22 November 2019
 {: #nov-22-2019}

@@ -37,6 +37,9 @@ This document shows you how the administrator of the account can add additional 
 Changes to IAM access policies for VPC Infrastructure resources may take up to 10 minutes to take effect.
 {: note}
 
+Not all VPC resources can be assigned to a resource group. See the [resource table](/docs/vpc-on-classic?topic=vpc-on-classic-about-vpc-infrastructure-resources) for specifics.
+{: important}
+
 ## Simple access scenario
 {: #simple-access-scenario}
 
