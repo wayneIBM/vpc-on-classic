@@ -123,4 +123,5 @@ If a networking failure results in a partition, such that the datacenter is unab
 | San Jose, USA | `s3.direct.sjc04.cloud-object-storage.appdomain.cloud` |
 | São Paulo, Brazil | `s3.direct.sao01.cloud-object-storage.appdomain.cloud` |
 | Seoul, South Korea | `s3.direct.seo01.cloud-object-storage.appdomain.cloud` |
+| Singapore | `s3.direct.sng01.cloud-object-storage.appdomain.cloud` |
 | Toronto, Canada | `s3.direct.tor01.cloud-object-storage.appdomain.cloud` |

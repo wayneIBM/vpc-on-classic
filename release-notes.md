@@ -30,7 +30,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 {: #dec-13-2019}
 
 - **Monitoring data for block storage volumes** is now available in the {{site.data.keyword.cloud_notm}} console. For more information, see [Monitoring block storage volumes](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-monitor-block-storage-vpc).
-- **Cloud Service Endpoint (CSE) source addresses** are now available in the VPC overview page on the {{site.data.keyword.cloud_notm}} console. To view the data, select a VPC from the [list](https://cloud.ibm.com/vpc/network/vpcs).
+- **Cloud Service Endpoint (CSE) source addresses** are now available in the VPC overview page on the {{site.data.keyword.cloud_notm}} console. To view the data, select a VPC from the [list](https://cloud.ibm.com/vpc/network/vpcs){: external}.
 
 ## 6 December 2019
 {: #dec-6-2019}
