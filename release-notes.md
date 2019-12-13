@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-06"
+lastupdated: "2019-12-13"
 
 keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,12 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 13 December 2019
+{: #dec-13-2019}
+
+- **Monitoring data for block storage volumes** is now available in the {{site.data.keyword.cloud_notm}} console. For more information, see [Monitoring block storage volumes](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-monitor-block-storage-vpc).
+- **Cloud Service Endpoint (CSE) source addresses** are now available in the VPC overview page on the {{site.data.keyword.cloud_notm}} console. To view the data, select a VPC from the [list](https://cloud.ibm.com/vpc/network/vpcs).
 
 ## 6 December 2019
 {: #dec-6-2019}
