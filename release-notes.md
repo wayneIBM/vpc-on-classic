@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-12-13"
+lastupdated: "2020-01-10"
 
 keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,19 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 10 January 2020
+{: #jan-10-2020}
+
+**CLI enhancements**
+
+- Interactive mode to create an instance (for example, `ibmcloud is instance-create --interactive`)
+- Help command example section for create and update (for example, `ibmcloud is help instance-create`, `ibmcloud is help instance-update`, and `ibmcloud is help volume-create`)
+- Resource group filter for list commands (for example, `ibmcloud is vpcs --resource-group-name Littleton`)
+- JSON output format support for the `ibmcloud is target --json` command
+- `--ipv4` and `--primary-network-interface` options for `instance-create`, which allows you to specify the primary private IP for the primary network interface while creating an instance.
+
+Refer to the [IBM Cloud CLI for VPC reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference) for the new options.
 
 ## 13 December 2019
 {: #dec-13-2019}

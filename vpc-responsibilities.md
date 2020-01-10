@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2019-06-14"
+lastupdated: "2019-12-16"
 
 keywords: vpc, responsibilities, ha, high availability, disaster recovery
 
@@ -41,6 +41,7 @@ IBM's responsibilities:
 - Deploy a fully managed, highly available, secured, IBM-owned infrastructure.
 - Fulfill requests for VPC infrastructure, such as VPCs, subnets, Virtual Server instances, block storage volumes, security groups, network ACLs, floating IPs, public gateways, VPNs, Load Balancers and SSH Keys across multiple availability zones (AZs) and multi-zone regions (MZRs).
 - Provide the ability to bring your own CIDR block to a subnet.
+- Load Balancer and VPN for VPC have off-site storage and replication of configuration data in an out-of-region disaster recovery node with daily backups. This data is fully managed by IBM Cloud and no customer input is required to ensure service recovery, although there can be up to a 24-hour loss of configuration data.
 
 Your responsibilities:
 - Use the provided API, CLI, or UI console to provision compute and storage, and to adjust networking configurations to meet the needs of your workload.
@@ -73,6 +74,7 @@ Your responsibilities:
 - Maintain the lifecycle of any keys used within KeyProtect for disk encryption.
 - Restrict user access to the appropriate resources and resource groups.
 - Integrate IBM Activity Tracker and IBM Monitoring data into your auditing and monitoring processes
+- If your application requires end-to-end encryption, ensure that your connection is encrypted end-to-end.
 
 ### App Orchestration
 

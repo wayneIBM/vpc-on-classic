@@ -686,9 +686,9 @@ The quotas per resource are specified in [Quotas and limits for VPC](/docs/vpc-o
 For versions on and after 5/31/2019, the `generation` query parameter is required for VPC for generation 1 compute resources API requests.
 
 ## missing_ims_account_id
-**Message**: None
+**Message**: There is no classic infrastructure (IMS) account linked to your account.
 
-For further instructions to fix this problem, refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: external}. If this problem persists, [contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
+To create a Classic Access VPC, your account must be linked to a classic infrastructure (IMS) account. See [Setting up access to your Classic Infrastructure from VPC](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc) to learn more.
 
 ## missing_version
 **Message**: The `version` parameter is required, and it must be of the form `YYYY-MM-DD`.

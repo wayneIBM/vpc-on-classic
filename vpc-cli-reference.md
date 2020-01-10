@@ -22,20 +22,20 @@ subcollection: vpc-on-classic
 {:DomainName: data-hd-keyref="DomainName"}
 {:external: target="_blank" .external}
 
-# IBM Cloud CLI for VPC Reference
+# IBM Cloud CLI for VPC reference
 {: #vpc-reference}
 
-This document provides a reference of the command line interface (CLI) commands available for the functionality of the {{site.data.keyword.cloud}} Virtual Private Cloud (Gen 1 compute). 
+This document provides a reference of the command line interface (CLI) commands available for the functionality of the {{site.data.keyword.cloud}} Virtual Private Cloud (Gen 1 compute).
 
-This VPC CLI is for use with generation 1 compute resources. Generation 1 resources aren't compatible with generation 2 resources. To view the CLI for generation 2 resources, see the [CLI for VPC for generation 2 compute](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference). 
+This VPC CLI is for use with generation 1 compute resources. Generation 1 resources aren't compatible with generation 2 resources. To view the CLI for generation 2 resources, see the [CLI for VPC for generation 2 compute](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference).
 {:tip}
 
-The commands are organized into sections according to functionality such as network, compute, regions, VPN, load balancers, and storage. Similar commands to execute these functions also are available as [API commands](https://{DomainName}/apidocs/vpc-on-classic){: external}.
+The commands are organized into sections according to functionality, such as network, compute, regions, VPN, load balancers, and storage. Similar commands to execute these functions also are available as [API commands](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
 ## Prerequisites:
 
 1. Install the [IBM Cloud CLI](/docs/cli?topic=cloud-cli-install-ibmcloud-cli).
-2. Install or update the vpc-infrastructure plugin.
+2. Install or update the `vpc-infrastructure` plug-in.
 
   ```
   ibmcloud plugin install vpc-infrastructure
@@ -49,14 +49,14 @@ The commands are organized into sections according to functionality such as netw
   ```
   {: pre}
 
-  To view installed plugins and versions:
+  To view installed plug-ins and versions:
 
   ```
   ibmcloud plugin list
   ```
   {: pre}
-  
-3. Set target generation for compute resources as `1`. 
+
+3. Set target generation for compute resources as `1`.
 
    ```
    ibmcloud is target --gen 1
@@ -64,21 +64,22 @@ The commands are organized into sections according to functionality such as netw
    {: pre}
 
 
-## Target Commands
+## Target commands
 {: #target}
 
 This command targets the generation of compute resources, (Gen 1) or ( Gen 2).
 
 ### `ibmcloud is target`
 
-`ibmcloud is target [--gen 2 | 1]`
+`ibmcloud is target [--gen 2 | 1] [--json]`
 
 **Options**
 
 - `--gen`: Generation of compute resources. Default is '2'. You must set the value to '1' to access generation 1 resources.
+- `--json`: Format output in JSON.
 
 
-## Network Commands
+## Network commands
 {: #network}
 
 This section provides a reference to the command line interface (CLI) commands available for the network functionality and resources, including floating IPs, public gateways, network ACLs, subnets, security groups, and VPCs.
@@ -159,7 +160,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 
 
-## Public Gateways
+## Public gateways
 
 ### `ibmcloud is public-gateways`
 {: #public-gateways-cli}
@@ -198,7 +199,7 @@ This section provides a reference to the command line interface (CLI) commands a
 **Options**
 
 - `GATEWAY_NAME`: Name of the public gateway.
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `ZONE_NAME`: Name of the zone.
 - `--floating-ip-id`: ID of the floating IP bound to the public gateway.
 - `--floating-ip-address`: IP address of the floating IP bound to the public gateway.
@@ -259,7 +260,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `ACL`: ID of the network acl.
+- `ACL`: ID of the network ACL.
 - `--json`: Format output in JSON.
 
 ---
@@ -274,8 +275,8 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `ACL_NAME`: Name of the network acl.
-- `-rules`: RULES_JSON|@RULES_JSON_FILE, rules for the ACL in json or json file.
+- `ACL_NAME`: Name of the network ACL.
+- `-rules`: RULES_JSON|@RULES_JSON_FILE, rules for the ACL in JSON or as a JSON file.
 - `--source-acl-id`: ID of the network ACL contains rules to be copied.
 - `--json`: Format output in JSON.
 
@@ -290,7 +291,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `ACL`: ID of the network acl.
+- `ACL`: ID of the network ACL.
 - `--name`: New name of the network ACL.
 - `--json`: Format output in JSON.
 
@@ -319,7 +320,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `ACL`: ID of the network acl.
+- `ACL`: ID of the network ACL.
 - `--json`: Format output in JSON.
 
 ---
@@ -333,7 +334,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `ACL`: ID of the network acl.
+- `ACL`: ID of the network ACL.
 - `RULE`: ID of the rule.
 - `--json`: Format output in JSON.
 
@@ -349,19 +350,19 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `ACL`: ID of the network acl.
+- `ACL`: ID of the network ACL.
 - `ACTION`: Enumeration type: `allow` or `deny`.
 - `DIRECTION`: Direction of traffic to enforce. Enumeration type: `inbound` or `outbound`.
 - `SOURCE`: Source IP address or CIDR block.
 - `DESTINATION`: Destination IP address or CIDR block.
 - `PROTOCOL`: Protocol to enforce. Enumeration type: `all`, `icmp`, `tcp` or `udp`.
 - `--name`: The name of the ACL rule.
-- `--icmp-type`: ICMP traffic type to allow. Valid values from 0 to 254. This option is specified only when protocol is set to `icmp`. If unspecified, all types are allowed.
-- `--icmp-code`: ICMP traffic code to allow. Valid values from 0 to 255. This option is specified only when protocol is set to `icmp`. If unspecified, all codes are allowed.
-- `--destination-port-min`: Minimum destination port number. Valid values are from 1 to 65535. This option is specified only when protocol is set to `tcp` or `udp` (default: 1).
-- `--destination-port-max`: Maximum destination port number. Valid values are from 1 to 65535. This option is specified only when protocol is set to `tcp` or `udp` (default: 65535).
-- `--source-port-min`: Minimum source port number. Valid values are from 1 to 65535. This option is specified only when protocol is set to `tcp` or `udp` (default: 1).
-- `--source-port-max`: Maximum source port number. Valid values are from 1 to 65535. This option is specified only when protocol is set to `tcp` or `udp` (default: 65535).
+- `--icmp-type`: ICMP traffic type to allow. Valid values from `0` to `254`. This option is specified only when protocol is set to `icmp`. If unspecified, all types are allowed.
+- `--icmp-code`: ICMP traffic code to allow. Valid values from `0` to `255`. This option is specified only when protocol is set to `icmp`. If unspecified, all codes are allowed.
+- `--destination-port-min`: Minimum destination port number. Valid values are from `1` to `65535`. This option is specified only when protocol is set to `tcp` or `udp` (default: `1`).
+- `--destination-port-max`: Maximum destination port number. Valid values are from `1` to `65535`. This option is specified only when protocol is set to `tcp` or `udp` (default: `65535`).
+- `--source-port-min`: Minimum source port number. Valid values are from `1` to `65535`. This option is specified only when protocol is set to `tcp` or `udp` (default: `1`).
+- `--source-port-max`: Maximum source port number. Valid values are from `1` to `65535`. This option is specified only when protocol is set to `tcp` or `udp` (default: `65535`).
 - `--before-rule-id`: ID of the rule that this rule is inserted before.
 - `--json`: Format output in JSON.
 
@@ -372,11 +373,11 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Update a rule of a network ACL.**
 
-`ibmcloud is network-acl-rule-update ACL RULE [--name NEW_NAME] [--action ACTION] [--direction DIRECTION] [--source SOURCE] [--dest DEST] [--protocol PROTOCOL] [--icmp-code ICMP_CODE] [--icmp-type ICMP_TYPE] [--source-port-min PORT_MIN] [--source-port-max PORT_MAX] [--destination-port-max PORT_MAX] [---destination-port-min PORT_MIN] [--before-rule-id RULE_ID] [--json]`
+`ibmcloud is network-acl-rule-update ACL RULE [--name NEW_NAME] [--direction inbound | outbound] [--action allow | deny] [--before-rule-id RULE_ID] [--source SOURCE] [--dest DEST] [--protocol all | icmp | tcp | udp] [--icmp-type ICMP_TYPE] [--icmp-code ICMP_CODE] [--source-port-min PORT_MIN] [--source-port-max PORT_MAX] [--destination-port-min PORT_MIN] [--destination-port-max PORT_MAX] [--json]`
 
 **Options**
 
-- `ACL`: ID of the network acl.
+- `ACL`: ID of the network ACL.
 - `RULE`: ID of the rule.
 - `--name`: New name of the rule.
 - `--direction`: Direction of traffic to enforce. Enumeration type: `inbound` or `outbound`.
@@ -404,7 +405,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `ACL`: ID of the network acl.
+- `ACL`: ID of the network ACL.
 - `RULE`: ID of the rule.
 - `--force, -f`: Delete without confirmation.
 
@@ -450,12 +451,12 @@ This section provides a reference to the command line interface (CLI) commands a
 **Options**
 
 - `SUBNET_NAME`: Name of the subnet.
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `--network-acl-id`: The ID of the network ACL.
 - `--public-gateway-id`: The ID of the public gateway.
-- `--ipv4-cidr-block`: the IPv4 range of the subnet, this is exclusive with --ipv4-address-count.
+- `--ipv4-cidr-block`: the IPv4 range of the subnet, this is exclusive with ``--ipv4-address-count`.
 - `--zone`: Name of the zone.
-- `--ipv4-address-count`: The total number of IPv4 addresses required, must be a power of 2 and minimum value is 8. This option is mutually exclusive with --ipv4-cidr-block.
+- `--ipv4-address-count`: The total number of IPv4 addresses required, must be a power of 2 and minimum value is `8`. This option is mutually exclusive with ``--ipv4-cidr-block`.
 - `--json`: Format output in JSON.
 
 ---
@@ -526,11 +527,14 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **List all security groups.**
 
-`ibmcloud is security-groups [--json]`
+`ibmcloud is security-groups [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
+
 
 ---
 
@@ -558,9 +562,9 @@ This section provides a reference to the command line interface (CLI) commands a
 **Options**
 
 - `GROUP_NAME`: Name of the subnet.
-- `VPC`: ID of the vpc.
-- `--resource-group-id`: ID of the resource group. This option is exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is exclusive with --resource-group-id.
+- `VPC`: ID of the VPC.
+- `--resource-group-id`: ID of the resource group. This option is exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -687,18 +691,18 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Add a rule to a security group.**
 
-`ibmcloud is security-group-rule-add GROUP DIRECTION PROTOCOL [(--remote REMOTE_ADDRESS | CIDR_BLOCK | SECURITY_GROUP_ID)] [--icmp-type ICMP_TYPE [--icmp-code ICMP_CODE]] [--port-max PORT_MAX --port-min PORT_MIN] [--json]`
+`ibmcloud is security-group-rule-add GROUP DIRECTION PROTOCOL [--remote REMOTE_ADDRESS | CIDR_BLOCK | SECURITY_GROUP_ID] [--icmp-type ICMP_TYPE [--icmp-code ICMP_CODE]] [--port-min PORT_MIN] [--port-max PORT_MAX] [--json]`
 
 **Options**
 
 - `GROUP`: ID of the security group.
 - `DIRECTION`: Direction of traffic to enforce. Enumeration type: `inbound` or `outbound`.
 - `PROTOCOL`: Protocol to enforce. Enumeration type: `all`, `icmp`, `tcp` or `udp`.
-- `--remote`: The set of network interfaces from which this rule allows traffic, Can be specified as either an REMOTE_ADDRESS, CIDR_BLOCK and SECURITY_GROUP_ID. If unspecified, traffic will be allowed from any source (or to any source, for outbound rules).
-- `--icmp-type`: ICMP traffic type to allow. Valid values from 0 to 254. This option is specified only when protocol is set to `icmp`. If unspecified, all types are allowed.
-- `--icmp-code`: ICMP traffic code to allow. Valid values from 0 to 255. This option is specified only when protocol is set to `icmp`. If unspecified, all codes are allowed.
-- `--port-min`: Minimum port number. Valid values are from 1 to 65535. This option is specified only when protocol is set to tcp or udp. If unspecified, all ports are allowed (default: 1).
-- `--port-max`: Maximum port number. Valid values are from 1 to 65535. This option is specified only when protocol is set to tcp or udp. If unspecified, all ports are allowed (default: 65535).
+- `--remote`: The set of network interfaces from which this rule allows traffic, Can be specified as either `REMOTE_ADDRESS`, `CIDR_BLOCK` or `SECURITY_GROUP_ID`. If unspecified, traffic is allowed from any source (or to any source, for outbound rules).
+- `--icmp-type`: ICMP traffic type to allow. Valid values from `0` to `254`. This option is specified only when protocol is set to `icmp`. If unspecified, all types are allowed.
+- `--icmp-code`: ICMP traffic code to allow. Valid values from `0` to `255`. This option is specified only when protocol is set to `icmp`. If unspecified, all codes are allowed.
+- `--port-min`: Minimum port number. Valid values are from `1` to `65535`. This option is specified only when protocol is set to tcp or udp. If unspecified, all ports are allowed (default: 1).
+- `--port-max`: Maximum port number. Valid values are from `1` to `65535`. This option is specified only when protocol is set to tcp or udp. If unspecified, all ports are allowed (default: `65535`).
 - `--json`: Format output in JSON.
 
 ---
@@ -708,18 +712,18 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Update a rule of a security group.**
 
-`ibmcloud is security-group-rule-update GROUP RULE_ID [--direction DIRECTION] [(--remote REMOTE_ADDRESS | CIDR_BLOCK | SECURITY_GROUP_ID)] [--icmp-type ICMP_TYPE [--icmp-code ICMP_CODE]] [--port-max PORT_MAX --port-min PORT_MIN] [--json]`
+`ibmcloud is security-group-rule-update GROUP RULE_ID [--direction inbound | outbound] [--remote REMOTE_ADDRESS | CIDR_BLOCK | SECURITY_GROUP_ID] [--icmp-type ICMP_TYPE [--icmp-code ICMP_CODE]] [--port-min PORT_MIN] [--port-max PORT_MAX] [--json]`
 
 **Options**
 
 - `GROUP`: ID of the security group.
 - `RULE_ID`: ID of the rule.
 - `--direction`: Direction of traffic to enforce. Enumeration type: `inbound` or `outbound`.
-- `--remote`: The set of network interfaces from which this rule allows traffic, Can be specified as either an REMOTE_ADDRESS, CIDR_BLOCK and SECURITY_GROUP_ID. If unspecified, traffic will be allowed from any source (or to any source, for outbound rules).
-- `--icmp-type`: ICMP traffic type to allow. Valid values from 0 to 254. This option is specified only when protocol is set to `icmp`.
-- `--icmp-code`: ICMP traffic code to allow. Valid values from 0 to 255. This option is specified only when protocol is set to `icmp`.
-- `--port-min`: Minimum port number. Valid values are from 1 to 65535. This option is specified only when protocol is set to tcp or udp. If unspecified, all ports are allowed (default: 1).
-- `--port-max`: Maximum port number. Valid values are from 1 to 65535. This option is specified only when protocol is set to tcp or udp. If unspecified, all ports are allowed (default: 65535).
+- `--remote`: The set of network interfaces from which this rule allows traffic, Can be specified as either a `REMOTE_ADDRESS`, `CIDR_BLOCK` and `SECURITY_GROUP_ID`. If unspecified, traffic will be allowed from any source (or to any source, for outbound rules).
+- `--icmp-type`: ICMP traffic type to allow. Valid values from `0` to `254`. This option is specified only when protocol is set to `icmp`.
+- `--icmp-code`: ICMP traffic code to allow. Valid values from `0` to `255`. This option is specified only when protocol is set to `icmp`.
+- `--port-min`: Minimum port number. Valid values are from `1` to `65535`. This option is specified only when protocol is set to tcp or udp. If unspecified, all ports are allowed (default: `1).
+- `--port-max`: Maximum port number. Valid values are from `1` to `65535`. This option is specified only when protocol is set to tcp or udp. If unspecified, all ports are allowed (default: `65535`).
 - `--json`: Format output in JSON.
 
 ---
@@ -746,11 +750,13 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **List all VPCs.**
 
-`ibmcloud is vpcs [--classic-access true | false ] [--json]`
+`ibmcloud is vpcs [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--classic-access true | false] [--json]`
 
 **Options**
 
-- `--classic-access`: This flag lists VPCs that have Classic access enabled. Enumeration type: true, false. If unspecified, it returns all VPCs with and without classic access enabled.
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
+- `--classic-access`: This flag lists VPCs that have classic access enabled. Enumeration type: true, false. If unspecified, it returns all VPCs with and without classic access enabled.
 - `--json`: Format output in JSON.
 
 ---
@@ -764,7 +770,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `--show-attached`: View details of resources (Subnets,VPC Routes and Address Prefix) attached to this VPC.
 - `--json`: Format output in JSON.
 
@@ -781,10 +787,10 @@ This section provides a reference to the command line interface (CLI) commands a
 **Options**
 
 - `VPC_NAME`: Name of the VPC
-- `--classic-access`: This flag indicates whether the VPC should be connected to Classic Infrastructure. The default  is false.
-- `--address-prefix-management`: This flag indicates whether a default address prefix should be automatically created for each zone in this VPC. Enumeration type: auto, manual. If 'manual', this VPC will be created with no default address prefixes. If unspecified, default is 'auto'.
-- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with --resource-group-id.
+- `--classic-access`: This flag indicates whether the VPC should be connected to Classic Infrastructure. The default  is `false`.
+- `--address-prefix-management`: This flag indicates whether a default address prefix should be automatically created for each zone in this VPC. Enumeration type: `auto`, `manual`. If `manual`, this VPC is created with no default address prefixes. If unspecified, default is `auto`.
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -794,11 +800,11 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Update a VPC.**
 
-`ibmcloud is vpc-update VPC [--name NEW_NAME] [--json]`
+`ibmcloud is vpc-update VPC --name NEW_NAME [--json]`
 
 **Options**
 
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `--name`: New name of the VPC.
 - `--json`: Format output in JSON.
 
@@ -813,7 +819,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `--force, -f`: Delete without confirmation.
 
 ---
@@ -827,7 +833,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `--json`: Format output in JSON.
 
 ---
@@ -841,8 +847,8 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
-- `PREFIX`: ID of the vpc address prefix.
+- `VPC`: ID of the VPC.
+- `PREFIX`: ID of the VPC address prefix.
 - `--json`: Format output in JSON.
 
 ---
@@ -857,10 +863,10 @@ This section provides a reference to the command line interface (CLI) commands a
 **Options**
 
 - `PREFIX_NAME`: Name of the address prefix.
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `ZONE`: Name of the zone.
 - `CIDR`: The CIDR block for this prefix.
-- `--default`: This flag indicates whether this is the default prefix for this zone in this VPC. Enumeration type: true, false. If unspecified, the default is false.
+- `--default`: This flag indicates whether this is the default prefix for this zone in this VPC. Enumeration type: `true`, `false`. If unspecified, the default is `false`.
 - `--json`: Format output in JSON.
 
 ---
@@ -870,12 +876,12 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Delete an address prefix.**
 
-`ibmcloud is vpc-address-prefix-delete VPC PREFIX [--force]`
+`ibmcloud is vpc-address-prefix-delete VPC PREFIX [-f, --force]`
 
 **Options**
 
-- `VPC`: ID of the vpc.
-- `PREFIX`: ID of the vpc address prefix.
+- `VPC`: ID of the VPC.
+- `PREFIX`: ID of the VPC address prefix.
 - `--force, -f`: Delete without confirmation.
 
 ---
@@ -889,9 +895,9 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
-- `PREFIX`: ID of the vpc address prefix.
-- `--default`: This flag indicates whether this is the default prefix for this zone in this VPC. Enumeration type: true, false. If unspecified, the default is false.
+- `VPC`: ID of the VPC.
+- `PREFIX`: ID of the VPC address prefix.
+- `--default`: This flag indicates whether this is the default prefix for this zone in this VPC. Enumeration type: `true`, `false`. If unspecified, the default is `false`.
 - `--name`: New name of the address prefix.
 - `--json`: Format output in JSON.
 
@@ -906,7 +912,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `--json`: Format output in JSON.
 
 ---
@@ -920,7 +926,7 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `--json`: Format output in JSON.
 
 ---
@@ -934,8 +940,8 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
-- `Route`: ID of the vpc route.
+- `VPC`: ID of the VPC.
+- `Route`: ID of the VPC route.
 - `--json`: Format output in JSON.
 
 ---
@@ -949,8 +955,8 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `ROUTE_NAME`: Name of the vpc route.
-- `VPC`: ID of the vpc.
+- `ROUTE_NAME`: Name of the VPC route.
+- `VPC`: ID of the VPC.
 - `--zone`: Name of the zone.
 - `--destination`: The destination CIDR of the route.
 - `--next-hop-ip`: The IP address of the next hop to which to route packets.
@@ -967,8 +973,8 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Options**
 
-- `VPC`: ID of the vpc.
-- `Route`: ID of the vpc route.
+- `VPC`: ID of the VPC.
+- `Route`: ID of the VPC route.
 - `--name`: New name of the route.
 - `--json`: Format output in JSON.
 
@@ -979,12 +985,12 @@ This section provides a reference to the command line interface (CLI) commands a
 
 **Delete a vpc route.**
 
-`ibmcloud is vpc-route-delete VPC ROUTE [--force]`
+`ibmcloud is vpc-route-delete VPC ROUTE [-f, --force]`
 
 **Options**
 
-- `VPC`: ID of the vpc.
-- `Route`: ID of the vpc route.
+- `VPC`: ID of the VPC.
+- `Route`: ID of the VPC route.
 - `--force, -f`: Force the operation without confirmation.
 
 ---
@@ -1059,11 +1065,13 @@ This section contains a reference for the CLI commands related to Compute functi
 
 **List all images in the region.**
 
-`ibmcloud is images [--visibility VISIBILITY] [--json]`
+`ibmcloud is images [--visibility public | private] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
 - `--visibility`: List images with given visibility. Valid visibility is: public, private.
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1094,8 +1102,8 @@ This section contains a reference for the CLI commands related to Compute functi
 - `IMAGE_NAME`: Name of the new image.
 - `--file`: The Cloud Object Store (COS) location of the image file, for example: 'cos://us-south/custom-image-vpc-bucket/customImage-0.vhd'.
 - `--os-name`: The name of the operating system for this image.
-- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with --resource-group-id.
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1105,7 +1113,7 @@ This section contains a reference for the CLI commands related to Compute functi
 
 **Update an image.**
 
-`ibmcloud is image-update IMAGE [--name NEW_NAME] [--json]`
+`ibmcloud is image-update IMAGE --name NEW_NAME [--json]`
 
 **Options**
 
@@ -1135,10 +1143,12 @@ This section contains a reference for the CLI commands related to Compute functi
 
 **List all keys.**
 
-`ibmcloud is keys [--json]`
+`ibmcloud is keys [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1168,8 +1178,8 @@ This section contains a reference for the CLI commands related to Compute functi
 
 - `KEY_NAME`: Name of the key.
 - `KEY`: key|@key-file. The public SSH key to be imported into the system.
-- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with --resource-group-id.
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1210,10 +1220,12 @@ This section contains a reference for the CLI commands related to Compute functi
 
 **List all server instances.**
 
-`ibmcloud is instances [--json]`
+`ibmcloud is instances [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1237,26 +1249,28 @@ This section contains a reference for the CLI commands related to Compute functi
 
 **Create a server instance.**
 
-`ibmcloud is instance-create INSTANCE_NAME VPC ZONE_NAME PROFILE_NAME SUBNET --image-id IMAGE_ID [--boot-volume BOOT_VOLUME_JSON | @BOOT_VOLUME_JSON_FILE] [--volume-attach VOLUME_ATTACH_JSON | @VOLUME_ATTACH_JSON_FILE] [--key-ids IDS] [--user-data DATA] [--network-interface NETWORK_INTERFACE_JSON | @NETWORK_INTERFACE_JSON_FILE] [--security-group-ids SECURITY_GROUP_IDS] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
-
+`ibmcloud is instance-create INSTANCE_NAME VPC ZONE_NAME PROFILE_NAME SUBNET --image-id IMAGE_ID [--boot-volume BOOT_VOLUME_JSON | @BOOT_VOLUME_JSON_FILE] [--volume-attach VOLUME_ATTACH_JSON | @VOLUME_ATTACH_JSON_FILE] [--key-ids IDS] [--user-data DATA] [(--security-group-ids SECURITY_GROUP_IDS --ipv4 IPV4_ADDRESS) | --primary-network-interface PRIMARY_NETWORK_INTERFACE_JSON | @PRIMARY_NETWORK_INTERFACE_JSON_FILE] [--network-interface NETWORK_INTERFACE_JSON | @NETWORK_INTERFACE_JSON_FILE] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json] [-i, --interactive]`
 
 **Options**
 
 - `INSTANCE_NAME`: Name of the server instance.
-- `VPC`: ID of the vpc.
+- `VPC`: ID of the VPC.
 - `ZONE_NAME`: Name of the zone.
 - `PROFILE_NAME`: Name of the profile.
 - `SUBNET`: ID of the subnet.
 - `--image-id`: ID of the image.
-- `--boot-volume`: BOOT_VOLUME_JSON|@BOOT_VOLUME_JSON_FILE, boot volume attachment in json or json file.
-- `--volume-attach`: VOLUME_ATTACH_JSON|@VOLUME_ATTACH_JSON_FILE, volume attachment in json or json file.
+- `--boot-volume`: BOOT_VOLUME_JSON|@BOOT_VOLUME_JSON_FILE, boot volume attachment in JSON or as a JSON file.
+- `--volume-attach`: VOLUME_ATTACH_JSON|@VOLUME_ATTACH_JSON_FILE, volume attachment in JSON or as a JSON file.
 - `--security-group-ids`: Comma separated security group IDs for primary network interface.
+- `--ipv4`: Primary IPv4 address for the primary network interface.
+- `--primary-network-interface`: PRIMARY_NETWORK_INTERFACE_JSON|@PRIMARY_NETWORK_INTERFACE_JSON_FILE, primary network interface in JSON or as a JSON file.
 - `--key-ids`: Comma separated IDs of SSH keys.
 - `--user-data`: data|@data-file. The user data to transfer to the server instance.
 - `--network-interface`: NETWORK_INTERFACE_JSON|@NETWORK_INTERFACE_JSON_FILE, network interface attachment in JSON or as a JSON file.
-- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with --resource-group-id.
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
+- `--interactive, -i`: Supply the parameters under interactive mode,this option is mutually exclusive with all other arguments and options.
 
 ---
 
@@ -1266,12 +1280,11 @@ This section contains a reference for the CLI commands related to Compute functi
 
 **Update a server instance.**
 
-`ibmcloud is instance-update INSTANCE [--name NEW_NAME] [--json]`
+`ibmcloud is instance-update INSTANCE --name NEW_NAME [--json]`
 
 **Options**
 
 - `INSTANCE`: ID of the instance.
-- `--profile`: Name of the profile.
 - `--name`: New name of the server instance.
 - `--json`: Format output in JSON.
 
@@ -1474,14 +1487,14 @@ This section contains a reference for the CLI commands related to Compute functi
 
 **Create a volume attachment, connecting a volume to an instance.
 
-`ibmcloud is instance-volume-attachment-add NAME INSTANCE VOLUME [--auto-delete true | false] [--json]`
+`ibmcloud is instance-volume-attachment-add NAME INSTANCE VOLUME [--auto-delete false | true] [--json]`
 
 **Options**
 
 - `NAME`: Name of the volume attachment.
 - `INSTANCE`: ID of the instance.
 - `VOLUME`: ID of the volume.
-- `--auto-delete`: The attached volume will be deleted when deleting the instance, default is false.
+- `--auto-delete`: The attached volume will be deleted when deleting the instance, default is `false`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1511,7 +1524,7 @@ This section contains a reference for the CLI commands related to Compute functi
 - `INSTANCE`: ID of the instance.
 - `VOLUME_ATTACHMENT`: ID of the volume attachment.
 - `--name`: New name of the volume.
-- `--auto-delete`: The attached volume will be deleted when deleting the instance, default is false.
+- `--auto-delete`: The attached volume will be deleted when deleting the instance, default is `false`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1608,10 +1621,12 @@ This section gives details about the CLI commands available for working with VPN
 
 **List all IKE policies.**
 
-`ibmcloud is ike-policies [--json]`
+`ibmcloud is ike-policies [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1643,9 +1658,9 @@ This section gives details about the CLI commands available for working with VPN
 - `DH_GROUP`: The Diffie-Hellman group. Enumeration type: `2`, `5`, `14`.
 - `ENCRYPTION_ALGORITHM`: The encryption algorithm. Enumeration type: `triple_des`, `aes128`, `aes256`.
 - `IKE_VERSION`: The IKE protocol version. Enumeration type: `1`, `2`.
-- `--key-lifetime`: The key lifetime in seconds. Maximum: 86400, Minimum: 1800 (default: 28800).
-- `--resource-group-id`: ID of the resource group. This option is exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is exclusive with --resource-group-id.
+- `--key-lifetime`: The key lifetime in seconds. Maximum: `86400`, Minimum: `1800` (default: `28800`).
+- `--resource-group-id`: ID of the resource group. This option is exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1669,7 +1684,7 @@ This section gives details about the CLI commands available for working with VPN
 
 **Update an IKE policy.**
 
-`ibmcloud is ike-policy-update IKE_POLICY_ID [--authentication_algorithm md5 | sha1 | sha256] [--dh-group 2 | 5 | 14] [--encryption-algorithm triple_des | aes128 | aes256] [--ike-version 1 | 2] [--key-lifetime KEY_LIFETIME] [--name NEW_NAME] [--json]`
+`ibmcloud is ike-policy-update IKE_POLICY_ID [--name NEW_NAME] [--authentication-algorithm md5 | sha1 | sha256] [--dh-group 2 | 5 | 14] [--encryption-algorithm triple_des | aes128 | aes256] [--ike-version 1 | 2] [--key-lifetime KEY_LIFETIME] [--json]`
 
 **Options**
 - `IKE_POLICY_ID` ID of the IKE policy.
@@ -1678,7 +1693,7 @@ This section gives details about the CLI commands available for working with VPN
 - `--dh-group`: The Diffie-Hellman group. Enumeration type: `2`, `5`, `14`.
 - `--encryption-algorithm`: The encryption algorithm. Enumeration type: `triple_des`, `aes128`, `aes256`.
 - `--ike-version`: The IKE protocol version. Enumeration type: `1`, `2`.
-- `--key-lifetime`: The key lifetime in seconds. Maximum: 86400, Minimum: 1800.
+- `--key-lifetime`: The key lifetime in seconds. Maximum: `86400`, Minimum: `1800`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1702,10 +1717,12 @@ This section gives details about the CLI commands available for working with VPN
 
 **List all IPsec policies.**
 
-`ibmcloud is ipsec-policies [--json]`
+`ibmcloud is ipsec-policies [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1735,9 +1752,9 @@ This section gives details about the CLI commands available for working with VPN
 - `AUTHENTICATION_ALGORITHM`: The authentication algorithm. Enumeration type: `md5`, `sha1`, `sha256`.
 - `ENCRYPTION_ALGORITHM`: The encryption algorithm. Enumeration type: `triple_des`, `aes128`, `aes256`.
 - `PFS`: Perfect Forward Secrecy. Enumeration type: disabled, `group_2`, `group_5`, `group_14`.
-- `--key-lifetime`: The key lifetime in seconds. Maximum: 86400, Minimum: 1800 (default: 3600).
-- `--resource-group-id`: ID of the resource group. This option is exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is exclusive with --resource-group-id.
+- `--key-lifetime`: The key lifetime in seconds. Maximum: `86400`, Minimum: `1800` (default: `3600`).
+- `--resource-group-id`: ID of the resource group. This option is exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1761,7 +1778,7 @@ This section gives details about the CLI commands available for working with VPN
 
 **Update an IPsec policy.**
 
-`ibmcloud is ipsec-policy-update IPSEC_POLICY_ID [--authentication_algorithm md5 | sha1 | sha256] [--pfs disabled | group_2 | group_5 | group_14] [--encryption-algorithm triple_des | aes128 | aes256] [--key-lifetime KEY_LIFETIME] [--name NEW_NAME] [--json]`
+`ibmcloud is ipsec-policy-update IPSEC_POLICY_ID [--name NEW_NAME] [--authentication-algorithm md5 | sha1 | sha256] [--pfs disabled | group_2 | group_5 | group_14] [--encryption-algorithm triple_des | aes128 | aes256] [--key-lifetime KEY_LIFETIME] [--json]`
 
 **Options**
 - `IPSEC_POLICY_ID`: ID of the IPsec policy.
@@ -1769,7 +1786,7 @@ This section gives details about the CLI commands available for working with VPN
 - `--authentication-algorithm`: The authentication algorithm. Enumeration type: `md5`, `sha1`, `sha256`.
 - `--pfs`: Perfect Forward Secrecy. Enumeration type: `disabled`, `group_2`, `group_5`, `group_14`.
 - `--encryption-algorithm`: The encryption algorithm. Enumeration type: `triple_des`, `aes128`, `aes256`.
-- `--key-lifetime`: The key lifetime in seconds. Maximum: 86400, Minimum: 1800.
+- `--key-lifetime`: The key lifetime in seconds. Maximum: `86400`, Minimum: `1800`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1796,10 +1813,12 @@ This section contains commands available for working with VPN for VPC gateways.
 
 **List all VPN gateways.**
 
-`ibmcloud is vpn-gateways [--json]`
+`ibmcloud is vpn-gateways [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1827,8 +1846,8 @@ This section contains commands available for working with VPN for VPC gateways.
 **Options**
 - `VPN_GATEWAY_NAME`: Name of the VPN gateway.
 - `SUBNET_ID`: The unique identifier for this subnet.
-- `--resource-group-id`: ID of the resource group. This option is exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is exclusive with --resource-group-id.
+- `--resource-group-id`: ID of the resource group. This option is exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -1879,7 +1898,7 @@ This section contains commands available for working with VPN for VPC gateways.
 
 **Create a VPN gateway connection.**
 
-`ibmcloud is vpn-gateway-connection-create CONNECTION_NAME VPN_GATEWAY_ID PEER_ADDRESS PRESHARED_KEY [--admin-state-up true | false] [--dead-peer-detection-action ACTION] [--dead-peer-detection-interval INTERVAL] [--dead-peer-detection-timeout TIMEOUT] [--ike-policy IKE_POLICY_ID] [--ipsec-policy IPSEC_POLICY_ID]  [--local-cidr CIDR1 --local-cidr CIDR2 ...] [--peer-cidr CIDR1 --peer-cidr CIDR2 ...] [--json]`
+`ibmcloud is vpn-gateway-connection-create CONNECTION_NAME VPN_GATEWAY_ID PEER_ADDRESS PRESHARED_KEY [--admin-state-up true | false] [--dead-peer-detection-action restart | clear | hold | none] [--dead-peer-detection-interval INTERVAL] [--dead-peer-detection-timeout TIMEOUT] [--ike-policy IKE_POLICY_ID] [--ipsec-policy IPSEC_POLICY_ID] [--local-cidr CIDR1 --local-cidr CIDR2 ...] [--peer-cidr CIDR1 --peer-cidr CIDR2 ...] [--json]`
 
 **Options**
 - `CONNECTION_NAME`: Name of the connection.
@@ -1888,8 +1907,8 @@ This section contains commands available for working with VPN for VPC gateways.
 - `PRESHARED_KEY`: The preshared key.
 - `--admin-state-up`: If set to `false`, the VPN gateway connection is shut down. default is `false`.
 - `--dead-peer-detection-action`: Dead Peer Detection actions. Enumeration type: `restart`, `clear`, `hold`, `none`.
-- `--dead-peer-detection-interval`: Dead Peer Detection interval in seconds (default: 30).
-- `--dead-peer-detection-timeout`: Dead Peer Detection timeout in seconds (default: 120).
+- `--dead-peer-detection-interval`: Dead Peer Detection interval in seconds (default: `30`).
+- `--dead-peer-detection-timeout`: Dead Peer Detection timeout in seconds (default: `120`).
 - `--ike-policy`: ID of the IKE policy.
 - `--ipsec-policy`: ID of the IPsec policy.
 - `--local-cidr`: Local CIDR for this resource. This parameter can be specified multiple times to provision multiple local CIDRs.
@@ -1932,15 +1951,15 @@ This section contains commands available for working with VPN for VPC gateways.
 
 **Update a VPN gateway connection.**
 
-`ibmcloud is vpn-gateway-connection-update VPN_GATEWAY_ID CONNECTION_ID [--admin-state-up true | false] [--dead-peer-detection-action ACTION] [--dead-peer-detection-interval INTERVAL] [--dead-peer-detection-timeout TIMEOUT] [--ike-policy IKE_POLICY_ID] [--ipsec-policy IPSEC_POLICY_ID] [--peer-address ADDRESS] [--psk PSK] [--name NEW_NAME] [--json]`
+`ibmcloud is vpn-gateway-connection-update VPN_GATEWAY_ID CONNECTION_ID [--admin-state-up true | false] [--dead-peer-detection-action restart | clear | hold | none] [--dead-peer-detection-interval INTERVAL] [--dead-peer-detection-timeout TIMEOUT] [--ike-policy IKE_POLICY_ID] [--ipsec-policy IPSEC_POLICY_ID] [--peer-address ADDRESS] [--psk PSK] [--name NEW_NAME] [--json]`
 
 **Options**
 - `VPN_GATEWAY_ID`: ID of the VPN gateway.
 - `CONNECTION_ID`: ID of the connection.
 - `--admin-state-up`: If set to `false`, the VPN gateway connection is shut down. default is `false`.
 - `--dead-peer-detection-action`: Dead Peer Detection actions. Enumeration type: `restart`, `clear`, `hold`, `none`.
-- `--dead-peer-detection-interval`: Dead Peer Detection interval in seconds.
-- `--dead-peer-detection-timeout`: Dead Peer Detection timeout in seconds.
+- `--dead-peer-detection-interval`: Dead Peer Detection interval in seconds (default: `30`).
+- `--dead-peer-detection-timeout`: Dead Peer Detection timeout in seconds (default: `120`).
 - `--ike-policy`: ID of the IKE policy.
 - `--ipsec-policy`: ID of the IPsec policy.
 - `--peer-address`: The IP address of the peer VPN gateway.
@@ -2029,10 +2048,12 @@ This section gives details about the CLI commands available for working with loa
 
 **List all load balancers.**
 
-`ibmcloud is load-balancers [--json]`
+`ibmcloud is load-balancers [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -2063,8 +2084,8 @@ This section gives details about the CLI commands available for working with loa
 - `LOAD_BALANCER_NAME`: Name of the load balancer.
 - `LOAD_BALANCER_TYPE`: Type of the load balancer, public or private.
 - `--subnet`: ID of the subnets to provision this load balancer. This parameter can be specified multiple times to provision multiple subnets.
-- `--resource-group-id`: ID of the resource group. This option is exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is exclusive with --resource-group-id.
+- `--resource-group-id`: ID of the resource group. This option is exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -2088,7 +2109,7 @@ This section gives details about the CLI commands available for working with loa
 
 **Update a load balancer.**
 
-`ibmcloud is load-balancer-update LOAD_BALANCER_ID [--name NEW_NAME] [--json]`
+`ibmcloud is load-balancer-update LOAD_BALANCER_ID --name NEW_NAME [--json]`
 
 **Options**
 
@@ -2144,7 +2165,7 @@ This section gives details about the CLI commands available for working with loa
 - `--certificate-instance-crn`: CRN of the certificate instance. Required when protocol is HTTPS.
 - `--connection-limit`: The connection limit of the listener.
 - `--default-pool`: ID of the default pool.
-- `--policies`: LISTENER_POLICIES_JSON | @LISTENER_POLICIES_JSON_FILE, listener policies in json or json file.
+- `--policies`: LISTENER_POLICIES_JSON | @LISTENER_POLICIES_JSON_FILE, listener policies in JSON or as a JSON file.
 - `--json`: Format output in JSON.
 
 ---
@@ -2169,13 +2190,13 @@ This section gives details about the CLI commands available for working with loa
 
 **Update a load balancer listener.**
 
-`ibmcloud is load-balancer-listener-update LOAD_BALANCER_ID LISTENER_ID [--certificate-instance-crn CERTIFICATE_INSTANCE_CRN] [--connection-limit LIMIT] [--port PORT] [--protocol http | https | tcp] [--default-pool DEFAULT_POOL_ID] [--json]`
+`ibmcloud is load-balancer-listener-update LOAD_BALANCER_ID LISTENER_ID [--certificate-instance-crn CERTIFICATE_INSTANCE_CRN] [--connection-limit LIMIT] [--default-pool DEFAULT_POOL_ID] [--protocol http | https | tcp] [--port PORT] [--json]`
 
 **Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
-- `--certificate-instance-crn`: CRN of the certificate instance.
+- `--certificate-instance-crn`: CRN of the certificate instance. Required when protocol is HTTPS.
 - `--connection-limit`: The connection limit of the listener.
 - `--default-pool`: ID of the default pool.
 - `--protocol`: The listener protocol. Enumeration type: `http`, `https`, `tcp`.
@@ -2227,12 +2248,12 @@ This section gives details about the CLI commands available for working with loa
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `LISTENER_ID`: ID of the listener.
 - `--name`: The new name of the policy.
-- `--target-id`: The unique identifier for this load balancer pool, specified with 'forward' action.
-- `--target-http-status-code`: The http status code in the redirect response, one of [301, 302, 303, 307, 308], specified with 'redirect' action.
-- `--target-url`: The redirect target URL, specified with 'redirect' action.
+- `--target-id`: The unique identifier for this load balancer pool, specified with `forward` action.
+- `--target-http-status-code`: The HTTP status code in the redirect response, one of [301, 302, 303, 307, 308], specified with `redirect` action.
+- `--target-url`: The redirect target URL, specified with `redirect` action.
 - `--priority`: Priority of the policy. Lower value indicates higher priority, e.g. 5, range: [1-10].
 - `--action`: The policy action, one of [forward, redirect, reject].
-- `--rules`: LISTENER_POLICY_RULES_JSON | @LISTENER_POLICY_RULES_JSON_FILE, listener policy rules in json or json file.
+- `--rules`: LISTENER_POLICY_RULES_JSON | @LISTENER_POLICY_RULES_JSON_FILE, listener policy rules in JSON or as a JSON file.
 - `--json`: Format output in JSON.
 
 ---
@@ -2258,7 +2279,7 @@ This section gives details about the CLI commands available for working with loa
 
 **Update a policy of a load balancer listener.**
 
-`ibmcloud is load-balancer-listener-policy-update LOAD_BALANCER_ID LISTENER_ID POLICY_ID [--name NAME] [--priority PRIORITY] [--target-id TARGET_ID] [--target-http-status-code TARGET_HTTP_STATUS_CODE] [--target-url TARGET_URL] [--json]`
+`ibmcloud is load-balancer-listener-policy-update LOAD_BALANCER_ID LISTENER_ID POLICY_ID [--name NEW_NAME] [--priority PRIORITY] [--target-id TARGET_ID] [--target-http-status-code TARGET_HTTP_STATUS_CODE] [--target-url TARGET_URL] [--json]`
 
 **Options**
 
@@ -2266,10 +2287,10 @@ This section gives details about the CLI commands available for working with loa
 - `LISTENER_ID`: ID of the listener.
 - `POLICY_ID`: ID of the policy.
 - `--name`: The user-defined name for this policy. Names must be unique within the load balancer listener the policy resides in.
-- `--priority`: Priority of the policy. Lower value indicates higher priority.
+- `--priority`: Priority of the policy. Lower value indicates higher priority, e.g. 5, range: [1-10].
 - `--target-id`: The unique identifier for this load balancer pool, specified with 'forward' action.
 - `--target-http-status-code`: The http status code in the redirect response, one of [301, 302, 303, 307, 308], specified with 'redirect' action.
-- `--target-url`: The redirect target URL, specified with 'redirect' action.
+- `--target-url`: The redirect target URL, specified with `redirect` action.
 - `--json`: Format output in JSON.
 
 ---
@@ -2412,7 +2433,7 @@ This section gives details about the CLI commands available for working with loa
 - `HEALTH_RETRIES`: The health check maximum retries.
 - `HEALTH_TIMEOUT`: The health check timeout in seconds.
 - `HEALTH_TYPE`: The pool protocol. Enumeration type: `http`, `tcp`.
-- `--health-monitor-url`: The health check url. This option is applicable only to `http` type of HEALTH_TYPE.
+- `--health-monitor-url`: The health check url. This option is applicable only to `http` type of `HEALTH_TYPE`.
 - `--session-persistence-type`: The session persistence type, Enumeration type: source_ip
 - `--health-monitor-port`: The health check port number.
 - `--json`: Format output in JSON.
@@ -2438,17 +2459,17 @@ This section gives details about the CLI commands available for working with loa
 
 **Update a pool of a load balancer.**
 
-`ibmcloud is load-balancer-pool-update LOAD_BALANCER_ID POOL_ID [--algorithm round_robin | weighted_round_robin | least_connections] [--health-delay DELAY --health-max-retries RETRIES --health-timeout TIMEOUT --health-type TYPE --health-monitor-url URL] [--health-monitor-port PORT] [--protocol http | tcp] [--session-persistence-type TYPE] [--name NEW_NAME] [--json]`
+`ibmcloud is load-balancer-pool-update LOAD_BALANCER_ID POOL_ID [--algorithm round_robin | weighted_round_robin | least_connections] [--health-delay DELAY --health-max-retries RETRIES --health-timeout TIMEOUT --health-type TYPE] [--health-monitor-url URL] [--health-monitor-port PORT] [--protocol http | tcp] [--session-persistence-type TYPE] [--name NEW_NAME] [--json]`
 
 **Options**
 
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `POOL_ID`: ID of the pool.
 - `--algorithm`: The load balancing algorithm. Enumeration type: `round_robin`, `weighted_round_robin`, `least_connections`.
-- `--health-delay`: The health check interval in seconds. Interval must be greater than timeout value. Minimum: 2, maximum: 60.
-- `--health-max-retries`: The health check max retries. Minimum: 2, maximum: 60.
+- `--health-delay`: The health check interval in seconds. Interval must be greater than timeout value. Minimum: `2`, maximum: `60`.
+- `--health-max-retries`: The health check max retries. Minimum: `2`, maximum: `60`.
 - `--health-monitor-url`: The health check url. This option is applicable only to `http` type of `--health-type`.
-- `--health-timeout`: The health check timeout in seconds. Minimum: 1, maximum: 59.
+- `--health-timeout`: The health check timeout in seconds. Minimum: `1`, maximum: `59`.
 - `--health-type`: The pool protocol. Enumeration type: `http`, `tcp`.
 - `--health-monitor-port`: The health check port number.
 - `--session-persistence-type`: The session persistence type, Enumeration type: `source_ip`.
@@ -2511,7 +2532,7 @@ This section gives details about the CLI commands available for working with loa
 
 **Update a member of a load balancer pool.**
 
-`ibmcloud is load-balancer-pool-member-update LOAD_BALANCER_ID POOL_ID MEMBER_ID [--port PORT] [--target-address TARGET_ADDRESS] [--weight WEIGHT] [--json]`
+`ibmcloud is load-balancer-pool-member-update LOAD_BALANCER_ID POOL_ID MEMBER_ID [--target-address TARGET_ADDRESS] [--port PORT] [--weight WEIGHT] [--json]`
 
 **Options**
 - `LOAD_BALANCER_ID`: ID of the load balancer.
@@ -2600,10 +2621,12 @@ This section gives details about the CLI commands available for working with blo
 
 **List all volumes.**
 
-`ibmcloud is volumes [--json]`
+`ibmcloud is volumes [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
+- `--resource-group-id`: ID of the resource group. This option is mutually exclusive with --resource-group-name.
+- `--resource-group-name`: Name of the resource group. This option is mutually exclusive with --resource-group-id.
 - `--json`: Format output in JSON.
 
 ---
@@ -2612,7 +2635,7 @@ This section gives details about the CLI commands available for working with blo
 
 **Create a volume.**
 
-`ibmcloud is volume-create VOLUME_NAME PROFILE_NAME ZONE_NAME [--encryption-key ENCRYPTION_KEY] [--capacity CAPACITY] [--iops IOPS] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
+`ibmcloud is volume-create VOLUME_NAME PROFILE_NAME ZONE_NAME [--capacity CAPACITY] [--iops IOPS] [--encryption-key ENCRYPTION_KEY] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json]`
 
 **Options**
 
@@ -2622,8 +2645,8 @@ This section gives details about the CLI commands available for working with blo
 - `--capacity`: Capacity of the volume in GB, from 10 GB to 20,000 GB. Defaults to 100 GB.
 - `--iops`: Input/Output Operations Per Second for the volume.
 - `--encryption-key`: The CRN (Cloud Resource Name) of the root key in IBM Key Protect service.
-- `--resource-group-id`: ID of the resource group. This option is exclusive with --resource-group-name.
-- `--resource-group-name`: Name of the resource group. This option is exclusive with --resource-group-id.
+- `--resource-group-id`: ID of the resource group. This option is exclusive with `--resource-group-name`.
+- `--resource-group-name`: Name of the resource group. This option is exclusive with `--resource-group-id`.
 - `--json`: Format output in JSON.
 
 ---
@@ -2645,7 +2668,7 @@ This section gives details about the CLI commands available for working with blo
 
 **Update a volume.
 
-`ibmcloud is volume-update VOLUME [--name NEW_NAME] [--json]`
+`ibmcloud is volume-update VOLUME --name NEW_NAME [--json]`
 
 **Options**
 
