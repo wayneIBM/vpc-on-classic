@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2019
-lastupdated: "2019-08-02"
+  years: 2017, 2020
+lastupdated: "2020-01-15"
 
 keywords: limitations, bugs, known, known issues, Beta, services, capabilities, use cases
 
@@ -52,8 +52,9 @@ This section lists more details of unsupported features and use cases, categoriz
 ### Compute
 {: VSI-unsupported-features-and-use-cases}
 
-* Existing {{site.data.keyword.cloud_notm}} virtual server instances (VSIs) or bare metal servers cannot be migrated into a VPC.
+* Existing {{site.data.keyword.cloud_notm}} bare metal servers cannot be migrated into a VPC.
 * Bare metal servers cannot be provisioned in a VPC.
+* {{site.data.keyword.vsi_is_short}} have different naming conventions than classic infrastructure virtual server instances. For example, an instance name must start with a lowercase letter. Instance names cannot begin with numbers or dashes. For more information about naming instances, see the error message for [instance_invalid_hostname](/docs/vpc-on-classic?topic=vpc-on-classic-rias-error-messages#instance_invalid_hostname).
 
 ### Network
 {: network-unsupported-features-and-use-cases}

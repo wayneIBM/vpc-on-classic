@@ -2,8 +2,8 @@
 
 copyright:
 
-  years: 2018, 2019
-lastupdated: "2019-12-03"
+  years: 2018, 2020
+lastupdated: "2029-01-14"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -109,7 +109,12 @@ The file specified is too large. Only files less than 100 GB are allowed.
 ## cos_invalid_file_extension
 **Message** The URI provided contains an unsupported file extension.
 
-The file extension in the URI must be ".vhd".
+The file extension in the URI must be **.vhd**.
+
+## cos_invalid_qcow2_format
+**Message** The image provided contains an invalid qcow2 formatted image.
+
+Even though the import image file name has a **.qcow2** extension, the contents is not valid.
 
 ## cos_not_authorized
 **Message**: You are not authorized to access the cloud object store resource.
