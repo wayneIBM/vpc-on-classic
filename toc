@@ -66,7 +66,12 @@ Virtual Private Cloud (Gen 1 compute)
     vpc-endpoints.md
     at-events.md
     [Go and Python Example Code](https://github.com/IBM-Cloud/vpc-api-samples/tree/gen1)
-    [Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html)
+    
+    {: .topicgroup}
+    Terraform
+        [IBM Cloud Provider for Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html)
+        [Terraformer for VPC](https://github.com/ibm-cloud-architecture/terraformer)
+    
     [Exporter Tool](https://github.com/l2fprod/vpc-diagram-exporter)
     {: .navgroup-end}
 

@@ -23,7 +23,7 @@ subcollection: vpc-on-classic
 # Quick reference to CLI commands for resources
 {: #quick-reference-to-cli-commands-for-resources}
 
-This quick guide to CLI commands for resources is useful to get going with the {{site.data.keyword.cloud}} CLI for Virtual Private Cloud.
+Use this quick reference to get going with the {{site.data.keyword.cloud}} CLI for Virtual Private Cloud.
 
 * **To log in**
 
@@ -32,15 +32,15 @@ This quick guide to CLI commands for resources is useful to get going with the {
 * **To get information about VPCs**
 
   * `ibmcloud is vpcs`
-  
+
 Use the resource's ID to view specific details on the resource.
 {: tip}
 
-* **To view VPC details** 
+* **To view VPC details**
 
-  * `ibmcloud is vpc [vpc_id]` 
+  * `ibmcloud is vpc [vpc_id]`
 
-* **To get information about subnets** 
+* **To get information about subnets**
 
   * `ibmcloud is subnets`
 
@@ -50,13 +50,13 @@ Use the resource's ID to view specific details on the resource.
 
 * **To get information about instances**
 
-  * `ibmcloud is instances` 
+  * `ibmcloud is instances`
 
-* **To view details about instances** 
+* **To view details about instances**
 
   * `ibmcloud is instance [instance_id]`
 
-* **To get information about floating IPs** 
+* **To get information about floating IPs**
 
   * `ibmcloud is floating-ips`  
 
@@ -68,14 +68,14 @@ Use the resource's ID to view specific details on the resource.
 
   * `ibmcloud is regions`
 
-* **To get information about zones** 
+* **To get information about zones**
 
   * `ibmcloud is zones [region_name]`
-  
+
 * **To get information about all block storage volumes**
 
   * `ibmcloud is volumes`
-  
+
 * **To view details about a block storage volume**
 
   * `ibmcloud is volume [volume_id]`

@@ -979,7 +979,7 @@ Only rules with an 'icmp' protocol have a type and code. Rules with 'tcp' or 'ud
 ## security_group_vpc_default
 **Message**: Cannot delete the default security group for a VPC.
 
-The default security group cannot be deleted. For information on the default security group, refer to the guide on [Updating the default security group](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-updating-the-default-security-group).
+The default security group cannot be deleted. For information on the default security group, refer to [Updating the default security group](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-updating-the-default-security-group).
 
 ## service_manager_service_failure
 **Message**: None
