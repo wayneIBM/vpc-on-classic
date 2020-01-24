@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019
-lastupdated: "2020-01-10"
+lastupdated: "2020-01-24"
 
 keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,12 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 24 January 2020
+{: #jan-24-2020}
+
+**VPN for Virtual Private Cloud log update**
+- You can now use {{site.data.keyword.la_full_notm}} to view application and connection logs from your VPN for a VPC gateway. See [Using LogDNA to view VPN logs](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-logdna-to-view-vpn-logs) for instructions on how to do this.
 
 ## 10 January 2020
 {: #jan-10-2020}
