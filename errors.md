@@ -744,7 +744,7 @@ Run `GET /vpcs/{vpc_id}/address_prefixes` to get the list of address prefixes fo
 
 This error occurs if a user is trying to create a subnet by address count and no default address prefix is available in the given zone.
 
-## operating_system_restricted ##
+## operating_system_restricted
 **Message**: You cannot use this operating system to create a custom image.
 
 The referenced operating system is restricted for use with system images only. Select a different operating system and retry your request.
