@@ -7,7 +7,6 @@ Virtual Private Cloud (Gen 1 compute)
     {: .navgroup id="learn"}
     getting-started.md
     about-vpc-is.md
-    vpc-responsibilities.md
     vpc-quotas.md
     pricing.md
 
@@ -27,7 +26,6 @@ Virtual Private Cloud (Gen 1 compute)
         [Storage for VPC](/vpc-on-classic-block-storage/vpc-on-classic-block-storage-getting-started)
         [Load Balancer for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)
         [VPN for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-vpn-with-your-vpc)
-        [Architecture Center VPC Solutions](https://www.ibm.com/cloud/garage/architectures/virtual-private-cloud-subdomain)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -62,7 +60,8 @@ Virtual Private Cloud (Gen 1 compute)
     {: .navgroup id="reference"}
     [API reference for VPC](https://{DomainName}/apidocs/vpc-on-classic)
     quick-guide-to-resources.md
-    vpc-cli-reference.md
+    vpc-cli-reference.md    
+    vpc-responsibilities.md
     vpc-endpoints.md
     at-events.md
     [Go and Python Example Code](https://github.com/IBM-Cloud/vpc-api-samples/tree/gen1)
