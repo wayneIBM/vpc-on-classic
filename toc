@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc-on-classic" category="vpc,network,storage" audience="service" arm="4135753" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
+{: .toc subcollection="vpc-on-classic" category="vpc,network,storage" audience="service" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
 Virtual Private Cloud (Gen 1 compute)
 
     {: .navgroup id="learn"}
@@ -60,17 +60,17 @@ Virtual Private Cloud (Gen 1 compute)
     {: .navgroup id="reference"}
     [API reference for VPC](https://{DomainName}/apidocs/vpc-on-classic)
     quick-guide-to-resources.md
-    vpc-cli-reference.md    
+    vpc-cli-reference.md
     vpc-responsibilities.md
     vpc-endpoints.md
     at-events.md
     [Go and Python Example Code](https://github.com/IBM-Cloud/vpc-api-samples/tree/gen1)
-    
+
     {: .topicgroup}
     Terraform
         [IBM Cloud Provider for Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html)
         [Terraformer for VPC](https://github.com/ibm-cloud-architecture/terraformer)
-    
+
     [Exporter Tool](https://github.com/l2fprod/vpc-diagram-exporter)
     {: .navgroup-end}
 
