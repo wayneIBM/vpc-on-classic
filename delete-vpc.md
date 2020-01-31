@@ -123,7 +123,7 @@ Deleting a load balancer can take up to 30 minutes. The delete request immediate
 ### VPN
 {: #deleting-vpn}
 
-No pre-requisites are required for deleting a VPN gateway. When the VPN gateway is deleted, its assoiciated connections are also deleted automatically. IKE policies & IPSec policies are not deleted when a VPN gateway is deleted.
+No pre-requisites are required for deleting a VPN gateway. When the VPN gateway is deleted, its assoiciated connections are also deleted automatically. IKE policies & IPsec policies are not deleted when a VPN gateway is deleted.
 
 Deleting a VPN gateway can take up to 30 minutes. The delete request immediately changes the provisioning status of the VPN gateway to `deleting`. However, it is not actually deleted until the VPN gateway disappears from the list query.
 {: important}

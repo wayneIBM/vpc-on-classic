@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2020-01-24"
+  years: 2019, 2020
+lastupdated: "2020-01-31"
 
 keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
 
@@ -25,6 +25,17 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 31 January 2020
+{: #jan-31-2020}
+
+**Updates to the UI**
+- The maximum subnet size was increased from `/20` to `/8`.
+- Public gateway details are now available in the public gateway page.
+- The load balancer pool creation form has been moved to a side panel.
+- The SSH key provision form has been moved to a side panel.
+- The floating IP reserve and associate form has been moved to a side panel.
+
 
 ## 24 January 2020
 {: #jan-24-2020}

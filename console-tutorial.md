@@ -69,7 +69,7 @@ To create a VPC and subnet:
 1. Select or create the default ACL for new subnets in this VPC. In this tutorial, let's create a new default ACL. We'll configure rules for the ACL later.
 1. Select whether the default security group allows inbound SSH and ping traffic to virtual server instances in this VPC. We'll configure more rules for the default security group later.
 1. _Optional:_ Select whether you want to enable your VPC to access classic infrastructure resources. For more information, see [Setting up access to classic infrastructure](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc).
-    
+
     You can only enable a VPC for classic access while creating it. In addition, you can only have one classic access VPC enabled in your account at any time.
     {: important}
 
@@ -109,7 +109,7 @@ To configure the ACL:
 1. Click **Add rule** to configure inbound and outbound rules that define what traffic is allowed in or out of the subnet. For each rule, specify the following information:  
    * Select whether to allow or deny the specified traffic.
    * Select the protocol to which the rule applies.  
-   * For the source and destination of the rule, specify the IP range and ports for which the rule applies. For example, if you want all inbound traffic to be allowed to the IP range 192.168.0.0/24 in your subnet, specify **Any** as the source and 192.168.0.0/24 as the destination. But if you want to allow inbound traffic only from 169.168.0.0/24 to your entire subnet, specify 169.168.0.0/24 as the source and **Any** as the destination for the rule. 
+   * For the source and destination of the rule, specify the IP range and ports for which the rule applies. For example, if you want all inbound traffic to be allowed to the IP range 192.168.0.0/24 in your subnet, specify **Any** as the source and 192.168.0.0/24 as the destination. But if you want to allow inbound traffic only from 169.168.0.0/24 to your entire subnet, specify 169.168.0.0/24 as the source and **Any** as the destination for the rule.
    * Specify the rule's priority. Rules with lower numbers are evaluated first and override rules with higher numbers. For example, if a rule with priority 2 allows HTTP traffic and a rule with priority 5 denies all traffic, HTTP traffic is still allowed.  
 1. When you finish creating rules, click the **All access control lists** breadcrumb at the beginning of the page.
 
@@ -299,7 +299,7 @@ To create a load balancer:
     * **Virtual private cloud**: Select your VPC.
     * **Resource group**: Select a resource group for the load balancer.
     * **Tags**: (Optional) Enter tags to help you organize and find your resources. You can add more tags later. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
-    * **Type**: Select the load balancer type. 
+    * **Type**: Select the load balancer type.
       * A public load balancer has a public IP address, which means that it can route requests from clients over the internet.
       * A private load balancer has a private IP address, which means that it is accessible only to internal clients on your private subnets, within the same region and VPC.
     * **Region**: Indicates the region in which the  load balancer will be created; that is, the region selected for your VPC.
@@ -387,14 +387,14 @@ To create a VPN:
     * **Dead peer detection action**: The action to take if a peer gateway stops responding. For example, select **Restart** if you want the gateway to immediately renegotiate the connection.
     * **Interval**: How often to check that the peer gateway is active. By default, messages are sent every 30 seconds.
     * **Timeout**: How long to wait for a response from the peer gateway. By default, a peer gateway is no longer considered active if a response isn't received within 150 seconds.
-1. Specify the Internet Key Exchange (IKE) and Internet Protocol Security (IPSec) parameters to use for phase 1 and phase 2 negotiation of the connection.
+1. Specify the Internet Key Exchange (IKE) and Internet Protocol Security (IPsec) parameters to use for phase 1 and phase 2 negotiation of the connection.
     * Select **Auto** if you want the cloud gateway to try to automatically establish the connection.
     * Select or create custom policies if you need to enforce particular security requirements, or the VPN gateway for the other network doesn't support the security proposals that are tried by auto-negotiation.
 
   **Important**: The IKE and IPsec security parameters that you specify for the connection must be the same parameters that are set on the gateway for the network outside your VPC.
-  
+
 ## Viewing resources associated with a VPC
-{: #vpc-layout} 
+{: #vpc-layout}
 
 You can quickly view the resources that are associated with a VPC by accessing the resource view: In the navigation, click **VPC layout**. You can select the VPC that you are interested in, if your account has multiple VPCs configured. For each VPC you can see the associated subnets, and within each subnet you can see how many instances are running, stopped, and failed. You can also see how many IP addresses are available in each subnet. From the lists of instances and associated IP addresses, you can click a specific instance to view its details.  
 

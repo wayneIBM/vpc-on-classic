@@ -89,9 +89,9 @@ Here are the current VPN resource limitations per account:
 | VPN gateways| 3 per zone |
 | VPN connections | 10 per VPN gateway |
 | IKE policies | 20 per region |
-| IPSec policies | 20 per region |
-| Peer subnets | 50 across all connections of a VPN gateway, 15 per indvidual VPN connection |
-| Local subnets | 50 across all connections of a VPN gateway, 15 per indvidual VPN connection |
+| IPsec policies | 20 per region |
+| Peer subnets | 50 across all connections of a VPN gateway, 15 per individual VPN connection |
+| Local subnets | 50 across all connections of a VPN gateway, 15 per individual VPN connection |
 
 ## Load Balancer quotas
 {: #load-balancer-quotas}
