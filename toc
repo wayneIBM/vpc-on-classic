@@ -20,7 +20,7 @@ Virtual Private Cloud (Gen 1 compute)
         /containers/containers-vpc_ks_tutorial
 
     {: .topicgroup}
-    Related Links
+    Related links
         [Networking for VPC](/vpc-on-classic-network/vpc-on-classic-network-getting-started)
         [Virtual Servers for VPC](/vpc-on-classic-vsi/vpc-on-classic-vsi-getting-started)
         [Storage for VPC](/vpc-on-classic-block-storage/vpc-on-classic-block-storage-getting-started)

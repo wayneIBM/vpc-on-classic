@@ -3,7 +3,7 @@
 copyright:
 
   years: 2018, 2020
-lastupdated: "2020-01-27"
+  lastupdated: "2020-01-27"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -1288,7 +1288,7 @@ When creating a volume, the capacity value specified in the request must be a po
 ## volume_crn_account_id_mismatch
 **Message**: The CRN specified in the request does not belong to current user's account.
 
-The Key Protect root key CRN does not match your IAM authorization account ID. Specify a different Key Protect root key CRN for your IAM account. See the [Key Protect](/docs/services/key-protect?topic=key-protect-getting-started-tutorial) documentation for more information.
+The Key Protect root key CRN does not match your IAM authorization account ID. Specify a different Key Protect root key CRN for your IAM account. See the [Key Protect](/docs/key-protect?topic=key-protect-getting-started-tutorial) documentation for more information.
 
 ## volume_crn_cname_mismatch
 **Message**: The CRN specified in the request cannot be used for the current environment.

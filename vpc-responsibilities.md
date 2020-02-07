@@ -35,7 +35,7 @@ Learn about management responsibilities and terms and conditions that you have w
 
 IBM provides you with an enterprise cloud platform to deploy your workload. You choose how to set up, integrate, back up, and operate your workloads in the cloud.
 
-### Cloud Infrastructure
+### IBM Cloud infrastructure
 
 IBM's responsibilities:
 - Deploy a fully managed, highly available, secured, IBM-owned infrastructure.
@@ -48,7 +48,7 @@ Your responsibilities:
 - Make sure any self-provided CIDR blocks do not conflict with CIDR blocks used by resources external to your VPC that you intend to consume.
 - Design and deploy your workload in a way that achieves high availability using our provided tools, such as multiple availability zones and load balancers. At a high level, deploy your workloads in different zones of the region, use at least two load balancers located in different zones, and either use DNS records to point to the load balancers, or ensure that your application can handle a list of IP addresses that it can connect to. More details can be found under [deploy isolated workloads across multiple locations and zones](/docs/vpc-on-classic?topic=solution-tutorials-vpc-multi-region).
 
-### VPC Workloads
+### VPC workloads
 
 IBM's responsibilities:
 - Provide a suite of tools to automate VPC workload creation, such as the [IBM Cloud Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html){: external} Provider.
@@ -59,7 +59,7 @@ Your responsibilities:
 - Set up your back up and recovery strategies for workload data.
 - Monitor the health of your workload using either the built in Virtual Server monitoring in Device Details or IBM Monitoring with Grafana.
 
-### Security-rich Environment
+### Security-rich environment
 
 IBM's responsibilities:
 - Maintain controls commensurate to current industry compliance standards.
@@ -76,7 +76,7 @@ Your responsibilities:
 - Integrate IBM Activity Tracker and IBM Monitoring data into your auditing and monitoring processes
 - If your application requires end-to-end encryption, ensure that your connection is encrypted end-to-end.
 
-### App Orchestration
+### App orchestration
 
 IBM's responsibilities:
 - None

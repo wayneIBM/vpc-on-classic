@@ -28,7 +28,7 @@ subcollection: vpc-on-classic
 Use the {{site.data.keyword.at_full}} service to track how your users and applications interact with the {{site.data.keyword.cloud}} Virtual Private Cloud (VPC) in the {{site.data.keyword.cloud}}.
 {:shortdesc}
 
-The {{site.data.keyword.at_full}} service records user-initiated activities to change the state of a service in the {{site.data.keyword.cloud}}. For more information, see [{{site.data.keyword.at_full}}](/docs/services/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started).
+The {{site.data.keyword.at_full}} service records user-initiated activities to change the state of a service in the {{site.data.keyword.cloud}}. For more information, see [{{site.data.keyword.at_full}}](/docs/Activity-Tracker-with-LogDNA?topic=logdnaat-getting-started#getting-started).
 
 ## List of events: Network resources
 {: #events-volumes}

@@ -45,7 +45,7 @@ Not all VPC resources can be assigned to a resource group. See the [resource tab
 
 This scenario covers the basic steps needed to set up an individual user. We will cover two cases, inviting a new user to the account and modifying an existing user's permissions.
 
-### Inviting a new user to create or manage VPC Infrastructure resources
+### Inviting a new user to create or manage VPC infrastructure resources
 {: #inviting-a-new-user-to-create-or-manage-vpc-resources}
 
 Invite an IBM Cloud user to your account and give them access to `VPC Infrastructure` so that they can view, create, and update all VPC resources in the Default resource group.
@@ -60,7 +60,7 @@ Invite an IBM Cloud user to your account and give them access to `VPC Infrastruc
   * In the **Resource group access** area, select **Viewer**.
   * Scroll to the end of the page and click **Add**.
 
-If you would like to give the user permissions to create their own resource groups, learn about [Creating and managing resource groups](/docs/resources?topic=resources-rgs#create_rgs).
+If you want to give the user permissions to create their own resource groups, learn about [Creating and managing resource groups](/docs/resources?topic=resources-rgs#create_rgs).
 
 ### Giving an existing user permission to manage VPC resources
 {: #giving-an-existing-user-permission-to-manage-vpc-resources}
@@ -159,7 +159,7 @@ Repeat the previous steps to accomplish these tasks:
 
 The two example teams are now set up to use VPCs. At this point, members of the `test_team_manage_vpcs` and `production_team_manage_vpcs` access groups can create VPCs in their assigned resource groups.
 
-## Related Links
+## Related links
 {: #related-links}
 
 - Learn how to [Managing IAM access, API keys, service IDs, and access groups using the CLI](/docs/cli/reference/ibmcloud?topic=cloud-cli-ibmcloud_commands_iam).

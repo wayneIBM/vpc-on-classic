@@ -93,14 +93,14 @@ Here are the current VPN resource limitations per account:
 | Peer subnets | 50 across all connections of a VPN gateway, 15 per individual VPN connection |
 | Local subnets | 50 across all connections of a VPN gateway, 15 per individual VPN connection |
 
-## Load Balancer quotas
+## Load balancer quotas
 {: #load-balancer-quotas}
 
 Here are the current load balancer resource quotas:
 
 |Resource|Quota|
 |--------|-----|
-| Load Balancers | 20 per account |
+| Load balancers | 20 per account |
 | Listeners | 10 per Load Balancer |
 | Pools | 10 per Load Balancer |
 | Members | 50 per Pool |

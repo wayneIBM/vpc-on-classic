@@ -22,7 +22,7 @@ subcollection: vpc-on-classic
 {:DomainName: data-hd-keyref="DomainName"}
 {:external: target="_blank" .external}
 
-# IBM Cloud CLI for VPC reference
+# VPC command reference
 {: #vpc-reference}
 
 This document provides a reference of the command line interface (CLI) commands available for the functionality of the {{site.data.keyword.cloud}} Virtual Private Cloud (Gen 1 compute).
@@ -996,7 +996,7 @@ This section provides a reference to the command line interface (CLI) commands a
 ---
 
 
-## Compute CLI commands
+## Compute commands
 {: #compute}
 
 This section contains a reference for the CLI commands related to Compute functionality in the IBM Cloud VPC, including profiles, images, keys, and instances.
@@ -1542,14 +1542,14 @@ This section contains a reference for the CLI commands related to Compute functi
 
 
 
-## Regions and Zones CLI commands
+## Regions and Zones commands
 {: #geography}
 
 This section gives details about the CLI commands available for working with regions and zones.
 
 
 
-## VPC Regions Commands
+## VPC Regions commands
 
 This section contains commands related to the functionality of geographical regions and zones.
 
@@ -1609,7 +1609,7 @@ This section contains commands related to the functionality of geographical regi
 - `--json`: Format output in JSON.
 
 
-## VPN Commands
+## VPN commands
 {: #vpn}
 
 This section gives details about the CLI commands available for working with VPN, including IKE and IPsec policies.
@@ -1803,7 +1803,7 @@ This section gives details about the CLI commands available for working with VPN
 - `--json`: Format output in JSON.
 
 
-## VPN Gateway Commands
+## VPN gateway commands
 
 This section contains commands available for working with VPN for VPC gateways.
 
@@ -2571,7 +2571,7 @@ This section gives details about the CLI commands available for working with loa
 - `LOAD_BALANCER_ID`: ID of the load balancer.
 - `--json`: Format output in JSON.
 
-## Storage CLI commands
+## Storage commands
 {: #storage}
 
 This section gives details about the CLI commands available for working with block storage volumes.

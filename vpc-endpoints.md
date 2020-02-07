@@ -70,6 +70,6 @@ An NTP server is available from `time.adn.networklayer.com`, which should resolv
 
 Cloud service endpoints are services provided by other cloud users. They will be available soon through DNS names in the `cloud.ibm.com` domain. They resolve to `166.8.0.0/14` addresses. For more information, see [About cloud service endpoints](/docs/resources?topic=resources-service-endpoints).
 
-## Access to Service Endpoints using VPN
+## Access to service endpoints using VPN
 
 You can also use VPN for VPC to access service endpoints, see [Build SE connectivity using VPN](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-vpn-with-your-vpc#build-se-connectivity-using-vpn) for more details and [Services that support service endpoints](/docs/resources?topic=resources-private-network-endpoints#services-support-service-endpoints) for the list of services that support service endpoints.
