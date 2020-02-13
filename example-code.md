@@ -40,7 +40,7 @@ To create a Virtual Private Cloud for generation 2 compute, see [Using the REST 
 
    If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the `ssh-keygen` command (in Linux or macOS servers) and following the prompts. For Windows operating systems, you can use a tool like PuTTYgen to generate an SSH key.
 
-2.  Make sure you have an API key for your IBM Cloud account. If you don't have an API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#create_user_key). You will need to store this API key in an environment variable in Step 1.
+2.  Make sure you have an API key for your IBM Cloud account. If you don't have an API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#create_user_key). You must store this API key in an environment variable in Step 1.
 
 ## Step 1: Store your API Key as a variable
 
@@ -206,7 +206,7 @@ To get a list of address prefixes for your vpc, run the following command
 `curl -X GET  "$rias_endpoint/v1/vpcs/$vpc/address_prefixes?version=$version&generation=1" -H "Authorization:$iam_token"`..
 {: tip}
 
-A subnet cannot be resized after it is created. 
+A subnet cannot be resized after it is created.
 {: important}
 
 ```bash
@@ -546,7 +546,7 @@ curl -X POST "$rias_endpoint/v1/instances/$server/volume_attachments?version=$ve
 ```
 {: pre}
 
-## Step 22 (Optional): Delete the Resources
+## Step 22 (Optional): Delete the resources
 
 Optionally delete the resources. A resource cannot be deleted if it contains other resources. For example, a virtual private cloud cannot be deleted if it contains subnets, and a subnet cannot be deleted if it contains virtual server instances. On a delete operation, the API may return quickly but the resource deletion might still be in progress. After issuing the delete request, make sure the resource has been deleted before attempting to delete the parent resource. See [Deleting a VPC](/docs/vpc-on-classic?topic=vpc-on-classic-deleting) for more details.
 

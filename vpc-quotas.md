@@ -75,8 +75,8 @@ Some account-based quotas (limits) exist for security groups and their associate
 |Resource|Quota|
 |--------|-----|
 |ACLs| 30 per region |
-|Ingress rules|20 per ACL |
-|Egress rules |20 per ACL |
+|ingress rules|20 per ACL |
+|egress rules |20 per ACL |
 
 ## VPN quotas
 {: #vpn-quotas}

@@ -31,12 +31,12 @@ Pricing of IBM Cloud Virtual Private Cloud is applied separately for [internet d
 ## Pricing for internet data transfer with IBM Cloud™ Virtual Private Cloud
 {: #pricing-for-data-transfer}
 
-The table summarizes the pricing for internet data transfer with {{site.data.keyword.cloud}} Virtual Private Cloud. Remember that there is no charge for traffic within a VPC and other Classic IBM Cloud services (within the IBM data centers). 
+The table summarizes the pricing for internet data transfer with {{site.data.keyword.cloud}} Virtual Private Cloud. Remember that there is no charge for traffic within a VPC and other Classic IBM Cloud services (within the IBM data centers).
 
 ### Free allowances for internet data transfer
 {: #free-allowances-for-internet-data-transfer}
 
-Traffic within your VPC is free as well as the use of public gateways. 
+Traffic within your VPC is free as well as the use of public gateways.
 
 | Data transfer |  Cost for all IBM Cloud VPC Customers |
 |---------------|------------------|
@@ -51,7 +51,7 @@ For traffic leaving the VPC, the following pricing applies.
 
 | Data transfer | Amount of data | PayGo pricing (usa)| PayGo pricing (eu-de)|PayGo pricing (eu-gb)|PayGo pricing (jp-tok)|PayGo pricing (au-syd)|
 |-----------|-----------|------------------|------------------|------------------|------------------|------------------|
-| Egress to Internet |  0 to 5 GB | Free |Free |Free |Free |Free |
+| Egress to internet |  0 to 5 GB per VSI | Free |Free |Free |Free |Free |
 |  | 6 to 10,000 GB | $0.087 per GB |$0.096 per GB |$0.093 per GB |$0.098 per GB |$0.104 per GB |
 |  | 10,001 to 50,000 GB | $0.083 per GB |$0.091 per GB |$0.089 per GB |$0.094 per GB |$0.100 per GB |
 |  | 50,001 to 150,000 GB | $0.07 per GB |$0.077 per GB |$0.075 per GB |$0.079 per GB |$0.084 per GB |
@@ -64,12 +64,12 @@ When you create a new VPC, it may take up to an hour for initial billing charges
 If you have a public gateway or Floating IP, you may still see some minimal egress charges, even if you have not sent out any egress traffic during that time. These charges are for ARP traffic, which is necessary to operate your account.
 {: important}
 
-### Pricing for Floating IPs
+### Pricing for floating IPs
 {: #floating-ip-pricing}
 
 A floating IP is charged at the rate of $1 (U.S.) per month, starting when it is reserved. The fee is charged even if the floating IP is not associated to a VSI or not in use. The $1 for the monthly fee is charged even if the floating IP is reserved for only a few days.
 
-## Pricing for Load Balancers for VPC 
+## Pricing for load balancers for VPC
 {: #lb-for-vpc-pricing}
 
 Load Balancers for VPC pricing is based on the following metrics, calculated monthly:
@@ -96,7 +96,7 @@ The following chart shows an example for a customer using 4500 GB per month for 
 **Table 1: Monthly Cost Example. The total charge for this scenario is $54 (USD) per month.**
 
 
-## Pricing for VPN for VPC 
+## Pricing for VPN for VPC
 {: #vpn-for-vpc-pricing}
 
 | Region | Connection (Peer) per hour | Instance (Gateway) per hour |
@@ -109,7 +109,7 @@ Data transfer to the internet as a result of using VPNaaS is charged as regular 
 {: note}
 
 
-## Pricing for Virtual Servers for VPC
+## Pricing for virtual servers for VPC
 {: #pricing-for-virtual-servers-for-vpc}
 [comment]: # (linked help topic)
 
@@ -120,7 +120,7 @@ Data transfer to the internet as a result of using VPNaaS is charged as regular 
 ### Base instance prices
 {: #base-instance-prices}
 
-Base instance prices start at $0.087 per hour. When you create a virtual server, you are prompted to select a virtual server family and select a profile configuration. When you make your selection, the associated hourly rate is displayed in the table. <!-- You can also use the Pricing Calculator to estimate your costs. --> 
+Base instance prices start at $0.087 per hour. When you create a virtual server, you are prompted to select a virtual server family and select a profile configuration. When you make your selection, the associated hourly rate is displayed in the table. <!-- You can also use the Pricing Calculator to estimate your costs. -->
 
 | Profile | vCPU | RAM | PayGo / Hour |
 |---------|---------|---------|---------|
@@ -145,8 +145,8 @@ Base instance prices start at $0.087 per hour. When you create a virtual server,
 
 The region where your virtual server is created determines if a regional pricing uplift applies for your virtual server.
 
-| Region         | Pricing Uplift | 
-| -------------- | ----------------- | 
+| Region         | Pricing Uplift |
+| -------------- | ----------------- |
 | us-south       | 0%                |                 
 | eu-de          | 10%               |                  
 | jp-tok         | 13%               |                  
@@ -170,7 +170,7 @@ Premium operating systems and other add-ons are available. You'll see pricing re
 | Red Hat Enterprise Linux 7.x   | 1-4 cores         | $.08 per core per hour   |                
 | Red Hat Enterprise Linux 7.x   | 5-64 cores        | $.13 per core per hour   |                 
 | Windows 2012, 2012 R2, 2016    |                   | $.04 per core per hour  |            
-{: caption="Table 3. Premium operating system pricing" caption-side="top"} 
+{: caption="Table 3. Premium operating system pricing" caption-side="top"}
 
 
 ### Sustained usage
@@ -178,8 +178,8 @@ Premium operating systems and other add-ons are available. You'll see pricing re
 
 While the instances are charged at an hourly rate, the longer your instance is running, the less expensive the rate is. As the billing month progresses, you receive the following hourly discounts.
 
-| Time elapsed in a month       | Billing discount  | 
-| ----------------------------- | ----------------- | 
+| Time elapsed in a month       | Billing discount  |
+| ----------------------------- | ----------------- |
 | 0-20%                         | regular retail rate |                 
 | 21-40%                        | 5%        |                  
 | 41-60%                        | 10%       |                  
@@ -237,7 +237,7 @@ Review the following table for details on how suspend billing impacts various re
 | Storage                       |                   |         X        |
 {: caption="Table 6. Resource billing details" caption-side="top"}   
 
-Usage times are calculated per second, for both the in use time and suspended time of your virtual server instance. Even if you never initiate the suspend billing feature by powering off your instance, the billing is calculated per second of the instance's lifecycle. 
+Usage times are calculated per second, for both the in use time and suspended time of your virtual server instance. Even if you never initiate the suspend billing feature by powering off your instance, the billing is calculated per second of the instance's lifecycle.
 {:note}
 
 
@@ -249,7 +249,7 @@ For sustained usage discounts, a suspended image picks up where it left off on t
 #### Minimum usage charge
 {: #minimum-usage-charge}
 
-Virtual server instances have a minimum usage charge per month. If usage is greater than 25% in the billing cycle, you're billed for the actual usage. If usage is less than 25% of the time it existed in the billing cycle, then the minimum charge of 25% applies. 
+Virtual server instances have a minimum usage charge per month. If usage is greater than 25% in the billing cycle, you're billed for the actual usage. If usage is less than 25% of the time it existed in the billing cycle, then the minimum charge of 25% applies.
 
 For example, let's say you have an instance running for an entire billing cycle (720 hours). Of that time, the instance was suspended for 577 hours and running for 143 hours. The instance is charged for 180 hours (the minimum of the available hours in that billing period).  
 
@@ -280,7 +280,7 @@ When you suspend billing on a virtual server instance, the associated storage pe
 
 All network configurations and IPs (private IPs from the subnet range) remain unchanged while the instance is suspended.
 
-You can view whether your device is stopped on the instance details page. To see when the status changed, click **Activity** in the navigation pane. 
+You can view whether your device is stopped on the instance details page. To see when the status changed, click **Activity** in the navigation pane.
 
 #### Limitations
 {: #suspend-billing-limitations}
@@ -293,7 +293,7 @@ Suspended virtual servers will continue to count towards your account-wide devic
 
 
 
-## Pricing for Block Storage for VPC
+## Pricing for block storage for VPC
 {: #pricing-for-block-storage-for-vpc}
 
 Pricing for {{site.data.keyword.block_storage_is_short}} is based on the capacity or the IOPS that was provisioned, depending on which storage profile you chose.  The published monthly rate is [calculated on an hourly basis](#how-are-charges-calculated).

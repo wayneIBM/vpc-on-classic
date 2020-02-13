@@ -31,12 +31,12 @@ This document shows you how to use the IBM Cloud CLI to create an {{site.data.ke
 To create a Virtual Private Cloud for generation 2 compute, see [Using the CLI to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-cli).
 {: tip}
 
-## Pre-requisites:
+## Prerequisites:
 {: #cli-pre-requisites}
 
 1. Install the [IBM Cloud CLI](/docs/cli?topic=cloud-cli-install-ibmcloud-cli).
 
-2. Install or update the `vpc-infrastructure` plugin to the IBM Cloud CLI.
+2. Install or update the `vpc-infrastructure` plug-in to the IBM Cloud CLI.
 
   To install:
 
@@ -66,7 +66,7 @@ You may have a public SSH key already. Look for a file called ``id_rsa.pub`` und
 If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the ``ssh-keygen`` command (on Linux or macOS servers) and following the prompts. For Windows operating systems, you can use a tool like PuTTYgen to generate an SSH key.
 
 
-## Step 1: Log in to IBM Cloud.
+## Step 1: Log in to IBM Cloud
 {: #step-1-log-in-to-ibm-cloud}
 
 If you have a federated account:
@@ -85,7 +85,7 @@ ibmcloud login -a cloud.ibm.com
 During the login process, you will be prompted to choose a region during login. VPC may not be available in all regions. Refer to [Creating VPCs in different regions](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region) to see which regions are available today. The VPC resources will be created in the region chosen. For this example, the region chosen was `us-south`.
 {: important}
 
-## Step 2: Set generation target.
+## Step 2: Set generation target
 
 Use the following command to set generation target.
 
@@ -95,7 +95,7 @@ ibmcloud is target --gen 1
 {: pre}
 
 
-## Step 3: Create a VPC and save the VPC ID.
+## Step 3: Create a VPC and save the VPC ID
 {: #step-3-create-a-vpc-and-save-the-vpc-id}
 
 Use the following command to create a VPC named _helloworld-vpc_.
@@ -131,7 +131,7 @@ vpc="b4f815a3-d235-4533-b50c-8c312a49ae6a"
 The previous example does not create a VPC with classic access. If you require the VPC to have access to your classic resources, see [Setting up access to your Classic Infrastructure from VPC](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc). You can only enable a VPC for classic access while creating it. In addition, you can only have one classic access VPC in your account at any time.
 {: important}
 
-## Step 4: Create a subnet and save the subnet ID.
+## Step 4: Create a subnet and save the subnet ID
 {: #step-4-create-a-subnet-and-save-the-subnet-id}
 
 Pick the `us-south-2` zone for the subnet's location and call the subnet _helloworld-subnet_. The zone needs to be in the region chosen in step 1. To view the zones available for the region, run the command `ibmcloud is zones us-south`, substituting `us-south` for the region chosen in step 1.
@@ -176,7 +176,7 @@ ibmcloud is subnet $subnet
 ```
 {: pre}
 
-## Step 5: Attach a public gateway.
+## Step 5: Attach a public gateway
 {: #step-5-attach-a-public-gateway}
 
 Attach a public gateway to the subnet to allow all attached resources to communicate with the public internet.
@@ -226,7 +226,7 @@ VPC              helloworld-vpc(6dcd8188-f1e2-48ca-b872-d04cf54479c1)
 ```
 {: screen}
 
-## Step 6: Create an SSH Key in IBM Public Cloud.
+## Step 6: Create an SSH key in IBM Public Cloud
 {: #step-6-create-an-ssh-key-in-ibm-public-cloud}
 
 You'll use the key to provision a virtual server instance. You can use the same key to provision multiple virtual server instances.
@@ -270,7 +270,7 @@ Save the ID in a variable so we can use it later, for example:
 key="859b4e97-7540-4337-9c64-384792b85653"
 ```
 
-## Step 7: Select a profile and image for the virtual server instance.
+## Step 7: Select a profile and image for the virtual server instance
 {: #step-7-select-a-profile-and-image-for-the-virtual-server-instance}
 
 To list all available instance profiles, run the following command:
@@ -294,7 +294,7 @@ image=$(ibmcloud is images | grep "ubuntu-16.04-amd64" | cut -d" " -f1)
 ```
 {: pre}
 
-## Step 8: Provision a Virtual Server Instance.
+## Step 8: Provision a Virtual Server Instance
 {: #step-8-provision-a-virtual-server-instance}
 
 ```
@@ -349,10 +349,10 @@ ibmcloud is instance $vsi
 ```
 {: pre}
 
-## Step 9: Create a Floating IP address.
+## Step 9: Create a floating IP address
 {: #step-9-create-a-floating-ip-address}
 
-You need a Floating IP address so you can log in to the virtual server instance (VSI) from the internet.
+You need a floating IP address so you can log in to the virtual server instance (VSI) from the internet.
 
 ```
 ibmcloud is floating-ip-reserve helloworld-fip --nic-id $nic
@@ -384,7 +384,7 @@ address=169.61.181.53
 ```
 {: pre}
 
-## Step 10: Add a rule to the default security group for SSH.
+## Step 10: Add a rule to the default security group for SSH
 {: #step-10-add-a-rule-to-the-default-security-grop-for-ssh}
 
 Find the security group for the VPC:
@@ -442,7 +442,7 @@ Remote      -
 ```
 {:screen}
 
-## Step 11: Create a block storage data volume.
+## Step 11: Create a block storage data volume
 {: #step-11-create-a-block-storage-data-volume}
 
 Run this command to create a block storage data volume. Specify a name for your volume, volume profile, and the zone where you are creating the volume. To attach a block storage data volume to an instance, the instance and the block storage data volume must be created in the same zone.
@@ -498,7 +498,7 @@ ibmcloud is volume $vol
 ```
 {: pre}
 
-## Step 12: Attach a block storage data volume to an instance.
+## Step 12: Attach a block storage data volume to an instance
 {: #step-12-attach-a-block-storage-data-volume-to-an-instance}
 
 Use the following command to attach the volume to the virtual server instance, using the variables we created:
@@ -508,7 +508,7 @@ ibmcloud is instance-volume-attachment-add helloworld-vol-attachment $vsi $vol -
 ```
 {: pre}
 
-## Step 13: Log in to your virtual server instance using your private SSH key.
+## Step 13: Log in to your virtual server instance using your private SSH key
 {: #step-13-log-in-to-your-virtual-server-instance-using-your-private-ssh-key}
 
 For example, you can use a command of this form:
@@ -660,8 +660,8 @@ touch hellovol_file1
 ```
 {:codeblock}
 
-## Step 15: (Optional) Delete the Resources
-{: #step-15-delete-vpc-cli}
+## Step 16: (Optional) Delete the resources
+{: #step-16-delete-vpc-cli}
 
 Optionally delete the resources. A resource cannot be deleted if it contains other resources. For example, a virtual private cloud cannot be deleted if it contains subnets, and a subnet cannot be deleted if it contains virtual server instances. On a delete operation, the API may return quickly but the resource deletion might still be in progress. After issuing the delete request, make sure the resource has been deleted before attempting to delete the parent resource. See [Deleting a VPC](/docs/vpc-on-classic?topic=vpc-on-classic-deleting) for more details.
 

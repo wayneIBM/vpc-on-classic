@@ -22,7 +22,7 @@ subcollection: vpc-on-classic
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
-# About VPC Infrastructure resources
+# About VPC infrastructure resources
 {: #about-vpc-infrastructure-resources}
 
 {{site.data.keyword.vpc_full}} uses [{{site.data.keyword.iamlong}}](/docs/iam?topic=iam-iamoverview) (IAM) for identity and access management. The service is called `VPC Infrastructure` and contains resource types as described in the following table. An access control level of `itself` means the resource has its own individual policies that can be applied.
@@ -45,13 +45,13 @@ Not all VPC resources are controlled by individual resource level access control
 | | Virtual Server for VPC  | instance | itself | Yes |
 | | VPN for VPC  | vpn | itself | Yes |
 
-Floating IPs and Network ACLs can be created with authorization at the account level if unassigned. However, as soon as a floating IP is assigned to an instance or an ACL is assigned to a subnet, these resources become subject to the VPC's authorization level.
+Floating IPs and network ACLs can be created with authorization at the account level if unassigned. However, as soon as a floating IP is assigned to an instance or an ACL is assigned to a subnet, these resources become subject to the VPC's authorization level.
 {: note}
 
 Floating IPs are always created in the _Default_ resource group so a user must have **Viewer** privileges on this resource group in order to have authorization to create Floating IPs.
 {: important}
 
-VPC Infrastructure uses an inherited model for access control. A role on the resource hierarchy, such as group, service, type, or instance, is inherited to the resources down the hierarchy. The access to a resource is determined by the resulting union of roles on the resource. The following diagram is a visual representation of the model. 
+VPC infrastructure uses an inherited model for access control. A role on the resource hierarchy, such as group, service, type, or instance, is inherited to the resources down the hierarchy. The access to a resource is determined by the resulting union of roles on the resource. The following diagram is a visual representation of the model.
 
 ![IAM model for VPC Infrastructure](images/vpc-iam.svg "IAM model for VPC Infrastructure"){: caption="Figure: IAM model for VPC Infrastructure" caption-side="bottom"}
 
@@ -75,7 +75,7 @@ Use the search CLI to display tags attached to a resource. Use filters to displa
 
 Large enterprises may want to divide a VPC into resource groups. Smaller companies may not need to divide their VPC into resource groups, because all of their team would be using the entire VPC. Learn more about [Working with resources](/docs/resources?topic=resources-resource).
 
-Not all VPC resources can be assigned to a resource group. See the [table above](#about-vpc-infrastructure-resources) for specifics. In addition, assignment of a resource to a resource group can be done ONLY when you create it. Resources cannot change resource groups after they are created. 
+Not all VPC resources can be assigned to a resource group. See the [table above](#about-vpc-infrastructure-resources) for specifics. In addition, assignment of a resource to a resource group can be done ONLY when you create it. Resources cannot change resource groups after they are created.
 {: important}
 
 Defining resource groups requires advance planning. Before you set up your {{site.data.keyword.cloud_notm}} VPC, know how you'll assign the resources and the users in your organization to each resource group.

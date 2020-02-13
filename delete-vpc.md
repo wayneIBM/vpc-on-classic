@@ -112,7 +112,7 @@ No pre-requisites are required for deleting an instance. When the instance is de
 | ---------------- | ----------------------------------------- | --------------------------- | ------ | ---------------------------------------------- | ----------------------------------- |
 | Network interface | --- | subnets, floating IP, security groups | No | Yes | Yes |
 
-### Load Balancer
+### Load balancer
 {: #deleting-lb}
 
 No pre-requisites are required for deleting a load balancer. When the load balancer is deleted, all the listener, pools, and pool members which are part of the load balancer are deleted automatically.
@@ -170,7 +170,7 @@ When any VPC is created, it requires a default network ACL. If an existing netwo
 Unlike security groups, network ACLs can be assigned across VPCs. Therefore, deleting a VPC does not delete the network ACLs.
 {: note}
 
-## Next Steps
+## Next steps
 {: #deleting-nextsteps}
 
 The following topics provide more examples on how to delete VPC resources, using the IBM Cloud Console, Command Line Interface or API.

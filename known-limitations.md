@@ -28,12 +28,12 @@ This document contains a summary of features and APIs that are not supported, fe
 ## Summary of features not supported
 {: #summary-of-features-not-supported}
 
-* Direct Link access to VPC is supported through [**Classic Access**](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc) only.
+* Direct Link on Classic access to VPC is supported through [**Classic Access**](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc) only. Direct Link (release 2.0) does not have this limitation. 
 * Although a subset of Private Service Endpoints are available to VPC, not all endpoints are available. See [Service endpoints available for IBM Cloud VPC](/docs/vpc-on-classic?topic=vpc-on-classic-service-endpoints-available-for-ibm-cloud-vpc) for services that are available.
 * Saving and restoring images is not supported.
 * {{site.data.keyword.cloud_notm}} VPCs are regional, therefore a VPC from one region cannot connect to a VPC in another region unless they are "classic access" enabled, or connected by means of a VPN connection. See [**Classic Access**](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc).
 
-## Features and Use Cases not yet supported
+## Features and use cases not yet supported
 {: #features-and-use-cases-not-yet-supported}
 
 This section lists more details of unsupported features and use cases, categorized according to their {{site.data.keyword.cloud_notm}} service.
