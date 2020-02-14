@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-01-15"
+lastupdated: "2020-02-13"
 
 keywords: limitations, bugs, known, known issues, Beta, services, capabilities, use cases
 
@@ -73,11 +73,3 @@ This section lists more details of unsupported features and use cases, categoriz
 * The public gateway does not allow the traffic to be initiated from the Internet to a VSI in the IBM Cloud VPC. For that purpose, a Floating IP must be used.
 * ACL is stateless, so return traffic must be allowed explicitly in ACL rules.
 
-## Known issues
-{: #known-issues-in-this-release}
-
-{{site.data.keyword.block_storage_is_short}} might not accurately validate the volume name for uniqueness when all of the following conditions are met:
-
-* The provision request is concurrent
-* The volume has the same name
-* The volume is in the same region
