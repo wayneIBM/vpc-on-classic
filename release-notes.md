@@ -2,9 +2,9 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-01-31"
+lastupdated: "2020-02-21"
 
-keywords: vpc release notes, changes, updates, vpc, profile, hyper protect, estimator, load balancer
+keywords: vpc release notes, changes, new, updates
 
 subcollection: vpc-on-classic
 
@@ -25,6 +25,17 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 21 February 2020
+{: #feb-21-2020}
+
+**Updates to the UI**
+- More accurate pricing estimates available for Load Balancers based on selected region.
+- More accurate pricing estimates available for instances based on selected GPU profile.
+- Enhanced network monitoring data available for instances with added support for aggregated metrics.
+
+**Upcoming update to the API**
+- Starting with API version `2020-03-24`, the requirement to include the `generation=1` query parameter will be enforced for the {{site.data.keyword.vpc_full}} (Gen1 Compute) API. 
 
 ## 31 January 2020
 {: #jan-31-2020}

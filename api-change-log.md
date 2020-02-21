@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-10-17"
+  years: 2019, 2020
+lastupdated: "2020-02-20"
 
-keywords: vpc, api, change log, new features, restrictions, migration, generation 2, gen2,
+keywords: vpc, api, change log, new features, restrictions, migration
 
 subcollection: vpc
 
@@ -33,6 +33,11 @@ To minimize regressions from changes, we recommend the following best practices 
 * Follow HTTP redirect rules for any `3xx` HTTP status code
 * Consume only the resources and properties your application needs to function
 * Avoid any behavior that is not explicitly documented
+
+## 2020-03-24
+{: #2020-03-24}
+
+The requirement to include the `generation=1` query parameter will be enforced for {{site.data.keyword.vpc_full}} (Gen1 Compute) API calls beginning with version `2020-03-24`.
 
 ## 2019-10-08
 {: #2019-10-08}
