@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2019-06-20"
+  years: 2019, 2020
+lastupdated: "2020-02-28"
 
 keywords: vpc, region, zone, deploy, datacenter, data, center, federated, CLI, API, account, failover, disaster, recovery, DR
 
@@ -29,16 +29,16 @@ A region is a specific geographical location where you can deploy apps, services
 The IBM Cloud VPC service is regional. To allow for disaster recovery (DR), you must provide the ability for recovery using failover to an alternate region, by establishing a VPC in one of our other regions.
 {: note}
 
-Virtual Private Cloud is being deployed to all {{site.data.keyword.cloud}} regions in phases.
+Virtual Private Cloud is deployed to these {{site.data.keyword.cloud}} multi-zone regions.
 
-|   Location     | Region | API Endpoint | Status |
-| ------- | :------: | :------: |:------: |
-| Dallas | us-south | `us-south.iaas.cloud.ibm.com`| Available |
-| Frankfurt | eu-de | `eu-de.iaas.cloud.ibm.com`| Available |
-| Tokyo | jp-tok | `jp-tok.iaas.cloud.ibm.com`| Available |
-| London | eu-gb | `eu-gb.iaas.cloud.ibm.com`| Available|
-| Sydney | au-syd | `au-syd.iaas.cloud.ibm.com`| Available |
-| Washington DC | us-east | `us-east.iaas.cloud.ibm.com`| Coming Soon |
+|   Location     | Region | API Endpoint |
+| ------- | :------: | :------: |
+| Dallas | us-south | `us-south.iaas.cloud.ibm.com`| 
+| Frankfurt | eu-de | `eu-de.iaas.cloud.ibm.com`| 
+| Tokyo | jp-tok | `jp-tok.iaas.cloud.ibm.com`| 
+| London | eu-gb | `eu-gb.iaas.cloud.ibm.com`| 
+| Sydney | au-syd | `au-syd.iaas.cloud.ibm.com`| 
+| Washington DC | us-east | `us-east.iaas.cloud.ibm.com`| 
 
 The Regional API (VPC) endpoint is automatically set by the IBM Cloud CLI when you log in to a specific region.
 {: note}

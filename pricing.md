@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2019
+  years: 2017, 2020
 
-lastupdated: "2019-09-17"
+lastupdated: "2020-02-28"
 
 keywords: vpc, pricing, billing, data, instance, VSI, block, storage, paygo, transfer, floating, server, VPC, allowance, gateway, egress, minimal charges, ARP, traffic
 
@@ -147,7 +147,8 @@ The region where your virtual server is created determines if a regional pricing
 
 | Region         | Pricing Uplift |
 | -------------- | ----------------- |
-| us-south       | 0%                |                 
+| us-south       | 0%                |     
+| us-east        | 0%                |               
 | eu-de          | 10%               |                  
 | jp-tok         | 13%               |                  
 | eu-gb          | 7%                |                  

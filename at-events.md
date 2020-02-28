@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2019
+  years: 2019, 2020
 
-lastupdated: "2019-10-03"
+lastupdated: "2020-02-28"
 
 keywords: vpc event, vpc activity tracker, vpc logdna
 
@@ -179,6 +179,7 @@ The following table lists the Activity Tracker with LogDNA location for each VPC
 | VPC Region | Activity Tracker with LogDNA Location |
 |--------------|---------------------------------------|
 | us-south   | Dallas  |
+| us-east | Washington |
 | jp-tok   | Tokyo  |
 | eu-de  | Frankfurt  |
 | eu-gb  | London |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-21"
+lastupdated: "2020-02-28"
 
 keywords: vpc release notes, changes, new, updates
 
@@ -25,6 +25,14 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 28 February 2020
+{: #feb-28-2020}
+
+- **Washington, DC** region is [now available](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region).
+- **Updates to the UI**
+   - SSL & Floating IP details pages
+   - Back-end pools **Attach** button and side panel to add instances
 
 ## 21 February 2020
 {: #feb-21-2020}
