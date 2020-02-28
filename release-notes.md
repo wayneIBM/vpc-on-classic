@@ -31,8 +31,8 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 
 - **Washington, DC** region is [now available](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region).
 - **Updates to the UI**
-   - SSL & Floating IP details pages
-   - Back-end pools **Attach** button and side panel to add instances
+   - New detail pages have been added for SSL keys and Floating IPs.
+   - The attach instance action for Load Balancers backend pool creation has been moved to a side panel.
 
 ## 21 February 2020
 {: #feb-21-2020}
