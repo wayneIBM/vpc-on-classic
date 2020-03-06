@@ -25,14 +25,14 @@ subcollection: vpc-on-classic
 # About VPC infrastructure resources
 {: #about-vpc-infrastructure-resources}
 
-{{site.data.keyword.vpc_full}} uses [{{site.data.keyword.iamlong}}](/docs/iam?topic=iam-iamoverview) (IAM) for identity and access management. The service is called `VPC Infrastructure` and contains resource types as described in the following table. An access control level of `itself` means the resource has its own individual policies that can be applied.
+{{site.data.keyword.vpc_full}} uses [{{site.data.keyword.iamlong}}](/docs/iam?topic=iam-iamoverview) (IAM) for identity and access management. The service is called `Infrastructure Service` and contains resource types as described in the following table. An access control level of `itself` means the resource has its own individual policies that can be applied.
 
 Not all VPC resources are controlled by individual resource level access control policies. Some resources inherit the access control from the account or parent VPC.
 {: important}
 
 | Service | Resource type | Resource | Access Control Level | Support of custom resource groups |
 | ---------------|---------------|---------------|-----|-----|
-| VPC Infrastructure | Virtual Private Cloud  | vpc | itself | Yes |
+| Infrastructure Service | Virtual Private Cloud  | vpc | itself | Yes |
 | | Block Storage for VPC  | volume | itself  |  Yes |
 | | Floating IP for VPC    | floating ip* | Account | No |
 | | Image Service for VPC  | image | itself | Yes |
@@ -51,9 +51,9 @@ Floating IPs and network ACLs can be created with authorization at the account l
 Floating IPs are always created in the _Default_ resource group so a user must have **Viewer** privileges on this resource group in order to have authorization to create Floating IPs.
 {: important}
 
-VPC infrastructure uses an inherited model for access control. A role on the resource hierarchy, such as group, service, type, or instance, is inherited to the resources down the hierarchy. The access to a resource is determined by the resulting union of roles on the resource. The following diagram is a visual representation of the model.
+Infrastructure Service uses an inherited model for access control. A role on the resource hierarchy, such as group, service, type, or instance, is inherited to the resources down the hierarchy. The access to a resource is determined by the resulting union of roles on the resource. The following diagram is a visual representation of the model.
 
-![IAM model for VPC Infrastructure](images/vpc-iam.svg "IAM model for VPC Infrastructure"){: caption="Figure: IAM model for VPC Infrastructure" caption-side="bottom"}
+![IAM model for Infrastructure Service](images/vpc-iam.svg "IAM model for Infrastructure Service"){: caption="Figure: IAM model for Infrastructure Service" caption-side="bottom"}
 
 ## Resource policies
 {: #resource-policies}
@@ -84,7 +84,7 @@ Defining resource groups requires advance planning. Before you set up your {{sit
 ## VPC coverage summary table
 {: #vpc-coverage-summary-table}
 
-The following table summarizes the roles required to perform specific actions on VPC Infrastructure resources.
+The following table summarizes the roles required to perform specific actions on Infrastructure Service resources.
 
 * **Administrator** - Assign roles and take any available actions on resources
 * **Editor** - Modify the state and create or delete resources

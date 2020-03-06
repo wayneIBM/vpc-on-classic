@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-28"
+lastupdated: "2020-03-06"
 
 keywords: vpc release notes, changes, new, updates
 
@@ -25,6 +25,16 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 6 March 2020
+{: #march-6-2020}
+
+**Virtual server instance quota has been decreased** to 20 per region. You can always request your quota to be increased by opening a [support case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. See [VSI quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vsi-quotas) for more quota information.
+
+**New version `0.5.11` of the CLI plug-in `vpc-infrastructure` has been released**, which includes the following enhancements:
+- Command output for volume details `ibmcloud is volume` includes resource tags now.
+- Usage examples have been added to the [CLI reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference).
+- Non-English usage help has been updated.
 
 ## 28 February 2020
 {: #feb-28-2020}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2019
-lastupdated: "2019-10-30"
+  years: 2017, 2020
+lastupdated: "2020-03-06"
 keywords: vpc, quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
 
 subcollection: vpc-on-classic
@@ -29,17 +29,21 @@ This document covers quotas and limits for your {{site.data.keyword.cloud}} Virt
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
-| Virtual Private Clouds | 5 per region|
+| Virtual Private Clouds | 5 per region <sup>1</sup> |
 | VPCs with Classic Access | 1 per region |
 | Public Gateways (PGWs) | 1 per VPC per zone |
 | Address prefixes | 5 per VPC per zone |
+
+<sup>1</sup> You can request to increase the VPC limit by submitting a [support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) ticket.
 
 ## Subnet quotas
 {: #subnet-quotas}
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
-| Subnets | 15 per Virtual Private Cloud |
+| Subnets | 15 per Virtual Private Cloud <sup>1</sup> |
+
+<sup>1</sup> You can request to increase the subnet limit by submitting a [support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) ticket.
 
 
 ## VSI quotas
@@ -47,7 +51,7 @@ This document covers quotas and limits for your {{site.data.keyword.cloud}} Virt
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
-| Virtual Server Instances (VSIs) | 100 per region <sup>1</sup> |
+| Virtual Server Instances (VSIs) | 20 per region <sup>1</sup> |
 | vNICs per VSI | 5 per VSI |
 | Floating IP addresses | 100 per zone per account <sup>2</sup> |
 | SSH Keys | 100 per account |
