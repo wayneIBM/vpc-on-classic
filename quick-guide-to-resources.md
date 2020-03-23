@@ -20,62 +20,75 @@ subcollection: vpc-on-classic
 {:table: .aria-labeledby="caption"}
 {:download: .download}
 
-# Quick reference to CLI commands for resources
+# VPC CLI quick reference 
 {: #quick-reference-to-cli-commands-for-resources}
 
 Use this quick reference to get going with the {{site.data.keyword.cloud}} CLI for Virtual Private Cloud.
 
-* **To log in**
+* To log in
+```
+ibmcloud login [-sso]
+```
 
-  * `ibmcloud login [-sso]`
+* To get information about VPCs
+```
+ibmcloud is vpcs
+```
 
-* **To get information about VPCs**
+   Use the resource's ID to view specific details on the resource.
+   {: tip}
 
-  * `ibmcloud is vpcs`
+* To view VPC details
+```
+ibmcloud is vpc [vpc_id]
+```
 
-Use the resource's ID to view specific details on the resource.
-{: tip}
+* To get information about subnets
+```
+ibmcloud is subnets
+```
 
-* **To view VPC details**
+* To get subnet details
+```
+ibmcloud is subnet [subnet_id]
+```
 
-  * `ibmcloud is vpc [vpc_id]`
+* To get information about instances
+```
+ibmcloud is instances
+```
 
-* **To get information about subnets**
+* To view details about instances
+```
+ibmcloud is instance [instance_id]
+```
 
-  * `ibmcloud is subnets`
+* To get information about floating IPs
+```
+ibmcloud is floating-ips
+```
 
-* **To get subnet details**
+* To view floating IP details
+```
+ibmcloud is floating-ip [floating-ips_id]
+```
 
-  * `ibmcloud is subnet [subnet_id]`
+* To get information about your regions and endpoints
+```
+ibmcloud is regions
+```
 
-* **To get information about instances**
+* To get information about zones
+```
+ibmcloud is zones [region_name]
+```
 
-  * `ibmcloud is instances`
+* To get information about all block storage volumes
+```
+ibmcloud is volumes
+```
 
-* **To view details about instances**
-
-  * `ibmcloud is instance [instance_id]`
-
-* **To get information about floating IPs**
-
-  * `ibmcloud is floating-ips`  
-
-* **To view floating IP details**
-
-  * `ibmcloud is floating-ip [floating-ips_id]`
-
-* **To get information about your regions and endpoints**
-
-  * `ibmcloud is regions`
-
-* **To get information about zones**
-
-  * `ibmcloud is zones [region_name]`
-
-* **To get information about all block storage volumes**
-
-  * `ibmcloud is volumes`
-
-* **To view details about a block storage volume**
-
-  * `ibmcloud is volume [volume_id]`
+* To view details about a block storage volume
+```
+ibmcloud is volume [volume_id]
+```

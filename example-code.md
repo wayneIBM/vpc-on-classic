@@ -33,6 +33,7 @@ To create a Virtual Private Cloud for generation 2 compute, see [Using the REST 
 {: tip}
 
 ## Prerequisites
+{: #prereqs}
 
 1. Make sure you have a public SSH key, which will be used to connect to the virtual server instance.
 
@@ -43,6 +44,7 @@ To create a Virtual Private Cloud for generation 2 compute, see [Using the REST 
 2.  Make sure you have an API key for your IBM Cloud account. If you don't have an API key, see [Creating an API key](/docs/iam?topic=iam-userapikey#create_user_key). You must store this API key in an environment variable in Step 1.
 
 ## Step 1: Store your API Key as a variable
+{: #step-1}
 
 Run the following command to store your API key in an environment variable:
 
@@ -52,6 +54,7 @@ apikey="<YOUR_API_KEY>"
 {: pre}
 
 ## Step 2: Get an IBM Identity and Access Management (IAM) token
+{: #step-2}
 
 Refer to the [Getting an IBM Cloud IAM token by using an API key](/docs/iam?topic=iam-iamtoken_from_apikey#iamtoken_from_apikey) topic on how to get an IAM token or use the following example commands.
 
@@ -79,6 +82,7 @@ You must repeat the preceding step to refresh your IAM token every hour, because
 {: important}
 
 ## Step 3: Store the API endpoint and version parameter as a variable
+{: #step-3}
 
 The API endpoints are per region and follow the convention `https://<region>.iaas.cloud.ibm.com`. To see the list of all available endpoints, refer to [Creating a VPC in a different region](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region).
 
@@ -101,6 +105,7 @@ version="2019-05-31"
 To verify that this variable was saved, run `echo $version` and make sure the response is not empty.
 
 ## Step 4: Run the GET regions API
+{: #step-4}
 
 The following command returns the regions available for VPC, in JSON format. At least one object should be returned.
 
@@ -118,6 +123,7 @@ If you encounter unexpected results, add the `--verbose` (debug) flag after the 
 
 
 ## Step 5: Run the GET zones API
+{: #step-5}
 
 The following command returns all the zones available for VPC in region `us-south`, in JSON format. At least three objects should be returned.
 
@@ -131,6 +137,7 @@ Update the region name in the parameter, `us-south` above, depending on the regi
 {: note}
 
 ## Step 6: Run the GET profiles API
+{: #step-6}
 
 The following command returns the profiles available for your instances, in JSON format. At least one object should be returned.
 
@@ -153,6 +160,7 @@ curl -X GET "$rias_endpoint/v1/instance/profiles?version=$version&generation=1&l
 {: pre}
 
 ## Step 7: Run the GET images API
+{: #step-7}
 
 The following command returns the images available for your instances, in JSON format. At least one object should be returned.
 
@@ -163,6 +171,7 @@ curl -X GET "$rias_endpoint/v1/images?version=$version&generation=1" \
 {: pre}
 
 ## Step 8: Run the GET VPCs API
+{: #step-8}
 
 The following command returns any VPCs that have been created under your account, in JSON format.
 
@@ -173,6 +182,7 @@ curl -X GET "$rias_endpoint/v1/vpcs?version=$version&generation=1" \
 {: pre}
 
 ## Step 9: Create a virtual private cloud
+{: #step-9}
 
 Create an {{site.data.keyword.cloud_notm}} VPC called `my-vpc`.
 
@@ -196,6 +206,7 @@ The previous example does not create a VPC with classic access. If you require t
 {: important}
 
 ## Step 10: Create a subnet
+{: #step-10}
 
 Create a subnet in your {{site.data.keyword.cloud_notm}} VPC. The following example creates a VPC in the `us-south-2` zone.
 
@@ -229,6 +240,7 @@ subnet="<YOUR_SUBNET_ID>"
 {: pre}
 
 ## Step 11: Check the status of your subnet
+{: #step-11}
 
 To provision resources in your subnet, the subnet must be in `available` status. Before you continue, query the subnet resource and make sure the status is `available`. If the status is `failed`, contact [Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) with the details. You can attempt to continue by trying to provision another subnet.
 
@@ -240,6 +252,7 @@ curl -X GET "$rias_endpoint/v1/subnets/$subnet?version=$version&generation=1" \
 
 
 ## Step 12: Create a public gateway
+{: #step-12}
 
 To allow virtual server instances in the subnet to have access to the public internet, add a public gateway (PGW) to the subnet.  
 
@@ -272,6 +285,7 @@ curl -X GET "$rias_endpoint/v1/public_gateways/$gateway?version=$version&generat
 {: pre}
 
 ## Step 13: Attach the public gateway to the subnet
+{: #attach-public-gateway-to-the-subnet}
 
 ```bash
 curl -X PUT "$rias_endpoint/v1/subnets/$subnet/public_gateway?version=$version&generation=1" \
@@ -283,6 +297,7 @@ curl -X PUT "$rias_endpoint/v1/subnets/$subnet/public_gateway?version=$version&g
 {: pre}
 
 ## Step 14: Create an SSH key
+{: #step-14}
 
 Create a key with your public SSH key. This key is used when you create the virtual server instance. The key is also needed to log in to the virtual server instance.
 
@@ -308,6 +323,7 @@ key="<YOUR_KEY_ID>"
 {: pre}
 
 ## Step 15: Choose a profile and image for your virtual server instance
+{: #step-15}
 
 Run the APIs to list all profiles and images available for your virtual server instance, and choose a combination.
 
@@ -341,6 +357,7 @@ image_id="<CHOSEN_IMAGE_ID>"
 {: pre}
 
 ## Step 16: Provision a virtual server instance
+{: #step-16}
 
 Provision a virtual server instance (VSI) in the newly-created subnet. Pass in your public SSH key so that you can log in after the instance is provisioned.
 
@@ -380,6 +397,7 @@ server="<YOUR_INSTANCE_ID>"
 {: pre}
 
 ## Step 17: Check the status of your virtual server instance
+{: #step-17}
 
 Provisioning a virtual server instance can take up to a few minutes. Before you continue, query the status of the server and make sure it is `running`.
 
@@ -400,6 +418,7 @@ You can't get the primary network interface until you query the specific instanc
 {: note}
 
 ## Step 18: Create a floating IP
+{: #step-18}
 
 To create a floating IP for the virtual server instance, use the instance's primary network interface as the target for the new floating IP address.
 
@@ -425,6 +444,7 @@ floating_ip="<YOUR_FLOATING_IP_ID>"
 {: pre}
 
 ## Step 19: Add a rule to the default security group to allow SSH traffic
+{: #step-19}
 
 Configure the security group to define the inbound and outbound traffic that is allowed for the instance.
 
@@ -458,6 +478,7 @@ curl -X POST "$rias_endpoint/v1/security_groups/$sg/rules?version=$version&gener
 {: pre}
 
 ## Step 20: SSH into your virtual server instance
+{: #step-20}
 
 To SSH to the server, use the `address` of the floating IP you created earlier. To get the `address` of the floating IP, run the following command:
 
@@ -480,6 +501,7 @@ SSH access into the virtual server may be prevented by security groups. If SSH a
 See [Connecting to your instance using Linux](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-connecting-to-your-linux-instance) for more information on how to connect to your instance.
 
 ## Step 21: Create and attach a block storage volume
+{: #step-21}
 
 Create a block storage volume with a request similar to this example and specify a volume name, zone, and profile.
 
@@ -491,7 +513,7 @@ curl -X GET "$rias_endpoint/v1/volume/profiles?version=$version&generation=1" \
 ```
 {: pre}
 
-Profiles can be general-purpose (3 IOPS/GB), 5iops-tier, 10iops-tier, and custom. See [About Block Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about#capacity-performance)
+Profiles can be general-purpose (3 IOPS/GB), 5iops-tier, 10iops-tier, and custom. See [About Block Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about)
 for information about volume capacity and IOPS ranges based on the volume profile you select.
 
 You don't have to provide a volume name in the request, the system creates one by default.  This example specifies a volume name, `helloworld-vol`.  Volume names must be unique and can use a combination of lowercase alpha-numeric characters (a-z, 0-9) and the minus sign (-).
@@ -547,10 +569,12 @@ curl -X POST "$rias_endpoint/v1/instances/$server/volume_attachments?version=$ve
 {: pre}
 
 ## Step 22 (Optional): Delete the resources
+{: #step-22}
 
 Optionally delete the resources. A resource cannot be deleted if it contains other resources. For example, a virtual private cloud cannot be deleted if it contains subnets, and a subnet cannot be deleted if it contains virtual server instances. On a delete operation, the API may return quickly but the resource deletion might still be in progress. After issuing the delete request, make sure the resource has been deleted before attempting to delete the parent resource. See [Deleting a VPC](/docs/vpc-on-classic?topic=vpc-on-classic-deleting) for more details.
 
 ### Delete the floating IP
+{: #delete-ip}
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/floating_ips/$floating_ip?version=$version&generation=1" \
@@ -559,6 +583,7 @@ curl -X DELETE "$rias_endpoint/v1/floating_ips/$floating_ip?version=$version&gen
 {: pre}
 
 ### Delete the virtual server instance
+{: #delete-the-vs-instance}
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/instances/$server?version=$version&generation=1" \
@@ -567,6 +592,7 @@ curl -X DELETE "$rias_endpoint/v1/instances/$server?version=$version&generation=
 {: pre}
 
 ### Delete the key
+{: #delete-the-key}
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/keys/$key?version=$version&generation=1" \
@@ -575,6 +601,7 @@ curl -X DELETE "$rias_endpoint/v1/keys/$key?version=$version&generation=1" \
 {: pre}
 
 ### Delete the subnet
+{: #delete-the-subnet}
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/subnets/$subnet?version=$version&generation=1" \
@@ -583,6 +610,7 @@ curl -X DELETE "$rias_endpoint/v1/subnets/$subnet?version=$version&generation=1"
 {: pre}
 
 ### Delete the public gateway
+{: #delete-the-public-gateway}
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/public_gateways/$gateway?version=$version&generation=1" \
@@ -592,6 +620,7 @@ curl -X DELETE "$rias_endpoint/v1/public_gateways/$gateway?version=$version&gene
 
 
 ### Delete the VPC
+{: #delete-the-vpc}
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/vpcs/$vpc?version=$version&generation=1" \
@@ -600,6 +629,7 @@ curl -X DELETE "$rias_endpoint/v1/vpcs/$vpc?version=$version&generation=1" \
 {: pre}
 
 ### Delete the volume
+{: #delete-the-volume}
 
 ```bash
 curl -X DELETE "$rias_endpoint/v1/volumes/$volume?version=$version&generation=1"  \
@@ -608,6 +638,7 @@ curl -X DELETE "$rias_endpoint/v1/volumes/$volume?version=$version&generation=1"
 {: pre}
 
 ## Congratulations!
+{: #congrats}
 
 You've successfully provisioned a virtual private cloud instance using the REST APIs. To try out more API commands, explore the full reference:
 

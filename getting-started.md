@@ -20,9 +20,13 @@ subcollection: vpc-on-classic
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 {:external: target="_blank" .external}
+{:help: data-hd-content-type='help'}
+{:support: data-reuse='support'}
 
 # Getting started with Virtual Private Cloud (Gen 1 compute)
 {: #getting-started}
+{: help} 
+{: support}
 [comment]: # (linked help topic)
 
 New! Check out Virtual Private Cloud for generation 2 virtual server profiles. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
@@ -48,7 +52,7 @@ To get started with {{site.data.keyword.vpc_full}} (Gen 1 compute):
 
    * Or Generate an SSH Key: If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the `ssh-keygen -t rsa -C "user_ID"` command (on Linux or macOS servers) and following the prompts. That command generates two files. The generated public key is in the `<your key>.pub` file. For Windows operating systems, you can use a tool like PuTTYgen to generate an SSH key.
 
-## Use the UI, CLI, or REST API
+## Using the UI, CLI, or REST API
 
 You can provision and manage all of your VPC resources through the UI, CLI, or REST API.
 

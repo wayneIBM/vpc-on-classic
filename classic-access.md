@@ -38,7 +38,7 @@ In classic account hosts with a public interface, you must add a route that poin
 1. Your classic account must be linked to your IBM Cloud account. See [Linking IBMid accounts](/docs/account?topic=account-unifyingaccounts) for instructions on how to do this.
 1. Your classic account must be enabled for VRF.
     * If you already have Direct Link on your account, you are ready.
-    * If your account is not VRF-enabled, open a ticket to request "VRF Migration" for your account. See [Converting to VRF](#vrf-conversion) to learn more about the conversion process.
+    * If your account is not VRF-enabled, open an IBM Support case to request "VRF Migration" for your account. See [Converting to VRF](#vrf-conversion) to learn more about the conversion process.
 
 Firewalls, gateways, Network ACLs, or security groups can filter out some or all of the network traffic between Classic and VPC resources.
 {: important}

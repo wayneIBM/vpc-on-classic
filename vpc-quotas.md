@@ -34,7 +34,7 @@ This document covers quotas and limits for your {{site.data.keyword.cloud}} Virt
 | Public Gateways (PGWs) | 1 per VPC per zone |
 | Address prefixes | 5 per VPC per zone |
 
-<sup>1</sup> You can request to increase the VPC limit by submitting a [support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) ticket.
+<sup>1</sup> You can request to increase the VPC limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case.
 
 ## Subnet quotas
 {: #subnet-quotas}
@@ -43,7 +43,7 @@ This document covers quotas and limits for your {{site.data.keyword.cloud}} Virt
 | ------- | :------: |
 | Subnets | 15 per Virtual Private Cloud <sup>1</sup> |
 
-<sup>1</sup> You can request to increase the subnet limit by submitting a [support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) ticket.
+<sup>1</sup> You can request to increase the subnet limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case.
 
 
 ## VSI quotas
@@ -56,10 +56,9 @@ This document covers quotas and limits for your {{site.data.keyword.cloud}} Virt
 | Floating IP addresses | 100 per zone per account <sup>2</sup> |
 | SSH Keys | 100 per account |
 
-<sup>1</sup> You can request to increase the VSI limit by submitting a [support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) ticket. Consider other related resource limits that need to be increased as well, such as floating IPs.
+<sup>1</sup> You can request to increase the VSI limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case. Consider other related resource limits that need to be increased as well, such as floating IPs.
 
-<sup>2</sup> You can request to increase the floating IP limit by submitting a [support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) ticket.
-
+<sup>2</sup> You can request to increase the floating IP limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case.
 ## Security groups quotas
 {: #security-groups-quotas}
 

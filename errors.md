@@ -1,9 +1,8 @@
 ---
 
 copyright:
-
   years: 2018, 2020
-  lastupdated: "2020-01-27"
+lastupdated: "2020-01-27"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -20,11 +19,16 @@ subcollection: vpc-on-classic
 {:DomainName: data-hd-keyref="DomainName"}
 {:external: target="_blank" .external}
 
-# IBM Cloud Virtual Private Cloud API error messages
+# API error messages
 {: #rias-error-messages}
 
 When you receive an error message from the {{site.data.keyword.cloud}} Virtual Private Cloud APIs, you can use the message ID to find more information about how to resolve the problem.
 {:shortdesc}
+
+## account_disabled
+**Message**: The account requesting this resource is disabled.
+
+Create a new account.
 
 ## account_missing
 **Message**: The account in the token was empty or did not exist in the request.
@@ -166,7 +170,7 @@ To see where the floating IP is used, use the `GET /v1/floating_ips/e6e4850d-123
 
 Only one public gateway per zone is allowed in a VPC but the one public gateway can be attached to multiple subnets in the zone. To find the public gateway for a zone, run the GET public_gateways API and look at the "vpc" and "zone" values. If using the CLI, you can run the `ibmcloud is public-gateways` command and see the "VPC" and "Zone" value.
 
-Use the public gateway's ID to attach it to a subnet, see an example in our [API examples](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-rest-apis#step-13-attach-the-public-gateway-to-the-subnet-). If using the CLI, you can use the subnet update command to attach it to a public gateway, for example, `ibmcloud is subnet-update SUBNET_ID --public-gateway-id PUBLIC_GATEWAY_ID`.
+Use the public gateway's ID to attach it to a subnet, see an example in our [API examples](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-using-the-rest-apis#attach-public-gateway-to-the-subnet). If using the CLI, you can use the subnet update command to attach it to a public gateway, for example, `ibmcloud is subnet-update SUBNET_ID --public-gateway-id PUBLIC_GATEWAY_ID`.
 
 ## health_monitor_invalid_delay
 **Message**: The specified health monitor delay <health_monitor_delay> is invalid
@@ -368,7 +372,7 @@ Refer to the [API documentation](https://{DomainName}/apidocs/vpc-on-classic){: 
 
 If the resource is an instance:
 
-1. A reboot operation may already be in progress for the instance. Refer to [actions allowed](/docs/vpc-on-classic?topic=vpc-on-classic-troubleshooting-your-ibm-cloud-vpc#error-409-conflict-when-invoking-an-action-on-an-instance), depending on the status of the instance.
+1. A reboot operation may already be in progress for the instance. Refer to [actions allowed](/docs/vpc-on-classic?topic=vpc-on-classic-troubleshooting-your-ibm-cloud-vpc#error-409-conflict-invoke-action), depending on the status of the instance.
 
 2. While the status of the instance is `pending` you cannot perform the following actions:
   * delete the instance

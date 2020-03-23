@@ -44,6 +44,7 @@ The VPC Overview figure, which follows, illustrates the available VPC components
 The following sections give you an overview of the features available in IBM Cloud VPC.
 
 ## Networking capabilities
+{: #networking-capabilities}
 
 {{site.data.keyword.cloud_notm}} VPC offers easy and comprehensive networking capabilities, including the ability to create multiple Virtual Private Clouds in [multi-zone regions available globally](/docs/vpc-on-classic?topic=vpc-on-classic-creating-a-vpc-in-a-different-region), subnets in different zones, [IP address range selection](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets), virtual firewalls, ([security groups](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups) and [network ACLs](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-network-acls)), site-to-site virtual private networks ([VPN](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-vpn-with-your-vpc)), and load balancing ([LBaaS](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)) with elasticity.
 
@@ -57,6 +58,7 @@ In API versions before `2019-08-27`, CIDR block 10.240/13 is reserved for VPC de
 {: important}
 
 ### Internet access
+{: #internet-access}
 
 Three options are available for enabling communications from your virtual server instances (VSIs) to the public internet:
 * Use a public gateway (PGW) to enable communication to the internet for all virtual server instances on the attached subnet. There is no charge for using a PGW, except for the bandwidth used.
@@ -65,10 +67,12 @@ Three options are available for enabling communications from your virtual server
 {: note}
 
 ### Classic access
+{: #classic-access}
 
 Existing {{site.data.keyword.cloud_notm}} infrastructure users can connect their classic infrastructure, including Direct Link connectivity, to one VPC per region using our [Classic Access](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc).
 
 ### BYOIP
+{: #byoip}
 
 You can bring your own public IPv4 address range (BYOIP) to your IBM Cloud VPC account.
 
@@ -79,32 +83,38 @@ You must use the API or the CLI to use BYOIP. This capability is not available t
 {: note}
 
 ### Global connectivity
+{: #global-connectivity}
 
 You can scope your applications and available resources to span across multiple regions. Using [VPN](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-vpn-with-your-vpc), you can create private connections to other projects and other portions of your hybrid cloud deployments.
 
 Easily scalable and sharable, a VPC network and resources can stretch from your on-premises facility into your cloud.
 
 ## Security
+{: #security}
 
 Security is integrated into your {{site.data.keyword.cloud_notm}} VPC, with [security groups](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-using-security-groups) that act as virtual firewalls for instance-level protection, and with [network access control lists](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-setting-up-network-acls) (ACLs) for subnet-level protection.
 
 ## High availability
+{: #high-availability}
 
 The {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) gives your applications logical isolation from other networks in all regions, while providing scalability and security. Use [Load Balancers](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc) to distribute your network traffic across a set of targets to improve performance and HA. Load Balancers also monitor the health of your applications and services. You can set up a load balancer to distribute incoming application traffic across instances in a single zone or across multiple zones within a region.
 
 ## Compute capabilities
+{: #compute-capabilities}
 
 Use [IBM Cloud Virtual Servers for Virtual Private Cloud](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-virtual-private-cloud) to provision scalable compute resources in the IBM Cloud. Create virtual server instances (VSIs) quickly, using pre-defined [profiles](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-profiles) optimized for your specific workloads. When provisioning the multi-homed, [multi-vNIC](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-network-security-options) instances, choose from the supported stock [images](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-images) or upload a custom image.
 
 {{site.data.keyword.cloud_notm}} VPC adds a network orchestration layer that eliminates the pod boundary of virtual server instances, creating infinite capacity for scaling instances. The network orchestration layer handles all of the networking for all virtual server instances that are within an IBM Cloud VPC across regions and zones. With the software defined networking capabilities that {{site.data.keyword.cloud_notm}} VPC provides, you have more options for VPNs, LBaaS, multi-vNIC instances, and larger subnet sizes.
 
 ## Storage capabilities
+{: #storage-capabilities}
 
 When you provision an {{site.data.keyword.cloud_notm}} Virtual Servers for Virtual Private Cloud instance, a 100 GB, general purpose IOPS (3 IOPS/GB) block storage volume is created automatically, as a primary boot volume, and attached to the instance. You can create block storage volumes when you provision a virtual server instance in a VPC network, or create new volumes independent of the VSI lifecycle.
 
-When provisioning additional block storage for your VPC, you can select an [IOPS tier](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about#tiers) for your block storage volume, or specify  a [custom IOPS profile](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about#custom).
+When provisioning additional block storage for your VPC, you can select an [IOPS tier](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-profiles#tiers) for your block storage volume, or specify  a [custom IOPS profile](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-profiles#custom).
 
 ## Designed for cloud-native and hybrid workloads
+{: #designed-for-cloud-native-and-hybrid-workloads}
 
 A VPC is ideal for cloud-native workloads and for linking your existing infrastructure into {{site.data.keyword.cloud_notm}}. You can create the best cloud for workloads such as cognitive, AI, and Machine Learning computations.
 
@@ -116,6 +126,7 @@ Here are more ways that VPC supports your hybrid, cloud-tolerant, and cloud-nati
 * VSI provisioning with affinity and anti-affinity groups
 
 ## Learn more
+{: #learn-more}
 
 * [**VPC security**](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-security-in-your-ibm-cloud-vpc#security-in-your-ibm-cloud-vpc)
 * [**VPC regions and subnets available**](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets)

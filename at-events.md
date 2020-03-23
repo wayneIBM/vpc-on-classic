@@ -145,7 +145,7 @@ The following table lists the actions related to load balancers and the generati
 | Rule |  is.load-balancer.load-balancer.listener.policy.rule.delete | Rule was deleted |
 
 Load balancer auditing events are recorded to {{site.data.keyword.at_full}} in the `us-south` region. The region in which you provision the load balancer service does not matter.
-{:note}
+{: note}
 
 ## List of events: VPNs
 {: #events-vpn}

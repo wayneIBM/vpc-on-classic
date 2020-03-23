@@ -455,7 +455,7 @@ ibmcloud is volume-profiles
 {: pre}
 
 Profiles can be general-purpose (3 IOPS/GB), 5iops-tier, 10-iops-tier, and custom.
-See [About Block Storage for VPC](/docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-block-storage-about#capacity-performance)
+See [About Block Storage for VPC](//docs/vpc-on-classic-block-storage?topic=vpc-on-classic-block-storage-capacity-performance)
 for information about volume capacity and IOPS ranges based on the volume profile you select.  
 
 ```
@@ -666,6 +666,7 @@ touch hellovol_file1
 Optionally delete the resources. A resource cannot be deleted if it contains other resources. For example, a virtual private cloud cannot be deleted if it contains subnets, and a subnet cannot be deleted if it contains virtual server instances. On a delete operation, the API may return quickly but the resource deletion might still be in progress. After issuing the delete request, make sure the resource has been deleted before attempting to delete the parent resource. See [Deleting a VPC](/docs/vpc-on-classic?topic=vpc-on-classic-deleting) for more details.
 
 ### Release the floating IP
+{: #releasing-floating-ip}
 
 ```
 ibmcloud is floating-ip-release $floating_ip
@@ -673,6 +674,7 @@ ibmcloud is floating-ip-release $floating_ip
 {: pre}
 
 ### Delete the virtual server instance
+{: #delete-vs-instance1}
 
 ```
 ibmcloud is instance-delete $vsi
@@ -680,6 +682,7 @@ ibmcloud is instance-delete $vsi
 {: pre}
 
 ### Delete the key
+{: #delete-key}
 
 ```
 ibmcloud is key-delete $key
@@ -687,6 +690,7 @@ ibmcloud is key-delete $key
 {: pre}
 
 ### Delete the subnet
+{: #delete-subnet}
 
 ```
 ibmcloud is subnet-delete $subnet
@@ -694,6 +698,7 @@ ibmcloud is subnet-delete $subnet
 {: pre}
 
 ### Delete the public gateway
+{: #delete-public-g}
 
 ```
 ibmcloud is public-gateway-delete $gateway
@@ -702,6 +707,7 @@ ibmcloud is public-gateway-delete $gateway
 
 
 ### Delete the VPC
+{: #delete-vpc}
 
 ```
 ibmcloud is vpc-delete $vpc
@@ -709,6 +715,7 @@ ibmcloud is vpc-delete $vpc
 {: pre}
 
 ### Delete the volume (if not set to auto delete)
+{: #delete-volume}
 
 ```
 ibmcloud is volume-delete $vol

@@ -25,15 +25,15 @@ subcollection: vpc-on-classic
 # Deleting a VPC using the IBM Cloud CLI
 {: #deleting-using-cli}
 
-This topic provides examples of how to delete resources from your {{site.data.keyword.cloud}} Virtual Private Cloud, for every VPC resource, in the suggested order. 
+This topic provides examples of how to delete resources from your {{site.data.keyword.cloud}} Virtual Private Cloud, for every VPC resource, in the suggested order.
 
 Here are some key facts to remember about deletion:
 
-* A VPC cannot be deleted until it is empty. 
-* All containing resources must be deleted successfully before the parent resource can be deleted. 
-* If the resource is pending a deletion, it shows a `deleting` status when viewed in list queries. 
-* Most delete requests are _asynchronous_, which means that the resource may show a **deleting** status in list queries when it has not yet been deleted completely. 
-* You must poll to make sure the child resource is no longer in the list view before attempting to delete the parent resource. 
+* A VPC cannot be deleted until it is empty.
+* All containing resources must be deleted successfully before the parent resource can be deleted.
+* If the resource is pending a deletion, it shows a `deleting` status when viewed in list queries.
+* Most delete requests are _asynchronous_, which means that the resource may show a **deleting** status in list queries when it has not yet been deleted completely.
+* You must poll to make sure the child resource is no longer in the list view before attempting to delete the parent resource.
 
 If the status of the resource changes from `deleting` to `failed`, you can try to delete the resource again. If you cannot delete a resource in `failed` status, [Contact support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support).
 {: tip}
@@ -76,6 +76,7 @@ If the VPC you want to delete has multiple subnets, repeat these steps to delete
 {: #deleting-subnet-resources-cli}
 
 ### Delete all VPN gateways in the subnet, if any
+{: #delete-vpn-g-in-subway}
 
 To list all VPN gateways in your account, run the following command:
 
@@ -120,7 +121,7 @@ You can request other subnet resources to be deleted in parallel while waiting f
 ### Delete all network interfaces in the subnet, if any
 {: #deleting-nics-cli}
 
-An instance can have multiple network interfaces, and those network interfaces can belong to multiple subnets of the VPC. Before a subnet can be deleted, any network interface in the subnet must first be deleted. 
+An instance can have multiple network interfaces, and those network interfaces can belong to multiple subnets of the VPC. Before a subnet can be deleted, any network interface in the subnet must first be deleted.
 
 The only way to delete a network interface in a subnet is to delete the instance.
 {: note}

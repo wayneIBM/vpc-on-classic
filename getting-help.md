@@ -6,7 +6,7 @@ copyright:
   years: 2017, 2018, 2019
 lastupdated: "2019-05-28"
 
-keywords: vpc, vpc help, help, support, ticket, question, forum, Stack Overflow, development
+keywords: vpc, vpc help, help, support, case, question, forum, Stack Overflow, development
 
 subcollection: vpc-on-classic
 
@@ -28,7 +28,7 @@ subcollection: vpc-on-classic
 {: #getting-help-and-support}
 
 
-If you have problems or questions when using {{site.data.keyword.cloud}} Virtual Private Cloud, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open a support ticket.
+If you have problems or questions when using {{site.data.keyword.cloud}} Virtual Private Cloud, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open an IBM Support case.
 
 When using the forums to ask a question, tag your question so that it is seen by the IBM Cloud development teams.
 
@@ -37,9 +37,9 @@ When using the forums to ask a question, tag your question so that it is seen by
 
 See [Getting help](/docs/get-support?topic=get-support-getting-customer-support) for more details about using the forums.
 
-For information about opening an IBM support ticket, or about support levels and ticket severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+For information about opening an IBM Support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
 
-When opening a ticket, if given a choice of technical category, select the component under the `VPC` (Virtual Private Cloud) category:
+When opening a case, if given a choice of technical category, select the component under the `VPC` (Virtual Private Cloud) category:
 
 * `Compute` for technical issues with instances, profiles, images, or keys
 * `Network` for technical issues with VPCs, subnets, floating IPs, network ACLs, security groups, load balancers, or VPNs

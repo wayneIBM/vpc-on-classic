@@ -1,14 +1,14 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc-on-classic" audience="service" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" path="vpc-on-classic"}
+{: .toc subcollection="vpc-on-classic" category="vpc,network" audience="service" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" console-page="/vpc-ext/overview" product-page="https://www.ibm.com/cloud/vpc" path="vpc-on-classic"}
 Virtual Private Cloud (Gen 1 compute)
 
     {: .navgroup id="learn"}
     getting-started.md
-    about-vpc-is.md
-    vpc-quotas.md
-    pricing.md
+    about-vpc-is.md    
+    [Pricing](https://www.ibm.com/cloud/vpc/pricing)
+    vpc-quotas.md 
 
     {: .topicgroup}
     Tutorials
@@ -22,10 +22,12 @@ Virtual Private Cloud (Gen 1 compute)
     {: .topicgroup}
     Related links
         [Networking for VPC](/vpc-on-classic-network/vpc-on-classic-network-getting-started)
-        [Virtual Servers for VPC](/vpc-on-classic-vsi/vpc-on-classic-vsi-getting-started)
+        [Virtual servers for VPC](/vpc-on-classic-vsi/vpc-on-classic-vsi-getting-started)
         [Storage for VPC](/vpc-on-classic-block-storage/vpc-on-classic-block-storage-getting-started)
-        [Load Balancer for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)
+        [Load balancer for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)
         [VPN for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-vpn-with-your-vpc)
+        [Getting started with virtual servers](/vsi/sysdig-monitoring-metrics.md?topic=virtual-servers-getting-started-tutorial)
+        [What is VPC?](https://www.ibm.com/cloud/learn/vpc)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -58,19 +60,19 @@ Virtual Private Cloud (Gen 1 compute)
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API reference for VPC](https://{DomainName}/apidocs/vpc-on-classic)
-    quick-guide-to-resources.md
+    [VPC API reference](https://{DomainName}/apidocs/vpc-on-classic)
     vpc-cli-reference.md
+    quick-guide-to-resources.md
     vpc-responsibilities.md
     vpc-endpoints.md
     at-events.md
-    [Go and Python Example Code](https://github.com/IBM-Cloud/vpc-api-samples/tree/gen1)
 
     {: .topicgroup}
     Terraform
         [IBM Cloud Provider for Terraform](https://ibm-cloud.github.io/tf-ibm-docs/index.html)
         [Terraformer for VPC](https://github.com/ibm-cloud-architecture/terraformer)
 
+    [Go and Python example code](https://github.com/IBM-Cloud/vpc-api-samples/tree/gen1)
     [Exporter Tool](https://github.com/l2fprod/vpc-diagram-exporter)
     {: .navgroup-end}
 
