@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc-on-classic" category="vpc,network" audience="service" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" console-page="/vpc-ext/overview" product-page="https://www.ibm.com/cloud/vpc" path="vpc-on-classic"}
+{: .toc subcollection="vpc-on-classic" audience="service" href="/docs/vpc-on-classic?topic=vpc-on-classic-getting-started" console-page="/vpc-ext/overview" product-page="https://www.ibm.com/cloud/vpc" path="vpc-on-classic"}
 Virtual Private Cloud (Gen 1 compute)
 
     {: .navgroup id="learn"}
