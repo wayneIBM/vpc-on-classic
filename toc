@@ -6,9 +6,9 @@ Virtual Private Cloud (Gen 1 compute)
 
     {: .navgroup id="learn"}
     getting-started.md
-    about-vpc-is.md    
+    about-vpc-is.md
     [Pricing](https://www.ibm.com/cloud/vpc/pricing)
-    vpc-quotas.md 
+    vpc-quotas.md
 
     {: .topicgroup}
     Tutorials
@@ -25,8 +25,7 @@ Virtual Private Cloud (Gen 1 compute)
         [Virtual servers for VPC](/vpc-on-classic-vsi/vpc-on-classic-vsi-getting-started)
         [Storage for VPC](/vpc-on-classic-block-storage/vpc-on-classic-block-storage-getting-started)
         [Load balancer for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc)
-        [VPN for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-vpn-with-your-vpc)
-        [Getting started with virtual servers](/vsi/sysdig-monitoring-metrics.md?topic=virtual-servers-getting-started-tutorial)
+        [VPN for VPC](/vpc-on-classic-network/vpc-on-classic-network---using-vpn-with-your-vpc) 
         [What is VPC?](https://www.ibm.com/cloud/learn/vpc)
     {: .navgroup-end}
 
