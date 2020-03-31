@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-26"
 keywords: vpc, quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
 
 subcollection: vpc-on-classic
@@ -108,11 +108,14 @@ Here are the current load balancer resource quotas:
 | Pools | 10 per Load Balancer |
 | Members | 50 per Pool |
 
-## Secondary volume quotas
-{: #secondary-volume-quotas}
+### Block storage volumes
+{: #block-storage-quotas}
 
-| Resource | Quota |
-|--------|----- |
+|Resource|Quota| 
+|--------|-----| 
+| Boot and secondary volumes | 300 total volumes per account in a region<sup>1</sup> |  
 | Secondary volumes per instance, when creating an instance |  4 secondary volumes |
 | Secondary volumes per instance, for existing instances with fewer than 4 cores | 4 secondary volumes |
 | Secondary volumes per instance, for existing instances with 4 cores or more | up to 12 secondary volumes |
+
+<sup>1</sup> You can request to increase the block storage volume limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case.

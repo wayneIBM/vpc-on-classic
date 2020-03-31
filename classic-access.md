@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-16"
+  years: 2018, 2020
+lastupdated: "2020-03-27"
 
 keywords: vpc, classic, access, classic access, VRF
 
@@ -144,7 +144,7 @@ Migration is completed by the {{site.data.keyword.cloud_notm}} Network Engineeri
 * Only your private (or "backend" in old documentation) networks will be connected to your account's private implicit router.
 * Only subnets allocated to your classic infrastructure with IBM Cloud provisioning systems are connected to the classic side of your private implicit router.
 * Only one VPC per region, per account can be enabled for Classic Access.
-* If your classic infrastructure includes an imported default route from Direct Link, the imported default route is used by your Classic Access VPC. In this scenario, the public gateway and floating IPs in your Classic Access VPC do not provide internet access.
+* If your classic infrastructure includes an imported default route from Direct Link, the imported default route is used by your Classic Access VPC. In this scenario, the public gateway and floating IPs in your Classic Access VPC will not provide internet access. Once the default route is no longer imported via Direct Link, then public gateways and floating IPs will once again provide internet access.
 
 Depending on the OS you've installed on your classic VSIs or bare metal servers, your configuration procedure will vary. For more information, see [About public virtual servers](/docs/vsi?topic=virtual-servers-about-public-virtual-servers).
 {: note}

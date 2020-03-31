@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-06"
+lastupdated: "2020-03-27"
 
 keywords: vpc release notes, changes, new, updates
 
@@ -25,6 +25,16 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 27 March 2020
+{: #march-27-2020}
+
+**Updates to the API**
+- Starting with API version `2020-03-24`, the requirement to include the `generation=1` query parameter will be enforced for the {{site.data.keyword.vpc_full}} (Gen1 Compute) API. 
+
+**Updates to the UI**
+- You can now monitor virtual server instances using {{site.data.keyword.mon_full_notm}}. Use the new **Add monitoring** button on the instance's **Monitoring** page to provision an instance of the monitoring service. If a monitoring instance is already provisioned for the region, use the **Launch monitoring** button to view metrics associated with the instance.
+- Virtual Private Cloud UI pages were updated to use [Carbon 10](https://www.carbondesignsystem.com/){: external} --IBM's open-source design system, which improves UI consistency and quality.
 
 ## 6 March 2020
 {: #march-6-2020}
