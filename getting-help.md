@@ -3,8 +3,8 @@
 
 
 copyright:
-  years: 2017, 2018, 2019
-lastupdated: "2019-05-28"
+  years: 2017, 2020
+lastupdated: "2020-04-01"
 
 keywords: vpc, vpc help, help, support, case, question, forum, Stack Overflow, development
 
@@ -27,15 +27,9 @@ subcollection: vpc-on-classic
 # Getting help and support
 {: #getting-help-and-support}
 
+If you have problems or questions when using {{site.data.keyword.cloud}} Virtual Private Cloud, you can get help by searching for information or by asking questions through a forum. You can also open an IBM Support case.
 
-If you have problems or questions when using {{site.data.keyword.cloud}} Virtual Private Cloud, you can get help by searching for information or by asking questions through one of the forums listed below. You can also open an IBM Support case.
-
-When using the forums to ask a question, tag your question so that it is seen by the IBM Cloud development teams.
-
-* If you have technical questions about the IBM Virtual Private Cloud, post your question on [Stack Overflow](https://stackoverflow.com/search?q=vpc+ibm-cloud){: external} and tag your question with "vpc" and "ibm-cloud".
-* For questions about the service and getting started instructions, use the [IBM developerWorks dW Answers](https://developer.ibm.com/answers/topics/vpc.html){: external} forum. Include the "vpc" and "ibm-cloud" tags.
-
-See [Getting help](/docs/get-support?topic=get-support-getting-customer-support) for more details about using the forums.
+If you have technical questions about the IBM Virtual Private Cloud, post your question on [Stack Overflow](https://stackoverflow.com/search?q=vpc+ibm-cloud){: external} and tag your question with "vpc" and "ibm-cloud".
 
 For information about opening an IBM Support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
 
