@@ -3,7 +3,7 @@
 copyright:
   years: 2017, 2020
 
-lastupdated: "2020-03-04"
+lastupdated: "2020-04-02"
 
 keywords: vpc, resource, access, role, role-based, authorization, policy, access group, resource group, permission, assign, administrator, operator, editor, viewer, user, team, scenario, manage, create, IAM
 
@@ -67,14 +67,14 @@ If you want to give the user permissions to create their own resource groups, le
 
 This scenario covers the basic steps needed to give an existing user in your account permission to edit VPC resources.
 
-1. Navigate to the [IAM Users UI](https://{DomainName}/iam/users){: external} in the IBM Cloud Console.
+1. Navigate to the [IAM Users UI](https://{DomainName}/iam/users){: external} in the IBM Cloud console.
 2. Select the user whose authorization you're enabling.
 3. Under the **Access policies** tab, select **Assign access**.
-4. Select **Assign access within a resource group**.
-  * In the **Resource group** drop-down list, select **All resource groups** or the specific resource group you want to grant access to the user.
-  * In the **Assign access to a resource group** drop-down list, select at least **Viewer** to allow the user to create new resources in the resource group. It can be set to **No access** if you do not want to allow the user to create new resources.
-  * In the **Services** drop-down list, select **Infrastructure Service**.
-  * In the **Resource type** drop-down list, select **All resource types** to give the user access to all [VPC resource types](/docs/vpc-on-classic?topic=vpc-on-classic-about-vpc-infrastructure-resources). Optionally, you can select individual resource types to grant specific resource permissions.
+4. Select **Assign users additional access**.
+  * In the **Resource group** list, select **All resource groups** or the specific resource group you want to grant access to the user.
+  * In the **Assign users additional access** list, select at least **Viewer** to allow the user to create new resources in the resource group. It can be set to **No access** if you do not want to allow the user to create new resources.
+  * In the **Services** list, select **Infrastructure Service**.
+  * In the **Resource type** list, select **All resource types** to give the user access to all [VPC resource types](/docs/vpc-on-classic?topic=vpc-on-classic-about-vpc-infrastructure-resources). Optionally, you can select individual resource types to grant specific resource permissions.
   * In the **Select roles** section, select the platform access role that you want to assign to the user. It can be **Administrator**, **Editor**, **Operator**, or **Viewer**, depending on the role you would like to assign the users. See [Roles required to manage VPC resources](/docs/vpc-on-classic?topic=vpc-on-classic-resource-authorizations-required-for-api-and-cli-calls) to determine which permissions are needed. **Editor** role gives a user the power to create, update, and delete resources.
   * Click **Assign**.
 
@@ -119,14 +119,14 @@ For help creating access groups, see [Create access groups](/docs/iam?topic=iam-
 
 Add the necessary VPC access policies so that the `test_team` access group can manage (create, update and delete) VPC resources.  
 
-1. Navigate to the [IAM Group UI](https://{DomainName}/iam/groups){: external} in the IBM Cloud Console.
-2. Select the desired access group (start with: `test_team_manage_vpcs`).
+1. Navigate to the [IAM Group UI](https://{DomainName}/iam/groups){: external} in the IBM Cloud console.
+2. Select the wanted access group (start with: `test_team_manage_vpcs`).
 3. Under the **Access policies** tab, click **Assign access**.
 4. Select **Assign access within a resource group**.
-  * In the **Resource group** drop-down list, select the desired resource group (start with: `test_team_manage_vpcs`)
-  * In the **Assign access to a resource group** drop-down list, select **Viewer** to allow the users to create new resources in the resource group.
-  * In the **Services** drop-down list, select **Infrastructure Service**.
-  * In the **Resource type** drop-down list, select **All resource types** to give the user access to all VPC resource types.
+  * In the **Resource group** list, select the wanted resource group (start with: `test_team_manage_vpcs`)
+  * In the **Assign users additional access** list, select **Viewer** to allow the users to create new resources in the resource group.
+  * In the **Services** list, select **Infrastructure Service**.
+  * In the **Resource type** list, select **All resource types** to give the user access to all VPC resource types.
   * In the **Select roles** section, select **Editor** role to give users the power to create, update, and delete resources.
   * Click **Assign**.
 
@@ -143,16 +143,16 @@ Users with **Editor** access to VPC resources also can view them. It isn't neces
 
 Now you can assign team members (users) to the appropriate access groups. Follow these steps to add each member of the test team to the access group that allows test team VPC management:
 
-1. Navigate to the [IAM Group UI](https://{DomainName}/iam/groups){: external} in the IBM Cloud Console.
-2. Select the desired access group (start with: `test_team_manage_vpcs`).
+1. Navigate to the [IAM Group UI](https://{DomainName}/iam/groups){: external} in the IBM Cloud console.
+2. Select the wanted access group (start with: `test_team_manage_vpcs`).
 3. Under the **Users** tab, click **Add users**.
 4. Select each user you wish to add to the access group.
 5. Click **Add to group**.
 
 Repeat the previous steps to accomplish these tasks:
-* Assign the desired users to the `test_team_view_vpcs` access group.
-* Assign the desired users to the `production_team_manage_vpcs` access group.
-* Assign the desired users to the `production_team_view_vpcs` access group.
+* Assign the wanted users to the `test_team_view_vpcs` access group.
+* Assign the wanted users to the `production_team_manage_vpcs` access group.
+* Assign the wanted users to the `production_team_view_vpcs` access group.
 
 ## Next steps
 {: #permissions-next-steps}
