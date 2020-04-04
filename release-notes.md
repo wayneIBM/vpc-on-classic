@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-03-27"
+lastupdated: "2020-04-02"
 
 keywords: vpc release notes, changes, new, updates
 
@@ -26,6 +26,24 @@ subcollection: vpc-on-classic
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
 
+## 3 April 2020
+{: #april-3-2020}
+
+**Updates to Load Balancer for VPC**
+
+- You can now access load balancer monitoring metrics (throughput, active connections, connection rate) using [IBM Cloud Monitoring with Sysdig](/docs/vpc-on-classic-network?topic=vpc-on-classic-network-monitoring-metrics-sysdig).
+- Starting on April 7, the following cipher suites will be supported for load balancer HTTPS listeners:
+    - `TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384`
+    - `TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`
+    - `TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256`
+    - `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`
+    - `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`
+    - `TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256` 
+
+**Updates to Block Storage for VPC**
+
+- Block storage volumes quota has been decreased to 300 per region. You can request that your storage quota be increased by opening a [support case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. See [Block storage volume quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#block-storage-quotas) for more quota information.
+
 ## 27 March 2020
 {: #march-27-2020}
 
@@ -39,7 +57,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 ## 6 March 2020
 {: #march-6-2020}
 
-**Virtual server instance quota has been decreased** to 20 per region. You can always request your quota to be increased by opening a [support case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. See [VSI quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vsi-quotas) for more quota information.
+**Virtual server instance quota has been decreased** to 20 per region. You can always request that your quota be increased by opening a [support case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. See [VSI quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#vsi-quotas) for more quota information.
 
 **New version `0.5.11` of the CLI plug-in `vpc-infrastructure` has been released**, which includes the following enhancements:
 - Command output for volume details `ibmcloud is volume` includes resource tags now.

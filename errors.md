@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-01-27"
+lastupdated: "2020-04-02"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
