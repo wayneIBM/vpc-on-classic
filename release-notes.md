@@ -38,17 +38,17 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
     - `TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256`
     - `TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384`
     - `TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256`
-    - `TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256` 
+    - `TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256`
 
 **Updates to Block Storage for VPC**
 
-- Block storage volumes quota has been decreased to 300 per region. You can request that your storage quota be increased by opening a [support case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. See [Block storage volume quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#block-storage-quotas) for more quota information.
+- Block storage volumes quota has been decreased to 300 per account per region. You can request that your storage quota be increased by opening a [support case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. See [Block storage volume quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#block-storage-quotas) for more quota information.
 
 ## 27 March 2020
 {: #march-27-2020}
 
 **Updates to the API**
-- Starting with API version `2020-03-24`, the requirement to include the `generation=1` query parameter will be enforced for the {{site.data.keyword.vpc_full}} (Gen1 Compute) API. 
+- Starting with API version `2020-03-24`, the requirement to include the `generation=1` query parameter will be enforced for the {{site.data.keyword.vpc_full}} (Gen1 Compute) API.
 
 **Updates to the UI**
 - You can now monitor virtual server instances using {{site.data.keyword.mon_full_notm}}. Use the new **Add monitoring** button on the instance's **Monitoring** page to provision an instance of the monitoring service. If a monitoring instance is already provisioned for the region, use the **Launch monitoring** button to view metrics associated with the instance.
@@ -81,7 +81,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 - Enhanced network monitoring data available for instances with added support for aggregated metrics.
 
 **Upcoming update to the API**
-- Starting with API version `2020-03-24`, the requirement to include the `generation=1` query parameter will be enforced for the {{site.data.keyword.vpc_full}} (Gen1 Compute) API. 
+- Starting with API version `2020-03-24`, the requirement to include the `generation=1` query parameter will be enforced for the {{site.data.keyword.vpc_full}} (Gen1 Compute) API.
 
 ## 31 January 2020
 {: #jan-31-2020}
