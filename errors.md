@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-07"
 
 keywords: vpc, vpc errors, error, message, API, limitations, rias, support
 
@@ -139,6 +139,13 @@ The cloud object storage bucket specified could not be found in the target regio
 **Message**: The cloud object storage URI provided is not in the correct format.
 
 This error occurs if the URI has an incorrect scheme. The URI should follow this format: `cos://<region>/<bucket>/<sourceFile>`
+
+## cos_uri_not_supported
+**Message**: The Cloud Object Storage URI that was specified is not supported.
+
+A Cloud Object Storage URI cannot specify a single data center, such as ams03. A Cloud Object Storage URI cannot have an image nested within a folder in the file path, for example: cos://us-south/myBucket/MyFolder/myImage.vhd.
+
+The following example shows a Cloud Object Storage URI with a supported format: cos://us-south/myBucket/myImage.vhd.
 
 ## default_address_prefix_not_found
 **Message**: Default address prefix not found.

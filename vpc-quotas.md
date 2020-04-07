@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-03-26"
+lastupdated: "2020-04-07"
 keywords: vpc, quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
 
 subcollection: vpc-on-classic
@@ -77,9 +77,9 @@ Some account-based quotas (limits) exist for security groups and their associate
 
 |Resource|Quota|
 |--------|-----|
-|ACLs| 30 per region |
-|ingress rules|20 per ACL |
-|egress rules |20 per ACL |
+|ACLs| 2 x number of subnets (30 by default) per Virtual Private Cloud |
+|inbound rules|20 per ACL |
+|outbound rules |20 per ACL |
 
 ## VPN quotas
 {: #vpn-quotas}
