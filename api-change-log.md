@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-02-20"
+lastupdated: "2020-04-10"
 
 keywords: vpc, api, change log, new features, restrictions, migration
 
@@ -33,6 +33,10 @@ To minimize regressions from changes, we recommend the following best practices 
 * Follow HTTP redirect rules for any `3xx` HTTP status code
 * Consume only the resources and properties your application needs to function
 * Avoid any behavior that is not explicitly documented
+
+## 2020-04-10
+{: #2020-04-10}
+Added usage recommendations for the protocol property for load balancer pools and the type property for load balancer pool health monitors. The guidance notes that new values for these properties may be added in the future, and unexpected values should be handled gracefully.
 
 ## 2020-03-24
 {: #2020-03-24}
