@@ -1422,7 +1422,7 @@ You are not authorized to list or create volumes in the specified resource group
 ## volume_resource_group_not_found
 **Message**: A resource group with the specified ID could not be found.
 
-The resource group ID could not be found because you might have entered it incorrectly or it does not exist. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#storage) for more information.
+The resource group ID could not be found because you might have entered it incorrectly or it does not exist. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#storage-cli-section) for more information.
 
 ## volume_start_not_found
 **Message**: A volume with the ID specified as the page start parameter is not found.
