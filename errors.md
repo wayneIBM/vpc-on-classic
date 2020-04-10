@@ -106,7 +106,7 @@ Only one VPC with Classic Access can be created per region. To list the VPC with
 The linked classic account is not VRF-enabled. A classic access VPC requires the linked classic account to be VRF-enabled. To enable your account for VRF, refer to [VRF on IBM Cloud](/docs/vpc-on-classic?topic=vpc-on-classic-setting-up-access-to-your-classic-infrastructure-from-vpc#vrf-conversion).
 
 ## cos_file_too_large
-**Message**: The file from cloud object store is greater than 100 GB.
+**Message**: The file from Cloud Object Storage is greater than 100 GB.
 
 The file specified is too large. Only files less than 100 GB are allowed.
 
@@ -121,22 +121,22 @@ The file extension in the URI must be **.vhd**.
 Even though the import image file name has a **.qcow2** extension, the contents is not valid.
 
 ## cos_not_authorized
-**Message**: You are not authorized to access the cloud object store resource.
+**Message**: You are not authorized to access the Cloud Object Storage resource.
 
-This error occurs if a user tries to import an image from a cloud object store to which they do not have access. Use the [Granting access between services](/docs/iam?topic=iam-serviceauth){: external} to help you grant authorization from the image service to the cloud object store bucket.
+This error occurs if a user tries to import an image from a Cloud Object Storage to which they do not have access. Use the [Granting access between services](/docs/iam?topic=iam-serviceauth){: external} to help you grant authorization from the image service to the Cloud Object Storage bucket.
 
 ## cos_not_found
-**Message**: Cloud object storage resource not found.
+**Message**: Cloud Object Storage resource not found.
 
-The cloud object storage resource specified could not be found. Verify that the resource identification is correct.
+The Cloud Object Storage resource specified could not be found. Verify that the resource identification is correct.
 
 ## cos_region_mismatch
-**Message**: Cloud object storage resource not found in the target region.
+**Message**: Cloud Object Storage resource not found in the target region.
 
-The cloud object storage bucket specified could not be found in the target region. Make sure the bucket exists in the target region.
+The Cloud Object Storage bucket specified could not be found in the target region. Make sure the bucket exists in the target region.
 
 ## cos_scheme_uri_invalid
-**Message**: The cloud object storage URI provided is not in the correct format.
+**Message**: The Cloud Object Storage URI provided is not in the correct format.
 
 This error occurs if the URI has an incorrect scheme. The URI should follow this format: `cos://<region>/<bucket>/<sourceFile>`
 
@@ -340,9 +340,10 @@ An unexpected error occurred. This problem may be temporary. Try the request aga
 Public images cannot be added, modified, or deleted.
 
 ## invalid_generation_parameter
-**Message**: The generation query parameter must be set to 1.
+**Message**: The generation query parameter is invalid.
 
-For versions on and after 5/31/2019, the 'generation' query parameter must be set to 1 to allow VPC API requests for use with generation 1 compute resources.
+For versions on and after 5/31/2019, the 'generation' query parameter must be set to 1 to allow VPC API requests for use with generation 1 compute resources
+and set to 2 to allow VPC API requests for use with generation 2 compute resources.
 
 How to set the generation parameter
 
@@ -1271,7 +1272,7 @@ This operation is not allowed. The boot volume's volume attachment cannot be del
 ## volume_attachment_over_quota
 **Message**: The volume cannot be attached because the number of volume attachments would exceed the quota.
 
-The quotas per instance are specified in [Secondary volume quotas](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#secondary-volume-quotas).
+The quotas per instance are specified in [Quotas: Block storage volumes](/docs/vpc-on-classic?topic=vpc-on-classic-quotas#block-storage-quotas).
 
 ## volume_attachment_update_invalid_request
 **Message**: The volume attachment could not be updated because the request is invalid.
@@ -1411,7 +1412,7 @@ You are out of quota for the current account. Try deleting some volumes or conta
 ## volume_resource_group_id_invalid
 **Message**: The resource group ID specified in the request is not valid.
 
-The resource group ID that you specified in the request is not valid. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#storage) for more information.
+The resource group ID that you specified in the request is not valid. Verify the correct resource group ID. From the CLI, use the `ibmcloud is volume VOLUME_ID` command. The resulting information will include the resource group and resource group ID. See the [IBM Cloud CLI for VPC Reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#storage-cli-section) for more information.
 
 ## volume_resource_group_not_authorized
 **Message**: The current action is not authorized on the specified resource group.
