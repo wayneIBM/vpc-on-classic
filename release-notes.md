@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-02"
+lastupdated: "2020-04-05"
 
 keywords: vpc release notes, changes, new, updates
 
