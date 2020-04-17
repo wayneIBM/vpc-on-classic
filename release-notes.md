@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-05"
+lastupdated: "2020-04-17"
 
 keywords: vpc release notes, changes, new, updates
 
@@ -25,6 +25,15 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 17 April 2020
+{: #april-17-2020}
+
+**New version `0.5.13` of the CLI plug-in `vpc-infrastructure` has been released**, which includes the following enhancements:
+- Usage examples for **key-create** and **key-update** commands.
+- Command output includes Cloud Resource Name (CRN) fields now.
+
+To update the `vpc-infrastructure` plug-in, see the [CLI reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#cli-prerequisites).
 
 ## 3 April 2020
 {: #april-3-2020}
