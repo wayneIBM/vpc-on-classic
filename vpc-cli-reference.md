@@ -438,7 +438,7 @@ ibmcloud is instance INSTANCE [--json]
 Create a virtual server instance.
 
 ```
-ibmcloud is instance-create INSTANCE_NAME VPC ZONE_NAME PROFILE_NAME SUBNET --image-id IMAGE_ID [--boot-volume BOOT_VOLUME_JSON | @BOOT_VOLUME_JSON_FILE] [--volume-attach VOLUME_ATTACH_JSON | @VOLUME_ATTACH_JSON_FILE] [--key-ids IDS] [--user-data DATA] [(--security-group-ids SECURITY_GROUP_IDS --ipv4 IPV4_ADDRESS) | --primary-network-interface PRIMARY_NETWORK_INTERFACE_JSON | @PRIMARY_NETWORK_INTERFACE_JSON_FILE] [--network-interface NETWORK_INTERFACE_JSON | @NETWORK_INTERFACE_JSON_FILE] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json] [-i, --interactive]
+ibmcloud is instance-create INSTANCE_NAME VPC ZONE_NAME PROFILE_NAME SUBNET --image-id IMAGE_ID [--boot-volume BOOT_VOLUME_JSON | @BOOT_VOLUME_JSON_FILE] [--volume-attach VOLUME_ATTACH_JSON | @VOLUME_ATTACH_JSON_FILE] [--key-ids IDS] [--user-data DATA] [(--security-group-ids SECURITY_GROUP_IDS [--ipv4 IPV4_ADDRESS]) | --primary-network-interface PRIMARY_NETWORK_INTERFACE_JSON | @PRIMARY_NETWORK_INTERFACE_JSON_FILE] [--network-interface NETWORK_INTERFACE_JSON | @NETWORK_INTERFACE_JSON_FILE] [--resource-group-id RESOURCE_GROUP_ID | --resource-group-name RESOURCE_GROUP_NAME] [--json] [-i, --interactive]
 ```
 
 #### Command options
@@ -451,7 +451,7 @@ ibmcloud is instance-create INSTANCE_NAME VPC ZONE_NAME PROFILE_NAME SUBNET --im
 - **SUBNET**: ID of the subnet.
 - **--image-id**: ID of the image.
 - **--boot-volume**: **BOOT_VOLUME_JSON**|**@BOOT_VOLUME_JSON_FILE**, boot volume attachment in JSON or JSON file.
-- **--volume-attach**: **VOLUME_ATTACH_JSON**|**@VOLUME_ATTACH_JSON_FILE**, volume attachment in JSON or JSON file.
+- **--volume-attach**: **VOLUME_ATTACH_JSON**|**@VOLUME_ATTACH_JSON_FILE**, volume attachment in JSON or JSON file, list of volumes.
 - **--key-ids**: Comma separated IDs of SSH keys.
 - **--user-data**: **data**|**@data-file**. User data to transfer to the virtual server instance.
 - **--security-group-ids**: Comma separated security group IDs for primary network interface.
@@ -1513,11 +1513,11 @@ ibmcloud is load-balancer-pool-create POOL_NAME LOAD_BALANCER_ID ALGORITHM PROTO
 - **POOL_NAME**: Name of the pool.
 - **LOAD_BALANCER_ID**: ID of the load balancer.
 - **ALGORITHM**: The load balancing algorithm. Enumeration type: **round_robin**, **weighted_round_robin**, **least_connections**.
-- **PROTOCOL**: The pool protocol. Enumeration type: **http**, **tcp**.
+- **PROTOCOL**: The pool protocol. Enumeration type: **https**, **http**, **tcp**.
 - **HEALTH_DELAY**: The health check interval in seconds. The interval must be greater than the timeout value. Minimum: **2**, maximum: **60**.
 - **HEALTH_RETRIES**: The health check max retries. Minimum: **1**, maximum: **10**.
 - **HEALTH_TIMEOUT**: The health check timeout in seconds. Minimum: **1**, maximum: **59**.
-- **HEALTH_TYPE**: The pool protocol. Enumeration type: **http**, **tcp**.
+- **HEALTH_TYPE**: The pool protocol. Enumeration type: **https**, **http**, **tcp**.
 - **--health-monitor-url**: The health check URL. This option is applicable only to HTTP type of **HEALTH_TYPE**.
 - **--health-monitor-port**: The health check port number. If specified, this overrides the ports specified in the server member resources.
 - **--session-persistence-type**: The session persistence type, Enumeration type: **source_ip**.
@@ -1556,7 +1556,7 @@ ibmcloud is load-balancer-pool-delete LOAD_BALANCER_ID POOL_ID [-f, --force]
 Update a pool of a load balancer.
 
 ```
-ibmcloud is load-balancer-pool-update LOAD_BALANCER_ID POOL_ID [--algorithm round_robin | weighted_round_robin | least_connections] [--health-delay DELAY --health-max-retries RETRIES --health-timeout TIMEOUT --health-type http | tcp] [--health-monitor-url URL] [--health-monitor-port PORT] [--protocol http | tcp] [--session-persistence-type TYPE] [--name NEW_NAME] [--json]
+ibmcloud is load-balancer-pool-update LOAD_BALANCER_ID POOL_ID [--algorithm round_robin | weighted_round_robin | least_connections] [--health-delay DELAY --health-max-retries RETRIES --health-timeout TIMEOUT --health-type https | http | tcp] [--health-monitor-url URL] [--health-monitor-port PORT] [--protocol https | http | tcp] [--session-persistence-type TYPE] [--name NEW_NAME] [--json]
 ```
 
 #### Command options
@@ -1568,10 +1568,10 @@ ibmcloud is load-balancer-pool-update LOAD_BALANCER_ID POOL_ID [--algorithm roun
 - **--health-delay**: The health check interval in seconds. The interval must be greater than the timeout value. Minimum: **2**, maximum: **60**.
 - **--health-max-retries**: The health check max retries. Minimum: **1**, maximum: **10**.
 - **--health-timeout**: The health check timeout in seconds. Minimum: **1**, maximum: **59**.
-- **--health-type**: The pool protocol. Enumeration type: **http**, **tcp**.
+- **--health-type**: The pool protocol. Enumeration type: **https**, **http**, **tcp**.
 - **--health-monitor-url**: The health check URL. This option is applicable only to HTTP type of **--health-type**.
 - **--health-monitor-port**: The health check port number. If specified, this overrides the ports specified in the server member resources.
-- **--protocol**: The pool protocol. Enumeration type: **http**, **tcp**.
+- **--protocol**: The pool protocol. Enumeration type: **https**, **http**, **tcp**.
 - **--session-persistence-type**: The session persistence type, Enumeration type: **source_ip**.
 - **--name**: The new name of the pool.
 - **--json**: Format output in JSON.
