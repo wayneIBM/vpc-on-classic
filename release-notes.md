@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-04-17"
+lastupdated: "2020-05-01"
 
 keywords: vpc release notes, changes, new, updates
 
@@ -14,7 +14,7 @@ subcollection: vpc-on-classic
 {:new_window: target="_blank"}
 {:codeblock: .codeblock}
 {:pre: .pre}
-{:screen: .screen}
+:screen: .screen}
 {:tip: .tip}
 {:important: .important}
 {:download: .download}
@@ -25,6 +25,16 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 1 May 2020
+{: #may-1-2020}
+
+**New version `0.5.14` of the CLI plug-in `vpc-infrastructure` has been released**, which includes the following enhancements: 
+* Added HTTPS protocol and HTTPS health-type support for the **load-balancer-pool-create** command.
+* Added HTTPS protocol and HTTPS health-type support for the **load-balancer-pool-update** command.
+* Added floating IP data to the **instance** command JSON output.
+
+To update the `vpc-infrastructure` plug-in, see the [CLI reference](/docs/vpc-on-classic?topic=vpc-on-classic-vpc-reference#cli-prerequisites).
 
 ## 17 April 2020
 {: #april-17-2020}
