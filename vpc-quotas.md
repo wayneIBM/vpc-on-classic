@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2020
-lastupdated: "2020-04-07"
+lastupdated: "2020-05-11"
 keywords: vpc, quota, resource, classic, access, gateway, address, prefix, VSI, vNIC, floating, SSH, key, security, group, rule, remote, peer, ACL, region, ingress, egress, VPN, policies, load balancer, listener, pool, per
 
 subcollection: vpc-on-classic
@@ -45,20 +45,20 @@ This document covers quotas and limits for your {{site.data.keyword.cloud}} Virt
 
 <sup>1</sup> You can request to increase the subnet limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case.
 
-
-## VSI quotas
+## Virtual server instance quotas
 {: #vsi-quotas}
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
-| Virtual Server Instances (VSIs) | 20 per region <sup>1</sup> |
-| vNICs per VSI | 5 per VSI |
+| vCPUs | 200 per region <sup>1</sup> |
+| vNICs per instance | 5 per instance |
 | Floating IP addresses | 100 per zone per account <sup>2</sup> |
 | SSH Keys | 100 per account |
 
-<sup>1</sup> You can request to increase the VSI limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case. Consider other related resource limits that need to be increased as well, such as floating IPs.
+<sup>1</sup> You can request to increase the vCPU limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case. Consider other related resource limits that need to be increased as well, such as floating IPs.
 
 <sup>2</sup> You can request to increase the floating IP limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case.
+
 ## Security groups quotas
 {: #security-groups-quotas}
 
