@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2020-02-28"
 
-keywords: vpc event, vpc activity tracker, vpc logdna
+keywords: 
 
 subcollection: vpc-on-classic
 

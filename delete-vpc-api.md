@@ -5,9 +5,9 @@ copyright:
 lastupdated: "2019-05-07"
 
 
-keywords: vpc, delete, resources, api, rias
+keywords: 
 
-subcollection: vpc
+subcollection: vpc-on-classic
 
 ---
 

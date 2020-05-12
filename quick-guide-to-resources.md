@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2018, 2019
 lastupdated: "2019-05-17"
 
-keywords: resources, CLI, commands, VPC, subnet, instance, floating, region, endpoint, zone, storage
+keywords: 
 
 subcollection: vpc-on-classic
 

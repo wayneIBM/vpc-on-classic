@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-07-01"
 
-keywords: vpc storage, resource, storage, boot, block, volume, name, naming, best practices
+keywords: 
 
 subcollection: vpc-on-classic
 

@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-09-20"
 
-keywords: vpc, resource, policies, authorization, resource type, resource groups, roles, API, CLI, editor, viewer, administrator, operator
+keywords:
 
 subcollection: vpc-on-classic
 

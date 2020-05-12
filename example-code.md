@@ -5,7 +5,7 @@ copyright:
 lastupdated: "2019-11-20"
 
 
-keywords: vpc, vpc examples, create, VPC, API, IAM, token, permissions, endpoint, region, zone, profile, status, subnet, gateway, floating IP, delete, resource, provision
+keywords:
 
 subcollection: vpc-on-classic
 
@@ -29,8 +29,8 @@ subcollection: vpc-on-classic
 
 This document shows you how to use the REST APIs and `curl` commands to create an {{site.data.keyword.cloud}} Virtual Private Cloud for generation 1 compute resources. For code snippets calling the REST APIs using Go and Python, see this [example code](https://github.com/IBM-Cloud/vpc-api-samples/tree/gen1){: external}.
 
-To create a Virtual Private Cloud for generation 2 compute, see [Using the REST APIs to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis).
-{: tip}
+Newer generation available. For more information, see [Using the REST APIs to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis) for generation 2 compute resources.
+{:important}
 
 ## Prerequisites
 {: #prereqs}

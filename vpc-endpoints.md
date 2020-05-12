@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-07-12"
 
-keywords: vpc, CSE, endpoint, service, DNS, resolver, mirror, object, storage, bandwidth, charges
+keywords: 
 
 subcollection: vpc-on-classic
 

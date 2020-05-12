@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2020
 lastupdated: "2020-04-13"
 
-keywords: cli, reference, commands, generation 1, classic
+keywords:
 
 subcollection: vpc-on-classic
 
@@ -28,7 +28,7 @@ subcollection: vpc-on-classic
 This document provides a reference of the command line interface (CLI) commands available for the functionality of the {{site.data.keyword.cloud}} Virtual Private Cloud (Gen 1 compute).
 
 This VPC CLI is for use with generation 1 compute resources. Generation 1 resources aren't compatible with generation 2 resources. To view the CLI for generation 2 resources, see the [CLI for VPC for generation 2 compute](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference).
-{:tip}
+{:important}
 
 The commands are organized into the following sections. Similar commands to execute these functions also are available as [API commands](https://{DomainName}/apidocs/vpc-on-classic){: external}.
 
@@ -1142,7 +1142,7 @@ When the action is "forward", the pool identity is required to specify which poo
    
 - `ibmcloud is load-balancer-listener-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 443 http --policies '[{"priority": 5, "action": "forward", "target": { "id": 70294e14-4e61-11e8-bcf4-0242ac110004 }}]'`
 
-When the action is "redirect", the "url" and "http_status_code" are required. Possible values for "http_status_code" are 01, 302, 303, 307, or 308. The "url" is the redirect target URL.
+When the action is "redirect", the "url" and "http_status_code" are required. Possible values for "http_status_code" are 301, 302, 303, 307, or 308. The "url" is the redirect target URL.
 
 - `ibmcloud is load-balancer-listener-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 443 http --policies '[{"priority": 5, "action": "redirect", "target": { "http_status_code": 301, "url": "https://www.redirect.com"}}]'`
 
@@ -1249,7 +1249,7 @@ ibmcloud is load-balancer-listener-policy LOAD_BALANCER_ID LISTENER_ID POLICY_ID
 Create a load balancer listener policy.
 
 ```
-ibmcloud is load-balancer-listener-policy-create LOAD_BALANCER_ID LISTENER_ID --priority PRIORITY --action ACTION [--name NEW_NAME] [--target-id TARGET_ID] [--target-http-status-code TARGET_HTTP_STATUS_CODE] [--target-url TARGET_URL] [--rules LISTENER_POLICY_RULES_JSON | @LISTENER_POLICY_RULES_JSON_FILE] [--json]
+ibmcloud is load-balancer-listener-policy-create LOAD_BALANCER_ID LISTENER_ID --priority PRIORITY (--action forward | redirect | reject) [--name NEW_NAME] [--target-id TARGET_ID | (--target-http-status-code TARGET_HTTP_STATUS_CODE --target-url TARGET_URL)] [--rules LISTENER_POLICY_RULES_JSON | @LISTENER_POLICY_RULES_JSON_FILE] [--json]
 ```
 
 #### Command options
@@ -1271,21 +1271,21 @@ ibmcloud is load-balancer-listener-policy-create LOAD_BALANCER_ID LISTENER_ID --
 
 The priority of the policy can have a range of 1 to 10, where a lower value indicates a higher priority. The possible values for action are forward, redirect, or reject.
 
-- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --name my-policy --priority 5 --action reject`
+- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --name my-policy --action reject --priority 5`
 
 When the action is "forward", the pool identity is required to specify which pool the load balancer forwards the traffic to.
 
-- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --action forward --target-id 70294e14-4e61-11e8-bcf4-0242ac110004`
+- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --action forward --priority 2 --target-id 70294e14-4e61-11e8-bcf4-0242ac110004`
 
 When the action is "redirect", the "url" and "http_status_code" are required. Possible values for "http_status_code" are 01, 302, 303, 307, or 308. The "url" is the redirect target URL.
 
-- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --action redirect --target-http-status-code 301 --target-url "https://www.redirect.com"`
+- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --action redirect --priority 1 --target-http-status-code 301 --target-url "https://www.redirect.com"`
 
 Possible values for "condition" are contains, equals, or matches_regex. Possible values for "type" are header, hostname, or path. The "field" is an HTTP header field which is only applicable to "header" rule type. The "value" parameter is the value to be matched for rule condition.
 
-- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --action reject '[{"rules": { "condition": "equals", "type": "header", "field": "My-app-header", "value": "value"}}]'`
+- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --action reject --priority 4 --rules '[{"rules": { "condition": "equals", "type": "header", "field": "My-app-header", "value": "value"}}]'`
 
-- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --name my-policy --json`
+- `ibmcloud is load-balancer-listener-policy-create 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 --action reject --priority 3 --name my-policy --json`
 
 ---
 
@@ -1337,9 +1337,9 @@ ibmcloud is load-balancer-listener-policy-update LOAD_BALANCER_ID LISTENER_ID PO
 
 When the action is "forward", the pool identity is required to specify which pool the load balancer forwards the traffic to.
 
-- `ibmcloud is load-balancer-listener-policy-update 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 72b27b5c-f4b0-48bb-b954-5becc7c1dcb8  --action forward --target-id 70294e14-4e61-11e8-bcf4-0242ac110004`
+- `ibmcloud is load-balancer-listener-policy-update 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 72b27b5c-f4b0-48bb-b954-5becc7c1dcb8 --action forward --target-id 70294e14-4e61-11e8-bcf4-0242ac110004`
 
-When the action is "redirect", the "url" and "http_status_code" are required. Possible values for "http_status_code" are 01, 302, 303, 307, or 308. The "url" is the redirect target URL.
+When the action is "redirect", the "url" and "http_status_code" are required. Possible values for "http_status_code" are 301, 302, 303, 307, or 308. The "url" is the redirect target URL.
 
 - `ibmcloud is load-balancer-listener-policy-update 72251a2e-d6c5-42b4-97b0-b5f8e8d1f479 72b27b5c-f4b0-48bb-b954-5becc7c1dcb3 72b27b5c-f4b0-48bb-b954-5becc7c1dcb8 --target-http-status-code 301 --target-url "https://www.redirect.com"`
 
@@ -1392,7 +1392,7 @@ ibmcloud is load-balancer-listener-policy-rule LOAD_BALANCER_ID LISTENER_ID POLI
 Create a load balancer listener policy rule.
 
 ```
-ibmcloud is load-balancer-listener-policy-rule-create LOAD_BALANCER_ID LISTENER_ID POLICY_ID --condition CONDITION --type TYPE --value VALUE [--field FIELD] [--json]
+ibmcloud is load-balancer-listener-policy-rule-create LOAD_BALANCER_ID LISTENER_ID POLICY_ID (--condition contains | equals | matches_regex) (--type header | hostname | path) --value VALUE [--field FIELD] [--json]
 ```
 
 #### Command options
@@ -1420,7 +1420,7 @@ ibmcloud is load-balancer-listener-policy-rule-create LOAD_BALANCER_ID LISTENER_
 Update a rule of a load balancer listener policy.
 
 ```
-ibmcloud is load-balancer-listener-policy-rule-update LOAD_BALANCER_ID LISTENER_ID POLICY_ID RULE_ID [--condition CONDITION] [--type TYPE] [--value VALUE] [--field FIELD] [--json]
+ibmcloud is load-balancer-listener-policy-rule-update LOAD_BALANCER_ID LISTENER_ID POLICY_ID RULE_ID [--condition contains | equals | matches_regex] [--type header | hostname | path] [--value VALUE] [--field FIELD] [--json]
 ```
 
 #### Command options

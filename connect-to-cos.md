@@ -3,7 +3,7 @@ copyright:
   years: 2018-2019
 lastupdated: "2019-06-11"
 
-keywords: resource, storage, connection, COS, object, endpoints, cross-region, regional, datacenter, vpc
+keywords: 
 
 subcollection: vpc-on-classic
 

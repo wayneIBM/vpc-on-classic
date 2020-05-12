@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2019
 lastupdated: "2019-11-20"
 
-keywords: vpc, vpc ui, create, configure, permissions, ACL, virtual, server, instance, subnet, block, storage, volume, security, group, images, Windows, Linux, example, monitoring, VPN, load balancer, IKE, IPsec
+keywords:
 
 subcollection: vpc-on-classic
 
@@ -27,13 +27,8 @@ subcollection: vpc-on-classic
 
 This document shows you how to use the the {{site.data.keyword.cloud_notm}} console to create and configure an {{site.data.keyword.cloud}} Virtual Private Cloud for generation 1 compute resources.
 
-To create a Virtual Private Cloud for generation 2 compute, see [Using the {{site.data.keyword.cloud_notm}} console to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console).
-{: tip}
-
-Within the console, the generation is depicted using the following image.
-
-![vpc-gen1-compute](./images/vpc_gen1.png)
-
+Newer generation available. For more information, see [Using the IBM Cloud console to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) for generation 2 compute resources.
+{:important}
 
 To create and configure your virtual private cloud (VPC) and other attached resources, perform the steps in the sections that follow, in this order:
 

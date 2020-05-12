@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2018, 2019
 lastupdated: "2019-11-20"
 
-keywords: vpc, permissions, infrastructure, VPC, SSH, CLI, API, console, classic
+keywords:
 
 subcollection: vpc-on-classic
 
@@ -29,8 +29,8 @@ subcollection: vpc-on-classic
 {: support}
 [comment]: # (linked help topic)
 
-New! Check out Virtual Private Cloud for generation 2 virtual server profiles. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
-{:tip} 
+Newer generation available. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started) for generation 2 compute resources.
+{:important}
 
 To get started with {{site.data.keyword.vpc_full}} (Gen 1 compute):
 

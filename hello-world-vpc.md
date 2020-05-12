@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2018, 2019
 lastupdated: "2019-11-20"
 
-keywords: vpc, vpc cli, create, VPC, CLI, resources, plugin, SSH, key, hello, world, provision, instance, subnet
+keywords:
 
 subcollection: vpc-on-classic
 
@@ -28,8 +28,8 @@ subcollection: vpc-on-classic
 
 This document shows you how to use the IBM Cloud CLI to create an {{site.data.keyword.cloud}} Virtual Private Cloud for generation 1 compute resources.
 
-To create a Virtual Private Cloud for generation 2 compute, see [Using the CLI to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-cli).
-{: tip}
+Newer generation available. For more information, see [Creating a VPC using the IBM Cloud CLI](/docs/vpc?topic=vpc-creating-a-vpc-using-cli) for generation 2 compute resources.
+{:important}
 
 ## Prerequisites:
 {: #cli-pre-requisites}

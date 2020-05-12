@@ -5,7 +5,7 @@ copyright:
 lastupdated: "2019-05-29"
 
 
-keywords: vpc, delete, resources
+keywords: 
 
 subcollection: vpc-on-classic
 ---

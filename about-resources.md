@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-11-27"
 
-keywords: vpc, vpc resources, resource, policies, authorization, resource type, resource groups, roles, load balancer, VPN, operator, editor, viewer, admin
+keywords: 
 
 subcollection: vpc-on-classic
 

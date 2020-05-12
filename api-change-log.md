@@ -4,9 +4,9 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-04-10"
 
-keywords: vpc, api, change log, new features, restrictions, migration
+keywords: 
 
-subcollection: vpc
+subcollection: vpc-on-classic
 
 
 ---
@@ -36,7 +36,7 @@ To minimize regressions from changes, we recommend the following best practices 
 
 ## 2020-04-10
 {: #2020-04-10}
-Added usage recommendations for the protocol property for load balancer pools and the type property for load balancer pool health monitors. The guidance notes that new values for these properties may be added in the future, and unexpected values should be handled gracefully.
+Added usage recommendations for the protocol property for load balancer pools and the type property for load balancer pool health monitors. The guidance notes that new values for these properties may be added in the future, and unexpected values will be handled gracefully.
 
 ## 2020-03-24
 {: #2020-03-24}

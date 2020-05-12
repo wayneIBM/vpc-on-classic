@@ -4,7 +4,7 @@ copyright:
   years: 2019
 lastupdated: "2019-12-16"
 
-keywords: vpc, responsibilities, ha, high availability, disaster recovery
+keywords: 
 
 subcollection: vpc-on-classic
 

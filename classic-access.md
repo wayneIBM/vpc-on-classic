@@ -3,7 +3,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-04-02"
 
-keywords: vpc, classic, access, classic access, VRF
+keywords: 
 
 subcollection: vpc-on-classic
 
