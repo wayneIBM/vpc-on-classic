@@ -3,7 +3,7 @@
 copyright:
   years: 2019, 2020
 
-lastupdated: "2020-02-28"
+lastupdated: "2020-05-12"
 
 keywords: 
 
@@ -116,7 +116,10 @@ The following table lists the actions related to storage resources and the gener
 | volume  | is.volume.volume.create  | Volume was created  |
 | volume  | is.volume.volume.update  | Volume was updated |
 | volume  | is.volume.volume.delete  | Volume was deleted  |
+| volume  | is.volume.volume.read    | One or more volumes were retrieved  |
 
+An event will not contain a volume name if there was no information available at the time of the event. For example, when you make a request to create a volume but do not provide a volume name, the information will not be available and will not appear in the event. 
+{:note}
 
 ## List of events: Load balancers
 {: #events-load-balancers}
