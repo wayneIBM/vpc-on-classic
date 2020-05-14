@@ -54,12 +54,12 @@ Newer generation available. For more information, see [Quotas and service limits
 
 |   Resource     | Maximum Number |
 | ------- | :------: |
-| vCPUs | 200 per region <sup>1</sup> |
+| Virtual server instances | 20 per region <sup>1</sup> |
 | vNICs per instance | 5 per instance |
 | Floating IP addresses | 100 per zone per account <sup>2</sup> |
 | SSH Keys | 100 per account |
 
-<sup>1</sup> You can request to increase the vCPU limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case. Be aware that (except for the `us-south` region) the vCPU quota must be the same in every region. Also, consider other related resource limits that need to be increased, such as floating IPs. 
+<sup>1</sup> You can request to increase the virtual server instances limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case. Consider other related resource limits that need to be increased, such as floating IPs. 
 
 <sup>2</sup> You can request to increase the floating IP limit by submitting an [IBM Support](/docs/vpc-on-classic?topic=vpc-on-classic-getting-help-and-support) case.
 
