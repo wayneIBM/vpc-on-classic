@@ -6,7 +6,7 @@ copyright:
   years: 2017, 2020
 lastupdated: "2020-04-01"
 
-keywords: vpc, vpc help, help, support, case, question, forum, Stack Overflow, development
+keywords: 
 
 subcollection: vpc-on-classic
 

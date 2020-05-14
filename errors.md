@@ -4,7 +4,7 @@ copyright:
   years: 2018, 2020
 lastupdated: "2020-04-07"
 
-keywords: vpc, vpc errors, error, message, API, limitations, rias, support
+keywords: 
 
 subcollection: vpc-on-classic
 

@@ -5,7 +5,7 @@ copyright:
 lastupdated: "2019-05-17"
 
 
-keywords: vpc, delete, resources, cli, rias, infrastructure
+keywords: 
 
 subcollection: vpc-on-classic
 

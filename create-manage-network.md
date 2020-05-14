@@ -5,7 +5,7 @@ copyright:
 
 lastupdated: "2019-05-29"
 
-keywords: vpc, vpc network, resource, network, capabilities, overview, security, load balancer, VPN, security groups, ACL, address, IP, range, prefix, peering, Fortigate, Cisco, Vyatta, VPC, vSRX
+keywords: 
 
 subcollection: vpc-on-classic
 

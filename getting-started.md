@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2017, 2018, 2019
-lastupdated: "2019-11-20"
+  years: 2017, 2020
+lastupdated: "2020-05-13"
 
-keywords: vpc, permissions, infrastructure, VPC, SSH, CLI, API, console, classic
+keywords:
 
 subcollection: vpc-on-classic
 
@@ -29,8 +29,8 @@ subcollection: vpc-on-classic
 {: support}
 [comment]: # (linked help topic)
 
-New! Check out Virtual Private Cloud for generation 2 virtual server profiles. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
-{:tip} 
+Newer generation available. For more information, see [Getting started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started) for generation 2 compute resources.
+{:important}
 
 To get started with {{site.data.keyword.vpc_full}} (Gen 1 compute):
 
@@ -50,7 +50,7 @@ To get started with {{site.data.keyword.vpc_full}} (Gen 1 compute):
 
    * Look for a file called `id_rsa.pub` under an `.ssh` directory under your home directory, for example, `/Users/<USERNAME>/.ssh/id_rsa.pub`. The file starts with `ssh-rsa` and ends with your email address.
 
-   * Or Generate an SSH Key: If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one by running the `ssh-keygen -t rsa -C "user_ID"` command (on Linux or macOS servers) and following the prompts. That command generates two files. The generated public key is in the `<your key>.pub` file. For Windows operating systems, you can use a tool like PuTTYgen to generate an SSH key.
+   * Or Generate an SSH Key: If you do not have a public SSH key or if you forgot the password of an existing one, generate a new one. For example on Linux, run the `ssh-keygen -t rsa -C "user_ID"` command and follow the prompts. That command generates two files. The generated public key is in the `<your key>.pub` file. For more information, see [SSH keys](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-ssh-keys).
 
 ## Using the UI, CLI, or REST API
 

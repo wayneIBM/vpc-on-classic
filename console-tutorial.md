@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-11-20"
+  years: 2018, 2020
+lastupdated: "2020-05-13"
 
-keywords: vpc, vpc ui, create, configure, permissions, ACL, virtual, server, instance, subnet, block, storage, volume, security, group, images, Windows, Linux, example, monitoring, VPN, load balancer, IKE, IPsec
+keywords:
 
 subcollection: vpc-on-classic
 
@@ -27,13 +27,8 @@ subcollection: vpc-on-classic
 
 This document shows you how to use the the {{site.data.keyword.cloud_notm}} console to create and configure an {{site.data.keyword.cloud}} Virtual Private Cloud for generation 1 compute resources.
 
-To create a Virtual Private Cloud for generation 2 compute, see [Using the {{site.data.keyword.cloud_notm}} console to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console).
-{: tip}
-
-Within the console, the generation is depicted using the following image.
-
-![vpc-gen1-compute](./images/vpc_gen1.png)
-
+Newer generation available. For more information, see [Using the IBM Cloud console to create VPC resources](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) for generation 2 compute resources.
+{:important}
 
 To create and configure your virtual private cloud (VPC) and other attached resources, perform the steps in the sections that follow, in this order:
 
@@ -53,7 +48,7 @@ After you enter data on the provisioning pages, you can click the **Get sample A
 {: #before}
 Make sure you have sufficient permissions to create and manage resources in your VPC. For more information, see [Managing user permissions for VPC resources](/docs/vpc-on-classic?topic=vpc-on-classic-managing-user-permissions-for-vpc-resources).
 
-Generate an SSH key, which will be used to connect to the virtual server instance. For example, generate an SSH key on your Linux or macOS server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file. For Windows operating systems, you can use a tool like PuTTYgen to generate an SSH key.
+Generate an SSH key, which will be used to connect to the virtual server instance. For example, generate an SSH key on your Linux server by running the command `ssh-keygen -t rsa -C "user_ID"`. That command generates two files. The generated public key is in the `<your key>.pub` file. For more information, see [SSH keys](/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-ssh-keys).
 
 If you plan to create a load balancer and use HTTPs for the listener, an SSL certificate is required. You can manage certificates with [IBM Certificate Manager](https://{DomainName}/catalog/services/certificate-manager){: external}. You must also create an authorization to allow your load balancer instance to access the Certificate Manager instance that contains the SSL certificate. You can create an authorization through [Identity and Access Authorizations](https://{DomainName}/iam/authorizations){: external}. For the source, select **Infrastructure Service** as the Source service, **Load Balancer for VPC** as the Resource type, and **All resource instances** for the Source resource instance. Select **Certificate Manager** as the Target service and assign **Writer** for the service access role. Set the Target service instance to  **All instances** or to your specific Certificate Manager instance. For more information, see [Using Load Balancers in IBM Cloud VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc).
 

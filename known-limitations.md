@@ -4,7 +4,7 @@ copyright:
   years: 2017, 2020
 lastupdated: "2020-02-13"
 
-keywords: limitations, bugs, known, known issues, Beta, services, capabilities, use cases
+keywords: 
 
 subcollection: vpc-on-classic
 

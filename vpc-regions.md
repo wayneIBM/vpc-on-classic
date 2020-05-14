@@ -4,7 +4,7 @@ copyright:
   years: 2019, 2020
 lastupdated: "2020-02-28"
 
-keywords: vpc, region, zone, deploy, datacenter, data, center, federated, CLI, API, account, failover, disaster, recovery, DR
+keywords: 
 
 subcollection: vpc-on-classic
 
