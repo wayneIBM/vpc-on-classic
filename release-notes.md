@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2020
-lastupdated: "2020-05-01"
+lastupdated: "2020-05-15"
 
 keywords:
 
@@ -25,6 +25,13 @@ subcollection: vpc-on-classic
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.vpc_full}}.
 {:shortdesc}
+
+## 15 May 2020
+{: #may-15-2020}
+
+**Updates to Load Balancer for VPC**
+
+- Supports backend encryption (HTTPS for backend pool). See [Using load balancers for VPC](/docs/vpc-on-classic-network?topic=vpc-on-classic-network---using-load-balancers-in-ibm-cloud-vpc) for details.
 
 ## 1 May 2020
 {: #may-1-2020}
